@@ -1,0 +1,13 @@
+.carousel-caption{
+    left: 0%;
+}
+
+
+.login{
+    background-color: #66eb5d;
+    border-radius: 15px;
+}
+
+.caro{
+    z-index: -1;
+}

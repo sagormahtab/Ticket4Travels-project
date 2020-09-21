@@ -1,0 +1,24 @@
+.image1{
+    
+}
+.image2{
+    position: relative;
+    z-index: 1;
+    margin-top: -320px;
+    
+}.image3{
+    background-color: #494f53;
+    position: relative;
+    z-index: 2;
+    margin-top: -40px;
+    height: 500px;
+}
+.logog{
+    margin-top: 50px;
+    
+}
+.pa{
+    background-color: #494f53 !important;
+    margin-left: 800px;
+    margin-top: 0;
+}
