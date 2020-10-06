@@ -17,20 +17,20 @@ function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#00ff06' }}>
+      <IconContext.Provider value={{ color: '#41B3F7' }}>
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} /><img src={logo} alt="logo" height="50px" width="80px"/>
+            <FaIcons.FaBars onClick={showSidebar} /><img src={logo} alt="logo" height="50px" width="80px" />
           </Link>
           <nav class="nav ml-auto">
-  <a class="nav-link active" href="#">partnership</a>
-  <a class="nav-link" href="#"><img src={icon11} height="22px" width="25px"></img> promo</a>
-  <a class="nav-link" href="#"><BookmarkIcon />saved</a>
-  <a class="nav-link" href="#">My booking</a>
-  <a class="nav-link" href="#">pay</a>
-  <a class="nav-link" href="#"><img src={icon12} height="22px" width="25px"></img> Log in</a>
-  <button type="button" class="btn btn-success">Register</button>
-</nav>
+            <a class="nav-link active" href="#">partnership</a>
+            <a class="nav-link" href="#"><img src={icon11} height="22px" width="25px"></img> promo</a>
+            <a class="nav-link" href="#"><BookmarkIcon />saved</a>
+            <a class="nav-link" href="#">My booking</a>
+            <a class="nav-link" href="#">pay</a>
+            <a class="nav-link" href="#"><img src={icon12} height="22px" width="25px"></img> Log in</a>
+            <button type="button" class="btn btn-success">Register</button>
+          </nav>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>

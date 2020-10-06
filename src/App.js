@@ -1,13 +1,20 @@
 import React from 'react'
 import "./App.css"
 import 'antd/dist/antd.css';
+import 'semantic-ui-css/semantic.min.css'
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 import HeadFirst from "./Components/HeaderFrist/HeaderFirst"
 import Navbar from "./Components/NavBar/Navbar"
 import Home from "./Components/NavBar/pages/Home"
+import MyBooking from "./Components/NavBar/pages/MyBooking"
+import MyInbox from "./Components/NavBar/pages/MyInbox"
+import Saved from "./Components/NavBar/pages/Saved"
+import HelpCenter from "./Components/NavBar/pages/HelpCenter"
+import PartnerUs from "./Components/NavBar/pages/PartnerUs"
+import ContactUs from "./Components/NavBar/pages/ContactUs"
 import Dropdown from "./Components/Dropdown/Dropdown"
 import Carousel from "./Components/Carousel/Carousel"
-import Slider from "./Components/FormMenu_part/Slider"
+import InputForm from "./Components/inputForm_part/InputForm"
 import Login from "./Components/exclusiveMember_part/Login"
 import Dropdown2 from "./Components/exclusiveMember_part/Dropdown2/Dropdown2"
 import HotelPic from "./Components/ExtraSpace_hotelPic/HotelPic"
@@ -23,20 +30,34 @@ function App() {
       <HeadFirst />
       <Navbar />
       <Dropdown/>
-      <Carousel />
-      {/* <Slider /> */}
-      <Login />
-      <Dropdown2 />
-      <HotelPic />
-      <PopularDeal />
-      <PartnerShip />
-      <Book />
-      <Interest />
-      <Footer />
-        <Switch>
+      <Switch>
            <Route exact path="/" component={Home}/>
-        </Switch>
+           <Route  path="/caro"> <Carousel /></Route>
+           <Route  path="/inputform"> <InputForm /></Route>
+           <Route  path="/login"> <Login/></Route>
+           <Route  path="/drop"> <Dropdown2/></Route>
+           <Route  path="/hotelpic"> <HotelPic/></Route>
+           <Route  path="/populardeal"> <PopularDeal/></Route>
+           <Route  path="/partnership"> <PartnerShip/></Route>
+           <Route  path="/book"> <Book/></Route>
+           <Route  path="/interest"> <Interest/></Route>
+
+
+           <Route path="/my_booking" component={MyBooking} />
+
+           <Route path="/my_inbox" component={MyInbox} />
+
+           <Route path="/saved" component={Saved} />
+
+           <Route path="/help_center" component={HelpCenter} />
+
+           <Route path="/partner_us" component={PartnerUs} />
+
+           <Route path="/contact_us" component={ContactUs} />
+           
+        </Switch>    
       </Router>
+      <Footer />
     </div>
   )
 }

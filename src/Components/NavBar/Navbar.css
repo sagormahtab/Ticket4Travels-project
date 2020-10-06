@@ -1,10 +1,13 @@
 .navbar {
+  /* position: fixed; */
   background-color: #353a40;
+  width: 100%;
   height: 50px;
   padding: 0;
   display: flex;
   justify-content: start;
   align-items: center;
+  z-index: 1;
 
 }
 
@@ -14,25 +17,18 @@
   background: none;
   
 }
-/* .logo{
-  background-image: url(../NavBar//logo//Final\ Logo.png);
-  height: 10px;
-} */
-/* .navbar-nav{
-  display: flex;
-  justify-content: right;
-  align-items: center;
-} */
 
 .nav-link{
   color: white;
 }
 
 .nav-menu {
-  background-color:#88C8F3;
-  width: 250px;
+  /* background-color:#88C8F3; */
+  background-color: whitesmoke;
+  width: 350px;
   height: 100vh;
   display: flex;
+  z-index: 50;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -67,7 +63,7 @@
 }
 
 .nav-text a:hover {
-  background-color: #1a83ff;
+  background-color: #D8D9DA;
 }
 
 .nav-menu-items {
@@ -75,7 +71,7 @@
 }
 
 .navbar-toggle {
-  background-color:white;
+  /* background-color:white; */
   width: 100%;
   height: 80px;
   display: flex;
@@ -86,3 +82,4 @@
 span {
   margin-left: 16px;
 }
+
