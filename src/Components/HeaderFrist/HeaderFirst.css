@@ -1,4 +1,13 @@
 .header_one{
     background-color: #16d423;
     height: 10px;
+    width: 100%;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .header_one{
+        width: 100% !important;
+    }
 }
