@@ -23,12 +23,16 @@ import PartnerShip from "./Components/partnerShip_part/PartnerShip"
 import Book from "./Components/booking Document_part/Book"
 import Interest from "./Components/interest_part/Interest"
 import Footer from "./Components/Footer_part/Footer"
+import Login_page from "./Components/Register_Log-in-page/Login_page"
+import Form1 from "./Components/Register_Log-in-page/RegisterPage-1/Form1"
+import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2"
 function App() {
   return (
     <div>
       <Router>
       <HeadFirst />
-      <Navbar />
+      <Navbar  />
+      
       <Dropdown/>
       <Switch>
            <Route exact path="/" component={Home}/>
@@ -54,6 +58,9 @@ function App() {
            <Route path="/partner_us" component={PartnerUs} />
 
            <Route path="/contact_us" component={ContactUs} />
+           <Route path="/login_form" component={Login_page}></Route>
+           <Route path="/account_inforamtion" component={Form2}></Route>
+
            
         </Switch>    
       </Router>

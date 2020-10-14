@@ -11,7 +11,7 @@ import PopularDeal from '../../popularDeals_part/PopularDeal';
 
 function Home() {
   return (
-    <div className='home'>
+    <div className=''>
       <Carousel/>
       <InputForm/>
       <Login/>

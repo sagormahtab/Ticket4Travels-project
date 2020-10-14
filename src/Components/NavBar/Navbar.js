@@ -9,11 +9,17 @@ import logo from "./logo/Final Logo.png"
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import icon11 from "../NavBar/icon-images/browser.png"
 import icon12 from "../NavBar/icon-images/user.png"
+import { useHistory } from "react-router-dom";
+
+
+
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  
 
   return (
     <>
@@ -29,7 +35,8 @@ function Navbar() {
             <a class="nav-link" href="#">My booking</a>
             <a class="nav-link" href="#">pay</a>
             <a class="nav-link" href="#"><img src={icon12} height="22px" width="25px"></img> Log in</a>
-            <button type="button" class="btn btn-success">Register</button>
+            <Link to="/login_form"><button type="button" class="btn btn-success">Register</button></Link>
+            
           </nav>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

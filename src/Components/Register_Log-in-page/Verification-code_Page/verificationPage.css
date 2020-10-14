@@ -1,0 +1,27 @@
+
+
+
+.under_DIV{
+  position: relative;
+  z-index: 2;
+  margin-top: -200px;
+}
+
+._div{
+    margin-top: 200px;
+    
+}
+
+.bg-Color{
+    background-color: #e2f6ff;
+}
+
+.acqua_colorDiv{
+    color: aqua;
+}
+
+.bbtn{
+    background-color: #00aeff;
+    color: white;
+    padding: 10px 24px;
+}
