@@ -1,0 +1,16 @@
+.navBar{
+    width: 580px;
+    margin-left: 430px;
+    background-color: #00d3ff;
+    z-index: 2;
+    position: relative;
+    margin-top: -30px;
+}
+.imgClass{
+    background-color: #c4f5ff;
+}
+.lol{
+    position: relative;
+    z-index: 3;
+    margin-left: -170px;
+}

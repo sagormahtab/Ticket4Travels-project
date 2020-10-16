@@ -13,19 +13,14 @@ import HelpCenter from "./Components/NavBar/pages/HelpCenter"
 import PartnerUs from "./Components/NavBar/pages/PartnerUs"
 import ContactUs from "./Components/NavBar/pages/ContactUs"
 import Dropdown from "./Components/Dropdown/Dropdown"
-import Carousel from "./Components/Carousel/Carousel"
-import InputForm from "./Components/inputForm_part/InputForm"
-import Login from "./Components/exclusiveMember_part/Login"
-import Dropdown2 from "./Components/exclusiveMember_part/Dropdown2/Dropdown2"
-import HotelPic from "./Components/ExtraSpace_hotelPic/HotelPic"
-import PopularDeal from "./Components/popularDeals_part/PopularDeal"
-import PartnerShip from "./Components/partnerShip_part/PartnerShip"
-import Book from "./Components/booking Document_part/Book"
-import Interest from "./Components/interest_part/Interest"
+
 import Footer from "./Components/Footer_part/Footer"
 import Login_page from "./Components/Register_Log-in-page/Login_page"
-import Form1 from "./Components/Register_Log-in-page/RegisterPage-1/Form1"
 import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2"
+import FlightSearch_pagesCombines from './Components/Flight_Search_Pages/FlightSearch_pagesCombines';
+import BusSearch_pagesCombines from './Components/Bus_Search_Pages/BusSearch_pagesCombines';
+import LaunchSearch_pagesCombines from './Components/Launch_Search_Pages/LaunchSearch_pagesCombines';
+import HotelSearch_pagesCombines from './Components/Hotel_Search_Pages/HotelSearch_pagesCombines';
 function App() {
   return (
     <div>
@@ -36,15 +31,6 @@ function App() {
       <Dropdown/>
       <Switch>
            <Route exact path="/" component={Home}/>
-           <Route  path="/caro"> <Carousel /></Route>
-           <Route  path="/inputform"> <InputForm /></Route>
-           <Route  path="/login"> <Login/></Route>
-           <Route  path="/drop"> <Dropdown2/></Route>
-           <Route  path="/hotelpic"> <HotelPic/></Route>
-           <Route  path="/populardeal"> <PopularDeal/></Route>
-           <Route  path="/partnership"> <PartnerShip/></Route>
-           <Route  path="/book"> <Book/></Route>
-           <Route  path="/interest"> <Interest/></Route>
 
 
            <Route path="/my_booking" component={MyBooking} />
@@ -60,6 +46,26 @@ function App() {
            <Route path="/contact_us" component={ContactUs} />
            <Route path="/login_form" component={Login_page}></Route>
            <Route path="/account_inforamtion" component={Form2}></Route>
+
+
+           {/* Flight-Search-start */}
+           <Route path="/flight_search" component={FlightSearch_pagesCombines}></Route>
+           {/* Flight-Search-END */}
+
+           {/* bUS-SEARCH-START */}
+           <Route path="/bus_search" component={BusSearch_pagesCombines}></Route>
+           {/* bUS-SEARCH-end */}
+
+           {/* Launch-search-start */}
+           <Route path="/launch_search" component={LaunchSearch_pagesCombines}></Route>
+           {/* Launch-search-end */}
+
+
+           {/* hotel-search-start */}
+           <Route path="/hotel_search" component={HotelSearch_pagesCombines}></Route>
+           {/* hotel-search-end  */}
+
+
 
            
         </Switch>    

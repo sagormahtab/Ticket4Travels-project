@@ -1,0 +1,19 @@
+.nav-link{
+    color: black !important;
+}
+
+.yatch1_div{
+    margin-left: -400px;
+}
+
+.btnCard{
+    background-color: #4ec3f0;
+    color: white !important;
+    border-radius: 15px;
+    padding: 10px 10px;
+    border: 1px solid white;
+}
+
+.LaunchCard1_shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,12 @@
+.rightArrow{
+    position: relative;
+    z-index: 1;
+    margin-left: -700px;
+    margin-top: -40px;
+}
+.buttonn{
+    margin-top: 20px;
+    background-color: aqua;
+    border-radius: 15px;
+    width: 200px;
+}

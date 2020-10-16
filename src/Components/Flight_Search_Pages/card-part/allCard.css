@@ -1,0 +1,27 @@
+.duration{
+    margin-left: 0px;
+}
+.logo_cls{
+    color: #4ec3f0;
+}
+
+.bag_part{
+    position: relative;
+    z-index: 1;
+    margin-left: -150px;
+}
+.button1{
+    background-color: #4ec3f0;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    margin-top: -10px;
+    margin-left: 30px;
+}
+
+.fare_info{
+    position: relative;
+    z-index: 3;
+    margin-top: -34px;
+    margin-left: -400px;
+}
