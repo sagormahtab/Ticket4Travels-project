@@ -1,10 +1,13 @@
 import React from 'react'
+import UserCard from "../../UserProfile OR booking information/userCard/UserCard"
+import UserProfile_page from "../../UserProfile OR booking information/userProfile-page/userProfile_page"
 
 
 function MyBooking() {
   return (
     <div>
-      <h1 className="text-center mt-5">It is My booking page</h1>
+      <UserCard/>
+      <UserProfile_page/>
     </div>
   )
 }

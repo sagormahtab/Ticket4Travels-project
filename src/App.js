@@ -13,7 +13,6 @@ import HelpCenter from "./Components/NavBar/pages/HelpCenter"
 import PartnerUs from "./Components/NavBar/pages/PartnerUs"
 import ContactUs from "./Components/NavBar/pages/ContactUs"
 import Dropdown from "./Components/Dropdown/Dropdown"
-
 import Footer from "./Components/Footer_part/Footer"
 import Login_page from "./Components/Register_Log-in-page/Login_page"
 import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2"
@@ -21,6 +20,8 @@ import FlightSearch_pagesCombines from './Components/Flight_Search_Pages/FlightS
 import BusSearch_pagesCombines from './Components/Bus_Search_Pages/BusSearch_pagesCombines';
 import LaunchSearch_pagesCombines from './Components/Launch_Search_Pages/LaunchSearch_pagesCombines';
 import HotelSearch_pagesCombines from './Components/Hotel_Search_Pages/HotelSearch_pagesCombines';
+import InformationForbooking_Comvbines from './Components/Information-for-bookingPart(Form)/InformationForbooking_Comvbines';
+import TrainSearch_pagesCombines from './Components/Train_Search_Pages/TrainSearch_pagesCombines';
 function App() {
   return (
     <div>
@@ -51,6 +52,9 @@ function App() {
            {/* Flight-Search-start */}
            <Route path="/flight_search" component={FlightSearch_pagesCombines}></Route>
            {/* Flight-Search-END */}
+           {/* Train-Search-start */}
+           <Route path="/train_search" component={TrainSearch_pagesCombines}></Route>
+           {/* Train-Search-END */}
 
            {/* bUS-SEARCH-START */}
            <Route path="/bus_search" component={BusSearch_pagesCombines}></Route>
@@ -64,6 +68,10 @@ function App() {
            {/* hotel-search-start */}
            <Route path="/hotel_search" component={HotelSearch_pagesCombines}></Route>
            {/* hotel-search-end  */}
+
+           {/* Information-for-booking-page(form)-START
+           <Route path="/your_information" component={InformationForbooking_Comvbines}></Route>
+            Information-for-booking-page(form)-END */}
 
 
 

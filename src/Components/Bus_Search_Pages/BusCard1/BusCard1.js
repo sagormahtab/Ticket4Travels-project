@@ -10,6 +10,7 @@ import MinarelWater from "../BusCard1/images/drinks.png"
 import Luggage from "../BusCard1/images/travel-case.png"
 import BusIMG from "../BusCard1/images/busImage1.jpg"
 import "../BusCard1/busCard1.css"
+import { Link } from 'react-router-dom';
 
 
 
@@ -63,8 +64,8 @@ function BusCard1() {
                                 <div className="col-sm-3 col-md-3"></div>
                                 <div className="col-sm-3 col-md-3"></div>
                             </div>
-                            <div className="busbuttonn"><button type="button" class="btn btn-success busButton1">Book Now</button>
-                            </div>
+                            <Link to="your_information"><div className="busbuttonn"><button type="button" class="btn btn-success busButton1">Book Now</button>
+                            </div></Link>
 
                             <div className="row mt-5">
                                 <div className="col-sm-4 col-md-4 busColorDiv busD_border">Bus Details</div>

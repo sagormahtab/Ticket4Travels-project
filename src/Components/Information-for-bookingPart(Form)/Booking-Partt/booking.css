@@ -1,0 +1,85 @@
+.color_change{
+    color: turquoise;
+}
+
+.card2{
+    margin-left: -250px;
+   
+}
+.img_div{
+    z-index: 1;
+    position: relative;
+    margin-top: -40px;
+    margin-left: -190px;
+}
+.lion_air{
+    font-weight: bold;
+}
+.time_part{
+    margin-left: 30px;
+    font-weight: bold;
+}
+.nxtpage{
+    margin-left: 80px;
+}
+
+.direction_part{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.back1{
+    background-color: #ececec;
+}
+.back2{
+    color: #00aeff;
+}
+
+.txtColor{
+    color: #006911;
+}
+
+.txt_div{
+    margin-left: -120px;
+}
+.lol{
+    width: 50px;
+}
+.backColor{
+    background-color: #00aeff;
+    width: 200px;
+}
+.booking_informationCard{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+.booking_Card2{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+.site-input-group-wrapper .site-input-split {
+    background-color: #fff;
+  }
+  
+  .site-input-group-wrapper .site-input-right {
+    border-left-width: 0;
+  }
+  
+  .site-input-group-wrapper .site-input-right:hover,
+  .site-input-group-wrapper .site-input-right:focus {
+    border-left-width: 1px;
+  }
+  
+  .site-input-group-wrapper .ant-input-rtl.site-input-right {
+    border-right-width: 0;
+  }
+  
+  .site-input-group-wrapper .ant-input-rtl.site-input-right:hover,
+  .site-input-group-wrapper .ant-input-rtl.site-input-right:focus {
+    border-right-width: 1px;
+  }

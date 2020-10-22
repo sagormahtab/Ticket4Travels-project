@@ -1,0 +1,59 @@
+.fonnt_div{
+    font-weight: bold;
+}
+
+.color_chng{
+    color: aqua;
+    margin-left: 950px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.border_div{
+    border-bottom: 2px solid blue;
+    color: aquamarine;
+}
+
+/* .timeline:before{
+    content: "";
+    background-color: #555;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 1;
+
+}
+
+.timeline p:before{
+    content: "";
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #000;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+} */
+
+.timmer_div{
+    margin-left: 130px;
+}
+
+.border_divvv{
+    border-left: 2px solid red;
+    /* background-color: lightgrey; */
+    margin-left: 100px;
+}
+
+.butt_div{
+    background-color: aqua;
+margin-left: 950px;
+}
+
+.TrainCard1_shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
