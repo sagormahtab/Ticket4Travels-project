@@ -18,7 +18,7 @@ function handleChange(value) {
 function LaunchCard2() {
     return (
         <div>
-            <div className="container mt-5">
+            <div className="container mt-2">
                 <div>
                     <span className="text-left mb-0"><h1 className="header_colorChang mb-0">Cabin-wise Seat Availavility</h1></span>
                     <h5 className="text-left mt-0">Maximum 2 cabins can be bookded per ticket</h5>
@@ -27,7 +27,7 @@ function LaunchCard2() {
 
                 <div className="row mt-2">
                     <div className="col-sm-6 sol-md-6 col-10">
-                        <Card style={{ width: 550, height:350 }} className="LaunchCard2_shadow">
+                        <Card style={{ width: 450, height:350 }} className="LaunchCard2_shadow">
                             <div className="row">
                                 <hr></hr>
                                 <div className=" col-sm-3 col-md-3">Cabin class</div>
@@ -91,7 +91,7 @@ function LaunchCard2() {
                     </div>
 
                     <div className="col-sm-6 col-md-6 text-left">
-                        <Card style={{ width: 510 }} className="LaunchCard2_shadow">
+                        <Card style={{ width: 480 }} className="LaunchCard2_shadow">
                             <div className="row">
                                 <div className="col-sm-6 col-md-6">
 
@@ -144,7 +144,7 @@ function LaunchCard2() {
                                 </Select>
 
                                 </div>
-                                <div className="col-sm-6 col-md-6"><div className="col-sm-6 col-md-6"><button type="button" class="btn btn-success">Success</button>
+                                <div className="col-sm-6 col-md-6"><div className="col-sm-6 col-md-6"><button type="button" class="btn btn-success">Continue</button>
                                 </div></div>
                             </div>
                         </Card>

@@ -11,7 +11,8 @@
     color: white !important;
     border-radius: 15px;
     padding: 10px 10px;
-    border: 1px solid white;
+    border: 2px solid white;
+    margin-left: 900px;
 }
 
 .LaunchCard1_shadow{

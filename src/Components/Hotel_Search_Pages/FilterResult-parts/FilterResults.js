@@ -8,8 +8,28 @@ import travelLogo from "../FilterResult-parts/images/Final Logo.png"
 import placeName from "../FilterResult-parts/images/placeholder.png"
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Slider from '@material-ui/core/Slider';
+import Input from '@material-ui/core/Input';
+import { Link } from "react-router-dom"
 
 
+
+
+
+
+
+
+const useStyles = makeStyles({
+    root: {
+        width: 250,
+    },
+    input: {
+        marginLeft: 30,
+        width: 42,
+    },
+});
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
@@ -38,7 +58,26 @@ function onChange(e) {
     console.log(`checked = ${e.target.checked}`);
 }
 
-function FilterResults() {
+export default function InputSlider() {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(30);
+
+    const handleSliderChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const handleInputChange = (event) => {
+        setValue(event.target.value === '' ? '' : Number(event.target.value));
+    };
+
+    const handleBlur = () => {
+        if (value < 0) {
+            setValue(0);
+        } else if (value > 100) {
+            setValue(100);
+        }
+    };
+
     return (
         <div>
             <div className="container-fluid">
@@ -54,9 +93,13 @@ function FilterResults() {
                         </div>
                         <div className="col-md-6 hotel_details">
                             <div className="row">
+
                                 <div className="col-md-4">
-                                    <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                    <Link to="/hotelPre_Booking">
+                                        <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                    </Link>
                                 </div>
+
                                 <div className="col-md-4">
                                     <Card style={{ width: 270, height: 200 }}>
                                         <h5 className="text-left">Hotel Name</h5>
@@ -90,10 +133,36 @@ function FilterResults() {
 
                     <Card style={{ width: 300 }}>
                         <h5 className="text-left">price range per Night</h5>
-                        <div className="button1"><button>RP-0</button></div>
-                        <br></br>
-                        <hr width="80px" className="horizontal_tab"></hr>
-                        <div className="button2"><button className="border-gray">RP-0000000</button></div>
+                        <div className={classes.root}>
+
+                            <Grid container spacing={2} alignItems="center">
+
+                                <Grid item xs>
+                                    <Slider
+                                        value={typeof value === 'number' ? value : 0}
+                                        onChange={handleSliderChange}
+                                        aria-labelledby="input-slider"
+                                    />
+                                </Grid>
+                                <Grid item>
+                                    <Input
+                                        className={classes.input}
+                                        value={value}
+                                        margin="dense"
+                                        onChange={handleInputChange}
+                                        onBlur={handleBlur}
+                                        inputProps={{
+                                            step: 10,
+                                            min: 0,
+                                            max: 100,
+                                            type: 'number',
+                                            'aria-labelledby': 'input-slider',
+                                        }}
+                                    />
+                                </Grid>
+                            </Grid>
+                        </div>
+
                     </Card>
                     <Card style={{ width: 300 }}>
                         <h3 className="text-left">Start rating</h3>
@@ -136,10 +205,14 @@ function FilterResults() {
                                 <div className="col-md-6 hotel_part2">
                                     <div className="">
                                         <div className="row">
+
                                             <div className="col-md-4">
-                                                <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                                <Link to="/hotelPre_Booking">
+                                                    <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                                </Link>
                                             </div>
-                                            <div className="col-md-4">
+
+                                            <div className="col-md-4 ">
                                                 <Card style={{ width: 280, height: 200 }}>
                                                     <h5 className="text-left">Hotel Name</h5>
                                                     <div className="text-left"><button className="button4">Hotel</button></div>
@@ -156,7 +229,7 @@ function FilterResults() {
                                                     <div className="text-right">
                                                         <Dropdown overlay={menu}>
                                                             <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                                            Including of Taxes! <DownOutlined />
+                                                                Including of Taxes! <DownOutlined />
                                                             </a>
                                                         </Dropdown>
                                                     </div>
@@ -176,7 +249,9 @@ function FilterResults() {
                         <div className="col-md-6 hotel_part3">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                    <Link to="/hotelPre_Booking">
+                                        <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                    </Link>
                                 </div>
                                 <div className="col-md-4">
                                     <Card style={{ width: 280, height: 200 }}>
@@ -195,7 +270,7 @@ function FilterResults() {
                                         <div className="text-right">
                                             <Dropdown overlay={menu}>
                                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                                Including of Taxes!<DownOutlined />
+                                                    Including of Taxes!<DownOutlined />
                                                 </a>
                                             </Dropdown>
                                         </div>
@@ -210,4 +285,5 @@ function FilterResults() {
     )
 }
 
-export default FilterResults
+
+

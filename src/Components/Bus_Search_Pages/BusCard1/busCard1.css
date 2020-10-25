@@ -1,5 +1,5 @@
 .busarrow_div{
-    margin-left: -330px;
+    margin-left: 90px;
 }
 
 .busbuttonn{
@@ -14,10 +14,10 @@
     color: aqua;
 }
 
-.busD_border{
+/* .busD_border{
     border-bottom: 2px solid blue;
 
-}
+} */
 
 .busIMG_div{
     /* position: relative;

@@ -5,12 +5,12 @@ import "../destination-part/destinationTxt.css"
 function DestinationTxt() {
     return (
         <div>
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6">
-                        <h2 className="text-left"> Name of the Destinaion</h2>
-                        <p className="mr-5 text-left">Thrusday, 20 Auguest</p>
-                        <p className="mr-5 text-left">1 Adult | Economy</p>
+                        <h2 className=""> Name of the Destinaion</h2>
+                        <p className=" ">Thrusday, 20 Auguest</p>
+                        <p className=" ">1 Adult | Economy</p>
                     </div>
                     <div className="col-md-6">
                     <h2  className="text-left"> Name of the Destinaion</h2>

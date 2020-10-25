@@ -10,18 +10,24 @@
     z-index: 1;
     margin-left: -150px;
 }
-.button1{
-    background-color: #4ec3f0;
-    border-radius: 15px;
-    position: relative;
-    z-index: 2;
-    margin-top: -10px;
-    margin-left: 30px;
-}
+
 
 .fare_info{
     position: relative;
     z-index: 3;
     margin-top: -34px;
     margin-left: -400px;
+}
+
+.AllCard-imageDiv{
+    margin-left: 340px;
+    margin-top: -20px;
+}
+.meterialButton{
+    margin-left: 20px;
+}
+
+.AllCard-shadow-div{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
