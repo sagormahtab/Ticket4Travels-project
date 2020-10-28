@@ -9,8 +9,19 @@ import nt from "../Initial-Train-booking-page/images/next.png"
 import tik from "../Initial-Train-booking-page/images/correct.png"
 import add from "../Initial-Train-booking-page/images/add.png"
 import more from "../Initial-Train-booking-page/images/more.png"
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      width:300,
+      height:70,
+    },
+  }));
+
 
 function TrainPreBooking_pageInfo() {
+    const classes = useStyles();
     return (
         <div>
             <div className="container mt-5 mb-5">
@@ -79,6 +90,9 @@ function TrainPreBooking_pageInfo() {
                                 <div className="col-md-6">Amount</div>
                             </div>
                         </Card>
+                        <div className="mt-4"><Button className={classes.root} variant="contained" size="large" color="primary">
+                            Continue to Payment
+                        </Button></div>
                     </div>
                 </div>
 

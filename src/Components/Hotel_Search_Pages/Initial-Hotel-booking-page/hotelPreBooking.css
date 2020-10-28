@@ -1,0 +1,49 @@
+.margin_div{
+    margin-left: 60px;
+}
+
+.pointing_div{
+    position: relative;
+    z-index: 1;
+    margin-top: -40px;
+    margin-left: 120px;
+}
+.txxt_div{
+    margin-top: 30px;
+    margin-left: 190px;
+}
+
+.logo_color{
+    color: aqua;
+}
+
+.pointing2{
+    margin-left: 100px;
+}
+.se_div{margin-left: -150px;}
+
+.green_div{
+    color: #017915;
+}
+
+
+.add_hotel{
+    color: aqua;
+}
+
+.immg_div{
+    margin-right: 900px;
+
+}
+.texxxt_div{
+    position: relative;
+    z-index: 1;
+    margin-left: 40px;
+    margin-top: -30px;
+}
+
+.div{
+    margin-left: 470px;
+    margin-top: -40px;
+}
+

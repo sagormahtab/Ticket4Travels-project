@@ -1,17 +1,18 @@
 import React from 'react'
 import { Card } from 'antd';
-import pln1 from "../Initial-Bus-booking-page/images/plane.png"
-import Arr1 from "../Initial-Bus-booking-page/images/next.png"
+import pln1 from "../Initial-Hotel-booking-page/images/plane.png"
+import Arr1 from "../Initial-Hotel-booking-page/images/next.png"
 import { Radio } from 'antd';
-import pointing from "../Initial-Bus-booking-page/images/pointing.png"
-import nt from "../Initial-Bus-booking-page/images/next.png"
-import tik from "../Initial-Bus-booking-page/images/correct.png"
-import add from "../Initial-Bus-booking-page/images/add.png"
-import more from "../Initial-Bus-booking-page/images/more.png"
-import "../Initial-Bus-booking-page/busPreBOOK.css"
+import pointing from "../Initial-Hotel-booking-page/images/pointing.png"
+import nt from "../Initial-Hotel-booking-page/images/next.png"
+import tik from "../Initial-Hotel-booking-page/images/correct.png"
+import add from "../Initial-Hotel-booking-page/images/add.png"
+import more from "../Initial-Hotel-booking-page/images/more.png"
+import "../Initial-Hotel-booking-page/hotelPreBooking.css"
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom"
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,11 +22,12 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-function BusPreBooking_pageInfo() {
+
+function HotelPreBooking_pageInfo() {
     const classes = useStyles();
+
     return (
         <div>
-            <div>
             <div className="container mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-12 col-sm-12 col-10">
@@ -35,7 +37,7 @@ function BusPreBooking_pageInfo() {
                                 <div className="col-md-6 ml-5">
                                     <p><img src={pln1} width="20px" height="20px"></img> Name <img src={Arr1} width="20px" height="20px" className="ml-5 mr-5"></img> Name <span className="ml-3"> | </span> 13sep 2021</p>
                                 </div>
-                                
+
                             </div>
                             <div className="row">
                                 <div className="col-md-6 margin_div mt-4">
@@ -75,14 +77,14 @@ function BusPreBooking_pageInfo() {
                     </div>
                     <div className="col-md-2 se_div">
 
-                        <Card size="small" title="Additional Information" extra={<a href="#">Details</a>} style={{ width:300 }}>
+                        <Card size="small" title="Additional Information" extra={<a href="#">Details</a>} style={{ width: 300 }}>
                             <p className="text-left">CGS <img src={nt} width="20px" height="20px"></img> DPS</p>
                             <div className="text-left mt-4">
                                 <p><img src={tik} width="20px" height="20px"></img><span className="green_div">Refundable</span></p>
                                 <p><img src={tik} width="20px" height="20px"></img><span className="green_div">Refundable</span></p>
                             </div>
                         </Card>
-                        <Card size="small" title="Price Details"  style={{ width:300 }}>
+                        <Card size="small" title="Price Details" style={{ width: 300 }}>
                             <div className="row">
                                 <div className="col-md-6">Name</div>
                                 <div className="col-md-6">Amount</div>
@@ -95,9 +97,9 @@ function BusPreBooking_pageInfo() {
                         <div className="mt-4">
                         <Link to="/booking_Stepper"><Button className={classes.root} variant="contained" size="large" color="primary">
                             Continue to Payment
-                        </Button></Link>
-                        
+                        </Button> </Link>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -107,24 +109,22 @@ function BusPreBooking_pageInfo() {
                     <div className="col-md-10">
                         <h5 className="text-left">Extra convenience for your trips</h5>
 
-                        <Card style={{ width: 550, height:80 }}>
-                        <div className="immg_div"><img src={add} width="20px" height="20px"></img></div>
-                        <div className="text-left texxxt_div">
-                        <p className="add_hotel mb-0 ">Card content</p>
-                            <p className="">lorem lorem lorem lorem koremgsfjgb hjfbgh</p>
-                        </div>
-                        <div className="div">
-                        <img src={more} width="20px" height="20px"></img>
-                        </div>
+                        <Card style={{ width: 550, height: 80 }}>
+                            <div className="immg_div"><img src={add} width="20px" height="20px"></img></div>
+                            <div className="text-left texxxt_div">
+                                <p className="add_hotel mb-0 ">Card content</p>
+                                <p className="">lorem lorem lorem lorem koremgsfjgb hjfbgh</p>
+                            </div>
+                            <div className="div">
+                                <img src={more} width="20px" height="20px"></img>
+                            </div>
                         </Card>
                     </div>
                     <div className="col-md-2"></div>
                 </div>
             </div>
         </div>
-        </div> 
-    
     )
 }
 
-export default BusPreBooking_pageInfo
+export default HotelPreBooking_pageInfo

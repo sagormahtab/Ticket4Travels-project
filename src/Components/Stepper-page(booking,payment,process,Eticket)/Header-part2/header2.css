@@ -1,0 +1,27 @@
+body{
+    
+
+}
+
+.head{
+    /* background-color: black; */
+    height: 1280px;
+
+}
+.txt1{
+    color: white;
+    padding: 10px;
+}
+
+.part2{
+    padding: 10px;
+}
+
+.title1{
+    color: white;
+}
+
+.lil{
+    color: tomato !important;
+    
+}

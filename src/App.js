@@ -23,9 +23,11 @@ import BusPreBooking_pageInfo from "./Components/Bus_Search_Pages/Initial-Bus-bo
 import LaunchSearch_pagesCombines from './Components/Launch_Search_Pages/LaunchSearch_pagesCombines';
 import LaunchPreBooking_pageInfo from "./Components/Launch_Search_Pages/Initial-Launch-booking-page/LaunchPreBooking_pageInfo"
 import HotelSearch_pagesCombines from './Components/Hotel_Search_Pages/HotelSearch_pagesCombines';
+import HotelPreBooking_pageInfo from "./Components/Hotel_Search_Pages/Initial-Hotel-booking-page/HotelPreBooking_pageInfo"
 import InformationForbooking_Comvbines from './Components/Information-for-bookingPart(Form)/InformationForbooking_Comvbines';
 import TrainSearch_pagesCombines from './Components/Train_Search_Pages/TrainSearch_pagesCombines';
 import TrainPreBooking_pageInfo from "./Components/Train_Search_Pages/Initial-Train-booking-page/TrainPreBooking_pageInfo"
+import BookingSteper_Combine from "./Components/Stepper-page(booking,payment,process,Eticket)/BookingSteper_Combine"
 function App() {
   return (
     <div>
@@ -76,11 +78,14 @@ function App() {
 
            {/* hotel-search-start */}
            <Route path="/hotel_search" component={HotelSearch_pagesCombines}></Route>
+           <Route path="/hotelPre_Booking" component={HotelPreBooking_pageInfo}></Route>
            {/* hotel-search-end  */}
 
            {/* Information-for-booking-page(form)-START
            <Route path="/your_information" component={InformationForbooking_Comvbines}></Route>
             Information-for-booking-page(form)-END */}
+
+            <Route path="/booking_Stepper" component={BookingSteper_Combine}></Route>
 
 
 

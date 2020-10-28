@@ -5,8 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import FlightInputForm from './FlightInputForm';
-import HotelInputForm from './HotelInputForm';
+import CreditCard from "../payment-part/Credit-debit-part/CreditCard"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,11 +45,15 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 224,
+    height: 900,
+    marginTop:100,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
   },
+  widthClss:{
+    width:100
+  }
 }));
 
 export default function VerticalTabs() {
@@ -62,7 +65,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <div className={`${classes.root} container`}>
+    <div className={`${classes.root} widthClss`}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -71,19 +74,19 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab label="Credit/Debit Card" {...a11yProps(0)} />
+        <Tab label="Bank Transfer" {...a11yProps(1)} />
+        <Tab label="ATM" {...a11yProps(2)} />
+        <Tab label="BKASH" {...a11yProps(3)} />
+        <Tab label="Nogod" {...a11yProps(4)} />
+        <Tab label="Rocket" {...a11yProps(5)} />
+      
       </Tabs>
       <TabPanel value={value} index={0}>
-       <FlightInputForm />
+        <CreditCard/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <HotelInputForm/>
+        Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three

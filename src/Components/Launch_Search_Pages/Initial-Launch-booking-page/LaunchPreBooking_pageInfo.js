@@ -9,8 +9,19 @@ import nt from "../Initial-Launch-booking-page/images/next.png"
 import tik from "../Initial-Launch-booking-page/images/correct.png"
 import add from "../Initial-Launch-booking-page/images/add.png"
 import more from "../Initial-Launch-booking-page/images/more.png"
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom"
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      width:300,
+      height:70,
+    },
+  }));
 
 function LaunchPreBooking_pageInfo() {
+    const classes = useStyles();
     return (
         <div>
             <div className="container mt-5 mb-5">
@@ -79,6 +90,12 @@ function LaunchPreBooking_pageInfo() {
                                 <div className="col-md-6">Amount</div>
                             </div>
                         </Card>
+                        <div className="mt-4">
+                        <Link to="/booking_Stepper"><Button className={classes.root} variant="contained" size="large" color="primary">
+                            Continue to Payment
+                        </Button></Link>
+                        
+                        </div>
                     </div>
                 </div>
 
