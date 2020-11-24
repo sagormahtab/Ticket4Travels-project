@@ -1,10 +1,11 @@
 .btn-grp{
     background-color: #23d836;
     height: 40px;
+    width: 100%;
 }
 
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
     .btn-grp{
         width: 100% !important;
     }
-}
+} */

@@ -1,7 +1,8 @@
 .image1{
-    
+    position: relative;
+    z-index: 3;
 }
-.image2{
+/* .image2{
     position: relative;
     z-index: 1;
     margin-top: -320px;
@@ -21,4 +22,22 @@
     background-color: #494f53 !important;
     margin-left: 800px;
     margin-top: 0;
+} */
+
+.image3{
+    position: relative;
+    z-index: 4;
+    margin-top: -400px;
+    color: white;
+}
+
+.image3 h3{
+    color: white;
+}
+
+.image3 h2{
+    color: white;
+}
+.fab .fa-facebook-f{
+    color: white;
 }

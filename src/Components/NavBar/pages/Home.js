@@ -11,9 +11,10 @@ import PopularDeal from '../../popularDeals_part/PopularDeal';
 
 function Home() {
   return (
-    <div className=''>
+    <div >
       <Carousel/>
-      <InputForm/>
+      {/* <InputForm/> */}
+      <h3 className="text-center mt-5 mb-5">Form input field comming soon!!!</h3>
       <Login/>
       <Dropdown2/>
       <HotelPic/>
