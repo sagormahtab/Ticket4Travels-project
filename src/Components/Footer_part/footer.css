@@ -1,64 +1,15 @@
-.image1{
-    position: relative;
-    z-index: 3;
-    width: 100%;
+footer .footer-content {
+  background: #273036;
+  padding-bottom: 6%;
+  color: white;
 }
 
-
-
-/* .image2{
-    position: relative;
-    z-index: 1;
-    margin-top: -320px;
-    
-}.image3{
-    background-color: #494f53;
-    position: relative;
-    z-index: 2;
-    margin-top: -40px;
-    height: 500px;
-}
-.logog{
-    margin-top: 50px;
-    
-}
-.pa{
-    background-color: #494f53 !important;
-    margin-left: 800px;
-    margin-top: 0;
-} */
-
-.image3{
-    position: relative;
-    z-index: 4;
-    margin-top: -400px;
-    color: white;
+footer .footer-content h3, .footer-content h2, .footer-content p {
+  color: white;
 }
 
-.image3 h3{
-    color: white;
-}
-
-.image3 h2{
-    color: white;
-}
-.fab .fa-facebook-f{
-    color: white;
-}
-
-
-@media (max-width: 40em) {
-    .image1 {
-    /* position: relative;
-    z-index: 5; */
-    height: 400px;
-    width: 100%;
-    margin-top: auto;
+@media only screen and (max-width: 768px) {
+    .logog{
+        margin-bottom: 2.5rem;
     }
-
-    .image3{
-        position: relative;
-    z-index: 6;
-    /* margin-top: -400px; */
-    }
-}    
+}

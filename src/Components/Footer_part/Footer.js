@@ -9,69 +9,59 @@ import apple from "../Footer_part/images/apple store2.jpg"
 import fb from "../Footer_part/images/fb1.png"
 import insta from "../Footer_part/images/instsgram.png"
 import Youtube from "../Footer_part/images/youtube.png"
-import "../Footer_part/footer.css"
+import "./footer.css"
 
 function Footer() {
     return (
-        <div>
+        <footer>
             {/* <img src={Wave_png} alt="wave" className="image1 img-fluid" width="100%"></img> */}
             {/* <img src={svg2} alt="wave" className="image2"></img> */}
-            <img src={wave} alt="" className="img-fluid" ></img>
-            
-            <div className="image3">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,64L48,85.3C96,107,192,149,288,144C384,139,480,85,576,90.7C672,96,768,160,864,176C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            </div>
+
+            <div className="footer-content">
                 <div className="container text-center">
                     <div className="row">
-                        <div className="col-md-3 col-3"><h3>About us</h3></div>
-                        <div className="col-md-3 col-3"><h3>Follow us On</h3></div>
-                        <div className="col-md-3 col-3"><h3>Products</h3></div>
-                        <div className="col-md-3 col-3"><h3>Others</h3></div>
-                    </div>
-
-                    <div className="row mt-3">
-                        <div className="col-md-3 col-3">How to book</div>
-                        <div className="col-md-3 col-3"><img src={fb} width="40px" height="30px" alt="" className="img-fluid"></img>Facebook</div>
-                        <div className="col-md-3 col-3">Flights</div>
-                        <div className="col-md-3 col-3">Flights</div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-md-3 col-3">Contact us</div>
-                        <div className="col-md-3 col-3"><img src={fb} width="40px" height="30px" alt="" className="img-fluid"></img>Facebook</div>
-                        <div className="col-md-3 col-3">Hotel</div>
-                        <div className="col-md-3 col-3">Hotel</div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-md-3 col-3">Help Center</div>
-                        <div className="col-md-3 col-3"><img src={insta} width="30px" height="30px" alt="" className="img-fluid"></img>Instagram</div>
-                        <div className="col-md-3 col-3">Train</div>
-                        <div className="col-md-3 col-3">Train</div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-md-3 col-3">Installment</div>
-                        <div className="col-md-3 col-3"><img src={Youtube} width="30px" height="20px" alt="" className="img-fluid"></img>YouTube</div>
-                        <div className="col-md-3 col-3">Bus</div>
-                        <div className="col-md-3 col-3">Bus</div>
-                    </div>
-
-
-                    <div className="row mt-5">
-                        <div className="col-md-3 col-3">
-                        <img src={paypal} alt="paypal" height="40px" width="70px" className="logog img-fluid" ></img>
+                        <div className="col-md-3 col-sm-6">
+                            <h3>About us</h3>
+                            <p>How to book</p>
+                            <p>Contact us</p>
+                            <p>Help Center</p>
+                            <p>Installment</p>
+                            <img src={paypal} alt="paypal" height="40px" width="70px" className="logog img-fluid" ></img>
                         </div>
-                        <div className="col-md-3 col-3">
-                        <img src={visa} alt="paypal" height="40px" width="60px" className=" logog ml-3 img-fluid"></img>
+                        <div className="col-md-3 col-sm-6">
+                            <h3>Follow us On</h3>
+                            <div><img src={fb} width="40px" height="30px" alt="" className="img-fluid mb-2"></img>Facebook</div>
+                            <div><img src={fb} width="40px" height="30px" alt="" className="img-fluid mb-2"></img>Facebook</div>
+                            <div><img src={insta} width="30px" height="30px" alt="" className="img-fluid mb-2"></img>Instagram</div>
+                            <div><img src={Youtube} width="30px" height="20px" alt="" className="img-fluid mb-2"></img>YouTube</div>
+                            <div><img src={visa} alt="paypal" height="40px" width="60px" className=" logog ml-3 img-fluid"></img></div>
                         </div>
-                        <div className="col-md-3 col-3">
-                        <img src={bikas} alt="paypal" height="40px" width="40px" className=" logog ml-3 img-fluid"></img>
+                        <div className="col-md-3 col-sm-6">
+                            <h3>Products</h3>
+                            <p>Flights</p>
+                            <p>Hotel</p>
+                            <p>Train</p>
+                            <p>Bus</p>
+                            <img src={bikas} alt="paypal" height="40px" width="40px" className=" logog ml-3 img-fluid"></img>
                         </div>
-                        <div className="col-md-3 col-3">
-                        <h2>Downloade Our App</h2>
-                        <img src={pa} alt="play+apple" className="pa img-fluid" height="70px" width="130px"></img>
-                        <img src={apple} alt="play+apple" className="pa img-fluid" height="50px" width="130px"></img>
+                        <div className="col-md-3 col-sm-6">
+                            <h3>Others</h3>
+                            <h3>Products</h3>
+                            <p>Flights</p>
+                            <p>Hotel</p>
+                            <p>Train</p>
+                            <p>Bus</p>
+                            <h2>Download Our App</h2>
+                            <img src={pa} alt="play+apple" className="pa img-fluid" height="70px" width="130px"></img>
+                            <img src={apple} alt="play+apple" className="pa img-fluid" height="50px" width="130px"></img>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 
