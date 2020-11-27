@@ -5,11 +5,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import MyCards from "../userProfile-page/MyCards-page/MyCards"
+import MyCards from "./MyCards-page/MyCards"
 import UserBooking from './User-booking-page/UserBooking';
 import MyPurchase from './My-purchase-page/MyPurchase';
-import MyAccount_page from './My-Account-page/MyAccount_page';
-import { VerticalAlignCenterOutlined } from '@material-ui/icons';
+import MyAccountPage from './My-Account-page/MyAccountPage';
+// import { VerticalAlignCenterOutlined } from '@material-ui/icons';
 
 
 
@@ -105,7 +105,7 @@ export default function VerticalTabs() {
                 <MyPurchase />
       </TabPanel>
             <TabPanel value={value} index={3}>
-              <MyAccount_page/>
+              <MyAccountPage/>
       </TabPanel>
             <TabPanel value={value} index={4}>
               "log out page"

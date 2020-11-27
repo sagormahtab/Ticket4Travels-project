@@ -1,11 +1,9 @@
-.text_part{
-    margin-top: 32px;
-}
 
 .pic{
     margin-right: -50px;
     position: relative;
 }
 .text{
-    margin-right: 580px;
+    /* margin-right: 580px; */
+    font-size: large;
 }

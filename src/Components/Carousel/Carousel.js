@@ -15,7 +15,7 @@ function Carousel() {
         <div class="carousel-item active">
           <img src={cover} class="d-block w-100" alt="cover"/>
           <div class="carousel-caption  d-md-block">
-          <div className="button_part"><button type="button" class="btn btn-success login">Log in</button> Or <button type="button" class="btn btn-success login">Register</button> to Enjoy <button type="button" class="btn btn-light">passenger Quick pick</button></div>
+          {/* <div className="button_part"><button type="button" class="btn btn-success login">Log in</button> Or <button type="button" class="btn btn-success login">Register</button> to Enjoy <button type="button" class="btn btn-light">passenger Quick pick</button></div> */}
             
           </div>
         </div>

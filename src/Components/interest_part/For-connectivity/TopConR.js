@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Top_ConR() {
+function TopConR() {
     return (
         <div>
              <div className="">
@@ -31,4 +31,4 @@ function Top_ConR() {
     )
 }
 
-export default Top_ConR
+export default TopConR

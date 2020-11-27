@@ -5,7 +5,7 @@ import sponser from "../partnerShip_part/images/Partnership-Show-off-xD.png"
 function PartnerShip() {
     return (
         <div>
-            <div className="container-fluid">
+            <div className="">
                 <div className="container mt-5">
                     <div className="row">
                         <div className="col-md-4 document1">
@@ -15,8 +15,8 @@ function PartnerShip() {
                             </p>
                         </div>
 
-                        <div className="col-md-8">
-                            <img src={sponser}></img>
+                        <div className="col-md-8 mt-4">
+                            <img src={sponser} className="img-fluid" alt=""></img>
                         </div>
                     </div>
                 </div>

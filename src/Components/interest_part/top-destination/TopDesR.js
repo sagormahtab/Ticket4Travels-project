@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Top_DesR() {
+function TopDesR() {
     return (
         <div>
              <div className="">
@@ -31,4 +31,4 @@ function Top_DesR() {
     )
 }
 
-export default Top_DesR
+export default TopDesR

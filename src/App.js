@@ -13,7 +13,7 @@ import HelpCenter from "./Components/NavBar/pages/HelpCenter"
 import PartnerUs from "./Components/NavBar/pages/PartnerUs"
 import ContactUs from "./Components/NavBar/pages/ContactUs"
 import Dropdown from "./Components/Dropdown/Dropdown"
-import Footer from "./Components/Footer_part/Footer"
+// import Footer from "./Components/Footer_part/Footer"
 import Login_page from "./Components/Register_Log-in-page/Login_page"
 import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2"
 import FlightSearch_pagesCombines from './Components/Flight_Search_Pages/FlightSearch_pagesCombines';
@@ -24,13 +24,14 @@ import LaunchSearch_pagesCombines from './Components/Launch_Search_Pages/LaunchS
 import LaunchPreBooking_pageInfo from "./Components/Launch_Search_Pages/Initial-Launch-booking-page/LaunchPreBooking_pageInfo"
 import HotelSearch_pagesCombines from './Components/Hotel_Search_Pages/HotelSearch_pagesCombines';
 import HotelPreBooking_pageInfo from "./Components/Hotel_Search_Pages/Initial-Hotel-booking-page/HotelPreBooking_pageInfo"
-import InformationForbooking_Comvbines from './Components/Information-for-bookingPart(Form)/InformationForbooking_Comvbines';
 import TrainSearch_pagesCombines from './Components/Train_Search_Pages/TrainSearch_pagesCombines';
 import TrainPreBooking_pageInfo from "./Components/Train_Search_Pages/Initial-Train-booking-page/TrainPreBooking_pageInfo"
 import BookingSteper_Combine from "./Components/Stepper-page(booking,payment,process,Eticket)/BookingSteper_Combine"
+
 function App() {
   return (
     <div>
+    
       <Router>
       <HeadFirst />
       <Navbar  />
@@ -92,7 +93,7 @@ function App() {
            
         </Switch>    
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

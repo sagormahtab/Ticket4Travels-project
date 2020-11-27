@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Top_HotelR() {
+function TopHotelR() {
     return (
         <div>
             <div className="">
@@ -31,4 +31,4 @@ function Top_HotelR() {
     )
 }
 
-export default Top_HotelR
+export default TopHotelR

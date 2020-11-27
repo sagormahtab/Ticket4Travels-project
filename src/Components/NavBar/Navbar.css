@@ -89,13 +89,8 @@ span {
 }
 
 
-/* @media (min-width: 576px) and (max-width: 767.98px) {
-
-  .navbar{
-    width: 100%;
+@media (max-width: 40em) {
+  .drop_txt {
+  display: none;
   }
-
-  .navbar .nav-link{
-    width: auto;
-  }
- } */
+}  

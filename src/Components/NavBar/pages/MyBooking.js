@@ -1,13 +1,13 @@
 import React from 'react'
 import UserCard from "../../UserProfile OR booking information/userCard/UserCard"
-import UserProfile_page from "../../UserProfile OR booking information/userProfile-page/userProfile_page"
+import UserProfilePage from "../../UserProfile OR booking information/userProfile-page/UserProfilePage"
 
 
 function MyBooking() {
   return (
     <div>
       <UserCard/>
-      <UserProfile_page/>
+      <UserProfilePage/>
     </div>
   )
 }

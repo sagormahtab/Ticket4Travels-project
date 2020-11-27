@@ -5,11 +5,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Top_FlightR from "../interest_part/Top_flight-route/Top_FlightR,"
-import Top_HotelR from "../interest_part/top-hotel/Top_HotelR"
-import Top_DesR from "../interest_part/top-destination/Top_DesR"
-import Top_ConR from "../interest_part/For-connectivity/Top_ConR"
-import Top_Things from "../interest_part/Top-things-todo/Top_Things"
+import TopFlightR from "./Top_flight-route/TopFlightR"
+import TopHotelR from "./top-hotel/TopHotelR"
+import TopDesR from "./top-destination/TopDesR"
+import TopConR from "./For-connectivity/TopConR"
+import TopThings from "./Top-things-todo/TopThings"
+import { Grid } from '@material-ui/core';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,10 +62,11 @@ export default function SimpleTabs() {
   };
 
   return (
+  
     <div className={`${classes.root} container`}>
-    <h1 className="text-center">What interests you?</h1>
-     
-        <Tabs value={value} onChange={handleChange}>
+      <h1 className="text-center mt-5">What interests you?</h1>
+    <Grid container item sm={5} md={12} spacing={3}>
+    <Tabs value={value} onChange={handleChange}>
           <Tab label="Top Flights Routes" {...a11yProps(0)} />
           <Tab label="Top Hotel Destinations" {...a11yProps(1)} />
           <Tab label="Top Packages Destination" {...a11yProps(2)} />
@@ -73,21 +75,26 @@ export default function SimpleTabs() {
         </Tabs>
         <hr></hr>
      
-      <TabPanel value={value} index={0}>
-        <Top_FlightR/>
+      
+    </Grid>
+    <TabPanel value={value} index={0}>
+        <TopFlightR/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Top_HotelR/>
+        <TopHotelR/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Top_DesR/>
+      <TopDesR/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Top_ConR/>
+      <TopConR/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-      <Top_Things/>
+      <TopThings/>
       </TabPanel>
+  
+     
+        
     </div>
   );
 }

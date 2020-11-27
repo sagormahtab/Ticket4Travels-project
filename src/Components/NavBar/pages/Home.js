@@ -4,7 +4,7 @@ import Carousel from '../../Carousel/Carousel';
 import Dropdown2 from '../../exclusiveMember_part/Dropdown2/Dropdown2';
 import Login from '../../exclusiveMember_part/Login';
 import HotelPic from '../../ExtraSpace_hotelPic/HotelPic';
-import InputForm from '../../inputForm_part/InputForm';
+// import InputForm from '../../inputForm_part/InputForm';
 import Interest from '../../interest_part/Interest';
 import PartnerShip from '../../partnerShip_part/PartnerShip';
 import PopularDeal from '../../popularDeals_part/PopularDeal';

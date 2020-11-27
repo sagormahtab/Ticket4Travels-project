@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Top_Things() {
+function TopThings() {
     return (
         <div>
             <div className="">
@@ -31,4 +31,4 @@ function Top_Things() {
     )
 }
 
-export default Top_Things
+export default TopThings

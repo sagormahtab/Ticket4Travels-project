@@ -28,13 +28,13 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} /><img src={logo} alt="logo" height="50px" width="80px" />
           </Link>
-          <nav class="nav ml-auto ">
-            <a class="nav-link drop_txt " href="#">Partnership</a>
-            <a class="nav-link drop_txt" href="#"><img src={icon11} height="22px" width="25px"></img>Promo</a>
-            <a class="nav-link drop_txt" href="#"><BookmarkIcon />Saved</a>
-            <a class="nav-link drop_txt" href="#">My booking</a>
-            <a class="nav-link drop_txt" href="#">Pay</a>
-            <a class="nav-link drop_txt" href="#"><img src={icon12} height="22px" width="25px"></img>Log in</a>
+          <nav class="nav ml-auto drop_txt">
+            <a class="nav-link  " href="/">Partnership</a>
+            <a class="nav-link " href="/"><img src={icon11} height="22px" width="25px" alt=""></img>Promo</a>
+            <a class="nav-link " href="/"><BookmarkIcon />Saved</a>
+            <a class="nav-link " href="/">My booking</a>
+            <a class="nav-link " href="/">Pay</a>
+            <a class="nav-link " href="/"><img src={icon12} height="22px" width="25px" alt=""></img>Log in</a>
             <Link to="/login_form"><button type="button" class="btn btn-success">Register</button></Link>
             
           </nav>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Top_FlightR() {
+function TopFlightR() {
     return (
         <div>
             <div className="">
@@ -31,4 +31,4 @@ function Top_FlightR() {
     )
 }
 
-export default Top_FlightR
+export default TopFlightR
