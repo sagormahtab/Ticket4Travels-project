@@ -38,3 +38,18 @@
   .site-input-group-wrapper .ant-input-rtl.site-input-right:focus {
     border-right-width: 1px;
   }
+
+
+
+  @media (max-width: 40em){
+    .sortResultCard1{
+      display: none;
+    }
+    .form1{
+      margin-left: 10px;
+    }
+    .form2{
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }

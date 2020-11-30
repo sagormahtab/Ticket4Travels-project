@@ -4,4 +4,29 @@
 
 .LaunchCard2_shadow{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 450px;
+    height: 350px;
+}
+
+.LaunchCard3_shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 480px;
+}
+
+
+
+@media (max-width: 40em){
+    .LaunchCard2_shadow{
+        width: 300px;
+        height: 430px;
+        
+    }
+
+    .LaunchCard3_shadow{
+        margin-top: 40px;
+        width: 300px;
+    }
+    h1{
+        font-size: medium;
+    }
 }

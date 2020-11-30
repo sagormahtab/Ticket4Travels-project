@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../RegisterPage-1/registerPage_one.css"
-import RegisterPage_one from "../RegisterPage-1/RegisterPage_one"
+import RegisterPageOne from "./RegisterPageOne"
 import VerificationPage from "../Verification-code_Page/VerificationPage"
 
 
@@ -18,7 +18,7 @@ const Form1 = () => {
 
         
         {!isSubmitted ? (
-          <RegisterPage_one submitForm={submitForm} />
+          <RegisterPageOne submitForm={submitForm} />
         ) : (
           <VerificationPage />
         )}

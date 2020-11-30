@@ -46,3 +46,21 @@
     margin-left: 470px;
     margin-top: -40px;
 }
+
+.flightprebookCard1{
+    width: 1100px;
+}
+
+.flightprebookCard2{
+    width: 600px;
+}
+
+@media (max-width: 40em){
+    .flightprebookCard1{
+        width: 340px;
+    }
+
+    .flightprebookCard2{
+        width: 340px;
+    }
+}

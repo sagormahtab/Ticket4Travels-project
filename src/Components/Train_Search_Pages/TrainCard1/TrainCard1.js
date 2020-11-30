@@ -8,10 +8,10 @@ import Box from '@material-ui/core/Box';
 import { Card } from 'antd';
 import { Checkbox } from 'antd';
 import TrainLogo from "../TrainCard1/images/train.png"
-import Timmer from "../TrainCard1/images/timer.png"
+// import Timmer from "../TrainCard1/images/timer.png"
 import "../TrainCard1/trainCard.css"
-import TrainDetails_pages from "../TrainCard1/TrainDetails_page"
-import TrainPDetails_page from './TrainPDetails_page';
+import TrainDetailsPages from "../TrainCard1/TrainDetailsPage"
+import TrainPDetailsPage from './TrainPDetailsPage';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -52,6 +52,19 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.light,
         marginBottom:240
     },
+    trainTab1: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "50%",
+            width: "50%"
+        }
+    },
+    trainTab2: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "50%",
+            width: "50%"
+        }
+    },
+
 }));
 
 export default function SimpleTabs() {
@@ -71,26 +84,26 @@ export default function SimpleTabs() {
         <div className={classes.root}>
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-12 col-md-12 col-md-10">
+                    <div className="col-sm-12 col-md-12 col-12">
                         <div><hr></hr></div>
 
                         <div>
 
                             <ul class="nav ">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Filter:</a>
+                                    <a class="nav-link active" href="train_search">Filter:</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Class</a>
+                                    <a class="nav-link" href="train_search">Class</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Station</a>
+                                    <a class="nav-link" href="train_search">Station</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Train</a>
+                                    <a class="nav-link" href="train_search">Train</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Time</a>
+                                    <a class="nav-link" href="train_search">Time</a>
                                 </li>
 
 
@@ -100,20 +113,20 @@ export default function SimpleTabs() {
                     </div>
 
                     <div>
-                        <Card style={{ width: 1110 }} className="TrainCard1_shadow ">
+                        <Card  className="TrainCard1_shadow ">
                             <div className="row">
-                                <div className="col-sm-3 col-md-3 ">
+                                <div className="col-sm-3 col-md-3 col-4 p-0">
 
-                                    <Checkbox onChange={onChange} >Air Condition class</Checkbox>
+                                    <Checkbox onChange={onChange} className="px-0">Air Condition class</Checkbox>
 
                                 </div>
-                                <div className="col-sm-3 col-md-3">
+                                <div className="col-sm-3 col-md-3 col-4 p-0  ">
 
-                                    <Checkbox onChange={onChange}>First class</Checkbox>
+                                    <Checkbox onChange={onChange} className="p-0 text-left">First class</Checkbox>
                                 </div>
-                                <div className="col-sm-3 col-md-3"><Checkbox onChange={onChange}>Second class</Checkbox> <hr></hr><span><hr width="10px"></hr></span></div>
+                                <div className="col-sm-3 col-md-3 col-4 p-0"><Checkbox onChange={onChange} className="p-0">Second class</Checkbox> <hr></hr></div>
 
-                                <div className="col-sm-3 col-md-3">
+                                <div className="col-sm-3 col-md-3 col-12 mt-0">
                                     <p><Checkbox onChange={onChange}>Suvhon Chair</Checkbox></p>
                                     <p><Checkbox onChange={onChange}>Suvhon</Checkbox></p>
                                     <p><Checkbox onChange={onChange}>Suvlob Sub-class</Checkbox></p>
@@ -123,37 +136,37 @@ export default function SimpleTabs() {
                     </div>
 
                     <div className="row mt-3">
-                        <div className="col-sm-12 col-md-12">
+                        <div className="col-sm-12 col-md-12 col-12">
 
-                            <Card style={{ width: 1110, height: 500 }} className="TrainCard1_shadow">
+                            <Card  className="TrainCard2_shadow">
                                 <p className="text-left fonnt_div">Train Time</p>
                                 <p className="text-left">Class Name</p>
 
                                 <div className="row">
-                                    <div className="col-sm-3 col-md-3 fonnt_div">Time</div>
-                                    <div className="col-sm-3 col-md-3 text-left"><img src={TrainLogo} width="20px" height="20px"></img></div>
-                                    <div className="col-sm-3 col-md-3 text-left fonnt_div">Time</div>
-                                    <div className="col-sm-3 col-md-3 text-left fonnt_div">Duration</div>
+                                    <div className="col-sm-3 col-md-3 col-3 fonnt_div">Time</div>
+                                    <div className="col-sm-3 col-md-3 col-3 text-left"><img src={TrainLogo} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+                                    <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Time</div>
+                                    <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Duration</div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-sm-3 col-md-3">place Name</div>
-                                    <div className="col-sm-3 col-md-3"></div>
-                                    <div className="col-sm-3 col-md-3 text-left">Your place</div>
-                                    <div className="col-sm-3 col-md-3 text-left">Direction</div>
+                                    <div className="col-sm-3 col-md-3 col-3">place Name</div>
+                                    <div className="col-sm-3 col-md-3 col-3"></div>
+                                    <div className="col-sm-3 col-md-3 col-3 text-left">Your place</div>
+                                    <div className="col-sm-3 col-md-3 col-3 text-left">Direction</div>
                                 </div>
                                 <span className="color_chng">Amount</span>
 
                                
                                     <Tabs value={value} onChange={handleChange}>
-                                        <Tab label="Train Details" {...a11yProps(0)} />
-                                        <Tab label="Price Details" {...a11yProps(1)} />
+                                        <Tab  className={`${classes.trainTab1} trainTab1`}  label="Train Details" {...a11yProps(0)} />
+                                        <Tab  className={`${classes.trainTab2} trainTab2`}  label="Price Details" {...a11yProps(1)} />
                                         
                                     </Tabs>
                                     <TabPanel value={value} index={0}>
-                                        <TrainDetails_pages/>
+                                        <TrainDetailsPages/>
                                     </TabPanel>
                                     <TabPanel value={value} index={1}>
-                                        <TrainPDetails_page />
+                                        <TrainPDetailsPage />
                                     </TabPanel>
 
         

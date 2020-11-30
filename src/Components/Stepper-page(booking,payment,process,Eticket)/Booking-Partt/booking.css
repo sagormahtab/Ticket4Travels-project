@@ -50,10 +50,18 @@
 }
 .booking_informationCard{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 550px;
 
 }
+.booking_Card1{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 550px;
+    height: 180px;
+}
+
 .booking_Card2{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 300px;
 }
 
 
@@ -82,4 +90,18 @@
   .site-input-group-wrapper .ant-input-rtl.site-input-right:hover,
   .site-input-group-wrapper .ant-input-rtl.site-input-right:focus {
     border-right-width: 1px;
+  }
+
+
+
+  @media (max-width: 40em){
+      .booking_Card1{
+          width: 365px;
+      }
+      .card2{
+          margin-left: 0px;
+      }
+      .booking_informationCard{
+          width: 360px;
+      }
   }

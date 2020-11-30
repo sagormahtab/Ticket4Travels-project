@@ -7,6 +7,7 @@ import OnlinePaymentt from "../Account_Information/images/online-payment.png"
 import { Card } from 'antd';
 import validate1 from "../Account_Information/validateInfo1"
 import useForm1 from "../Account_Information/useForm1"
+import Button from '@material-ui/core/Button';
 
 const AcountInfomation = ({ submitForm1 }) => {
 
@@ -17,39 +18,39 @@ const AcountInfomation = ({ submitForm1 }) => {
     return (
         <div>
             <div className="row">
-                <div className="col-lg-6 col-md-6 ">
+                <div className="col-lg-6 col-md-6 col-12">
 
-                    <img src={WaveOnly} width="1000" height="500" className="waveClss_div"></img>
+                    <img src={WaveOnly} width="1000" height="500" alt="" className="waveClss_div img-fluid "></img>
                     <div className="container ml-3 under_DIV">
-                        <div className="row">
-                            <div className="col-lg-6 col-md-6">
-                                <div className="text-left"><img src={RewardPng} width="40px" height="40px"></img></div>
+                        <div className="row mt-5">
+                            <div className="col-lg-6 col-md-6 col-12 mt-5">
+                                <div className="text-left"><img src={RewardPng} width="40px" height="40px" alt="" className="img-fluid"></img></div>
                                 <h5 className="text-left">Reward For your booking</h5>
                                 <p className="text-left">Earn points for Flight, Hotel and Flight+Hotel booking.Reddem for cheaper travels and deal from various March</p>
                             </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="text-left"><img src={CustomerCare} width="40px" height="40px"></img></div>
+                            <div className="col-lg-6 col-md-6 col-12 mt-5">
+                                <div className="text-left"><img src={CustomerCare} width="40px" height="40px" alt="" className="img-fluid"></img></div>
                                 <h5 className="text-left">Extra support after you book</h5>
                                 <p className="text-left">Earn points for Flight, Hotel and Flight+Hotel booking.Reddem for cheaper travels and deal from various March</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-lg-6 col-md-6">
-                                <div className="text-left"><img src={OnlineBook} width="40px" height="40px"></img></div>
+                            <div className="col-lg-6 col-md-6 col-12 mt-5">
+                                <div className="text-left"><img src={OnlineBook} width="40px" height="40px" alt="" className="img-fluid"></img></div>
                                 <h5 className="text-left">Reward For your booking</h5>
                                 <p className="text-left">Earn points for Flight, Hotel and Flight+Hotel booking.Reddem for cheaper travels and deal from various March</p>
                             </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="text-left"><img src={OnlinePaymentt} width="40px" height="40px"></img></div>
+                            <div className="col-lg-6 col-md-6 col-12 mt-5">
+                                <div className="text-left"><img src={OnlinePaymentt} width="40px" height="40px" alt="" className="img-fluid"></img></div>
                                 <h5 className="text-left">Extra support after you book</h5>
                                 <p className="text-left">Earn points for Flight, Hotel and Flight+Hotel booking.Reddem for cheaper travels and deal from various March</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6 col-md-6 VerificationCard
+                <div className="col-lg-6 col-md-6 col-12 mt-5 VerificationCard
                     _div">
-                    <Card style={{ width: 500 }}>
+                    <Card style={{ width: 380 }}>
                         <h2 className="">Account Information</h2>
                         <p className="text-left bg-Color mt-5">One more step to become our <span className="acqua_colorDiv">Tickets4travel</span> member. Please enter your Fullname and passowrd to log in</p>
 
@@ -79,7 +80,8 @@ const AcountInfomation = ({ submitForm1 }) => {
                                     <label class="form-check-label text-left" for="exampleCheck1">send me about promotions and <span>Tickets4travel's</span> exclusive Discount</label>
                              </div>
 
-                                <button type="submit" class="btn btn-primary">Done</button>
+                                {/* <button type="submit" class="btn btn-primary">Done</button> */}
+                                <Button type="submit" variant="contained" color="primary">Done</Button>
                         </form>
                             
                         </Card>

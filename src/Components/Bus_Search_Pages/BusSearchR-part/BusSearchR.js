@@ -12,13 +12,13 @@ function BusSearchR() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 col-sm-12 col-10">
-                        <h3 className="text-left">Name of the destination <img src={ArrowPng} width="20px" height="20px"></img> Name of the destination</h3>
+                        <h3 className="text-left">Name of the destination <img src={ArrowPng} width="20px" height="20px" alt="" className="img-fluid"></img> Name of the destination</h3>
                         <p className="text-left"> Thrusday 2 Aug, 2021</p>
                         <p className="text-left"> 1 Adult  |  Class Name</p>
                         
                     </div>
                     <div className="row button_Divvvv">
-                    <div className="col-md-12 "><button type="button" class="btn btn-success">Change Search</button></div>
+                    <div className="col-md-12 col-12"><button type="button" class="btn btn-success">Change Search</button></div>
                     </div>
                 </div>
                 <hr></hr>

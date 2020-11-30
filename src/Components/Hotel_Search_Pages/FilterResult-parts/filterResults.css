@@ -42,19 +42,19 @@
     position: relative;
     z-index: 4;
     margin-top: -28px;
-    margin-left: -30px;
+    margin-left: -10px;
 }
-.logo1{
+/* .logo1{
     position: relative;
     z-index: 9;
     margin-left: -19px;
-}
-.travelLg{
+} */
+/* .travelLg{
     position: relative;
     z-index: 5;
     margin-left: -33px;
     margin-top: 10px;
-}
+} */
 .rate_part2{
     position: relative;
     z-index: 10;
@@ -79,4 +79,76 @@
     z-index: 12;
     margin-top: -200px;
     margin-left: -100px;
+}
+
+.hotelfilterCard1{
+    width: 270;
+    height: 220px;
+}
+
+.hotelfilterCard2{
+    width: 160;
+    height: 220px !important;
+
+}
+
+.filterimage1{
+    width: auto;
+    height: 230px;
+}
+.filterimage2{
+    width: 240px !important;
+    height: 230px;
+}
+
+
+@media (max-width: 40em){
+    .hotelFilter1{
+        display: none;
+    }
+    .hotel_details{
+        margin-left: 6px;
+        margin-top: 30px;
+    }
+
+    .hotelfilterCard1{
+        height: 300px !important;
+    }
+    .rate_part{
+        width: auto;
+    }
+
+    .filterimage1{
+        height: 300px !important;
+    }
+
+    .hotelfilterCard2{
+        height: 300px !important;
+    }
+    .hotelPriceRange{
+        display: none;
+    }
+
+    .hotelRating{
+        display: none;
+    }
+    .hotelCkeckbx{
+        display: none;
+    }
+
+    .hotelFacility{
+        display: none;
+    }
+    .hotel_part2{
+        margin-top: 40px;
+        margin-left: 5px;
+    }
+
+    /* .filterimage2{
+        width: 330px !important;
+    } */
+
+    .hotel_part3{
+        display: none;
+    }
 }

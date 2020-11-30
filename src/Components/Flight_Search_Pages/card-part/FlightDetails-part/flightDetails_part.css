@@ -9,3 +9,20 @@
     margin-left: 120px;
 }
 
+.flightdetailsPart{
+    width: 700;
+}
+
+
+@media (max-width: 40em) {
+    .flightdetailsPart{
+        width: 200px;
+    }
+
+    .FlightDetailsBoder{
+        margin-left: 50px;
+    }
+    .FlightDetailsCard-divforAll{
+        margin-left: 20px;
+    }
+}

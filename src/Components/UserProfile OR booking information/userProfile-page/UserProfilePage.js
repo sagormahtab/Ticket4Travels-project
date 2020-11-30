@@ -52,17 +52,46 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
         display: 'flex',
         height: 450,
-        marginBottom:600
-       
+        marginBottom: 600
+
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        width:400,
-        backgroundColor:"#00baff",
-        color:"white",
-        alignItems:"left",
-        
-        
+        width: 250,
+        backgroundColor: "#00baff",
+        color: "white",
+        alignItems: "left",
+    },
+
+    tab1: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "100%",
+            width: "100%"
+        }
+    },
+    tab2: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "100%",
+            width: "100%"
+        }
+    },
+    tab3: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "100%",
+            width: "100%"
+        }
+    },
+    tab4: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "100%",
+            width: "100%"
+        }
+    },
+    tab5: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "100%",
+            width: "100%"
+        }
     },
 }));
 
@@ -75,9 +104,9 @@ export default function VerticalTabs() {
     };
 
     return (
-        
+
         <div className={`${classes.root} container`}>
-            
+
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -85,30 +114,30 @@ export default function VerticalTabs() {
                 onChange={handleChange}
                 className={classes.tabs}
             >
-           
-                <Tab  label="My Cards"  {...a11yProps(0)} />
-                <Tab label="My booking" {...a11yProps(1)} />
-                <Tab label="Purchase List" {...a11yProps(2)} />
-              
-                <Tab label="My Acoount" {...a11yProps(3)} />
-                <Tab label="Log out" {...a11yProps(4)} />
-                
+
+                <Tab className={`${classes.tab1} tab1`} label="My Cards"  {...a11yProps(0)} />
+                <Tab className={`${classes.tab2} tab2`} label="My booking" {...a11yProps(1)} />
+                <Tab className={`${classes.tab3} tab3`} label="Purchase List" {...a11yProps(2)} />
+
+                <Tab className={`${classes.tab4} tab4`} label="My Acoount" {...a11yProps(3)} />
+                <Tab className={`${classes.tab5} tab5`} label="Log out" {...a11yProps(4)} />
+
             </Tabs>
-            
+
             <TabPanel value={value} index={0}>
-                <MyCards/>
-      </TabPanel>
+                <MyCards />
+            </TabPanel>
             <TabPanel value={value} index={1}>
                 <UserBooking />
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={value} index={2}>
                 <MyPurchase />
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={value} index={3}>
-              <MyAccountPage/>
-      </TabPanel>
+                <MyAccountPage />
+            </TabPanel>
             <TabPanel value={value} index={4}>
-              "log out page"
+                "log out page"
       </TabPanel>
             <TabPanel value={value} index={5}>
                 Item Six

@@ -46,3 +46,23 @@
     margin-left: 470px;
     margin-top: -40px;
 }
+
+
+
+.busprebookCard1{
+    width: 1100px;
+}
+
+.busprebookCard2{
+    width: 600px;
+}
+
+@media (max-width: 40em){
+    .busprebookCard1{
+        width: 340px;
+    }
+
+    .busprebookCard2{
+        width: 340px;
+    }
+}

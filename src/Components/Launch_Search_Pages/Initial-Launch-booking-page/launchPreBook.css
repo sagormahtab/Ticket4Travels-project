@@ -46,3 +46,23 @@
     margin-left: 470px;
     margin-top: -40px;
 }
+
+
+
+.launchprebookCard1{
+    width: 1100px;
+}
+
+.launchprebookCard2{
+    width: 600px;
+}
+
+@media (max-width: 40em){
+    .launchprebookCard1{
+        width: 340px;
+    }
+
+    .launchprebookCard2{
+        width: 340px;
+    }
+}

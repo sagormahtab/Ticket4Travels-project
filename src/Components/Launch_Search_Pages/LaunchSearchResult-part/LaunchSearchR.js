@@ -2,7 +2,7 @@ import React from 'react'
 import ArrowForLaunch from "../LaunchSearchResult-part/images/next.png"
 import "../LaunchSearchResult-part/LaunchSearchR.css"
 
-function Launch_SearchR() {
+function LaunchSearchR() {
     return (
         <div>
             <h2 className="text-center mt-5">Searching Result</h2>
@@ -10,7 +10,7 @@ function Launch_SearchR() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-sm-6 col-6">
-                        <h1>Dhaka <img src={ArrowForLaunch} width="20px" height="20px"></img> Barishal</h1>
+                        <h1>Dhaka <img src={ArrowForLaunch} width="20px" height="20px" alt="" className="img-fluid"></img> Barishal</h1>
                         <p className=""> Thrusday 2 Aug, 2021</p>
                     </div>
                     <div className="col-md-6 col-lg-6 col-6 mt-3">
@@ -22,4 +22,4 @@ function Launch_SearchR() {
     )
 }
 
-export default Launch_SearchR
+export default LaunchSearchR

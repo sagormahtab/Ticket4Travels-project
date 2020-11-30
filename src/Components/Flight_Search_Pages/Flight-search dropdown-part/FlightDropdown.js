@@ -30,29 +30,29 @@ function FlightDropdown() {
             <div className="container">
                 <hr></hr>
                 <div className="row">
-                    <div className="col-md-2"><h5>Filter: </h5></div>
-                    <div className="col-md-2"><Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <div className="col-md-2 col-2"><h5>Filter: </h5></div>
+                    <div className="col-md-2 col-2"><Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                             Transit <DownOutlined />
                         </a>
                     </Dropdown></div>
-                    <div className="col-md-2"><Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <div className="col-md-2 col-2"><Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                             Time<DownOutlined />
                         </a>
                     </Dropdown></div>
-                    <div className="col-md-2"><Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <div className="col-md-2 col-2"><Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                             Airline<DownOutlined />
                         </a>
                     </Dropdown></div>
-                    <div className="col-md-2"><Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <div className="col-md-2 col-2"><Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                             More Filter<DownOutlined />
                         </a>
                     </Dropdown></div>
-                    <div className="col-md-2"><Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <div className="col-md-2 col-2"><Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                             Sort<DownOutlined />
                         </a>
                     </Dropdown></div>

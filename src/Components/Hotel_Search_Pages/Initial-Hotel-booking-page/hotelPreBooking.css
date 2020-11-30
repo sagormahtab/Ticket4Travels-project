@@ -47,3 +47,21 @@
     margin-top: -40px;
 }
 
+.hotelprebookCard1{
+    width: 1100px;
+}
+
+.hotelprebookCard2{
+    width: 600px;
+}
+
+@media (max-width: 40em){
+    .hotelprebookCard1{
+        width: 340px;
+    }
+
+    .hotelprebookCard2{
+        width: 340px;
+    }
+}
+

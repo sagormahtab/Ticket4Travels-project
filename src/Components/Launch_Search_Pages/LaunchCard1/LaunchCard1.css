@@ -17,4 +17,16 @@
 
 .LaunchCard1_shadow{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 1130px;
+}
+
+
+@media (max-width: 40em){
+    .LaunchCard1_shadow{
+        width: 390px;
+    }
+
+    .btnCard{
+        margin-left: 180px;
+    }
 }
