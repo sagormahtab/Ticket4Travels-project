@@ -13,6 +13,8 @@ import HelpCenter from "./Components/NavBar/pages/HelpCenter"
 import PartnerUs from "./Components/NavBar/pages/PartnerUs"
 import ContactUs from "./Components/NavBar/pages/ContactUs"
 import Dropdown from "./Components/Dropdown/Dropdown"
+import Footer from "./Components/Footer_part/Footer"
+import Login_page from "./Components/Register_Log-in-page/Login_page"
 // import Footer from "./Components/Footer_part/Footer"
 import Login_page from "./Components/Register_Log-in-page/LoginPage"
 import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2"
@@ -93,7 +95,7 @@ function App() {
            
         </Switch>    
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
