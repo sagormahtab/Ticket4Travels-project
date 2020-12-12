@@ -23,10 +23,10 @@ function MyAccount_page() {
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-md-12 col-5 accountTab">
                         <div>
                             <Card style={{ width: 600, height: 120 }} className="myAccount_pageCardShadow">
-                                <p> <img src={bellPNG} width="30px" height="30px" alt=""></img>Want to receive updates on New log in and others account activities?</p>
+                                <p> <img src={bellPNG} width="30px" height="30px" alt="" className="img-fluid"></img>Want to receive updates on New log in and others account activities?</p>
                                 <div className="text-right"><button type="button" class="btn btn-primary">Allow Dekstop notification</button></div>
 
                             </Card>
@@ -35,8 +35,8 @@ function MyAccount_page() {
                         <div>
                             <Card style={{width: 600, height: 80 }} className="myAccount_pageCardShadow mt-4">
                                 <div className="row">
-                                    <div className="col-md-4"><img src={userLOGO} width="20px" height="20px" alt=""></img>MD.Ismail Hossain</div>
-                                    <div className="col-md-4 text-right"><button type="button" class="btn btn-primary"><img src={colorPENCIL} width="20px" height="20px" alt=""></img>Update Profile</button></div>
+                                    <div className="col-md-3"><img src={userLOGO} width="20px" height="20px" alt="" className="img-fluid"></img>MD.Ismail Hossain</div>
+                                    <div className="col-md-5 text-right"><button type="button" class="btn btn-primary"><img src={colorPENCIL} width="20px" height="20px" alt="" className="img-fluid"></img>Update Profile</button></div>
                                     <div className="col-md-4 text-right"><button type="button" class="btn btn-primary">Update Profile</button></div>
                                 </div>
                             </Card>
@@ -44,7 +44,7 @@ function MyAccount_page() {
                         <div>
                             <Card style={{width: 600, height: 100 }} className="myAccount_pageCardShadow mt-4">
                                 <div className="row">
-                                    <div className="col-md-2 text-left"><img src={settingPNG} width="20px" height="20px" alt=""></img></div>
+                                    <div className="col-md-2 text-left"><img src={settingPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                                     <div className="col-md-10">
                                         <h5 className="text-left ">Enable log in Verification code?</h5>
                                         <Checkbox onChange={onChange}>Send me verification code every time when log in from new device</Checkbox>
@@ -55,7 +55,7 @@ function MyAccount_page() {
                         <div>
                             <Card style={{width: 600, height: 130 }} className="myAccount_pageCardShadow mt-4">
                                 <div className="row">
-                                    <div className="col-md-2 text-left"><img src={phonePaymentNGG} width="20px" height="20px" alt=""></img> </div>
+                                    <div className="col-md-2 text-left"><img src={phonePaymentNGG} width="20px" height="20px" alt="" className="img-fluid"></img> </div>
                                     <div className="col-md-5 text-left"><h5>Phone</h5>
                                     <p>Mobile number to receive accounts verification-code</p> </div>
                                     
@@ -67,7 +67,7 @@ function MyAccount_page() {
                         <div>
                             <Card style={{width: 600, height: 100 }} className="myAccount_pageCardShadow mt-4">
                                 <div className="row">
-                                    <div className="col-md-2 text-left"><img src={emailPNG} width="20px" height="20px" alt=""></img></div>
+                                    <div className="col-md-2 text-left"><img src={emailPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                                     <div className="col-md-10 text-left">
                                         <h5 className=" ">Email Address</h5>
                                         <p>Email address to receive account related notification</p>
@@ -79,7 +79,7 @@ function MyAccount_page() {
                         <div>
                             <Card style={{width: 600, height: 100 }} className="myAccount_pageCardShadow mt-4">
                                 <div className="row">
-                                    <div className="col-md-2 text-left"><img src={socialNetwork} width="20px" height="20px" alt=""></img></div>
+                                    <div className="col-md-2 text-left"><img src={socialNetwork} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                                     <div className="col-md-10 text-left">
                                         <h5 className=" ">Linked Account</h5>
                                         <p>For an easier log in connect your social accounts with Tickets4travel</p>    
@@ -88,11 +88,11 @@ function MyAccount_page() {
                             </Card>
                             <Card style={{ width: 600, height:100 }} className="myAccount_pageCardShadow">
                                 <div className="row">
-                                    <div className="col-md-6 text-left"><img src={facbookPNGG} width="20px"  height="20px" alt=""></img> Facebook</div>
+                                    <div className="col-md-6 text-left"><img src={facbookPNGG} width="20px"  height="20px" alt="" className="img-fluid"></img> Facebook</div>
                                     <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
                                 </div>
                                 <div className="row">
-                                <div className="col-md-6 text-left"><img src={gOOGLEpng} width="20px"  height="20px" alt=""></img> Google</div>
+                                <div className="col-md-6 text-left"><img src={gOOGLEpng} width="20px"  height="20px" alt="" className="img-fluid"></img> Google</div>
                                     <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
                                 </div>
                             </Card>

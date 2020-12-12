@@ -6,3 +6,9 @@
 .btn-success{
     background-color: aqua;
 }
+
+@media (max-width: 40em){
+    .button_Divvvv{
+        margin-left: 200px;
+    }
+}

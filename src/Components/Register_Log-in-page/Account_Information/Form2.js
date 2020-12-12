@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AccountInformation from "../Account_Information/AcountInfomation"
-import Additional_Information from "../Additional-Information-part/Additional_Information"
+import AdditionalInformation from "../Additional-Information-part/AdditionalInformation"
 
 
 
@@ -16,7 +16,7 @@ const Form2 = () => {
          {!isSubmitted ? (
           <AccountInformation submitForm1={submitForm1} />
         ) : (
-          <Additional_Information />
+          <AdditionalInformation />
         )}
       </>
     );

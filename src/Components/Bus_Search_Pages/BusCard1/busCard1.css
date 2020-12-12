@@ -28,5 +28,23 @@
 
 .busCard1_boxshadow{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 690px;
 
+}
+
+@media (max-width: 40em){
+    .busCard1_boxshadow{
+        width: 380px;
+    }
+
+    .busbuttonn{
+        margin-left: 200px;
+    }
+    .busIMG_div{
+        margin-left: 200px;
+        margin-top: -140px;
+    }
+    .bus_otehrs{
+        display: none;
+    }
 }

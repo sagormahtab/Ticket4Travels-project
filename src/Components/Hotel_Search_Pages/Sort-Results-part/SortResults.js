@@ -3,8 +3,9 @@ import { Card } from 'antd';
 import "../Sort-Results-part/sortResults.css"
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import { Dropdown } from 'semantic-ui-react'
-import { Input, Col, Row, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
+import { Select } from 'antd';
+// import { Dropdown } from 'semantic-ui-react'
+// import { Input, Col, Row, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
 
 
 
@@ -32,15 +33,14 @@ const { Option } = Select;
 
 
 
-function Sort_Results() {
+function SortResults() {
     return (
         <div>
             <div className="">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <Card title="Sort results" style={{ width: 320 }}>
-                                <div className="container-fluid">
+                            <Card title="Sort results" style={{ width: 320 }} className="sortResultCard1">
                                     <div className="row">
                                         <div className="col-md-6">
                                             <div class="form-check text-left">
@@ -57,7 +57,7 @@ function Sort_Results() {
 
                                         </div>
                                     </div>
-                                </div>
+                                
                                 <div className="container-fluid mt-3">
                                     <div className="row">
                                         <div className="col-md-6">
@@ -78,7 +78,7 @@ function Sort_Results() {
                                 </div>
                             </Card>
                         </div>
-                        <div className="col-md-3 form1">
+                        <div className="col-md-3 col-12 form1">
                             <Autocomplete
                                 id="combo-box-demo"
                                 freeSolo
@@ -88,7 +88,7 @@ function Sort_Results() {
                                 renderInput={(params) => <TextField required {...params} label="City hotel place to go" variant="outlined" />}
                             />
                         </div>
-                        <div className="col-md-3 form2">
+                        <div className="col-md-3 col-6 form2">
                            
                                 <Select placeholder="Total price" style={{width:"80%"}}>
                                     <Option value="per-room">Per Room,per Night</Option>
@@ -104,4 +104,4 @@ function Sort_Results() {
     )
 }
 
-export default Sort_Results
+export default SortResults

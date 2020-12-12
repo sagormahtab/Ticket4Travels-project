@@ -3,8 +3,8 @@ import { Card } from 'antd';
 import { Radio } from 'antd';
 import NxxtPng from "../BusCard1/images/next.png"
 import "../BusCard1/busCard1.css"
-import React, { useState } from 'react';
-import { Tab, Tabs, AppBar } from "@material-ui/core"
+import React from 'react';
+import { Tab, Tabs } from "@material-ui/core"
 import BusDetails from "../BusCard1/BusDetails"
 import PriceDetails from "../BusCard1/PriceDetails"
 import TrainDetails from "../BusCard1/TrainsDetails"
@@ -19,7 +19,7 @@ import {Link} from "react-router-dom"
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
-  const [selectedTab, setSelectedTab] = React.useState(0);
+  // const [selectedTab, setSelectedTab] = React.useState(0);
 
   return (
     <div
@@ -56,6 +56,24 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  busTab1: {
+    [theme.breakpoints.down("sm")]: {
+        maxWidth: "35%",
+        width: "35%"
+    },
+},
+  busTab2: {
+    [theme.breakpoints.down("sm")]: {
+        maxWidth: "35%",
+        width: "35%"
+    },
+},
+  busTab3: {
+    [theme.breakpoints.down("sm")]: {
+        maxWidth: "35%",
+        width: "35%"
+    },
+},
 }));
 
 export default function SimpleTabs() {
@@ -77,7 +95,7 @@ export default function SimpleTabs() {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-4">
+            <div className="col-lg-4 col-md-4 col-12 bus_otehrs">
 
               <Card style={{ width: 300, height: 100 }} className="busCard1_boxshadow">
                 <h5 className="text-left">Sort In results</h5>
@@ -95,7 +113,7 @@ export default function SimpleTabs() {
               </Card>
 
               <div className="mt-4 ">
-                <Card size="small" title="Filter Results" extra={<a href="#">Reset Filter</a>} style={{ width: 300 }} className="busCard1_boxshadow mt-5">
+                <Card size="small" title="Filter Results" extra={<a href="bus_search">Reset Filter</a>} style={{ width: 300 }} className="busCard1_boxshadow mt-5">
                   <p>Sort your search results based on your selected catagory</p>
 
                 </Card>
@@ -174,25 +192,25 @@ export default function SimpleTabs() {
                         </Card>
               </div>
             </div>
-            <div className="col-lg-8 col-md-8">
+            <div className="col-lg-8 col-md-8 col-12">
 
-              <Card style={{ width: 690 }} className="busCard1_boxshadow">
+              <Card  className="busCard1_boxshadow">
                 <h5 className="text-left">Name</h5>
                 <p className="text-left">Luxery Shuttle</p>
 
 
                 <div className="row mt-5">
-                  <div className="col-lg-3 col-md-3">00.01</div>
-                  <div className="col-lg-3 col-md-3">04.00</div>
-                  <div className="col-lg-3 col-md-3">3h 59m</div>
-                  <div className="col-lg-3 col-md-3">Amount</div>
+                  <div className="col-lg-3 col-md-3 col-3">00.01</div>
+                  <div className="col-lg-3 col-md-3 col-3">04.00</div>
+                  <div className="col-lg-3 col-md-3 col-3">3h 59m</div>
+                  <div className="col-lg-3 col-md-3 col-3">Amount</div>
                 </div>
-                <div className="busarrow_div"><img src={NxxtPng} width="20px" height="20px"></img></div>
+                <div className="busarrow_div"><img src={NxxtPng} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                 <div className="row mt-3">
-                  <div className="col-lg-3 col-md-3"><p>Name of the destination</p></div>
-                  <div className="col-lg-3 col-md-3"><p>Name of the destiantion</p></div>
-                  <div className="col-lg-3 col-md-3"></div>
-                  <div className="col-lg-3 col-md-3"></div>
+                  <div className="col-lg-3 col-md-3 col-3"><p>Name of the destination</p></div>
+                  <div className="col-lg-3 col-md-3 col-3"><p>Name of the destiantion</p></div>
+                  <div className="col-lg-3 col-md-3 col-3"></div>
+                  <div className="col-lg-3 col-md-3 col-3"></div>
                 </div>
 
                 <Link to="/BusPre_Booking"><div className="busbuttonn"><button type="button" class="btn btn-success busButton1">Book Now</button>
@@ -200,9 +218,9 @@ export default function SimpleTabs() {
                 
 
                 <Tabs value={value} onChange={handleChange} >
-                  <Tab label="Bus Details" {...a11yProps(0)} />
-                  <Tab label="Train Details" {...a11yProps(1)} />
-                  <Tab label="Price Details" {...a11yProps(2)} />
+                  <Tab  className={`${classes.busTab1} busTab1`} label="Bus Details" {...a11yProps(0)} />
+                  <Tab  className={`${classes.busTab2} busTab2`}  label="Price Details" {...a11yProps(1)} />
+                  <Tab  className={`${classes.busTab3} busTab3`}  label="Route Details" {...a11yProps(2)} />
                 </Tabs>
 
                 <TabPanel value={value} index={0}>

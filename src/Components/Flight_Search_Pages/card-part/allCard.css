@@ -29,5 +29,16 @@
 
 .AllCard-shadow-div{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 1100px;
 
 }
+
+
+@media (max-width: 40em) {
+    .AllCard-shadow-div{
+        width: 380px;
+    }
+}
+
+
+

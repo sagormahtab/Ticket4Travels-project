@@ -46,3 +46,27 @@
     margin-left: 470px;
     margin-top: -40px;
 }
+
+.trainprebookCard1{
+    width: 1100px;
+}
+.trainprebookCard2{
+    width: 600px;
+}
+
+@media (max-width: 40em){
+    .trainprebookCard1{
+        width: 340px !important;
+    }
+    h3{
+        font-size: small;
+    }
+
+    .trainprebookCard2{
+        width: 340px;
+    }
+    .se_div{
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}

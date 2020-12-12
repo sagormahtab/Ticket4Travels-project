@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     },
 });
 
-const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+// const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
 const menu = (
     <Menu>
@@ -80,43 +80,43 @@ export default function InputSlider() {
 
     return (
         <div>
-            <div className="container-fluid">
+            <div className="">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <Card title="Default size card" extra={<a href="#">Reset filter</a>} style={{ width: 300, height: 200 }}>
+                            <Card title="Default size card" extra={<a href="hotel_search">Reset filter</a>} style={{ width: 300, height: 200 }} className="hotelFilter1">
                                 <h3 className="text-left">Booking policy</h3>
                                 <div className="text-left">
                                     <Checkbox onChange={onChange}>Free cencelation</Checkbox>
                                 </div>
                             </Card>
                         </div>
-                        <div className="col-md-6 hotel_details">
+                        <div className="col-md-6 col-12 hotel_details">
                             <div className="row">
 
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-4 px-0">
                                     <Link to="/hotelPre_Booking">
-                                        <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                        <img src={architecture} alt="hotel-pic"  className="img-fluid filterimage1 " ></img>
                                     </Link>
                                 </div>
 
-                                <div className="col-md-4">
-                                    <Card style={{ width: 270, height: 200 }}>
+                                <div className="col-md-4 col-4 px-0">
+                                    <Card  className="hotelfilterCard1">
                                         <h5 className="text-left">Hotel Name</h5>
                                         <div className="text-left"><button className="button3">Hotel</button></div>
                                         <div className="rate_part"><Rate /></div>
-                                        <div className="text-left logo1 mt-3"><img src={placeName} width="20px" height="20px"></img>PlaceName</div>
-                                        <div className="text-left travelLg"><img src={travelLogo} width="50px" height="30px"></img>Convinient8.0</div>
+                                        <div className="text-left logo1 mt-3"><img src={placeName} width="20px" height="20px" alt="" className="img-fluid"></img>PlaceName</div>
+                                        <div className="text-left travelLg"><img src={travelLogo} width="50px" height="30px" alt="" className="img-fluid"></img>Convinient8.0</div>
                                     </Card>
                                 </div>
-                                <div className="col-md-4">
-                                    <Card style={{ width: 160, height: 200 }}>
+                                <div className="col-md-4 col-4 px-0">
+                                    <Card  className="hotelfilterCard2">
                                         <h5 className="text-right">Save 10%</h5>
                                         <p className="text-right">Pay upon check-in available</p>
                                         <p className="text-right font-weight-bold">Amount</p>
                                         <div className="text-right">
                                             <Dropdown overlay={menu}>
-                                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                                <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                                                     Including of Taxes! <DownOutlined />
                                                 </a>
                                             </Dropdown>
@@ -131,7 +131,7 @@ export default function InputSlider() {
 
 
 
-                    <Card style={{ width: 300 }}>
+                    <Card style={{ width: 300 }} className="hotelPriceRange">
                         <h5 className="text-left">price range per Night</h5>
                         <div className={classes.root}>
 
@@ -164,7 +164,7 @@ export default function InputSlider() {
                         </div>
 
                     </Card>
-                    <Card style={{ width: 300 }}>
+                    <Card style={{ width: 300 }} className="hotelRating">
                         <h3 className="text-left">Start rating</h3>
                         <Checkbox onChange={onChange}><Rate /></Checkbox>
                         <Checkbox onChange={onChange}><Rate /></Checkbox>
@@ -173,8 +173,8 @@ export default function InputSlider() {
                     <div className="">
                         <div className="">
                             <div className="row">
-                                <div className="col-md-6">
-                                    <Card style={{ width: 300 }} className="mt-5">
+                                <div className="col-md-6 ">
+                                    <Card style={{ width: 300 }} className="mt-5 hotelFacility">
                                         <h3 className="text-left">Facilities</h3>
                                         <div className="text-left">
                                             <Checkbox onChange={onChange}>Wifi</Checkbox>
@@ -202,33 +202,32 @@ export default function InputSlider() {
                                     </Card>
                                 </div>
 
-                                <div className="col-md-6 hotel_part2">
-                                    <div className="">
+                                <div className="col-md-6 col-12 hotel_part2">
                                         <div className="row">
 
-                                            <div className="col-md-4">
+                                            <div className="col-md-4 col-4 px-0">
                                                 <Link to="/hotelPre_Booking">
-                                                    <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
+                                                    <img src={architecture} alt="hotel-pic" className="img-fluid filterimage2"></img>
                                                 </Link>
                                             </div>
 
-                                            <div className="col-md-4 ">
-                                                <Card style={{ width: 280, height: 200 }}>
+                                            <div className="col-md-4 col-4 px-0">
+                                                <Card className="hotelfilterCard1">
                                                     <h5 className="text-left">Hotel Name</h5>
                                                     <div className="text-left"><button className="button4">Hotel</button></div>
                                                     <div className="rate_part2"><Rate /></div>
-                                                    <div className="text-left  mt-3"><img src={placeName} width="20px" height="20px"></img>PlaceName</div>
-                                                    <div className="text-left"><img src={travelLogo} width="50px" height="30px"></img>Convinient8.0</div>
+                                                    <div className="text-left  mt-3"><img src={placeName} width="20px" height="20px" alt="" className="img-fluid"></img>PlaceName</div>
+                                                    <div className="text-left"><img src={travelLogo} width="50px" height="30px" alt="" className="img-fluid"></img>Convinient8.0</div>
                                                 </Card>
                                             </div>
-                                            <div className="col-md-4">
-                                                <Card style={{ width: 160, height: 200 }}>
+                                            <div className="col-md-4 col-4 px-0">
+                                                <Card className="hotelfilterCard2">
                                                     <h5 className="text-right">Save 10%</h5>
                                                     <p className="text-right">Pay upon check-in available</p>
                                                     <p className="text-right font-weight-bold">Amount</p>
                                                     <div className="text-right">
                                                         <Dropdown overlay={menu}>
-                                                            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                                            <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                                                                 Including of Taxes! <DownOutlined />
                                                             </a>
                                                         </Dropdown>
@@ -238,7 +237,7 @@ export default function InputSlider() {
 
 
                                         </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -248,18 +247,18 @@ export default function InputSlider() {
                         <div className="col-md-6"></div>
                         <div className="col-md-6 hotel_part3">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-4 px-0">
                                     <Link to="/hotelPre_Booking">
                                         <img src={architecture} alt="hotel-pic" height="200px" width="200px"></img>
                                     </Link>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-4">
                                     <Card style={{ width: 280, height: 200 }}>
                                         <h5 className="text-left">Hotel Name</h5>
                                         <div className="text-left"><button className="button4">Hotel</button></div>
                                         <div className="rate_part2"><Rate /></div>
-                                        <div className="text-left  mt-3"><img src={placeName} width="20px" height="20px"></img>PlaceName</div>
-                                        <div className="text-left"><img src={travelLogo} width="50px" height="30px"></img>Convinient8.0</div>
+                                        <div className="text-left  mt-3"><img src={placeName} width="20px" height="20px" alt="" className="img-fluid"></img>PlaceName</div>
+                                        <div className="text-left"><img src={travelLogo} width="50px" height="30px" alt="" className="img-fluid"></img>Convinient8.0</div>
                                     </Card>
                                 </div>
                                 <div className="col-md-4">
@@ -269,7 +268,7 @@ export default function InputSlider() {
                                         <p className="text-right font-weight-bold">Amount</p>
                                         <div className="text-right">
                                             <Dropdown overlay={menu}>
-                                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                                <a className="ant-dropdown-link" href onClick={e => e.preventDefault()}>
                                                     Including of Taxes!<DownOutlined />
                                                 </a>
                                             </Dropdown>

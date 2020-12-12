@@ -38,8 +38,8 @@ function Booking() {
 
     const {
         fields,
-        isSubmitting,
-        isSubmittable,
+        // isSubmitting,
+        // isSubmittable,
         handleChange,
         handleBlur,
         handleSubmit
@@ -53,17 +53,17 @@ function Booking() {
                         <h2 className="text-left mb-0">Your Bookings</h2>
                         <p className="mt-2">Fill in your details and review bookings</p>
                     </div>
-                    <div className="col-md-10 mt-5 booking_1stcard">
-                        <Card style={{ width: 550, height: 180 }} className="booking_Card2">
+                    <div className="col-md-10 col-12 mt-5 booking_1stcard">
+                        <Card  className="booking_Card1">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-md-4 text-left ">
-                                        <img src={icon} width="140px" height="170px"></img>
+                                    <div className="col-md-4 col-4 text-left ">
+                                        <img src={icon} width="140px" height="170px" alt="" className="img-fluid"></img>
                                     </div>
 
-                                    <div className="col-md-8 text-left mt-3 px-0">
+                                    <div className="col-md-8 col-8 text-left mt-3 px-0">
                                         <p>Log in or register to enjoy this-member-only</p>
-                                        <p><img src={peopleIocn} width="20px" height="20px"></img> Book fater and easier with passenger quick pick</p>
+                                        <p><img src={peopleIocn} width="20px" height="20px" alt="" className="img-fluid"></img> Book fater and easier with passenger quick pick</p>
                                         <span className="color_change">Log in or Regiter</span>
                                     </div>
 
@@ -71,33 +71,33 @@ function Booking() {
                             </div>
                         </Card>
                     </div>
-                    <div className="col-md-2 card2 mt-5 ">
-                        <Card size="small" title="Flight to flight" style={{ width: 300 }} className="booking_Card2">
-                            <div className="img_div"><img src={cardIcon1} width="20px" height="20px"></img></div>
+                    <div className="col-md-2  col-12 card2 mt-5 ">
+                        <Card size="small" title="Flight to flight" className="booking_Card2">
+                            <div className="img_div"><img src={cardIcon1} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                             <p className="mt-3 lion_air">Wednesday <Radio>Radio</Radio> wed,16,25</p>
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-md-6 col-12">
                                     <p className="mb-0 lion_air">Lion Air</p>
                                     <p className="mt-0">promo</p>
                                 </div>
-                                <div className="col-md-6 text-right color_change">logo</div>
+                                <div className="col-md-6 col-12 text-right color_change">logo</div>
 
                                 <div className="row time_part">
-                                    <div className="col-md-4 ">18:03</div>
-                                    <div className="col-md-4">21:20</div>
-                                    <div className="col-md-4">1h30m</div>
-                                    <div className="nxtpage"><img src={nxtPage} width="20px" height="20px"></img></div>
+                                    <div className="col-md-4 col-4 ">18:03</div>
+                                    <div className="col-md-4 col-4">21:20</div>
+                                    <div className="col-md-4 col-4">1h30m</div>
+                                    <div className="nxtpage"><img src={nxtPage} width="20px" height="20px" alt="" className="img-fluid"></img></div>
                                 </div>
 
                                 <div className="row direction_part">
-                                    <div className="col-md-4 back1">18:03</div>
-                                    <div className="col-md-4 back1">21:20</div>
-                                    <div className="col-md-4 back2">1h30m</div>
+                                    <div className="col-md-4 col-4 back1">18:03</div>
+                                    <div className="col-md-4 col-4 back1">21:20</div>
+                                    <div className="col-md-4 col-4 back2">1h30m</div>
                                 </div>
 
                             </div>
-                            <div className="txt_div mt-4"><img src={correctIcon} width="20px" height="20px"></img><span className="txtColor">Refandable</span></div>
-                            <div className="txt_div mt-2"><img src={correctIcon} width="20px" height="20px"></img><span className="txtColor">Refandable</span></div>
+                            <div className="txt_div mt-4"><img src={correctIcon} width="20px" height="20px" alt="" className="img-fluid"></img><span className="txtColor">Refandable</span></div>
+                            <div className="txt_div mt-2"><img src={correctIcon} width="20px" height="20px" alt="" className="img-fluid"></img><span className="txtColor">Refandable</span></div>
                         </Card>
                     </div>
                 </div>
@@ -105,9 +105,9 @@ function Booking() {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-12">
                     <h2 className="text-left">Your Information</h2>
-                        <Card style={{ width: 550 }} className="booking_informationCard">
+                        <Card  className="booking_informationCard">
                             <form noValidate onSubmit={handleSubmit}>
                                 <div className="form-group">
                                 <h5 className="text-left">Contact name*</h5>

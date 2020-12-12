@@ -14,30 +14,6 @@
     color: aquamarine;
 }
 
-/* .timeline:before{
-    content: "";
-    background-color: #555;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 1;
-
-}
-
-.timeline p:before{
-    content: "";
-    background: #fff;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 2px solid #000;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 2;
-} */
 
 .timmer_div{
     margin-left: 130px;
@@ -56,8 +32,39 @@ margin-left: 890px;
 
 .TrainCard1_shadow{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 1110px;
+}
+.TrainCard2_shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 1110px;
+    height: 500px;
 }
 
 .TrainCard-font{
     font-size: bold;
+}
+
+@media (max-width: 40em){
+    .TrainCard1_shadow{
+        width: 395px;
+       
+    }
+
+    .TrainCard2_shadow{
+        width: 395px;
+    }
+    .color_chng{
+        margin-left: 300px;
+    }
+
+    .timmer_div{
+        margin-left: 30px;
+    }
+    .border_divvv{
+        margin-left: 50px;
+    }
+    .butt_div{
+        margin-left: 210px;
+        margin-top: -20px;
+    }
 }

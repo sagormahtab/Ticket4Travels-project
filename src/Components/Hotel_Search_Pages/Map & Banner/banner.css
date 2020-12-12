@@ -9,8 +9,26 @@
 .imgClass{
     background-color: #c4f5ff;
 }
-.lol{
+.hotelapplogo{
     position: relative;
     z-index: 3;
     margin-left: -170px;
+}
+.hotelBannerCard{
+    width: 22rem;
+}
+
+
+@media (max-width: 40em) {
+    .hotelBannerCard{
+        display: none;
+    }
+    .hotelapplogo{
+        margin-left: 5px;
+    }
+    .navBar{
+        width: 100%;
+        margin-left: 10px !important;
+        margin-top: 10px;
+    }
 }

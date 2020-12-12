@@ -8,3 +8,11 @@
     margin-top: 20px;
     margin-left: 300px;
 }
+
+@media (max-width: 40em) {
+    .rightArrow {
+    /* display: none; */
+    margin-left: -50px;
+    }
+  }  
+  

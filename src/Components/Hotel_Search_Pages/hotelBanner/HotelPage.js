@@ -7,7 +7,7 @@ function HotelPage() {
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src={hotelBanner} class="d-block w-100" alt="..."/>
+        <img src={hotelBanner} class="d-block w-100" alt="" className="img-fluid"/>
     </div>
   </div>
 </div>

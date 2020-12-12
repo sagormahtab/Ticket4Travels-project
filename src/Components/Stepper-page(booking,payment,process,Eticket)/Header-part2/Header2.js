@@ -60,8 +60,6 @@ const Header2 = () => {
 
   const handleSkip = () => {
     if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
       throw new Error("You can't skip a step that isn't optional.");
     }
 
@@ -80,7 +78,7 @@ const Header2 = () => {
     <div className="head">
       <div className="container ">
         <div className="row mt-5">
-          <div className="col-md-12">
+          <div className="col-md-12 col-12">
             {/* <h2 className="font-bold txt1">Tickets4Travels<img src={logo} width="90px" height="50px"></img></h2> */}
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {

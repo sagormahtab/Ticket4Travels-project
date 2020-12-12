@@ -1,43 +1,59 @@
 import React from 'react'
 import "../Map & Banner/banner.css"
-import rightArrow from "../Map & Banner/images/right-arrow.png"
+import { Card } from 'antd';
+// import rightArrow from "../Map & Banner/images/right-arrow.png"
 import HotelSearch from "../Map & Banner/images/Hotel-Search-Page-App-bar.png"
 
 function Banner() {
     return (
         <div>
-            <div className="container-fluid">
+            <div className="">
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-md-6">
-
-
-                            <div class="card" style={{ width: "18rem" }}>
-                                <img src="..." class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
+                        <div className="col-md-6 col-12">
+                            <Card size="small" title="Map"  className="hotelBannerCard">
+                                <p>Card content</p>
+                                <p>Card content</p>
+                                <p>Card content</p>
+                                <a href="hotel_search" class="btn btn-primary">Go somewhere</a>
+                            </Card>
                         </div>
-                        <div className="col-md-6 lol"><img src={HotelSearch} height="130px" width="600px"></img></div>
+                        <div className="col-md-6 col-12 hotelapplogo "><img src={HotelSearch} height="130px" width="600px" alt="" className="img-fluid"></img></div>
                         <div className="navBar">
                             <ul class="nav nav-pills nav-fill">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">All</a>
+                                    <a class="nav-link " href="hotel_search">All</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Clean Stay</a>
+                                    <a class="nav-link" href="hotel_search">Clean Stay</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Pay Upon Check-in</a>
+                                    <a class="nav-link" href="hotel_search">Pay Upon Check-in</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" href="#">Fan <img src={rightArrow} height="40px" width="30px" className="imgClass"></img></a>
+                                <a class="nav-link" href="hotel_search">Fan</a>
                                 </li>
                             </ul>
                         </div>
+
+                        {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <a class="navbar-brand" href="hotel_search">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="hotel_search">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="hotel_search">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="hotel_search" tabindex="-1" aria-disabled="true">Disabled</a>
+                                    </li>
+                                </ul></div></nav> */}
                     </div>
                 </div>
             </div>
