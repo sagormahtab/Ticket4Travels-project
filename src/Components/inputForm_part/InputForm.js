@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import FlightInputForm from './FlightInputForm';
-import HotelInputForm from './HotelInputForm';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import FlightInputForm from "./FlightInputForm";
+import { DirectionsBus, Hotel, DirectionsBoat } from "@material-ui/icons";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,19 +37,21 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    display: 'flex',
+    display: "flex",
     height: 224,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+  },
+  tabPanel: {
+    flexGrow: 1,
   },
 }));
 
@@ -71,35 +73,58 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
+        <Tab
+          label={
+            <div>
+              <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus
+            </div>
+          }
+          {...a11yProps(0)}
+        />
+        <Tab
+          label={
+            <div>
+              <Hotel style={{ verticalAlign: "middle" }} /> Hotel
+            </div>
+          }
+          {...a11yProps(1)}
+        />
+        <Tab
+          label={
+            <div>
+              <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch
+            </div>
+          }
+          {...a11yProps(2)}
+        />
         <Tab label="Item Four" {...a11yProps(3)} />
         <Tab label="Item Five" {...a11yProps(4)} />
         <Tab label="Item Six" {...a11yProps(5)} />
         <Tab label="Item Seven" {...a11yProps(6)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
-       <FlightInputForm />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <HotelInputForm/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+      <div className={classes.tabPanel}>
+        <TabPanel value={value} index={0}>
+          <FlightInputForm />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Item One
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <p>Item Three</p>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          Item Four
+        </TabPanel>
+        <TabPanel value={value} index={4}>
+          Item Five
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+          Item Six
+        </TabPanel>
+        <TabPanel value={value} index={6}>
+          Item Seven
+        </TabPanel>
+      </div>
     </div>
   );
 }
