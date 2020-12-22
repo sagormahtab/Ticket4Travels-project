@@ -3,13 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+import { BusProvider } from "./BusContext";
+import { CartProvider } from "./CartContext";
 
 ReactDOM.render(
-  <MuiPickersUtilsProvider utils={DateFnsUtils}>
-    <App />
-  </MuiPickersUtilsProvider>,
+  <BusProvider>
+    <CartProvider>
+      <App />
+    </CartProvider>
+  </BusProvider>,
   document.getElementById("root")
 );
 

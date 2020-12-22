@@ -1,11 +1,15 @@
-import React from 'react'
-import BusB from "../BusBanner/images/Bus-Search-Page-Banner.png"
+import React from "react";
+import BusB from "../BusBanner/images/Bus-Search-Page-Banner.png";
+
+const busBannerStyle = {
+  height: "30vh",
+  background: `url(${BusB})`,
+  backgroundPosition: "center center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+};
 function BusBanner() {
-    return (
-        <div>
-            <img src={BusB} width="100%" alt="" className="img-fluid"></img>
-        </div>
-    )
+  return <div style={busBannerStyle}></div>;
 }
 
-export default BusBanner
+export default BusBanner;

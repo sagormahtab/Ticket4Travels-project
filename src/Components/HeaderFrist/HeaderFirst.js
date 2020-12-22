@@ -1,12 +1,8 @@
-import React from 'react'
+import React from "react";
 import "../HeaderFrist/HeaderFirst.css";
 
 function HeaderFirst() {
-    return (
-        <div className="header_one">
-            
-        </div>
-    )
+  return <header className="header_one"></header>;
 }
 
-export default HeaderFirst
+export default HeaderFirst;

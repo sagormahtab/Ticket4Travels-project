@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import FlightInputForm from "./FlightInputForm";
 import { DirectionsBus, Hotel, DirectionsBoat } from "@material-ui/icons";
+import { Paper } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,6 +43,9 @@ function a11yProps(index) {
 }
 
 const useStyles = makeStyles((theme) => ({
+  searchSectionWrapper: {
+    marginTop: "3rem",
+  },
   root: {
     backgroundColor: theme.palette.background.paper,
     display: "flex",
@@ -52,6 +56,10 @@ const useStyles = makeStyles((theme) => ({
   },
   tabPanel: {
     flexGrow: 1,
+  },
+  paperStyle: {
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
   },
 }));
 
@@ -64,67 +72,71 @@ export default function VerticalTabs() {
   };
 
   return (
-    <div className={`${classes.root} container`}>
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab
-          label={
-            <div>
-              <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus
-            </div>
-          }
-          {...a11yProps(0)}
-        />
-        <Tab
-          label={
-            <div>
-              <Hotel style={{ verticalAlign: "middle" }} /> Hotel
-            </div>
-          }
-          {...a11yProps(1)}
-        />
-        <Tab
-          label={
-            <div>
-              <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch
-            </div>
-          }
-          {...a11yProps(2)}
-        />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
-      </Tabs>
-      <div className={classes.tabPanel}>
-        <TabPanel value={value} index={0}>
-          <FlightInputForm />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item One
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <p>Item Three</p>
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          Item Four
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          Item Five
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          Item Six
-        </TabPanel>
-        <TabPanel value={value} index={6}>
-          Item Seven
-        </TabPanel>
-      </div>
+    <div className={`${classes.searchSectionWrapper} container`}>
+      <Paper className={classes.paperStyle}>
+        <Box className={classes.root}>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              label={
+                <div>
+                  <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus
+                </div>
+              }
+              {...a11yProps(0)}
+            />
+            <Tab
+              label={
+                <div>
+                  <Hotel style={{ verticalAlign: "middle" }} /> Hotel
+                </div>
+              }
+              {...a11yProps(1)}
+            />
+            <Tab
+              label={
+                <div>
+                  <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch
+                </div>
+              }
+              {...a11yProps(2)}
+            />
+            <Tab label="Item Four" {...a11yProps(3)} />
+            <Tab label="Item Five" {...a11yProps(4)} />
+            <Tab label="Item Six" {...a11yProps(5)} />
+            <Tab label="Item Seven" {...a11yProps(6)} />
+          </Tabs>
+          <div className={classes.tabPanel}>
+            <TabPanel value={value} index={0}>
+              <FlightInputForm />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              Item One
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <p>Item Three</p>
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              Item Four
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              Item Five
+            </TabPanel>
+            <TabPanel value={value} index={5}>
+              Item Six
+            </TabPanel>
+            <TabPanel value={value} index={6}>
+              Item Seven
+            </TabPanel>
+          </div>
+        </Box>
+      </Paper>
     </div>
   );
 }
