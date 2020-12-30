@@ -8,6 +8,7 @@ import axios from "axios";
 import { KeyboardDatePicker } from "@material-ui/pickers";
 import { Search } from "@material-ui/icons";
 import { useBus } from "../../BusContext";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   searchInputContainer: {
@@ -35,11 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FlightInputForm = () => {
+const BusInputForm = () => {
   const classes = useStyles();
   const [from, setFrom] = useState([]);
   const [to, setTo] = useState([]);
   const { register, handleSubmit, control } = useForm(); // initialise the hook
+  let history = useHistory();
 
   useEffect(() => {
     axios
@@ -56,35 +58,10 @@ const FlightInputForm = () => {
   const { setBus } = useBus();
 
   const onSubmit = (data) => {
-    const { from, to } = data;
-    let { date, returnDate } = data;
-    date = JSON.parse(JSON.stringify(date));
-    if (returnDate) {
-      returnDate = new Date(returnDate);
-      returnDate = JSON.parse(JSON.stringify(returnDate));
-    } else {
-      returnDate = null;
-    }
-
-    axios
-      .get(
-        `http://localhost:4200/api/v1/bus-list?from=${from}&to=${to}&date=${date}${
-          returnDate ? `&returnDate=$${returnDate}` : ""
-        }`
-      )
-      .then(function (response) {
-        console.log(response, response.data.data);
-        setBus(response.data.data);
-      })
-      .catch(function (error) {
-        if (error.response) {
-          console.log(error.response.data);
-        } else {
-          console.log(error);
-        }
-      });
-    // setBus(data);
+    setBus(data);
+    history.push("/bus_search");
   };
+
   return (
     <Fragment>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -184,4 +161,4 @@ const FlightInputForm = () => {
   );
 };
 
-export default FlightInputForm;
+export default BusInputForm;

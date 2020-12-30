@@ -1,199 +1,137 @@
-import React from "react";
-import FormHandler1 from "../Credit-debit-part/formHandler1";
+import React, { useState, useEffect } from "react";
 import {
-  requiredValidation,
-  minimumLengthValidation,
-} from "../Credit-debit-part/validators1";
-import { DatePicker, Space } from "antd";
-// import moment from 'moment';
-import "../Credit-debit-part/creditCard.css";
-import visaLOGO from "../Credit-debit-part/images/visa-logo.svg";
-import masterLOGO from "../Credit-debit-part/images/mastercard.svg";
-import bkashLOGO from "../Credit-debit-part/images/BKash-Icon2-Logo.wine.svg";
+  useStripe,
+  useElements,
+  CardNumberElement,
+  CardCvcElement,
+  CardExpiryElement,
+} from "@stripe/react-stripe-js";
+import "./creditCard.css";
+import Button from "@material-ui/core/Button";
+import axios from "axios";
+import { useCart } from "../../../../CartContext";
 
-// const { RangePicker } = DatePicker;
-
-const dateFormat = "YYYY/MM/DD";
-// const monthFormat = 'YYYY/MM';
-
-// const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
-
-// const customFormat = value => {
-//     return `custom format: ${value.format(dateFormat)}`;
-// };
-
-function CreditCard() {
-  const FIELDS = {
-    number: {
-      value: "",
-      validations1: [requiredValidation, minimumLengthValidation(4)],
+const ELEMENT_OPTIONS = {
+  style: {
+    base: {
+      fontSize: "1rem",
+      color: "#495057",
+      backgroundColor: "#fff",
+      border: "1px solid #ced4da",
+      borderRadius: ".25rem",
+      fontWeight: "400",
+      letterSpacing: "0.025em",
+      "::placeholder": {
+        color: "#aab7c4",
+      },
     },
-    phone: {
-      value: "",
-      validations1: [requiredValidation, minimumLengthValidation(11)],
+    invalid: {
+      color: "#9e2146",
     },
-    cvv: {
-      value: "",
-      validations1: [requiredValidation, minimumLengthValidation(3)],
-    },
-    fullname: {
-      value: "",
-      validations1: [requiredValidation, minimumLengthValidation(6)],
-    },
+  },
+};
+
+const CreditCard = ({ handleBack, handleNext }) => {
+  const elements = useElements();
+  const stripe = useStripe();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { cart } = useCart();
+  const {
+    passenger: { name, email, phone },
+  } = cart;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!stripe || !elements) {
+      // Stripe.js has not loaded yet. Make sure to disable
+      // form submission until Stripe.js has loaded.
+      return;
+    }
+
+    const billingDetails = {
+      name,
+      email,
+      phone,
+    };
+
+    const cardElement = elements.getElement(CardNumberElement);
+    setIsLoading(true);
+
+    const payload = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+      billing_details: billingDetails,
+    });
+
+    if (payload.error) {
+      setErrorMessage(payload.error.message);
+      setPaymentMethod(null);
+      setIsLoading(false);
+    } else {
+      setPaymentMethod(payload.paymentMethod);
+      setErrorMessage(null);
+    }
   };
 
-  const { fields, handleChange, handleBlur, handleSubmit } = FormHandler1(
-    FIELDS
-  );
+  const sendToServer = async () => {
+    try {
+      setIsLoading(true);
+      const { id } = paymentMethod;
+      const response = await axios.post(
+        "http://localhost:4200/api/v1/bookings/checkout-session",
+        {
+          product: cart,
+          id: id,
+        }
+      );
+
+      if (response.data.success) {
+        handleNext();
+      }
+    } catch (error) {
+      setErrorMessage(error);
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (paymentMethod) {
+      sendToServer();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paymentMethod]);
 
   return (
     <div>
-      <div className="row">
-        <div className="col-md-3">Credit/Debit Card</div>
-        <div className="col-md-3 text-right">
-          <img src={visaLOGO} alt="visaLOGO" width="40px" height="40px"></img>
-        </div>
-        <div className="col-md-3 ">
-          <img
-            src={masterLOGO}
-            alt="masterLOGO"
-            width="40px"
-            height="40px"
-          ></img>
-        </div>
-        <div className="col-md-3 text-left">
-          <img src={bkashLOGO} alt="bkashLOGO" width="40px" height="40px"></img>
-        </div>
-      </div>
-      <form noValidate onSubmit={handleSubmit} className="mt-5">
-        <div className="form-group">
-          <h5 className="text-left">Card number*</h5>
-          <input
-            aria-describedby="nameHelp"
-            autoComplete="off"
-            className="form-control"
-            id="number"
-            name="number"
-            type="number"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={fields.number.value}
-            placeholder="Enter card number"
-          />
-          <small id="numberErrors" className="form-text text-danger">
-            {fields.number.errors &&
-              fields.number.errors.map((error) => (
-                <span>
-                  {error}
-                  <br />
-                </span>
-              ))}
-          </small>
-        </div>
-        <div className="row mt-5">
-          <div className="col-lg-6 col-md-6">
-            <h5 className="text-left mt-2">Valid till**</h5>
-            <div className="DatapickerDiv">
-              <Space direction="vertical" size={12}>
-                <DatePicker placeholder="MM/YY" format={dateFormat} />
-              </Space>
-            </div>
-          </div>
-          <div className="col-lg-6 col-md-6 mt-2">
-            <div className="form-group">
-              <h5 className="text-left">CVV*</h5>
-              <input
-                aria-describedby="emailHelp"
-                className="form-control"
-                autoComplete="off"
-                id="cvv"
-                name="cvv"
-                type="cvv"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={fields.cvv.value}
-                placeholder="Enter cvv"
-              />
-              <small id="emailErrors" className="form-text text-danger">
-                {fields.cvv.errors &&
-                  fields.cvv.errors.map((error) => (
-                    <span>
-                      {error}
-                      <br />
-                    </span>
-                  ))}
-              </small>
-            </div>
-          </div>
-        </div>
-        <div className="form-group mt-5">
-          <h5 className="text-left">Name on Card*</h5>
-          <input
-            aria-describedby="nameHelp"
-            autoComplete="off"
-            className="form-control"
-            id="fullname"
-            name="fullname"
-            type="text"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={fields.fullname.value}
-            placeholder="Enter name on card"
-          />
-          <small id="nameErrors" className="form-text text-danger">
-            {fields.fullname.errors &&
-              fields.fullname.errors.map((error) => (
-                <span>
-                  {error}
-                  <br />
-                </span>
-              ))}
-          </small>
-        </div>
-        <div className="mt-5">
-          <hr></hr>
-          <h5 className="text-left">Choose instalment plan</h5>
-          <p className="text-left">
-            3x, 8x, 12x installment available for certain banks or transiction
-            amount.
-          </p>
-          <a href="/" className="text-right">
-            Learn more
-          </a>
-          <hr></hr>
-        </div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="cardNumber">Card Number</label>
+        <CardNumberElement id="cardNumber" options={ELEMENT_OPTIONS} />
+        <label htmlFor="expiry">Card Expiration</label>
+        <CardExpiryElement id="expiry" options={ELEMENT_OPTIONS} />
+        <label htmlFor="cvc">CVC</label>
+        <CardCvcElement id="cvc" options={ELEMENT_OPTIONS} />
+        {errorMessage && <p className="text-danger">{errorMessage}</p>}
+        <div className="text-center">
+          <Button onClick={handleBack} className="mt-5 mr-3">
+            Back
+          </Button>
 
-        <div className="Credit_amountpart">
-          <h5 className="text-left">Price Details</h5>
-          <div className="row">
-            <div className="col-md-6">Lion Air(Adults)x1</div>
-            <div className="col-md-6">Amounts</div>
-          </div>
-          <div className="row">
-            <div className="col-md-6">CGK-DPS</div>
-            <div className="col-md-6">Amounts</div>
-          </div>
-          <div className="row">
-            <div className="col-md-6">Service fee</div>
-            <div className="col-md-6">Amounts</div>
-          </div>
-          <hr></hr>
-          <div className="row">
-            <div className="col-md-6">Total price</div>
-            <div className="col-md-6">Amounts</div>
-          </div>
-        </div>
-        <div className="mt-5">
-          <p>
-            By clicking the button below, You agree to{" "}
-            <span className="credit_1sttxt">Tickets4travel's</span>{" "}
-            <span className="credit_2ndttxt">Terms & conditions</span> and{" "}
-            <span className="credit_2ndttxt">privacy policy</span>
-          </p>
+          <Button
+            variant="contained"
+            color="primary"
+            className="mt-5 px-5"
+            disabled={!stripe || isLoading}
+            type="submit"
+          >
+            {isLoading ? "Processing" : "Pay"}
+          </Button>
         </div>
       </form>
     </div>
   );
-}
+};
 
 export default CreditCard;

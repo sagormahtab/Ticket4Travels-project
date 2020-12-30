@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
-import Paper from "@material-ui/core/Paper";
 import BusCart from "./BusCart";
 import MuiAlert from "@material-ui/lab/Alert";
 // import { useCart } from "../../../CartContext";
 
-const wrapperStyle = {
-  border: "1px solid gray",
-};
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
-    flexWrap: "wrap",
+    alignItems: "center",
+    flexWrap: "no-wrap",
     listStyle: "none",
     padding: theme.spacing(0.5),
     margin: 0,
@@ -25,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   breakAfter: {
     flexBasis: "23%",
   },
+  wrapperStyle: {
+    border: "1px solid gray",
+  },
 }));
 
 function Alert(props) {
@@ -32,19 +32,26 @@ function Alert(props) {
 }
 
 const ViewSeats = ({ bus }) => {
+  let firstCol = [],
+    secondCol = [],
+    thirdCol = [],
+    fourthCol = [];
+
   const classes = useStyles();
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [exceedLimit, setExceedLimit] = useState(false);
-  let spaceAfter = null;
-  let breakAfter = null;
 
-  if (bus.hasThreeInRow) {
-    spaceAfter = 1;
-    breakAfter = 3;
-  } else {
-    spaceAfter = 2;
-    breakAfter = 4;
-  }
+  bus.seats.forEach((st) => {
+    if (st[1] * 1 === 1) {
+      firstCol.push(st);
+    } else if (st[1] * 1 === 2) {
+      secondCol.push(st);
+    } else if (st[1] * 1 === 3) {
+      thirdCol.push(st);
+    } else if (st[1] * 1 === 4) {
+      fourthCol.push(st);
+    }
+  });
 
   const handleClick = (seat) => {
     if (selectedSeats.includes(seat)) {
@@ -58,37 +65,42 @@ const ViewSeats = ({ bus }) => {
       setSelectedSeats([...selectedSeats, seat]);
     }
   };
-  // let seatLetters = [];
-  // for (let i = 0; i < bus.seats.length; i++) {
-  //   seatLetters.push(bus.seats[i][0]);
-  // }
 
-  // console.log(seatLetters.toString());
+  const oneColumnSeat = (colName) => {
+    return (
+      <ul className={classes.root}>
+        {colName.map((data, i) => {
+          return (
+            <li key={i}>
+              <Chip
+                label={data}
+                className={`${classes.chip}`}
+                onClick={() => handleClick(data)}
+                color={selectedSeats.includes(data) ? "primary" : ""}
+                disabled={bus.bookedSeats.includes(data) ? true : false}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   return (
     <div>
       <div className="row">
         <div className="col-md-7">
-          <div className="seats-wrapper" style={wrapperStyle}>
-            <Paper component="ul" className={classes.root}>
-              {bus.seats.map((data, i) => {
-                return (
-                  <li
-                    key={i}
-                    className={`${data[1] * 1 === spaceAfter ? "mr-5" : ""} ${
-                      data[1] * 1 === breakAfter ? classes.breakAfter : ""
-                    }`}
-                  >
-                    <Chip
-                      label={data}
-                      className={`${classes.chip}`}
-                      onClick={() => handleClick(data)}
-                      color={selectedSeats.includes(data) ? "primary" : ""}
-                      disabled={bus.bookedSeats.includes(data) ? true : false}
-                    />
-                  </li>
-                );
-              })}
-            </Paper>
+          <div className={classes.wrapperStyle}>
+            <div className="d-flex justify-content-between">
+              <div className="d-flex">
+                <div>{oneColumnSeat(firstCol)}</div>
+                <div>{oneColumnSeat(secondCol)}</div>
+              </div>
+              <div className="d-flex">
+                <div>{oneColumnSeat(thirdCol)}</div>
+                {fourthCol.length > 0 && <div>{oneColumnSeat(fourthCol)}</div>}
+              </div>
+            </div>
           </div>
           {exceedLimit && (
             <Alert className="mt-2" severity="error">

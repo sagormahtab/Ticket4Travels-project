@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BusBanner from "./BusBanner/BusBanner";
 import BusSearchR from "./BusSearchR-part/BusSearchR";
 import BusCard1 from "./BusCard1/BusCard1";
 import BusLeftSideBar from "./BusCard1/BusLeftSideBar";
-import buses from "../../fakeData/buses";
+import axios from "axios";
+import { useBus } from "../../BusContext";
+// import buses from "../../fakeData/buses";
 
 function BusSearchPagesCombines() {
+  const { bus } = useBus();
+  const [buss, setBuss] = useState(null);
+
+  useEffect(() => {
+    const { from, to } = bus;
+    let { date, returnDate } = bus;
+    date = JSON.parse(JSON.stringify(date));
+    if (returnDate) {
+      returnDate = new Date(returnDate);
+      returnDate = JSON.parse(JSON.stringify(returnDate));
+    } else {
+      returnDate = null;
+    }
+
+    axios
+      .get(
+        `http://localhost:4200/api/v1/bus-list?from=${from}&to=${to}&date=${date}${
+          returnDate ? `&returnDate=$${returnDate}` : ""
+        }`
+      )
+      .then(function (response) {
+        console.log(response, response.data.data);
+        setBuss(response.data.data);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+        } else {
+          console.log(error);
+        }
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
       <BusBanner />
@@ -16,9 +52,7 @@ function BusSearchPagesCombines() {
             <BusLeftSideBar />
           </div>
           <div className="col-md-8">
-            {buses.data.map((bus) => (
-              <BusCard1 key={bus._id} bus={bus} />
-            ))}
+            {buss && buss.map((bus) => <BusCard1 key={bus._id} bus={bus} />)}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -13,7 +13,7 @@ import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { Link } from "react-router-dom";
-// import { useCart } from "../../../CartContext";
+import { useCart } from "../../../CartContext";
 
 const useStyles = makeStyles((theme) => ({
   greenText: {
@@ -28,7 +28,15 @@ const useStyles = makeStyles((theme) => ({
 const BusCart = ({ bus, selectedSeats }) => {
   const classes = useStyles();
   const [boarding, setBoarding] = useState("");
-  // const { cart } = useCart();
+  const { setCart } = useCart();
+  useEffect(() => {
+    setCart({
+      ...bus,
+      goingToBook: selectedSeats,
+      price: bus.fare * selectedSeats.length,
+      boardingPoint: boarding,
+    });
+  }, [selectedSeats, bus, setCart, boarding]);
   const rows = [];
   if (selectedSeats) {
     selectedSeats.forEach((st) => rows.push({ seat: st, price: bus.fare }));
@@ -81,11 +89,11 @@ const BusCart = ({ bus, selectedSeats }) => {
         </Select>
       </FormControl>
       <div className="d-flex justify-content-end mt-3">
-        <Link to="/BusPre_Booking">
+        <Link to="/booking_Stepper">
           <button
             type="button"
             disabled={boarding && rows.length > 0 ? false : true}
-            class="btn btn-success busButton1"
+            class="btn busButton1"
           >
             Book Now
           </button>

@@ -79,10 +79,6 @@
   align-items: center;
 }
 
-span {
-  margin-left: 16px;
-}
-
 @media (max-width: 40em) {
   .drop_txt {
     display: none;
