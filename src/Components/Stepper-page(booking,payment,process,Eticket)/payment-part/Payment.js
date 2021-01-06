@@ -99,22 +99,22 @@ export default function VerticalTabs({ handleNext, handleBack }) {
             </Elements>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item Two
+            Coming soon
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            Coming soon
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Item Four
+            Coming soon
           </TabPanel>
           <TabPanel value={value} index={4}>
-            Item Five
+            Coming soon
           </TabPanel>
           <TabPanel value={value} index={5}>
-            Item Six
+            Coming soon
           </TabPanel>
           <TabPanel value={value} index={6}>
-            Item Seven
+            Coming soon
           </TabPanel>
         </div>
       </div>

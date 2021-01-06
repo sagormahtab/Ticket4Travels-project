@@ -5,7 +5,6 @@ import BusCard1 from "./BusCard1/BusCard1";
 import BusLeftSideBar from "./BusCard1/BusLeftSideBar";
 import axios from "axios";
 import { useBus } from "../../BusContext";
-// import buses from "../../fakeData/buses";
 
 function BusSearchPagesCombines() {
   const { bus } = useBus();
@@ -24,7 +23,7 @@ function BusSearchPagesCombines() {
 
     axios
       .get(
-        `http://localhost:4200/api/v1/bus-list?from=${from}&to=${to}&date=${date}${
+        `https://bus-api-sm.herokuapp.com/api/v1/bus-list?from=${from}&to=${to}&date=${date}${
           returnDate ? `&returnDate=$${returnDate}` : ""
         }`
       )

@@ -8,9 +8,10 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
 import formValidation from "../../../Helper/formValidation";
+import SuccessTicket from "../SuccessTicket";
 
 function getSteps() {
-  return ["Book", "Pay", "Process", "E-Ticekt"];
+  return ["Book", "Pay", "Process"];
 }
 
 const fieldsValidation = {
@@ -42,9 +43,7 @@ const Header2 = () => {
       case 1:
         return <Payment handleNext={handleNext} handleBack={handleBack} />;
       case 2:
-        return "Process page";
-      case 3:
-        return "E-Ticekt page";
+        return <SuccessTicket />;
       default:
         return "Unknown step";
     }

@@ -37,7 +37,7 @@ const CreditCard = ({ handleBack, handleNext }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
   const {
     passenger: { name, email, phone },
   } = cart;
@@ -72,6 +72,10 @@ const CreditCard = ({ handleBack, handleNext }) => {
       setIsLoading(false);
     } else {
       setPaymentMethod(payload.paymentMethod);
+      setCart({
+        ...cart,
+        paymentId: payload.paymentMethod.id,
+      });
       setErrorMessage(null);
     }
   };
@@ -81,7 +85,7 @@ const CreditCard = ({ handleBack, handleNext }) => {
       setIsLoading(true);
       const { id } = paymentMethod;
       const response = await axios.post(
-        "http://localhost:4200/api/v1/bookings/checkout-session",
+        "https://bus-api-sm.herokuapp.com/api/v1/bookings/checkout-session",
         {
           product: cart,
           id: id,

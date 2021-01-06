@@ -107,32 +107,24 @@ export default function VerticalTabs() {
               }
               {...a11yProps(2)}
             />
-            <Tab label="Item Four" {...a11yProps(3)} />
-            <Tab label="Item Five" {...a11yProps(4)} />
-            <Tab label="Item Six" {...a11yProps(5)} />
-            <Tab label="Item Seven" {...a11yProps(6)} />
+            <Tab label="Flight" {...a11yProps(3)} />
+            <Tab label="Train" {...a11yProps(4)} />
           </Tabs>
           <div className={classes.tabPanel}>
             <TabPanel value={value} index={0}>
               <BusInputForm />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Item One
+              Coming soon
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <p>Item Three</p>
+              Coming soon
             </TabPanel>
             <TabPanel value={value} index={3}>
-              Item Four
+              Coming soon
             </TabPanel>
             <TabPanel value={value} index={4}>
-              Item Five
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-              Item Six
-            </TabPanel>
-            <TabPanel value={value} index={6}>
-              Item Seven
+              Coming soon
             </TabPanel>
           </div>
         </Box>
