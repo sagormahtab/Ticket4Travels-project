@@ -4,17 +4,30 @@ import RewardPng from "../Account_Information/images/reward.png"
 import CustomerCare from "../Account_Information/images/customer-agent.png"
 import OnlineBook from "../Account_Information/images/online-booking.png"
 import OnlinePaymentt from "../Account_Information/images/online-payment.png"
-import { Card } from 'antd';
 import validate1 from "../Account_Information/validateInfo1"
 import useForm1 from "../Account_Information/useForm1"
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+import { Card, CardActions, CardContent, Typography, TextField, Button } from '@material-ui/core';
+
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        maxWidth: 500,
+        [theme.breakpoints.down("md")]: {
+            maxWidth: 400
+        }
+    },
+}));
 
 const AcountInfomation = ({ submitForm1 }) => {
 
     const { handleChange1, handleSubmit1, values1, errors1 } = useForm1(
         submitForm1,
         validate1
-      );
+    );
+
+    const classes = useStyles()
     return (
         <div>
             <div className="row">
@@ -50,44 +63,67 @@ const AcountInfomation = ({ submitForm1 }) => {
                 </div>
                 <div className="col-lg-6 col-md-6 col-12 mt-5 VerificationCard
                     _div">
-                    <Card style={{ width: 380 }}>
-                        <h2 className="">Account Information</h2>
-                        <p className="text-left bg-Color mt-5">One more step to become our <span className="acqua_colorDiv">Tickets4travel</span> member. Please enter your Fullname and passowrd to log in</p>
+                    <Card className={classes.root}>
+                        <CardContent style={{ width: '100%', height: 700 }}>
+                            <Typography variant="h3">Account Information</Typography>
+                            <p className="text-left bg-Color mt-5">One more step to become our <span className="acqua_colorDiv">Tickets4travel</span> member. Please enter your Fullname and passowrd to log in</p>
 
-                        <form onSubmit={handleSubmit1} noValidate>
-                            <div class="form-group">
-                                <h5 className="text-left">Full Name</h5>
-                                <input type="text" class="form-control" aria-describedby="" name="username" value={values1.username} onChange={handleChange1} placeholder="Enter your Full name"/>
+                            <form onSubmit={handleSubmit1} noValidate>
+                                <div className="form-group">
+                                    <Typography variant="h5" className="text-left">Full Name</Typography>
+                                    <TextField
+                                        label="Enter your Full Name"
+                                        variant="outlined"
+                                        type="text"
+                                        name="username"
+                                        value={values1.username}
+                                        onChange={handleChange1}
+                                        fullWidth
+                                    />
+                                    {errors1.username && <p>{errors1.username}</p>}
+                                </div>
 
-                                {errors1.username && <p>{errors1.username}</p>}
+                                <div className="form-group">
+                                    <Typography variant="h5" className="text-left">New Password</Typography>
+                                    <TextField
+                                        variant="outlined"
+                                        type="password"
+                                        name="password"
+                                        onChange={handleChange1}
+                                        value={values1.password}
+                                        fullWidth
+                                    />
+                                    <small class="form-text text-muted text-left">Minimum eight characters, at least one letter and one number.</small>
+                                    {errors1.password && <p>{errors1.password}</p>}
+                                </div>
 
-                            </div>
-                            <div class="form-group">
-                                <h5 className="text-left">New Password</h5>
-                                <input type="password" class="form-control" name="password" onChange={handleChange1} value={values1.password} />
-                                <small class="form-text text-muted text-left">Minimum eight characters, at least one letter and one number.</small>
+                                <div className="form-group">
+                                    <Typography variant="h5" className="text-left">Re-type Password</Typography>
+                                    <TextField
+                                        variant="outlined"
+                                        type="password"
+                                        name="password2"
+                                        onChange={handleChange1}
+                                        value={values1.password2}
+                                        fullWidth
+                                    />
+                                    <small class="form-text text-muted text-left">Minimum eight characters, at least one letter and one number.</small>
+                                    {errors1.password2 && <p>{errors1.password2}</p>}
+                                </div>
 
-                                {errors1.password && <p>{errors1.password}</p>}
-                            </div>
-                            <div class="form-group">
-                                <h5 className="text-left">Re-type Password</h5>
-                                <input type="password" class="form-control" name="password2" onChange={handleChange1} value={values1.password2} />
-
-                                {errors1.password2 && <p>{errors1.password2}</p>}
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input"/>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" />
                                     <label class="form-check-label text-left" for="exampleCheck1">send me about promotions and <span>Tickets4travel's</span> exclusive Discount</label>
-                             </div>
+                                </div>
 
-                                {/* <button type="submit" class="btn btn-primary">Done</button> */}
-                                <Button type="submit" variant="contained" color="primary">Done</Button>
-                        </form>
-                            
-                        </Card>
-                            </div>
+                                <CardActions><Button type="submit" variant="contained" color="primary">Done</Button></CardActions>
+
+                            </form>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
+        </div>
     )
 }
 

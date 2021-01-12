@@ -1,9 +1,9 @@
 import React from "react";
 // import Wave_png from "../Footer_part/images/Wave.png"
 import paypal from "../Footer_part/images/paypal1.jpg";
-import visa from "../Footer_part/images/visa1.jpg";
+import visa from "../Footer_part/images/visa (1).png";
 import bikas from "../Footer_part/images/bikas1.png";
-import pa from "../Footer_part/images/play store1.png";
+import play from "../Footer_part/images/play store1.png";
 import apple from "../Footer_part/images/apple store2.jpg";
 import fb from "../Footer_part/images/fb1.png";
 import insta from "../Footer_part/images/instsgram.png";
@@ -13,8 +13,6 @@ import "./footer.css";
 function Footer() {
   return (
     <footer>
-      {/* <img src={Wave_png} alt="wave" className="image1 img-fluid" width="100%"></img> */}
-      {/* <img src={svg2} alt="wave" className="image2"></img> */}
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -39,7 +37,7 @@ function Footer() {
                 alt="paypal"
                 height="40px"
                 width="70px"
-                className="logog img-fluid"
+                className="logog img-fluid mt-4"
               ></img>
             </div>
             <div className="col-md-3 col-sm-6">
@@ -50,9 +48,9 @@ function Footer() {
                   width="40px"
                   height="30px"
                   alt=""
-                  className="img-fluid mb-2"
+                  className="img-fluid mb-2 mr-2"
                 ></img>
-                Facebook
+                 Facebook
               </div>
               <div>
                 <img
@@ -60,29 +58,29 @@ function Footer() {
                   width="40px"
                   height="30px"
                   alt=""
-                  className="img-fluid mb-2"
+                  className="img-fluid mb-2 mr-2"
                 ></img>
                 Facebook
               </div>
               <div>
                 <img
                   src={insta}
-                  width="30px"
+                  width="35px"
                   height="30px"
                   alt=""
-                  className="img-fluid mb-2"
+                  className="img-fluid mb-2 mr-2"
                 ></img>
-                Instagram
+                  Instagram
               </div>
               <div>
                 <img
                   src={Youtube}
-                  width="30px"
-                  height="20px"
+                  width="35px"
+                  height="30px"
                   alt=""
-                  className="img-fluid mb-2"
+                  className="img-fluid mb-2 mr-2"
                 ></img>
-                YouTube
+                  YouTube
               </div>
               <div>
                 <img
@@ -90,7 +88,7 @@ function Footer() {
                   alt="paypal"
                   height="40px"
                   width="60px"
-                  className=" logog ml-3 img-fluid"
+                  className=" logog ml-3 img-fluid mt-3"
                 ></img>
               </div>
             </div>
@@ -105,7 +103,7 @@ function Footer() {
                 alt="paypal"
                 height="40px"
                 width="40px"
-                className=" logog ml-3 img-fluid"
+                className=" logog ml-3 img-fluid mt-4"
               ></img>
             </div>
             <div className="col-md-3 col-sm-6">
@@ -117,7 +115,7 @@ function Footer() {
               <p>Bus</p>
               <h2>Download Our App</h2>
               <img
-                src={pa}
+                src={play}
                 alt="play+apple"
                 className="pa img-fluid"
                 height="70px"

@@ -1,6 +1,4 @@
 import React from 'react'
-import { Card } from 'antd';
-// import { Input, Col, Row, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
 import WomenPIC from "../RegisterPage-1/images/women pic with background prj.png"
 import Fb from "../RegisterPage-1/images/facebook.png"
 import Google from "../RegisterPage-1/images/google-symbol.png"
@@ -9,27 +7,35 @@ import Apple_Store from "../RegisterPage-1/images/apple store2.jpg"
 import "../RegisterPage-1/registerPage_one.css"
 import useForm from "./useForm"
 import validate from "./validateInfo"
-import Button from '@material-ui/core/Button';
+
+import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardActions, CardContent, Typography, TextField, Button } from '@material-ui/core';
 
 
 
 
+const useStyles = makeStyles(theme => ({
+    root: {
+        maxWidth: 500,
+        [theme.breakpoints.down("md")]: {
+            maxWidth: 400
+        }
+    },
+}));
 
-// const { Option } = Select;
 
 
 
-
-
-
-
-function RegisterPage_one({ submitForm }) {
+function RegisterPageOne({ submitForm }) {
 
 
     const { handleChange, handleSubmit, values, errors } = useForm(
         submitForm,
         validate
     );
+
+    const classes = useStyles();
+
 
 
     return (
@@ -51,59 +57,56 @@ function RegisterPage_one({ submitForm }) {
                         <h2><span className="ticekt-Text_Div2 mt-0 ml-5">Tickets4Travel</span> Member</h2>
 
                         <div>
-                            <Card style={{ width: 350 }} className="text-left">
-                                {/* <h5>Mobile Number</h5> */}
-                                <form onSubmit={handleSubmit}>
-                                    <div class="form-group">
-                                        <h5>Mobile Number</h5>
-                                        <input
-                                           
-                                            type="text"
-                                            name="phone"
-                                            class="form-control"
-                                            placeholder="Enter phone"
-                                            value={values.phone}
-                                            onChange={handleChange}
-                                        />
-                                       {errors.phone && <p>{errors.phone}</p>}
+                            <Card className={classes.root}>
+                                <CardContent style={{ width: '100%', height: 500 }}>
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="form-group">
+                                            <Typography variant="h5">Mobile Number</Typography>
+                                            <TextField
+                                                label="Enter Phone"
+                                                variant="outlined"
+                                                type="text"
+                                                name="phone"
+                                                fullWidth
+                                                value={values.phone}
+                                                onChange={handleChange}
+                                            />
+                                            {errors.phone && <p>{errors.phone}</p>}
+                                        </div>
+
+                                        <div className="form-group">
+                                            <Typography variant="h5">Email</Typography>
+                                            <TextField
+                                                label="Email"
+                                                variant="outlined"
+                                                type="email"
+                                                name="email"
+                                                value={values.email}
+                                                onChange={handleChange}
+                                                fullWidth
+
+                                            />
+                                            {errors.email && <p>{errors.email}</p>}
+                                        </div>
+                                        <CardActions>
+                                            <Button type="submit" variant="contained" color="primary">
+                                                Join
+                                    </Button>
+                                        </CardActions>
+                                    </form>
+
+                                    <div>
+
+                                        <Button className="mt-4 mr-5" variant="outlined" color="primary"> <img src={Fb} width="20px" height="20px" alt="" className="img-fluid"></img> <span className="ml-2">Register using Facbook</span> </Button>
+
+                                        <Button className="mt-2" variant="outlined" color="primary"> <img src={Google} width="20px" height="20px" alt="" className="img-fluid"></img> <span className="ml-2">Register using Facbook</span> </Button>
 
                                     </div>
-                                    <div class="form-group">
-                                        <h5>Email</h5>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            class="form-control"
-                                            placeholder="Enter Email"
-                                            value={values.email}
-                                            onChange={handleChange}
-                                        />
-                                         {errors.email && <p>{errors.email}</p>}
 
+                                    <div className="mt-3">
+                                        <p>By clicking the button below Your agree to <span className="ticekt-Text_Div">Tickets4travel</span> <span className="ticekt-Text_Div2"> Terms & conditions </span> & <span className="ticekt-Text_Div2"> privacy poilicy</span></p>
                                     </div>
-                                    {/* <div className=""> <button type="submit" class="btn btn-success mt-4 FormJoin_div">Join</button></div> */}
-                                    <div className="mr-5"><Button type="submit" variant="contained" color="primary">
-                                        Join
-                                    </Button></div>
-                                </form>
-
-
-
-
-
-
-                                <div>
-
-                                    <div className="mt-5 mr-5"><button type="button" class="btn btn-fb_button"><img src={Fb} width="20px" height="20px" alt="" className="img-fluid"></img> Register using Facbook</button>
-                                    </div>
-                                    <div className="mt-2"><button type="button" class="btn btn-fb_button"><img src={Google} width="20px" height="20px" alt="" className="img-fluid"></img> Register using Facbook</button>
-                                    </div>
-                                </div>
-
-                                <div className="mt-5">
-                                    <p>By clicking the button below Your agree to <span className="ticekt-Text_Div">Tickets4travel</span> <span className="ticekt-Text_Div2"> Terms & conditions </span> & <span className="ticekt-Text_Div2"> privacy poilicy</span></p>
-                                </div>
-
+                                </CardContent>
                             </Card>
                         </div>
                     </div>
@@ -115,4 +118,4 @@ function RegisterPage_one({ submitForm }) {
 }
 
 
-export default RegisterPage_one
+export default RegisterPageOne

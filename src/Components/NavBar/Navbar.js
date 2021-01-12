@@ -9,6 +9,8 @@ import logo from "./logo/Final Logo.png";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import icon11 from "../NavBar/icon-images/browser.png";
 import icon12 from "../NavBar/icon-images/user.png";
+import Button from '@material-ui/core/Button';
+
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -24,7 +26,7 @@ function Navbar() {
             <img src={logo} alt="logo" height="50px" width="80px" />
           </Link>
           <nav class="nav ml-auto drop_txt">
-            <a class="nav-link  " href="/">
+            <a class="nav-link  " href="/" >
               Partnership
             </a>
             <a class="nav-link " href="/">
@@ -44,9 +46,7 @@ function Navbar() {
               <img src={icon12} height="22px" width="25px" alt=""></img>Log in
             </a>
             <Link to="/login_form">
-              <button type="button" class="btn btn-success">
-                Register
-              </button>
+              <Button variant="contained" color="primary">Register</Button>
             </Link>
           </nav>
         </div>

@@ -5,8 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Card } from 'antd';
-import { Checkbox } from 'antd';
+import { Card, CardContent, Checkbox } from '@material-ui/core';
 import TrainLogo from "../TrainCard1/images/train.png"
 // import Timmer from "../TrainCard1/images/timer.png"
 import "../TrainCard1/trainCard.css"
@@ -50,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.light,
-        marginBottom:240
+        marginBottom: 240
     },
     trainTab1: {
         [theme.breakpoints.down("sm")]: {
@@ -64,6 +63,12 @@ const useStyles = makeStyles((theme) => ({
             width: "50%"
         }
     },
+    card1: {
+        maxWidth: "1500px",
+        [theme.breakpoints.down("md")]: {
+            maxWidth: 400
+        }
+    },
 
 }));
 
@@ -75,9 +80,7 @@ export default function SimpleTabs() {
         setValue(newValue);
     };
 
-    function onChange(e) {
-        console.log(`checked = ${e.target.checked}`);
-    }
+
 
 
     return (
@@ -112,64 +115,81 @@ export default function SimpleTabs() {
                         <div><hr></hr></div>
                     </div>
 
-                    <div>
-                        <Card  className="TrainCard1_shadow ">
-                            <div className="row">
-                                <div className="col-sm-3 col-md-3 col-4 p-0">
+                    <div className="row">
+                        <div className="col-sm-12 col-md-12 col-12">
+                            <Card className={classes.card1}>
+                                <CardContent>
+                                    <div className="row">
+                                        <div className="col-md-3 col-3">
+                                            <Checkbox
+                                                defaultChecked
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Air Condition
+                                        </div>
+                                        <div className="col-md-3 col-3">
+                                            <Checkbox
+                                                defaultChecked
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />First Class
+                                        </div>
+                                        <div className="col-md-3 col-3">
+                                            <Checkbox
+                                                defaultChecked
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Second Class
+                                        </div>
+                                        <div className="col-md-3 col-3">
+                                            <Checkbox
+                                                defaultChecked
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Suvon Class
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
 
-                                    <Checkbox onChange={onChange} className="px-0">Air Condition class</Checkbox>
-
-                                </div>
-                                <div className="col-sm-3 col-md-3 col-4 p-0  ">
-
-                                    <Checkbox onChange={onChange} className="p-0 text-left">First class</Checkbox>
-                                </div>
-                                <div className="col-sm-3 col-md-3 col-4 p-0"><Checkbox onChange={onChange} className="p-0">Second class</Checkbox> <hr></hr></div>
-
-                                <div className="col-sm-3 col-md-3 col-12 mt-0">
-                                    <p><Checkbox onChange={onChange}>Suvhon Chair</Checkbox></p>
-                                    <p><Checkbox onChange={onChange}>Suvhon</Checkbox></p>
-                                    <p><Checkbox onChange={onChange}>Suvlob Sub-class</Checkbox></p>
-                                </div>
-                            </div>
-                        </Card>
                     </div>
 
-                    <div className="row mt-3">
+                    <div className="row mt-4">
                         <div className="col-sm-12 col-md-12 col-12">
 
-                            <Card  className="TrainCard2_shadow">
-                                <p className="text-left fonnt_div">Train Time</p>
-                                <p className="text-left">Class Name</p>
+                            <Card className={classes.card1}>
+                                <CardContent >
+                                    <p className="text-left fonnt_div">Train Time</p>
+                                    <p className="text-left">Class Name</p>
 
-                                <div className="row">
-                                    <div className="col-sm-3 col-md-3 col-3 fonnt_div">Time</div>
-                                    <div className="col-sm-3 col-md-3 col-3 text-left"><img src={TrainLogo} width="20px" height="20px" alt="" className="img-fluid"></img></div>
-                                    <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Time</div>
-                                    <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Duration</div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-sm-3 col-md-3 col-3">place Name</div>
-                                    <div className="col-sm-3 col-md-3 col-3"></div>
-                                    <div className="col-sm-3 col-md-3 col-3 text-left">Your place</div>
-                                    <div className="col-sm-3 col-md-3 col-3 text-left">Direction</div>
-                                </div>
-                                <span className="color_chng">Amount</span>
+                                    <div className="row">
+                                        <div className="col-sm-3 col-md-3 col-3 fonnt_div">Time</div>
+                                        <div className="col-sm-3 col-md-3 col-3 text-left"><img src={TrainLogo} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+                                        <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Time</div>
+                                        <div className="col-sm-3 col-md-3 col-3 text-left fonnt_div">Duration</div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 col-md-3 col-3">place Name</div>
+                                        <div className="col-sm-3 col-md-3 col-3"></div>
+                                        <div className="col-sm-3 col-md-3 col-3 text-left">Your place</div>
+                                        <div className="col-sm-3 col-md-3 col-3 text-left">Direction</div>
+                                    </div>
+                                    <span className="color_chng">Amount</span>
 
-                               
+
                                     <Tabs value={value} onChange={handleChange}>
-                                        <Tab  className={`${classes.trainTab1} trainTab1`}  label="Train Details" {...a11yProps(0)} />
-                                        <Tab  className={`${classes.trainTab2} trainTab2`}  label="Price Details" {...a11yProps(1)} />
-                                        
+                                        <Tab className={`${classes.trainTab1} trainTab1`} label="Train Details" {...a11yProps(0)} />
+                                        <Tab className={`${classes.trainTab2} trainTab2`} label="Price Details" {...a11yProps(1)} />
+
                                     </Tabs>
                                     <TabPanel value={value} index={0}>
-                                        <TrainDetailsPages/>
+                                        <TrainDetailsPages />
                                     </TabPanel>
                                     <TabPanel value={value} index={1}>
                                         <TrainPDetailsPage />
                                     </TabPanel>
-
-        
+                                </CardContent>
                             </Card>
                         </div>
                     </div>
@@ -177,6 +197,6 @@ export default function SimpleTabs() {
             </div>
 
 
-        </div>
+        </div >
     );
 }

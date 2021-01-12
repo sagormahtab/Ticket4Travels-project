@@ -1,81 +1,81 @@
 import React from 'react'
-import { Card } from 'antd';
+import { Card, CardContent, Typography, CardHeader, Checkbox, InputLabel, MenuItem, FormHelperText, FormControl, Select } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import "../Sort-Results-part/sortResults.css"
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import { Select } from 'antd';
-// import { Dropdown } from 'semantic-ui-react'
-// import { Input, Col, Row, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
+
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
+}));
 
 
 
 
-
-// function onChange(checkedValues) {
-//     console.log('checked = ', checkedValues);
-// }
-
-// const plainOptions = ['Highest price', 'lowest price', 'Review score', "Highest popularity"];
 const cityList = [
     { title: 'Dhaka' },
     { title: 'narayangonj' },
 ];
 
-// const options = [
-//     { key: 1, text: 'Choice 1', value: 1 },
-//     { key: 2, text: 'Choice 2', value: 2 },
-//     { key: 3, text: 'Choice 3', value: 3 },
-// ]
-
-const { Option } = Select;
-
-
 
 
 
 function SortResults() {
+    const classes = useStyles();
+    const [price, setPrice] = React.useState('');
+
+    const handleChange = (event) => {
+        setPrice(event.target.value);
+    };
     return (
         <div>
             <div className="">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <Card title="Sort results" style={{ width: 320 }} className="sortResultCard1">
+                            <Card style={{ width: "300px" }}>
+                                <CardHeader title="Sort In result" subheader="Sort your search result by:-">
+                                </CardHeader>
+                                <hr></hr>
+                                <CardContent>
                                     <div className="row">
-                                        <div className="col-md-6">
-                                            <div class="form-check text-left">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                                <label class="form-check-label" for="exampleCheck1">Highest Price</label>
-                                            </div>
-
+                                        <div className="col-lg-6 col-md-6">
+                                            <Checkbox
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Depart Time
                                         </div>
-                                        <div className="col-md-6">
-                                            <div class="form-check text-left">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                                <label class="form-check-label" for="exampleCheck1">Lowest price</label>
-                                            </div>
 
+                                        <div className="col-lg-6 col-md-6">
+                                            <Checkbox
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Lowest Time
                                         </div>
                                     </div>
-                                
-                                <div className="container-fluid mt-3">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div class="form-check text-left">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                                <label class="form-check-label" for="exampleCheck1">Review score</label>
-                                            </div>
 
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div class="form-check text-left">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                                <label class="form-check-label" for="exampleCheck1">Highest popularity</label>
-                                            </div>
-
+                                    <div className="row mt-3">
+                                        <div className="col-lg-6 col-md-6">
+                                            <Checkbox
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Arrival Time
+                                    </div>
+                                        <div className="col-lg-6 col-md-6">
+                                            <Checkbox
+                                                color="primary"
+                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                            />Duration
                                         </div>
                                     </div>
-                                </div>
+                                </CardContent>
                             </Card>
                         </div>
                         <div className="col-md-3 col-12 form1">
@@ -89,13 +89,21 @@ function SortResults() {
                             />
                         </div>
                         <div className="col-md-3 col-6 form2">
-                           
-                                <Select placeholder="Total price" style={{width:"80%"}}>
-                                    <Option value="per-room">Per Room,per Night</Option>
-                                    <Option value="total-price">Total price</Option>
+
+                            <FormControl variant="outlined" className={classes.formControl}>
+                                <InputLabel id="demo-simple-select-outlined-label">Total Price</InputLabel>
+                                <Select
+                                    value={price}
+                                    onChange={handleChange}
+                                    label="Total price"
+                                >
+                                    <MenuItem value="Per Room,Per Night">Per Room,Per Night</MenuItem>
+                                    <MenuItem value="Total Price">Total Price</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
                                 </Select>
-                                
-                           
+                            </FormControl>
+
+
                         </div>
                     </div>
                 </div>

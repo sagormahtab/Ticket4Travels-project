@@ -4,12 +4,14 @@ footer .footer-content {
   color: white;
 }
 
-footer .footer-content h3, .footer-content h2, .footer-content p {
+footer .footer-content h3,
+.footer-content h2,
+.footer-content p {
   color: white;
 }
 
 @media only screen and (max-width: 768px) {
-    .logog{
-        margin-bottom: 2.5rem;
-    }
+  .logog {
+    margin-bottom: 2.5rem;
+  }
 }

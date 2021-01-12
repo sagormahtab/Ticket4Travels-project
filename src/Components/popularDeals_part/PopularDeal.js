@@ -9,7 +9,7 @@ import icn5 from "../popularDeals_part/images/train2.png"
 
 function PopularDeal() {
     return (
-        <div className="container-fluid">
+        <div className="">
             <div className="container mt-5">
                 <div className="row mt-5">
                     <div className="col-md-2 font-weight-bold "><span>Popular Deals</span> All</div>

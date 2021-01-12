@@ -5,22 +5,31 @@ import CustomerCare from "../Verification-code_Page/images/customer-agent.png"
 import OnlineBook from "../Verification-code_Page/images/online-booking.png"
 import OnlinePaymentt from "../Verification-code_Page/images/online-payment.png"
 import "../Verification-code_Page/verificationPage.css"
-import { Card } from 'antd';
 import { useHistory } from "react-router-dom";
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+import { Card, CardActions, CardContent, Typography, TextField, Button } from '@material-ui/core';
+
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        maxWidth: 500,
+        [theme.breakpoints.down("md")]: {
+            maxWidth: 400
+        }
+    },
+}));
 
 
 
 function VerificationPage() {
 
-    
+    let history = useHistory();
 
-// function HomeButton  () {
-  let history = useHistory();
-
-  const handleClick = ()=> {
-    history.push("/account_inforamtion");
-  }
+    const handleClick = () => {
+        history.push("/account_inforamtion");
+    }
+    const classes = useStyles();
 
     return (
         <div>
@@ -58,24 +67,35 @@ function VerificationPage() {
                     </div>
                     <div className="col-lg-6 col-md-6 col-12 VerificationCard
                     _div">
-                        <Card style={{ width: 350 }}>
-                            <h2 className="">Account Verification</h2>
-                            <p className="text-left bg-Color mt-5">Verification code has been send to <span className="acqua_colorDiv">name@gmail.com</span> Please insert Verifiaction code to verify</p>
+                        <Card className={classes.root}>
+                            <CardContent style={{ width: '100%', height: 500 }}>
+                                <Typography variant="h2">Account Verification</Typography>
+                                <p className="text-left bg-Color mt-5">Verification code has been send to <span className="acqua_colorDiv">name@gmail.com</span> Please insert Verifiaction code to verify</p>
+                                <Typography variant="h5" className="text-left mt-4">Verification code</Typography>
+                                <form>
+                                    <div className="row">
+                                        <div className="col-lg-12 col-md-12 col-12">
+                                            <TextField
+                                                type="text"
+                                                variant="outlined"
+                                                required
+                                                fullWidth
+                                            />
+                                        </div>
+                                    </div>
 
-                            <h5 className="text-left mt-4">Verification code</h5>
-                            <form>
-                            <div className="row">
-                                <div className="col-lg-12 col-md-12 col-12"><input type="text" class="form-control"  aria-describedby="emailHelp" required/></div>
-                            </div>
+                                    <div className="row mt-3">
+                                        <CardActions className="col-lg-12 col-md-12 col-12">
+                                            <Button type="submit" variant="contained" onClick={handleClick} color="primary">
+                                                Submit
+                                            </Button>
+                                        </CardActions>
 
-                                <div className="row mt-3">
-                                    <div className="col-lg-12 col-md-12 col-12"><Button type="submit" variant="contained" onClick={handleClick} color="primary">
-                                        Submit
-                                   </Button></div>
-                                </div>   
-                            <p className=" mt-2">Haven't receive the verifivation code? <span className="acqua_colorDiv">Resend</span></p>
-                            
-                            </form>
+                                    </div>
+                                    <p className=" mt-2">Haven't receive the verifivation code? <span className="acqua_colorDiv">Resend</span></p>
+
+                                </form>
+                            </CardContent>
                         </Card>
                     </div>
                 </div>

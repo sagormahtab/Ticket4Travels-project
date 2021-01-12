@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'antd';
+import Card from '@material-ui/core/Card';
 import Airoplan from "../card-part/images/plane.png"
 import bag from "../card-part/images/work.png"
 import "../card-part/allCard.css"
@@ -12,7 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import FlightDetailsPart from "./FlightDetails-part/FlightDetailsPart"
 import FlightFareInfo from "./Flight-FareInfo-part/FlightFareInfo"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import { CardContent } from '@material-ui/core';
 
 
 
@@ -85,49 +86,51 @@ export default function SimpleTabs() {
             <div className="container mb-5 mt-5">
                 <div className="row">
                     <div className="col-md-12 col-12 mt-5">
-                        <Card  className="AllCard-shadow-div">
-                            <p className="text-left"><span className="logo_cls">Logo</span> | Flight Name</p>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-4 col-4 text-right ">Flight Time</div>
+                        <Card className="AllCard-shadow-div">
+                            <CardContent>
+                                <p className="text-left"><span className="logo_cls">Logo</span> | Flight Name</p>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-4 col-4 text-right ">Flight Time</div>
 
-                                    <div className="col-md-4 col-4 text-center">Land time</div>
-                                    <div className="col-md-4 col-4 text-left">Duration</div>
+                                        <div className="col-md-4 col-4 text-center">Land time</div>
+                                        <div className="col-md-4 col-4 text-left">Duration</div>
+                                    </div>
+                                    <div className="AllCard-imageDiv"><img src={Airoplan} width="40px" height="20px" alt="" className="img-fluid"></img></div>
                                 </div>
-                                <div className="AllCard-imageDiv"><img src={Airoplan} width="40px" height="20px" alt="" className="img-fluid"></img></div>
-                            </div>
 
-                            <div className="container mt-3">
-                                <div className="row">
-                                    <div className="col-md-4 col-4 text-right">Name</div>
-                                    <div className="col-md-4 col-4 text-center">Name</div>
-                                    <div className="col-md-4 col-4 text-left">Direct</div>
-                                    <div className="bag_part"><img src={bag} width="20px" height="20px" alt="" className="img-fluid"></img></div>
-                                    
-                                     <Link to="/flightPre_Booking"><div className="meterialButton mt-3"><Button variant="contained" color="primary">
-                                        Choose
+                                <div className="container mt-3">
+                                    <div className="row">
+                                        <div className="col-md-4 col-4 text-right">Name</div>
+                                        <div className="col-md-4 col-4 text-center">Name</div>
+                                        <div className="col-md-4 col-4 text-left">Direct</div>
+                                        <div className="bag_part"><img src={bag} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+
+                                        <Link to="/flightPre_Booking"><div className="meterialButton mt-3"><Button variant="contained" color="primary">
+                                            Choose
                                     </Button></div></Link>
-                                    
 
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="mt-5 Flight-tabs">
-                                <div className={classes.root}>
-                                  
+                                <div className="mt-5 Flight-tabs">
+                                    <div className={classes.root}>
+
                                         <Tabs value={value} onChange={handleChange}>
                                             <Tab className={`${classes.flight1} flight1`} label="Flights Details" {...a11yProps(0)} />
                                             <Tab className={`${classes.flightFare} flightFare`} label="Fare Info" {...a11yProps(1)} />
                                         </Tabs>
-                                   
-                                    <TabPanel value={value} index={0}>
-                                        <FlightDetailsPart/>
-                                   </TabPanel>
-                                    <TabPanel value={value} index={1}>
-                                        <FlightFareInfo/>
-                                   </TabPanel>
-                                    
+
+                                        <TabPanel value={value} index={0}>
+                                            <FlightDetailsPart />
+                                        </TabPanel>
+                                        <TabPanel value={value} index={1}>
+                                            <FlightFareInfo />
+                                        </TabPanel>
+
+                                    </div>
                                 </div>
-                            </div>
+                            </CardContent>
                         </Card>
                     </div>
                 </div>
