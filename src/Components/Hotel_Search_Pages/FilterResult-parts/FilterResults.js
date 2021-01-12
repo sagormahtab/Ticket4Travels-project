@@ -4,8 +4,7 @@ import "../FilterResult-parts/filterResults.css"
 import architecture from "../FilterResult-parts/images/architecture-1048092_1920.jpg"
 import travelLogo from "../FilterResult-parts/images/Final Logo.png"
 import placeName from "../FilterResult-parts/images/placeholder.png"
-// import { Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';

@@ -1,23 +1,42 @@
 import React from 'react'
-import { Card } from 'antd';
+import { makeStyles } from '@material-ui/core/styles';
+import { Card,CardContent }from '@material-ui/core';
 import UsrPNGG from "../userCard/images/user.png"
 import "../userCard/userCard.css"
 
 
+const useStyles = makeStyles(theme => ({
+    root: {
+      maxWidth: 345,
+      [theme.breakpoints.down("md")] : {
+      maxWidth: 200
+      }
+    },
+    media: {
+      height: 140
+    }
+  }));
+
+
 function UserCard() {
+    const classes = useStyles()
     return (
         <div>
             <div className="container">
                 <div className="row mt-5">
-                    <div className="col-md-6 col-4"><Card style={{ width: 250 }} className="userCard-back">
-                        <div className="row">
-                            <div className="col-md-6 col-6"><img src={UsrPNGG} height="30px" width="30px" alt="" className="img-fluid"></img></div>
-                            <div className="col-md-6 col-6">
+                    <div className="col-md-6 col-4">
+                        <Card  className={classes.root}>
+                            <CardContent>
+                            <div className="row">
+                            <div className="col-md-4 col-12"><img src={UsrPNGG} height="30px" width="30px" alt="" className="img-fluid"></img></div>
+                            <div className="col-md-8 col-12">
                                 <h5>Ismail Hosain</h5>
-                                <p>name@gmail.com</p>
+                                <p>name@gmail.comm</p>
                             </div>
                         </div>
-                    </Card></div>
+                            </CardContent>
+                    </Card>
+                    </div>
                 </div>
             </div>
         </div>

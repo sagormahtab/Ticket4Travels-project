@@ -6,6 +6,12 @@ import icn2 from "../popularDeals_part/images/bus2.png"
 import icn3 from "../popularDeals_part/images/cruise-ship.png"
 import icn4 from "../popularDeals_part/images/hotel2.png"
 import icn5 from "../popularDeals_part/images/train2.png"
+import img1 from "./images/Banner-2-Short.jpg"
+import img2 from "./images/Banner-3-Short.jpg"
+import img3 from "./images/Banner-4-Short.jpg"
+import img4 from "./images/Banner-6-Short.jpg"
+import img5 from "./images/banner-7-Short.jpg"
+import img6 from "./images/Banner-8-Short.jpg"
 
 function PopularDeal() {
     return (
@@ -24,26 +30,26 @@ function PopularDeal() {
             <div className="container card1">
                 <div className="row">
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/22/1606063932894-b21249bf3958d1ab498e7dcbc427823d.png?tr=q-75,w-304,h-152" alt="" className="img-fluid"></img>
+                        <img src={img1} alt="" className="img-fluid"></img>
                     </div>
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/20/1605843458118-2e8efa988d099565a34d66b766661fc7.png?tr=q-75,w-304,h-152" alt=""></img>
+                        <img src={img2} alt=""></img>
                     </div>
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/22/1606057880097-721ad40a35e013b2693f3e992931ef5c.jpeg?tr=q-75,w-304,h-152" alt=""></img>
+                        <img src={img3}  alt=""></img>
                     </div>
                 </div>
             </div>
             <div className="container card1">
                 <div className="row">
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/22/1606047422793-df3e055481633e09c757cce056346d2d.png?tr=q-75,w-304,h-152" alt=""></img>
+                        <img src={img4} alt=""></img>
                     </div>
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/22/1606052180871-802201b45f176d8a47fee836c997f409.png?tr=q-75,w-304,h-152" alt=""></img>
+                        <img src={img5} alt=""></img>
                     </div>
                     <div className="col-md-4">
-                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2020/11/03/1604406597744-18ed3031874ef5090ef2c5c79bdb3b7b.jpeg?tr=q-75,w-304,h-152" alt=""></img>
+                        <img src={img6}  alt=""></img>
                     </div>
                 </div>
             </div>

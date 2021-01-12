@@ -1,6 +1,4 @@
 import React from "react";
-import "antd/dist/antd.css";
-// import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HeadFirst from "./Components/HeaderFrist/HeaderFirst";
 import Navbar from "./Components/NavBar/Navbar";

@@ -1,5 +1,7 @@
 import React from 'react'
-import cover from "../Carousel/cover_pic/COVERr-PAGE.png-2.png"
+import cover1 from "./images/Banner-2-Large-Final.jpg"
+import cover2 from "./images/Banner-1-large-FInal.jpg"
+import cover3 from "./images/Banner-3-Large-Final.jpg"
 import "../Carousel/carousel.css"
 
 function Carousel() {
@@ -13,20 +15,18 @@ function Carousel() {
       </ol>
       <div class="carousel-inner caro">
         <div class="carousel-item active">
-          <img src={cover} class="d-block w-100" alt="cover"/>
+          <img src={cover1} class="d-block w-100" alt="cover"/>
           <div class="carousel-caption  d-md-block">
-          {/* <div className="button_part"><button type="button" class="btn btn-success login">Log in</button> Or <button type="button" class="btn btn-success login">Register</button> to Enjoy <button type="button" class="btn btn-light">passenger Quick pick</button></div> */}
-            
           </div>
         </div>
         <div class="carousel-item">
-          <img src={cover} class="d-block w-100" alt="cover"/>
+          <img src={cover2} class="d-block w-100" alt="cover"/>
           <div class="carousel-caption d-none d-md-block">
             
           </div>
         </div>
         <div class="carousel-item">
-          <img src={cover} class="d-block w-100" alt="cover"/>
+          <img src={cover3} class="d-block w-100" alt="cover"/>
           <div class="carousel-caption d-none d-md-block">
             
           </div>

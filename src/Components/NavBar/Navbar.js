@@ -1,15 +1,37 @@
 import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import logo from "./logo/Final Logo.png";
-import BookmarkIcon from "@material-ui/icons/Bookmark";
-import icon11 from "../NavBar/icon-images/browser.png";
-import icon12 from "../NavBar/icon-images/user.png";
+
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { faAd } from '@fortawesome/free-solid-svg-icons';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHandshake } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
+
+
+
+const useStyles = makeStyles(() => ({
+  link : {
+    "&:hover": {
+      textDecoration: "none"
+    }
+  }
+}));
 
 
 function Navbar() {
@@ -17,36 +39,37 @@ function Navbar() {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const classes = useStyles();
+
   return (
     <>
-      <IconContext.Provider value={{ color: "#41B3F7" }}>
+      {/* <IconContext.Provider value={{ color: "#41B3F7" }}> */}
         <div className="navbar">
-          <Link to="/" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+          <span className="menu-bars">
+            <FontAwesomeIcon icon={faBars} onClick={showSidebar} size="1x" color="#007bff"/>
             <img src={logo} alt="logo" height="50px" width="80px" />
-          </Link>
+          </span>
           <nav class="nav ml-auto drop_txt">
             <a class="nav-link  " href="/" >
-              Partnership
+            <FontAwesomeIcon icon={faHandshake} className="mr-1"/> Partnership
             </a>
             <a class="nav-link " href="/">
-              <img src={icon11} height="22px" width="25px" alt=""></img>Promo
+              <FontAwesomeIcon icon={faAd} className="mr-1"/> Promo
             </a>
             <a class="nav-link " href="/">
-              <BookmarkIcon />
-              Saved
+            <FontAwesomeIcon icon={faSave} className="mr-1"/> Saved
             </a>
             <a class="nav-link " href="/">
-              My booking
+            <FontAwesomeIcon icon={faBook} className="mr-1"/> My Booking
             </a>
             <a class="nav-link " href="/">
-              Pay
+            <FontAwesomeIcon icon={faMoneyCheck} className="mr-1"/> Pay
             </a>
             <a class="nav-link " href="/">
-              <img src={icon12} height="22px" width="25px" alt=""></img>Log in
+              <FontAwesomeIcon icon={faSignInAlt} className="mr-1"/> Log In
             </a>
-            <Link to="/login_form">
-              <Button variant="contained" color="primary">Register</Button>
+            <Link to="/login_form" className={classes.link}>
+              <Button variant="contained"  style={{backgroundColor: "#28a745"}}>Register</Button>
             </Link>
           </nav>
         </div>
@@ -54,7 +77,7 @@ function Navbar() {
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose />
+                <FontAwesomeIcon icon={faWindowClose} size="2x"/>
               </Link>
             </li>
             {SidebarData.map((item, index) => {
@@ -69,7 +92,7 @@ function Navbar() {
             })}
           </ul>
         </nav>
-      </IconContext.Provider>
+      {/* </IconContext.Provider> */}
     </>
   );
 }
