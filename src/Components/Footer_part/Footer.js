@@ -1,14 +1,19 @@
 import React from "react";
 // import Wave_png from "../Footer_part/images/Wave.png"
-import paypal from "../Footer_part/images/paypal1.jpg";
-import visa from "../Footer_part/images/visa (1).png";
+
 import bikas from "../Footer_part/images/bikas1.png";
-import play from "../Footer_part/images/play store1.png";
-import apple from "../Footer_part/images/apple store2.jpg";
-import fb from "../Footer_part/images/fb1.png";
-import insta from "../Footer_part/images/instsgram.png";
-import Youtube from "../Footer_part/images/youtube.png";
+import play from "../Footer_part/images/google.png";
+import apple from "../Footer_part/images/Apple.png";
 import "./footer.css";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faCcPaypal } from '@fortawesome/free-brands-svg-icons';
+import { faCcVisa } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -24,109 +29,72 @@ function Footer() {
       </div>
 
       <div className="footer-content">
-        <div className="container text-center">
+        <div className="container">
           <div className="row">
-            <div className="col-md-3 col-sm-6">
-              <h3>About us</h3>
-              <p>How to book</p>
-              <p>Contact us</p>
-              <p>Help Center</p>
-              <p>Installment</p>
-              <img
-                src={paypal}
-                alt="paypal"
-                height="40px"
-                width="70px"
-                className="logog img-fluid mt-4"
-              ></img>
+            <div className="col-md-3 col-sm-6 ">
+              {/* <h6>About us</h6> */}
+              <div className="about-us"><a href="aboutus" alt="About us">About us</a></div>
+              <div className="mt-3">
+              <div className="mt-3"><a href="##"> How to book</a></div>
+              <div className="mt-3"><a href="##"> Contact us</a></div>
+              <div className="mt-3"><a href="##"> Help Center</a></div>
+              <div className="mt-3"><a href="##"> Installment</a></div>
+              </div>
+              <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal"/>
             </div>
-            <div className="col-md-3 col-sm-6">
-              <h3>Follow us On</h3>
-              <div>
-                <img
-                  src={fb}
-                  width="40px"
-                  height="30px"
-                  alt=""
-                  className="img-fluid mb-2 mr-2"
-                ></img>
-                 Facebook
+            <div className="col-md-3 col-sm-6 ">
+              <h6>Follow us On</h6>
+              <div className="mt-3 mr-1 d-flex  align-items-center">
+               <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg"/>
+               <a href="##" className="ml-2"><span>Facebook</span></a> 
+              </div>
+              <div className="mt-3 mr-4 d-flex  align-items-center">
+                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2"/><a href="##" className="ml-2">Twitter</a>
+              </div>
+              <div className="mt-3 mr-1 d-flex align-items-center">
+                <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950"/><a href="##" className="ml-2">Instagram</a>
+              </div>
+              <div className="mt-3 mr-2 d-flex align-items-center">
+                <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000"/><a href="##" className="ml-2">YouTube</a>
               </div>
               <div>
-                <img
-                  src={fb}
-                  width="40px"
-                  height="30px"
-                  alt=""
-                  className="img-fluid mb-2 mr-2"
-                ></img>
-                Facebook
-              </div>
-              <div>
-                <img
-                  src={insta}
-                  width="35px"
-                  height="30px"
-                  alt=""
-                  className="img-fluid mb-2 mr-2"
-                ></img>
-                  Instagram
-              </div>
-              <div>
-                <img
-                  src={Youtube}
-                  width="35px"
-                  height="30px"
-                  alt=""
-                  className="img-fluid mb-2 mr-2"
-                ></img>
-                  YouTube
-              </div>
-              <div>
-                <img
-                  src={visa}
-                  alt="paypal"
-                  height="40px"
-                  width="60px"
-                  className=" logog ml-3 img-fluid mt-3"
-                ></img>
+              <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa"/>
               </div>
             </div>
             <div className="col-md-3 col-sm-6">
-              <h3>Products</h3>
-              <p>Flights</p>
-              <p>Hotel</p>
-              <p>Train</p>
-              <p>Bus</p>
+              <h6>Products</h6>
+              <div className="mt-3"><a href="##"> Flights</a></div>
+              <div className="mt-3"><a href="##"> Hotels</a></div>
+              <div className="mt-3"><a href="##"> Train</a></div>
+              <div className="mt-3"><a href="##"> Bus</a></div>
               <img
                 src={bikas}
                 alt="paypal"
-                height="40px"
-                width="40px"
-                className=" logog ml-3 img-fluid mt-4"
+                height="30px"
+                width="30px"
+                className=" bikash  img-fluid"
               ></img>
             </div>
             <div className="col-md-3 col-sm-6">
-              <h3>Others</h3>
-              <h3>Products</h3>
-              <p>Flights</p>
-              <p>Hotel</p>
-              <p>Train</p>
-              <p>Bus</p>
-              <h2>Download Our App</h2>
+              <h6>Others Products</h6>
+              <div className="mt-3"><a href="##"> Flights</a></div>
+              <div className="mt-3"><a href="##"> Hotels</a></div>
+              <div className="mt-3"><a href="##"> Train</a></div>
+              <div className="mt-3"><a href="##"> Bus</a></div>
+              <p className="mt-3">Download Our App</p>
               <img
                 src={play}
-                alt="play+apple"
-                className="pa img-fluid"
-                height="70px"
-                width="130px"
+                alt="play"
+                className="play img-fluid"
+                height="50px"
+                width="150px"
               ></img>
               <img
                 src={apple}
-                alt="play+apple"
-                className="pa img-fluid"
+                alt="apple"
+                className="apple img-fluid"
                 height="50px"
-                width="130px"
+                width="160px"
               ></img>
             </div>
           </div>

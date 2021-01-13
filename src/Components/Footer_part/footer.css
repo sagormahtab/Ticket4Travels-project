@@ -1,14 +1,47 @@
 footer .footer-content {
   background: #273036;
   padding-bottom: 6%;
-  color: white;
 }
 
-footer .footer-content h3,
-.footer-content h2,
-.footer-content p {
-  color: white;
+
+/* .footer-content h2, */
+.footer-content a {
+  color: #BCB9B9 ;
+  font-size: 15px;
 }
+
+footer .footer-content h6{
+  font-weight: 700;
+  font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    color: white;
+}
+.about-us a{
+  font-weight: 700;
+  font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    color: white;
+}
+
+.paypal{
+  margin-top: 50px;
+}
+
+.visa{
+  margin-top: 55px;
+  margin-right: 50px;
+}
+
+.bikash{
+  margin-top: 60px;
+}
+
+.apple{
+  margin-left: -8px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .logog {

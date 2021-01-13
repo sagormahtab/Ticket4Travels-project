@@ -25,6 +25,7 @@ import HotelPreBookingPageInfo from "./Components/Hotel_Search_Pages/Initial-Hot
 import TrainSearchPagesCombines from "./Components/Train_Search_Pages/TrainSearchPagesCombines";
 import TrainPreBookingPageInfo from "./Components/Train_Search_Pages/Initial-Train-booking-page/TrainPreBookingPageInfo";
 import BookingSteper_Combine from "./Components/Stepper-page(booking,payment,process,Eticket)/BookingSteper_Combine";
+import About from "./Components/Footer_part/AboutUs/About";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Dropdown />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/aboutus" component={About} />
 
           <Route path="/my_booking" component={MyBooking} />
 

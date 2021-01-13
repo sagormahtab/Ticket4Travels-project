@@ -1,9 +1,18 @@
 
-.pic{
-    margin-right: -100px;
+.special-discount{
+    margin-left: -100px;
     
 }
 .text{
     /* margin-right: 580px; */
     font-size: large;
 }
+
+.best-price{
+    margin-left: -70px;
+}
+
+.special-dis-text{
+    margin-left: 50px;
+}
+

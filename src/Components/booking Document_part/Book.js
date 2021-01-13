@@ -1,8 +1,8 @@
 import React from 'react'
-import pic1 from "../booking Document_part/images/5-star.png"
-import pic2 from "../booking Document_part/images/4.png"
-import pic3 from "../booking Document_part/images/key-icon.png"
-import pic4 from "../booking Document_part/images/icon-3-(1).png"
+import pic1 from "../booking Document_part/images/Best-Price.png"
+import pic2 from "../booking Document_part/images/best-Price-Gurranty.png"
+import pic3 from "../booking Document_part/images/Key.png"
+import pic4 from "../booking Document_part/images/Real-Guest-Review.png"
 import "../booking Document_part/book.css"
 
 function Book() {
@@ -27,13 +27,13 @@ function Book() {
 
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-md-10 col-8 mt-5 ml-5">
+                        <div className="col-md-10 col-8 mt-5 special-dis-text">
                         <h5 className="text">Special Discounts</h5>
                     <p >
                     Lucrative discounts and hotels offers for our customers, newsletter subscribers and Tickets4Travel members.
                         </p>
                         </div>
-                        <div className="col-md-2 col-4 pic">
+                        <div className="col-md-2 col-4 special-discount">
                     <img src={pic2} height="250px" width="230px" className="img-fluid"  alt=""></img>
                     </div>
                     </div>
@@ -53,11 +53,11 @@ function Book() {
 
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-md-10 text_part2 col-8">
-                        <h5 className="text">Various payment</h5>
+                        <div className="col-md-10 col-8 special-dis-text">
+                        <h5 className="text">Various payment </h5>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has</p>
                         </div>
-                        <div className="col-md-2 col-4 pic">
+                        <div className="col-md-2 col-4 pic best-price">
                     <img src={pic4} height="250px" width="230px" className="img-fluid"  alt=""></img>
                     </div>
                     </div>
