@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Typography, CardHeader, Checkbox, InputLabel, MenuItem, FormHelperText, FormControl, Select } from '@material-ui/core';
+import { Card, CardContent,  CardHeader, Checkbox, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import "../Sort-Results-part/sortResults.css"
@@ -15,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
-
-
 
 
 const cityList = [
@@ -36,11 +34,11 @@ function SortResults() {
     };
     return (
         <div>
-            <div className="">
+            <div className=" mt-5">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
-                            <Card style={{ width: "300px" }}>
+                        <div className="col-md-4">
+                            <Card >
                                 <CardHeader title="Sort In result" subheader="Sort your search result by:-">
                                 </CardHeader>
                                 <hr></hr>
@@ -78,20 +76,20 @@ function SortResults() {
                                 </CardContent>
                             </Card>
                         </div>
-                        <div className="col-md-3 col-12 form1">
+                        <div className="col-md-6 col-6 form1">
                             <Autocomplete
                                 id="combo-box-demo"
                                 freeSolo
                                 options={cityList}
                                 getOptionLabel={(option) => option.title}
-                                style={{ width: '300px' }}
+                                fullWidth
                                 renderInput={(params) => <TextField required {...params} label="City hotel place to go" variant="outlined" />}
                             />
                         </div>
-                        <div className="col-md-3 col-6 form2">
+                        <div className="col-md-2 col-6 formControl">
 
                             <FormControl variant="outlined" className={classes.formControl}>
-                                <InputLabel id="demo-simple-select-outlined-label">Total Price</InputLabel>
+                                <InputLabel >Total Price</InputLabel>
                                 <Select
                                     value={price}
                                     onChange={handleChange}

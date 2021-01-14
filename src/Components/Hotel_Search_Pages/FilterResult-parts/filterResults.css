@@ -95,6 +95,25 @@
   height: 230px;
 }
 
+.ImpressiveLogo{
+  margin-left: -11px;
+}
+.impressiveRate{
+  margin-left: -11px;
+}
+.Amount{
+  color: #f96d01;
+  font-weight: 500;
+  font-size: large;
+}
+
+.AccordionText{
+  font-size: small;
+  margin: 0;
+}
+
+
+
 @media (max-width: 40em) {
   .hotelFilter1 {
     display: none;

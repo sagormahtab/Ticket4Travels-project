@@ -19,8 +19,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -40,50 +40,20 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    id: `scrollable-auto-tab-${index}`,
+    'aria-controls': `scrollable-auto-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: '100%',
     backgroundColor: theme.palette.background.paper,
-    marginTop: 30
-  },
-  interestTab1: {
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "20%",
-      width: "20%"
-    },
-  },
-  interestTab2: {
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "20%",
-      width: "20%"
-    },
-  },
-  interestTab3: {
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "20%",
-      width: "20%"
-    },
-  },
-  interestTab4: {
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "20%",
-      width: "20%"
-    },
-  },
-  interestTab5: {
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "20%",
-      width: "20%"
-    },
   },
 }));
 
-export default function SimpleTabs() {
+export default function ScrollableTabsButtonAuto() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -91,17 +61,28 @@ export default function SimpleTabs() {
     setValue(newValue);
   };
 
+
+
+
+
   return (
 
     <div className={`${classes.root} container`}>
       <h1 className="text-center mt-5">What interests you?</h1>
       <Grid container item sm={5} md={12} spacing={3}>
-        <Tabs value={value} onChange={handleChange}>
-          <Tab className={`${classes.interestTab1} interestTab1`} label="Top Flights Routes" {...a11yProps(0)} />
-          <Tab className={`${classes.interestTab2} interestTab2`} label="Top Hotel Destinations" {...a11yProps(1)} />
-          <Tab className={`${classes.interestTab3} interestTab3`} label="Top Packages Destination" {...a11yProps(2)} />
-          <Tab className={`${classes.interestTab4} interestTab4`} label="For Your Connectivity" {...a11yProps(3)} />
-          <Tab className={`${classes.interestTab5} interestTab5`} label="Top Things to Do" {...a11yProps(4)} />
+      <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
+          scrollButtons= "on"
+          aria-label="scrollable auto tabs example">
+          <Tab  label="Top Flights Routes" {...a11yProps(0)} />
+          <Tab  label="Top Hotel Destinations" {...a11yProps(1)} />
+          <Tab  label="Top Packages Destination" {...a11yProps(2)} />
+          <Tab  label="For Your Connectivity" {...a11yProps(3)} />
+          <Tab  label="Top Things to Do" {...a11yProps(4)} />
         </Tabs>
         <hr></hr>
 

@@ -4,13 +4,7 @@ import hotelBanner from "./images/Hotel-Banner-Without-Button.png"
 function HotelPage() {
     return (
         <div>
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src={hotelBanner} class="d-block w-100" alt="" className="img-fluid"/>
-    </div>
-  </div>
-</div>
+            <img src={hotelBanner} alt="hotelBanner" className="img-fluid" width="100%"></img>
         </div>
     )
 }

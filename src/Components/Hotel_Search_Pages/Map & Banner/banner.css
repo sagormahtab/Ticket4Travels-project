@@ -10,9 +10,9 @@
     background-color: #c4f5ff;
 }
 .hotelapplogo{
-    position: relative;
-    z-index: 3;
-    margin-left: -170px;
+
+    /* margin-left: -170px; */
+    width: 100%;
 }
 .hotelBannerCard{
     width: 22rem;
