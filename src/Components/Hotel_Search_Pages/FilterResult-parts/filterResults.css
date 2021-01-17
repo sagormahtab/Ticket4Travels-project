@@ -95,24 +95,22 @@
   height: 230px;
 }
 
-.ImpressiveLogo{
+.ImpressiveLogo {
   margin-left: -11px;
 }
-.impressiveRate{
+.impressiveRate {
   margin-left: -11px;
 }
-.Amount{
+.Amount {
   color: #f96d01;
   font-weight: 500;
   font-size: large;
 }
 
-.AccordionText{
+.AccordionText {
   font-size: small;
   margin: 0;
 }
-
-
 
 @media (max-width: 40em) {
   .hotelFilter1 {
@@ -137,9 +135,10 @@
   .hotelfilterCard2 {
     height: 300px !important;
   }
-  .hotelPriceRange {
+  /* .hotelPriceRange {
+
     display: none;
-  }
+  } */
 
   .hotelRating {
     display: none;
