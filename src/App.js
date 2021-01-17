@@ -26,6 +26,7 @@ import TrainSearchPagesCombines from "./Components/Train_Search_Pages/TrainSearc
 import TrainPreBookingPageInfo from "./Components/Train_Search_Pages/Initial-Train-booking-page/TrainPreBookingPageInfo";
 import BookingSteper_Combine from "./Components/Stepper-page(booking,payment,process,Eticket)/BookingSteper_Combine";
 import About from "./Components/Footer_part/AboutUs/About";
+import HotelDetails from "./Components/Hotel_Search_Pages/PerHotelDetails-page/HotelDetails";
 
 function App() {
   return (
@@ -95,6 +96,10 @@ function App() {
           <Route
             path="/hotel_search"
             component={HotelSearchPagesCombines}
+          ></Route>
+          <Route
+            path="/hotel"
+            component={HotelDetails}
           ></Route>
           <Route
             path="/hotelPre_Booking"
