@@ -1,6 +1,6 @@
 import React from 'react'
 import cover1 from "./images/Banner-1-large-FInal.jpg"
-import cover2 from "./images/Banner-2-Large-final.jpg"
+import cover2 from "./images/Banner-2-Large-Final.jpg"
 import cover3 from "./images/Banner-3-Large-Final.jpg"
 import "../Carousel/carousel.css"
 
