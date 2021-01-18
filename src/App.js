@@ -35,7 +35,7 @@ function App() {
         <HeadFirst />
         <Navbar />
 
-        <Dropdown />
+        {/* <Dropdown /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/aboutus" component={About} />
