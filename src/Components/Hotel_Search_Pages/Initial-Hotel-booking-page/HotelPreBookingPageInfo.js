@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
-  CardHeader,
-  Checkbox,
   CardMedia,
   Button,
 } from "@material-ui/core";
@@ -34,8 +32,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function HotelPreBookingPageInfo() {
   const classes = useStyles();
+
+
 
   return (
     <div>
@@ -158,12 +160,12 @@ function HotelPreBookingPageInfo() {
                 </CardContent>
               </CardContent>
 
-              <CardContent>
+              <CardContent style={{ backgroundColor: "#D3D3D2" }}>
                 <h6>Cancellation Policy:</h6>
-                <p> Before 7 Days of check in: FREE cancellation</p>
-                <p>  Within 7 Days of check in: Full amount of the first night's charge</p>
-                <p>  Failure to arrive at the hotel or property will be treated as No-show and will incur the first night’s charge.</p>
-                <p> During Blackout/Long Holidays period Cancellation policy will not be applicable..</p>
+                <p className="m-0" style={{ fontSize: "14px" }}> Before 7 Days of check in: FREE cancellation</p>
+                <p className="m-0" style={{ fontSize: "14px" }}>  Within 7 Days of check in: Full amount of the first night's charge</p>
+                <p className="m-0" style={{ fontSize: "14px" }}>  Failure to arrive at the hotel or property will be treated as No-show and will incur the first night’s charge.</p>
+                <p className="m-0" style={{ fontSize: "14px" }}> During Blackout/Long Holidays period Cancellation policy will not be applicable..</p>
               </CardContent>
             </Card>
           </div>
@@ -251,78 +253,16 @@ function HotelPreBookingPageInfo() {
                 </div>
               </CardContent>
             </Card>
+            <Link to="/booking_Stepper">
+              <Button variant="contained" color="primary" fullWidth className="p-3 mt-3">Continue</Button>
+            </Link>
           </div>
         </div>
 
-        <div className="row mt-5">
-          <div className="col-md-10 col-12 text-left">
-            <Card className="flightprebookCard2">
-              <CardHeader title="Flight Details" />
-              <CardContent>
-                <div className="txxt_div"></div>
-                <p>sun, 13 sep, 2021</p>
-                <p className="ml-5 mb-0">Lion jt-16</p>
-                <p className="logo_color mt-0 mb-0">Logo</p>
-                <p className="ml-5 mt-0">Promo</p>
 
-                <div className="row">
-                  <div className="col-md-4 col-4">18:00</div>
-                  <div className="col-md-4 col-4">21:20</div>
-                  <div className="col-md-4 col-4">01h, 50m</div>
-                </div>
-                {/* <div className="pointing2"><img src={pointing} width="20px" height="20px" alt="" className="img-fluid"></img></div> */}
-                <div className="row mt-3">
-                  <div className="col-md-4 col-4">Name</div>
-                  <div className="col-md-4 col-4">Name</div>
-                  <div className="col-md-4 col-4">
-                    <Checkbox
-                      color="primary"
-                      inputProps={{ "aria-label": "secondary checkbox" }}
-                    />
-                    Direct
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="col-md-2 se_div">
-            {/* <Card style={{ width: "300px" }}>
-                            <CardHeader title="Additional Information" />
-                            <CardContent>
-                                <p className="text-left">CGS <img src={nt} width="20px" height="20px" alt="" className="img-fluid"></img> DPS</p>
-                                <div className="text-left mt-4">
-                                    <p><img src={tik} width="20px" height="20px" alt="" className="img-fluid"></img><span className="green_div">Refundable</span></p>
-                                    <p><img src={tik} width="20px" height="20px" alt="" className="img-fluid"></img><span className="green_div">Refundable</span></p>
-                                </div>
-                            </CardContent>
-                        </Card> */}
-            <Card style={{ width: "300px" }} className="mt-4">
-              <CardHeader title="Price Details" />
-              <CardContent>
-                <div className="row">
-                  <div className="col-md-6 col-6">Name</div>
-                  <div className="col-md-6 col-6">Amount</div>
-                </div>
-                <div className="row mt-3">
-                  <div className="col-md-6 col-6">Price you pay</div>
-                  <div className="col-md-6 col-6">Amount</div>
-                </div>
-              </CardContent>
-            </Card>
-            <div className="mt-4">
-              <Link to="/booking_Stepper">
-                <Button
-                  className={classes.HotelButton}
-                  variant="contained"
-                  size="large"
-                  color="primary"
-                >
-                  Continue to Payment
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
+
+
+
       </div>
     </div>
   );
