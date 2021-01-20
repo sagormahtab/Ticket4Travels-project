@@ -7,9 +7,9 @@ import LaunchCard1 from "./LaunchCard1/LaunchCard1"
 function LaunchSearchPagesCombines() {
     return (
         <div>
-            <LaunchBanner/>
-            <LaunchSearchR/>
-            <LaunchCard1/>
+            <LaunchBanner />
+            <LaunchSearchR />
+            {/* <LaunchCard1/> */}
         </div>
     )
 }
