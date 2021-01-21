@@ -27,6 +27,10 @@ import TrainPreBookingPageInfo from "./Components/Train_Search_Pages/Initial-Tra
 import BookingSteper_Combine from "./Components/Stepper-page(booking,payment,process,Eticket)/BookingSteper_Combine";
 import About from "./Components/Footer_part/AboutUs/About";
 import HotelDetails from "./Components/Hotel_Search_Pages/PerHotelDetails-page/HotelDetails";
+import BusRoute from "./Components/Bus_Search_Pages/BusRoute-ForFooter/BusRoute";
+import LaunchRoute from "./Components/Launch_Search_Pages/LaunchRoute-ForFooter/LaunchRoute";
+import TrainRoute from "./Components/Train_Search_Pages/TrainRoute-ForFooter/TrainRoute";
+import FlightRoute from "./Components/Flight_Search_Pages/FlightRoute-ForFooter/FlightRoute";
 
 function App() {
   return (
@@ -59,6 +63,10 @@ function App() {
             path="/flight_search"
             component={FlightSearchPagesCombines}
           ></Route>
+          <Route
+            path="/flight"
+            component={FlightRoute}
+          ></Route>
           <Route path="/flightPre_Booking" component={FlightName}></Route>
 
           {/* Flight-Search-END */}
@@ -68,6 +76,10 @@ function App() {
             component={TrainSearchPagesCombines}
           ></Route>
           <Route
+            path="/train"
+            component={TrainRoute}
+          ></Route>
+          <Route
             path="/trainPre_Booking"
             component={TrainPreBookingPageInfo}
           ></Route>
@@ -75,6 +87,7 @@ function App() {
 
           {/* bUS-SEARCH-START */}
           <Route path="/bus_search" component={BusSearchPagesCombines}></Route>
+          <Route path="/bus" component={BusRoute}></Route>
           <Route
             path="/busPre_Booking"
             component={BusPreBookingPageInfo}
@@ -85,6 +98,10 @@ function App() {
           <Route
             path="/launch_search"
             component={LaunchSearchPagesCombines}
+          ></Route>
+          <Route
+            path="/launch"
+            component={LaunchRoute}
           ></Route>
           <Route
             path="/launchPre_Booking"
@@ -116,8 +133,8 @@ function App() {
             component={BookingSteper_Combine}
           ></Route>
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }
