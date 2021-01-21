@@ -35,38 +35,44 @@ function Footer() {
               {/* <h6>About us</h6> */}
               <div className="about-us"><a href="aboutus" alt="About us">About us</a></div>
               <div className="mt-3">
-              <div className="mt-3"><a href="##"> How to book</a></div>
-              <div className="mt-3"><a href="##"> Contact us</a></div>
-              <div className="mt-3"><a href="##"> Help Center</a></div>
-              <div className="mt-3"><a href="##"> Installment</a></div>
+                <div className="mt-3"><a href="##"> How to book</a></div>
+                <div className="mt-3"><a href="##"> Contact us</a></div>
+                <div className="mt-3"><a href="##"> Help Center</a></div>
+                <div className="mt-3"><a href="##"> Installment</a></div>
               </div>
-              <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal"/>
+              <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" />
             </div>
             <div className="col-md-3 col-sm-6 ">
               <h6>Follow us On</h6>
               <div className="mt-3 mr-1 d-flex  align-items-center">
-               <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg"/>
-               <a href="##" className="ml-2"><span>Facebook</span></a> 
+                <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg" />
+                <a href="##" className="ml-2"><span>Facebook</span></a>
               </div>
               <div className="mt-3 mr-4 d-flex  align-items-center">
-                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2"/><a href="##" className="ml-2">Twitter</a>
+                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2" /><a href="##" className="ml-2">Twitter</a>
               </div>
               <div className="mt-3 mr-1 d-flex align-items-center">
-                <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950"/><a href="##" className="ml-2">Instagram</a>
+                <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950" /><a href="##" className="ml-2">Instagram</a>
               </div>
               <div className="mt-3 mr-2 d-flex align-items-center">
-                <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000"/><a href="##" className="ml-2">YouTube</a>
+                <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000" /><a href="##" className="ml-2">YouTube</a>
               </div>
               <div>
-              <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa"/>
+                <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa" />
               </div>
             </div>
             <div className="col-md-3 col-sm-6">
               <h6>Products</h6>
-              <div className="mt-3"><a href="##"> Flights</a></div>
-              <div className="mt-3"><a href="##"> Hotels</a></div>
-              <div className="mt-3"><a href="##"> Train</a></div>
-              <div className="mt-3"><a href="##"> Bus</a></div>
+              <div className="mt-3">
+                <Link to="/flight"><a href="##"> Flights</a></Link></div>
+              <div className="mt-3">
+                <Link to="/hotel"><a href="##"> Hotels</a></Link></div>
+              <div className="mt-3">
+                <Link to="/launch"><a href="##"> Launch</a></Link></div>
+              <div className="mt-3">
+                <Link to="/bus"><a href="##"> Bus</a></Link></div>
+              <div className="mt-3">
+                <Link to="/train"><a href="##"> Train</a></Link></div>
               <img
                 src={bikas}
                 alt="paypal"
