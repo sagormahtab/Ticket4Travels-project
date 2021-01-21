@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import launchBanner from "./images/Launch-Banner-2.png"
 
 
 
@@ -44,7 +45,7 @@ const LaunchRoute = () => {
 
     return (
         <div className="container">
-            <div className="row">
+            <div className="row mt-5">
                 <div className="col-sm-12 col-md-6 col-lg-6 col-12">
                     <Card>
                         <CardContent>
@@ -100,7 +101,9 @@ const LaunchRoute = () => {
                         </CardContent>
                     </Card>
                 </div>
-                <div className="col-sm-12 col-md-6 col-lg-6 col-12"> Any Image</div>
+                <div className="col-sm-12 col-md-6 col-lg-6 col-12">
+                    <img alt="BusBanner" src={launchBanner} className="img-fluid"></img>
+                </div>
             </div>
         </div>
     )
