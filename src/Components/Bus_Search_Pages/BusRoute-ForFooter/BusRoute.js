@@ -28,7 +28,7 @@ const BusRoute = () => {
         { title: 'Cox Bazar' }
     ];
 
-    const { register, handleSubmit } = useForm(); // initialise the hook
+    const { handleSubmit } = useForm(); // initialise the hook
     const onSubmit = (data) => {
         console.log(data);
         redirect();

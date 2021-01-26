@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, Checkbox, CardMedia, Button, Accordion, AccordionSummary, AccordionDetails, FormControlLabel } from '@material-ui/core';
+import { Card, CardContent, CardHeader, Checkbox, CardMedia, Button, } from '@material-ui/core';
 
 import "../FilterResult-parts/filterResults.css"
 import architecture from "../FilterResult-parts/images/architecture-1048092_1920.jpg"
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         height: "auto"
     },
     hotelContent: {
-        flex: '1 1 0 auto',
+        flex: '1 1  auto',
 
     },
     checkInWithTex: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
         marginTop: "50px"
     },
     priceFilter: {
-        height: 10,
+        height: 40,
         width: "300px"
     },
     input: {
@@ -58,6 +58,12 @@ const useStyles = makeStyles({
         height: 0,
         paddingTop: '56.25%', // 16:9,
         marginTop: '30'
+    },
+
+    link: {
+        "&:hover": {
+            textDecoration: "none"
+        }
     }
 });
 
@@ -87,7 +93,7 @@ export default function InputSlider() {
             <div className="">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-lg-4 col-sm-12 col-12">
                             <Card className="hotelFilter1 mt-4">
                                 <CardHeader title="Booking Policy" />
                                 <hr></hr>
@@ -97,8 +103,8 @@ export default function InputSlider() {
                                 />Free cencelation
                             </Card>
                         </div>
-                        <div className="col-md-8 col-12 ">
-                            <Link to="/hotel">
+                        <div className="col-md-8 col-lg-8 col-sm-12 col-12 ">
+                            <Link to="/hotel" className={classes.link}>
                                 <Card className={classes.root}>
                                     <CardMedia>
                                         <img src={architecture} alt="" width="200px" height="240px"></img>
@@ -138,8 +144,8 @@ export default function InputSlider() {
 
 
 
-                    <div className="row">
-                        <div className="col-md-4">
+                    <div className="row mt-2">
+                        <div className="col-md-4 col-12">
                             <Card className="hotelPriceRange" >
 
                                 <CardHeader title="Price Range Per Night" />

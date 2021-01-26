@@ -9,7 +9,6 @@ import {
   Popover,
   Typography,
   FormControl,
-  InputLabel,
   Select,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -34,16 +33,27 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import hotelPic from "./images/hotel-img1.jpg";
+import Hotel from "./images/hotel-img1.jpg"
+
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   CardRoot: {
     display: "flex",
+    flexWrap: "wrap",
     width: "100%",
     height: "auto",
   },
+  HotelCardMedia: {
+    [theme.breakpoints.down('sm')]: {
+      width: "100%"
+    },
+  },
   hotelContent: {
     flex: "1 1 0 auto",
+    [theme.breakpoints.down('sm')]: {
+      flex: "100%"
+    },
   },
   bookNowContent: {
     flex: "1 1  auto",
@@ -72,7 +82,7 @@ const HotelDetails = () => {
   };
 
   const [persons, setPersons] = useState(1);
-  const [room, setRoom] = useState(1);
+  const [room] = useState(1);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -86,16 +96,10 @@ const HotelDetails = () => {
 
   const open = Boolean(anchorEl);
 
-  const [numOfRoom, setNumOfRoom] = React.useState({
-    selectRoom: 1,
-  });
+  const [numberOfRoom, setNumberOfRoom] = React.useState('1');
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    setNumOfRoom({
-      ...numOfRoom,
-      [name]: event.target.value,
-    });
+    setNumberOfRoom(event.target.value);
   };
 
   const classes = useStyles();
@@ -104,8 +108,8 @@ const HotelDetails = () => {
     <div className="container mt-5">
       <Card>
         <CardContent>
-          <div className="row">
-            <div className="col-md-3">
+          <div className="row ">
+            <div className="col-md-3 mt-2">
               <TextField
                 id="outlined-basic"
                 label="Where Are You Going?"
@@ -113,10 +117,11 @@ const HotelDetails = () => {
                 fullWidth
               />
             </div>
-            <div className="col-md-2">
+            <div className="col-md-2 mt-2">
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
                   disableToolbar
+                  fullWidth
                   className="ml-2"
                   variant="outline"
                   format="MM/dd/yyyy"
@@ -129,10 +134,11 @@ const HotelDetails = () => {
                 />
               </MuiPickersUtilsProvider>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-2 mt-2">
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
                   disableToolbar
+                  fullWidth
                   className="ml-2"
                   variant="outline"
                   format="MM/dd/yyyy"
@@ -145,7 +151,7 @@ const HotelDetails = () => {
                 />
               </MuiPickersUtilsProvider>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 mt-2">
               <ExpansionPanel>
                 <ExpansionPanelSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -203,7 +209,9 @@ const HotelDetails = () => {
           <hr></hr>
 
           <div className="row mt-3">
-            <div className="col-md-6">Images</div>
+            <div className="col-md-6">
+              <img src={Hotel} alt="One Kind Of Hotel" className="img-fluid"></img>
+            </div>
             <div className="col-md-6">
               <CardHeader title="The Raintree Dhaka" />
               <div className="ml-3">
@@ -285,284 +293,268 @@ const HotelDetails = () => {
 
       {/* Hotel card start */}
       <Card>
-          <CardContent>
+        <CardContent>
           <div className="row mt-5">
-        <div className="col-md-12">
-          <Card className={classes.CardRoot} >
-            <CardMedia>
-              <img
-                src={hotelPic}
-                alt="Hotel"
-                width="280px"
-                height="280px"
-              ></img>
-            </CardMedia>
+            <div className="col-md-12">
+              <Card className={classes.CardRoot} >
+                <CardMedia className={classes.HotelCardMedia}>
+                  <img
+                    src={hotelPic}
+                    alt="Hotel"
+                    width="280px"
+                    height="280px"
+                  ></img>
+                </CardMedia>
 
-            <CardContent className={classes.hotelContent}>
-              <CardHeader title="Superior (Single)" className="pb-0" />
-              <CardContent>
-                <FontAwesomeIcon icon={faWifi} color="green" size="sm" />
-                <span className="ml-1 mt-0">Wifi</span>
+                <CardContent className={classes.hotelContent}>
+                  <CardHeader title="Superior (Single)" className="pb-0" />
+                  <CardContent>
+                    <FontAwesomeIcon icon={faWifi} color="green" size="sm" />
+                    <span className="ml-1 mt-0">Wifi</span>
 
-                <div className="mt-2">
-                  <Button variant="outlined" color="secondary" size="small">
-                    Not Included: 15% VAT & 10% Service Charge
+                    <div className="mt-2">
+                      <Button variant="outlined" color="secondary" size="small">
+                        Not Included: 15% VAT & 10% Service Charge
                   </Button>
-                </div>
+                    </div>
 
-                <div className="mt-3">
-                  <FontAwesomeIcon icon={faCheckSquare} />
-                  <span
-                    aria-owns={open ? "mouse-over-popover" : undefined}
-                    aria-haspopup="true"
-                    onMouseEnter={handlePopoverOpen}
-                    onMouseLeave={handlePopoverClose}
-                    style={{ fontSize: "small", marginLeft: "3px" }}
-                  >
-                    Cancellation policy
+                    <div className="mt-3">
+                      <FontAwesomeIcon icon={faCheckSquare} />
+                      <span
+                        aria-owns={open ? "mouse-over-popover" : undefined}
+                        aria-haspopup="true"
+                        onMouseEnter={handlePopoverOpen}
+                        onMouseLeave={handlePopoverClose}
+                        style={{ fontSize: "small", marginLeft: "3px" }}
+                      >
+                        Cancellation policy
                   </span>
-                  <Popover
-                    id="mouse-over-popover"
-                    className={classes.popover}
-                    classes={{
-                      paper: classes.paper,
-                    }}
-                    open={open}
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "left",
-                    }}
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "left",
-                    }}
-                    onClose={handlePopoverClose}
-                    disableRestoreFocus
-                  >
-                    <Typography>
-                      {/* <CardHeader title="Cancellation policy"/> */}
-                      <CardContent>
-                        <p>Before 7 days in Check-in free cencelation</p>
-                      </CardContent>
-                    </Typography>
-                  </Popover>
-                </div>
+                      <Popover
+                        id="mouse-over-popover"
+                        className={classes.popover}
+                        classes={{
+                          paper: classes.paper,
+                        }}
+                        open={open}
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "left",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "left",
+                        }}
+                        onClose={handlePopoverClose}
+                        disableRestoreFocus
+                      >
+                        <Typography>
+                          {/* <CardHeader title="Cancellation policy"/> */}
+                          <CardContent>
+                            <p>Before 7 days in Check-in free cencelation</p>
+                          </CardContent>
+                        </Typography>
+                      </Popover>
+                    </div>
 
-                <div className="mt-3">
-                  <span>
-                    <span style={{ fontWeight: "bold" }}>Capacity</span>{" "}
-                    <FontAwesomeIcon icon={faUser} size="sm" />
-                    <span style={{ fontSize: "small" }}>1 adults</span>
-                  </span>
-                </div>
-              </CardContent>
-            </CardContent>
+                    <div className="mt-3">
+                      <span>
+                        <span style={{ fontWeight: "bold" }}>Capacity</span>{" "}
+                        <FontAwesomeIcon icon={faUser} size="sm" />
+                        <span style={{ fontSize: "small" }}>1 adults</span>
+                      </span>
+                    </div>
+                  </CardContent>
+                </CardContent>
 
-            <CardContent className={classes.bookNowContent}>
-              <Card style={{backgroundColor: "#F3F1EB"}}>
-                <CardContent>
-                  <p className="text-right">Price Per Night</p>
-                  <div>
-                    <h2 className="text-right"> BDT 7470</h2>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-8 text-right">Number of Rooms</div>
-                    <div className="col-md-4 text-right">
-                      <FormControl className={classes.formControl} fullWidth>
-                        {/* <InputLabel htmlFor="age-native-simple">
+                <CardContent className={classes.bookNowContent}>
+                  <Card style={{ backgroundColor: "#F3F1EB" }}>
+                    <CardContent>
+                      <p className="text-right">Price Per Night</p>
+                      <div>
+                        <h2 className="text-right"> BDT 7470</h2>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-8 text-right">Number of Rooms</div>
+                        <div className="col-md-4 text-right">
+                          <FormControl className={classes.formControl} fullWidth>
+                            {/* <InputLabel htmlFor="age-native-simple">
                           Number OF Rooms
                         </InputLabel> */}
-                        <Select
-                          native
-                          value={numOfRoom.selectRoom}
-                          onChange={handleChange}
-                        >
-                            <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
-                          <option value={4}>4</option>
-                        </Select>
-                      </FormControl>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                      <Link to="/hotelPre_Booking" className={classes.hotelBookLink}>
-                      <Button variant="contained" style={{backgroundColor: "#3e8f3e", color: "white", marginLeft: "195px"}}>Book Now</Button>
-                      </Link>
-              </div>
+                            <Select
+
+                              value={numberOfRoom}
+                              onChange={handleChange}
+
+                            > <option aria-label="None" value="1" />
+                              <option value={1}>1</option>
+                              <option value={2}>2</option>
+                              <option value={3}>3</option>
+                              <option value={4}>4</option>
+                            </Select>
+                          </FormControl>
+                        </div>
+                      </div>
+                      <div className="mt-3">
+                        <Link to="/hotelPre_Booking" className={classes.hotelBookLink}>
+                          <Button variant="contained" style={{ backgroundColor: "#3e8f3e", color: "white", marginLeft: "195px" }}>Book Now</Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+
                 </CardContent>
               </Card>
-
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-          </CardContent>
+            </div>
+          </div>
+        </CardContent>
       </Card>
 
 
       {/* Features of The Raintree Dhaka start */}
       <Card className="mt-5">
-          <CardContent>
-              <CardHeader title="Features of The Raintree Dhaka"/>
-              <hr></hr>
-              <div className="row ml-1">
-                  <div className="col-md-2">
-                      <h5>Food & Drinks</h5>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Snack Bar/Restaurant</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Lunch & Dinner</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Breakfast</span>
-                  </div>
-              </div>
-              <hr></hr>
-
-              <div>
-                  <CardHeader subheader="Services and conveniences" style={{ paddingBottom: "0px"}}/>
-                  <div className="service-body">
-                      <ul>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Newspape</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Express Check In/Check Out</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Transport Service</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Smoking Zone</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Parking Area</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> 24/7 Front Desk</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Business center</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Tour Guide</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Doctor</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Terrace</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Refrigerator</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Oven</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Early Wake up call</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Wake up service</span></li>
-                          <li><FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Wheel chair</span></li>
-                      </ul>
-                  </div>
-              </div>
-              <hr></hr>
-
-          </CardContent>
+        <CardContent>
+          <CardHeader title="Features of The Raintree Dhaka" />
+          <hr></hr>
+          <div className="row ml-1">
+            <div className="col-md-2 col-3">
+              <h5>Food & Drinks</h5>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Snack Bar/Restaurant</span>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Lunch & Dinner</span>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Breakfast</span>
+            </div>
+          </div>
           <hr></hr>
 
           <div>
-              
-                  <div className="row ml-1">
-                      <div className="col-md-2">
-                          <h5>Internet</h5>
-                      </div>
+            {/* <CardHeader subheader="Services and conveniences" style={{ paddingBottom: "0px" }} /> */}
+            <h5 className="ml-3">Services and conveniences</h5>
 
-                      <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> WiFi</span>
-                      </div>
-                  </div>
-                  <hr></hr>
-
-
-                  <div className="row ml-1">
-                  <div className="col-md-2">
-                      <h5>Fitness, Relaxing</h5>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Massage</span>
-                  </div>
-                  <div className="col-md-1 ">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Spa</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Swimming Pool</span>
-                  </div>
-                  <div className="col-md-1">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Gym</span>
-                  </div>
+            <div className="row ml-3">
+              <div className="col-md-3 col-3">
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Newspape</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Express Check In/Check Out</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Transport Service</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Smoking Zone</span></div>
               </div>
-              <hr></hr>
-
-
-              <div className="row ml-1">
-                  <div className="col-md-2">
-                      <h5>Fitness, Relaxing</h5>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Daily Housekeeping</span>
-                  </div>
-                  <div className="col-md-2 ">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Free toiletries</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Long beds</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Personal Locker</span>
-                  </div>
-                  <div className="col-md-2">
-                      <FontAwesomeIcon icon={faCheckCircle} size="xs"/> <span style={{fontSize: "small"}}> Air Conditioner</span>
-                  </div>
+              <div className="col-md-3 col-3">
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Parking Area</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> 24/7 Front Desk</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Business center</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Tour Guide</span></div>
               </div>
-             
+              <div className="col-md-3 col-3">
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Doctor</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Terrace</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Refrigerator</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Oven</span></div>
+              </div>
+              <div className="col-md-3 col-3">
+                <div ><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Early Wake up call</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Wake up service</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Wheel chair</span></div>
+                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Early Wake up call</span></div>
+              </div>
+            </div>
           </div>
-         
+
+
+
+        </CardContent>
+
+
+        <div>
+
+
+          <hr></hr>
+
+
+
+          <div className="row ml-1">
+            <div className="col-md-2">
+              <h5 className="ml-1">Fitness, Relaxing</h5>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Daily Housekeeping</span>
+            </div>
+            <div className="col-md-2 col-3 ">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Free toiletries</span>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Long beds</span>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Personal Locker</span>
+            </div>
+            <div className="col-md-2 col-3">
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Air Conditioner</span>
+            </div>
+          </div>
+
+        </div>
+
       </Card>
 
 
       {/* Nearby Landmarks start */}
       <Card className="mt-5">
-          <CardContent>
-              <h5 className="text-center">Nearby Landmarks</h5>
-              <hr></hr>
+        <CardContent>
+          <h5 className="text-center">Nearby Landmarks</h5>
+          <hr></hr>
 
-              <div className="row">
-                  <div className="col-md-12 col-12">
-                      <ul className="nearby-landmark">
-                          <li>
-                              <span>Banani, Dhaka</span>
-                              <span>0.29k</span>
-                          </li>
-                          <li>
-                              <span>Gulshan 1</span>
-                              <span>0.59 km</span>
-                          </li>
-                          <li>
-                              <span>Gulshan 2</span>
-                              <span>0.61 km</span>
-                          </li>
-                          <li>
-                              <span>Baridhara, Dhaka</span>
-                              <span>1.40 km</span>
-                          </li>
-                          <li>
-                              <span>Dhaka, Bangladesh</span>
-                              <span>1.72 km</span>
-                          </li>
-                          <li>
-                              <span>Dhaka Cantonment</span>
-                              <span>2.29 km</span>
-                          </li>
-                          <li>
-                              <span>Kuril, Progati Sharani, Dhaka</span>
-                              <span>3.02 km</span>
-                          </li>
-                          <li>
-                              <span>Nikunja, Dhaka</span>
-                              <span>4.15 km</span>
-                          </li>
-                          <li>
-                              <span>Farmgat, Dhaka</span>
-                              <span>4.78 km</span>
-                          </li>
-                          <li>
-                              <span>Kawran Bazar, Dhaka</span>
-                              <span>5.28 km</span>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </CardContent>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <ul className="nearby-landmark">
+                <li>
+                  <span>Banani, Dhaka</span>
+                  <span>0.29k</span>
+                </li>
+                <li>
+                  <span>Gulshan 1</span>
+                  <span>0.59 km</span>
+                </li>
+                <li>
+                  <span>Gulshan 2</span>
+                  <span>0.61 km</span>
+                </li>
+                <li>
+                  <span>Baridhara, Dhaka</span>
+                  <span>1.40 km</span>
+                </li>
+                <li>
+                  <span>Dhaka, Bangladesh</span>
+                  <span>1.72 km</span>
+                </li>
+                <li>
+                  <span>Dhaka Cantonment</span>
+                  <span>2.29 km</span>
+                </li>
+                <li>
+                  <span>Kuril, Progati Sharani, Dhaka</span>
+                  <span>3.02 km</span>
+                </li>
+                <li>
+                  <span>Nikunja, Dhaka</span>
+                  <span>4.15 km</span>
+                </li>
+                <li>
+                  <span>Farmgat, Dhaka</span>
+                  <span>4.78 km</span>
+                </li>
+                <li>
+                  <span>Kawran Bazar, Dhaka</span>
+                  <span>5.28 km</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </CardContent>
       </Card>
 
     </div>

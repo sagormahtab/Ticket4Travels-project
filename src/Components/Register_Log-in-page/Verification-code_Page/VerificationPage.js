@@ -13,9 +13,9 @@ import { Card, CardActions, CardContent, Typography, TextField, Button } from '@
 
 const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 500,
+        maxWidth: 600,
         [theme.breakpoints.down("md")]: {
-            maxWidth: 400
+            maxWidth: 480
         }
     },
 }));
@@ -37,7 +37,7 @@ function VerificationPage() {
                 <div className="row">
                     <div className="col-lg-6 col-md-6 col-12">
 
-                        <img src={WaveOnly} width="1000" height="500" className="waveClss_div img-fluid" alt=""></img>
+                        <img src={WaveOnly} className="waveClss_div img-fluid" alt=""></img>
                         <div className="container ml-3 under_DIV">
                             <div className="row">
                                 <div className="col-lg-6 col-md-6 col-12 mt-5">
@@ -68,7 +68,7 @@ function VerificationPage() {
                     <div className="col-lg-6 col-md-6 col-12 VerificationCard
                     _div">
                         <Card className={classes.root}>
-                            <CardContent style={{ width: '100%', height: 500 }}>
+                            <CardContent >
                                 <Typography variant="h2">Account Verification</Typography>
                                 <p className="text-left bg-Color mt-5">Verification code has been send to <span className="acqua_colorDiv">name@gmail.com</span> Please insert Verifiaction code to verify</p>
                                 <Typography variant="h5" className="text-left mt-4">Verification code</Typography>

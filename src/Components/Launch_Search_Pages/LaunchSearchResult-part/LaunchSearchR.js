@@ -34,7 +34,9 @@ function LaunchSearchR() {
             <div className="container">
                 <Card>
                     <CardContent>
-                        <FontAwesomeIcon icon={faArrowRight} size="2x" /><span>Dhaka - Chalitabunia on 24-January, 2021</span>
+                        <div className="d-flex  align-items-center">
+                            <FontAwesomeIcon icon={faArrowRight} size="2x" /> <span className="ml-3"> Dhaka - Chalitabunia on 24-January, 2021</span>
+                        </div>
                         <hr></hr>
 
                         <div className="Departure-title">
@@ -42,16 +44,16 @@ function LaunchSearchR() {
                         </div>
 
                         <div className="row mt-4">
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-lg-2 col-sm-2 col-4">
                                 <Button variant="outlined" color="primary" size="small">
                                     <FontAwesomeIcon icon={faArrowLeft} /> <span className="ml-2">Prev Day</span>
                                 </Button>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-lg-2 col-sm-2 col-4">
                                 <Button variant="outlined" color="primary" size="small">
                                     <FontAwesomeIcon icon={faArrowRight} /> <span className="ml-2">Prev Day</span>
                                 </Button></div>
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-lg-2 col-sm-2 col-4">
                                 <Button variant="outlined" color="primary" size="small">
                                     <FontAwesomeIcon icon={faSearch} /> <span className="ml-2">Prev Day</span>
                                 </Button>
@@ -60,7 +62,7 @@ function LaunchSearchR() {
 
 
                         <div className="row mt-5">
-                            <div className="col-md-12">
+                            <div className="col-md-12 col-lg-12 col-sm-12 col-12">
                                 <TableContainer component={Paper}>
                                     <Table className={classes.table}>
                                         <TableHead>
@@ -82,12 +84,12 @@ function LaunchSearchR() {
 
 
                         <div className="row mt-4">
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-lg-2 col-sm-2 col-4">
                                 <Button variant="outlined" color="primary" size="small">
                                     <FontAwesomeIcon icon={faArrowLeft} /> <span className="ml-2">Prev Day</span>
                                 </Button>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-lg-2 col-sm-2 col-4">
                                 <Button variant="outlined" color="primary" size="small">
                                     <FontAwesomeIcon icon={faArrowRight} /> <span className="ml-2">Prev Day</span>
                                 </Button></div>
@@ -95,10 +97,10 @@ function LaunchSearchR() {
 
 
                         <div className="row mt-5">
-                            <div className="col-md-6">
+                            <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                                 <h5>Available Launches</h5>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                                 <h5>Connect with Us</h5>
                             </div>
                         </div>

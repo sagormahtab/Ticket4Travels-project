@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
-import { IconContext } from "react-icons";
 import logo from "./logo/Final Logo.png";
 
 import Button from '@material-ui/core/Button';
@@ -49,7 +48,7 @@ function Navbar() {
           <FontAwesomeIcon icon={faBars} onClick={showSidebar} size="1x" color="#007bff" />
           <img src={logo} alt="logo" height="50px" width="80px" />
         </span>
-        <nav class="nav ml-auto drop_txt">
+        <nav class="nav ml-auto MenuBar-Contents">
           <a class="nav-link  " href="/" >
             <FontAwesomeIcon icon={faHandshake} className="mr-1" /> Partnership
             </a>

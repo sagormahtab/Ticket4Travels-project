@@ -13,9 +13,9 @@ import { Card, CardActions, CardContent, Typography, TextField, Button } from '@
 
 const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 500,
+        maxWidth: 600,
         [theme.breakpoints.down("md")]: {
-            maxWidth: 400
+            maxWidth: 480
         }
     },
 }));
@@ -64,7 +64,7 @@ const AcountInfomation = ({ submitForm1 }) => {
                 <div className="col-lg-6 col-md-6 col-12 mt-5 VerificationCard
                     _div">
                     <Card className={classes.root}>
-                        <CardContent style={{ width: '100%', height: 700 }}>
+                        <CardContent >
                             <Typography variant="h3">Account Information</Typography>
                             <p className="text-left bg-Color mt-5">One more step to become our <span className="acqua_colorDiv">Tickets4travel</span> member. Please enter your Fullname and passowrd to log in</p>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent,  CardHeader, Checkbox, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
+import { Card, CardContent, CardHeader, Checkbox, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import "../Sort-Results-part/sortResults.css"
@@ -76,7 +76,7 @@ function SortResults() {
                                 </CardContent>
                             </Card>
                         </div>
-                        <div className="col-md-6 col-6 form1">
+                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 form1 mt-3">
                             <Autocomplete
                                 id="combo-box-demo"
                                 freeSolo
@@ -86,7 +86,7 @@ function SortResults() {
                                 renderInput={(params) => <TextField required {...params} label="City hotel place to go" variant="outlined" />}
                             />
                         </div>
-                        <div className="col-md-2 col-6 formControl">
+                        <div className="col-md-2 col-lg-2 col-sm-12 col-12 formControl mt-2">
 
                             <FormControl variant="outlined" className={classes.formControl}>
                                 <InputLabel >Total Price</InputLabel>

@@ -3,48 +3,145 @@ footer .footer-content {
   padding-bottom: 6%;
 }
 
-
 /* .footer-content h2, */
 .footer-content a {
-  color: #BCB9B9 ;
+  color: #bcb9b9;
   font-size: 15px;
 }
 
-footer .footer-content h6{
+footer .footer-content h6 {
   font-weight: 700;
   font-size: 20px;
-    line-height: 24px;
-    letter-spacing: .5px;
-    color: white;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: white;
 }
-.about-us a{
+.about-us a {
   font-weight: 700;
   font-size: 20px;
-    line-height: 24px;
-    letter-spacing: .5px;
-    color: white;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: white;
 }
 
-.paypal{
-  margin-top: 50px;
+.AboutUs-body {
+  margin-left: 80px;
 }
 
-.visa{
-  margin-top: 55px;
+.paypal {
+  margin-top: 90px;
+}
+
+.visa {
+  margin-top: 101px;
   margin-right: 50px;
 }
 
-.bikash{
+.bikash {
   margin-top: 60px;
 }
 
-.apple{
+.apple {
   margin-left: -8px;
 }
-
 
 @media only screen and (max-width: 768px) {
   .logog {
     margin-bottom: 2.5rem;
+  }
+
+  .about-us {
+    text-align: center;
+  }
+  .about-us-content1 {
+    text-align: center;
+  }
+  .about-us-content2 {
+    text-align: center;
+  }
+  .about-us-content3 {
+    text-align: center;
+  }
+  .about-us-content4 {
+    text-align: center;
+  }
+  .paypal {
+    margin: auto;
+    display: block;
+  }
+  .followUs-Header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .followUs-body1 {
+    display: flex;
+    justify-content: center;
+  }
+  .followUs-body2 {
+    display: flex;
+    justify-content: center;
+  }
+  .followUs-body3 {
+    display: flex;
+    justify-content: center;
+  }
+  .followUs-body4 {
+    display: flex;
+    justify-content: center;
+  }
+  .visa {
+    margin: auto;
+    display: block;
+  }
+  .products-header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .products-body1 {
+    text-align: center;
+  }
+  .products-body2 {
+    text-align: center;
+  }
+  .products-body3 {
+    text-align: center;
+  }
+  .products-body4 {
+    text-align: center;
+  }
+  .products-body5 {
+    text-align: center;
+  }
+  .bikash {
+    margin: auto;
+    display: block;
+  }
+  .others-Products-Header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .others-Products-body1 {
+    text-align: center;
+  }
+  .others-Products-body2 {
+    text-align: center;
+  }
+  .others-Products-body3 {
+    text-align: center;
+  }
+  .others-Products-body4 {
+    text-align: center;
+  }
+  .Our-app-header {
+    text-align: center;
+  }
+
+  .play {
+    margin: auto;
+    display: block;
+  }
+  .apple {
+    margin: auto;
+    display: block;
   }
 }

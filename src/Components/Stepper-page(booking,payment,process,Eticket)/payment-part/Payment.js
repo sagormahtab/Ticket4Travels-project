@@ -57,13 +57,48 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    width: 170,
+  },
+  tab1: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  },
+  tab2: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  },
+  tab3: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  },
+  tab4: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  },
+  tab5: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
+  },
+  tab6: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      width: "100%"
+    }
   },
   tabPanel: {
     flexGrow: 1,
   },
-  widthClss: {
-    width: 100,
-  },
+
 }));
 
 export default function VerticalTabs({ handleNext, handleBack }) {
@@ -76,7 +111,7 @@ export default function VerticalTabs({ handleNext, handleBack }) {
 
   return (
     <React.Fragment>
-      <div className={`${classes.root} widthClss`}>
+      <div className={`${classes.root} `}>
         <Tabs
           orientation="vertical"
           variant="scrollable"
@@ -85,14 +120,14 @@ export default function VerticalTabs({ handleNext, handleBack }) {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Tab label="Credit/Debit Card" {...a11yProps(0)} />
-          <Tab label="Bank Transfer" {...a11yProps(1)} />
-          <Tab label="ATM" {...a11yProps(2)} />
-          <Tab label="BKASH" {...a11yProps(3)} />
-          <Tab label="Nogod" {...a11yProps(4)} />
-          <Tab label="Rocket" {...a11yProps(5)} />
+          <Tab className={`${classes.tab1} tab1`} label="Credit/Debit Card" {...a11yProps(0)} />
+          <Tab className={`${classes.tab1} tab1`} label="Bank Transfer" {...a11yProps(1)} />
+          <Tab className={`${classes.tab1} tab1`} label="ATM" {...a11yProps(2)} />
+          <Tab className={`${classes.tab1} tab1`} label="BKASH" {...a11yProps(3)} />
+          <Tab className={`${classes.tab1} tab1`} label="Nogod" {...a11yProps(4)} />
+          <Tab className={`${classes.tab1} tab1`} label="Rocket" {...a11yProps(5)} />
         </Tabs>
-        <div className={classes.tabPanel}>
+        <div >
           <TabPanel value={value} index={0}>
             <Elements stripe={stripePromise}>
               <CreditCard handleBack={handleBack} handleNext={handleNext} />
