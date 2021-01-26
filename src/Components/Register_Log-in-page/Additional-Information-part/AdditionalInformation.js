@@ -15,9 +15,9 @@ import { Card, CardActions, CardContent, Typography, TextField, Button } from '@
 
 const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 500,
+        maxWidth: 600,
         [theme.breakpoints.down("md")]: {
-            maxWidth: 400
+            maxWidth: 480
         }
     },
     container: {
@@ -72,7 +72,7 @@ function AdditionalInformation() {
                 <div className="col-lg-6 col-md-6 col-12 mt-3 additonalCard
                     _div">
                     <Card className={classes.root}>
-                        <CardContent style={{ width: '100%', height: 500 }}>
+                        <CardContent >
                             <Typography variant="h3">Additional Infomation</Typography>
                             <p className="text-left bg-Color mt-5">Fill out information below to receice Special offer just for YOU !!</p>
                             <Typography variant="h5" className="text-left mt-3">Gender</Typography>

@@ -16,9 +16,9 @@ import { Card, CardActions, CardContent, Typography, TextField, Button } from '@
 
 const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 500,
+        maxWidth: 600,
         [theme.breakpoints.down("md")]: {
-            maxWidth: 400
+            maxWidth: 480
         }
     },
 }));
@@ -43,7 +43,7 @@ function RegisterPageOne({ submitForm }) {
             <div className="">
                 <div className="row">
                     <div className="col-sm-6 col-md-6 ">
-                        <div className="womeIMG_div"> <img src={WomenPIC} width="600px" height="450px" alt="" className="img-fluid"></img></div>
+                        <div className="womeIMG_div"> <img src={WomenPIC} alt="" className="img-fluid"></img></div>
                         <div className="mt-5">
                             <img src={google_Store} width="110px" height="60px" alt="" className="img-fluid"></img>
                             <img src={Apple_Store} width="110px" height="45px" alt="" className="img-fluid"></img>
@@ -58,7 +58,7 @@ function RegisterPageOne({ submitForm }) {
 
                         <div>
                             <Card className={classes.root}>
-                                <CardContent style={{ width: '100%', height: 500 }}>
+                                <CardContent >
                                     <form onSubmit={handleSubmit}>
                                         <div className="form-group">
                                             <Typography variant="h5">Mobile Number</Typography>

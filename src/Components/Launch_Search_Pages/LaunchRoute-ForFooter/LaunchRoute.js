@@ -19,7 +19,7 @@ const LaunchRoute = () => {
 
     let history = useHistory();
     const redirect = () => {
-        history.push('/bus_search');
+        history.push('/launch_search');
     }
 
     const cityList = [
@@ -29,7 +29,7 @@ const LaunchRoute = () => {
         { title: 'Cox Bazar' }
     ];
 
-    const { register, handleSubmit } = useForm(); // initialise the hook
+    const { handleSubmit } = useForm(); // initialise the hook
     const onSubmit = (data) => {
         console.log(data);
         redirect();

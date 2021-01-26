@@ -25,7 +25,7 @@ const About = () => {
 
                 <div className="container">
 
-                    <h3 className="text-center">Who are we</h3>
+                    <h2 className="text-center">Who are we</h2>
 
                     <p className=" mt-4 main-content">We, Tickets4Travel, started our journey in 2020. Necessity drives Innovation, Innovation is necessity. In Bangladesh, we are becoming digital. But, in many sector, we are still lagging behind. Let’s hear how we initiated this startup, Our CEO, Mahjfujur Rahman Miraj, who wants to travel by launch but couldn’t find any digital solutions, he had to waste too many hours, but solutions didn’t happen. The same incident happens in the bus sector. So, He came up with an idea where general people can experience all services in a single platform.  Now, Tickets4Travel, developed an online platform, this serves people with bus, launch, air, train – tickets and hotel booking.
                     Tickets4Travel makes people life easier with the innovative solutions. We make people life much easier than before with our unique digital solutions.
@@ -34,7 +34,7 @@ const About = () => {
 
                     <h3 className="our-value-header text-center">Our Values</h3>
                     <div className="row">
-                        <div className="col-md-4 col-12 mt-5">
+                        <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-5">
                             <Card className="Our-value-CardRoot">
                                 <CardHeader
                                     classes={{ avatar: classes.avatar }}
@@ -51,7 +51,7 @@ const About = () => {
                             </Card>
                         </div>
 
-                        <div className="col-md-4 col-12 mt-5">
+                        <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-5">
                             <Card className="Our-value-CardRoot">
                                 <CardHeader
                                     classes={{ avatar: classes.avatar }}
@@ -69,7 +69,7 @@ const About = () => {
                             </Card>
                         </div>
 
-                        <div className="col-md-4 col-12 mt-5">
+                        <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-5">
                             <Card className="Our-value-CardRoot">
                                 <CardHeader
                                     classes={{ avatar: classes.avatar }}

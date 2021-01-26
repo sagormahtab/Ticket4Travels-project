@@ -80,7 +80,11 @@
 }
 
 @media (max-width: 40em) {
-  .drop_txt {
+  .MenuBar-Contents {
     display: none;
+  }
+
+  .nav-menu {
+    width: 250px;
   }
 }

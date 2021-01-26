@@ -19,7 +19,7 @@ function Home() {
         <InputForm />
       </MuiPickersUtilsProvider>
       <Login />
-      <Dropdown2 />
+      {/* <Dropdown2 /> */}
       <HotelPic />
       <PopularDeal />
       <PartnerShip />

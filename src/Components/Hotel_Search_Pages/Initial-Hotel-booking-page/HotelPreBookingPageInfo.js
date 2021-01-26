@@ -20,15 +20,20 @@ const useStyles = makeStyles((theme) => ({
   },
   CardRoot: {
     display: "flex",
+    flexWrap: "wrap",
     width: "100%",
     height: "auto",
   },
   hotelContent: {
-    flex: "1 1 0 auto",
+    flex: "1 1  auto",
+    [theme.breakpoints.down('sm')]: {
+      flex: "100%"
+    },
   },
   bookNowContent: {
     flex: "1 1  auto",
     marginTop: "10px",
+
   },
 }));
 
@@ -59,28 +64,28 @@ function HotelPreBookingPageInfo() {
                 <CardContent className={classes.hotelContent}>
                   <div className="ml-1">
                     <span style={{ fontWeight: "bold", fontSize: "25px" }}>
-                      The Raintree Dhaka{" "}
+                      The Raintree Dhaka
                     </span>
                   </div>
                   <CardContent className="pt-0">
-                    <FontAwesomeIcon icon={faStar} color="yelow" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="yelow" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="yelow" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="yelow" size="sm" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
 
                     <div className="row mt-4">
                       <div
-                        className="col-md-5"
+                        className="col-md-5 col-12 Check-In"
                         style={{ backgroundColor: "#D3D3D2 " }}
                       >
-                        <p>Check-In</p>
+                        <p className="text-center">Check-In</p>
                         <h2 className="text-center">18</h2>
                       </div>
                       <div
-                        className="col-md-5 ml-1"
+                        className="col-md-5 col-12 ml-1 Check-Out"
                         style={{ backgroundColor: "#D3D3D2 " }}
                       >
-                        <p>Check-Out</p>
+                        <p className="text-center">Check-Out</p>
                         <h2 className="text-center">18</h2>
                       </div>
                     </div>
@@ -135,7 +140,7 @@ function HotelPreBookingPageInfo() {
                     <p>1 Room</p>
                   </div>
                   <div className="row">
-                    <div className="col-md-6 ">
+                    <div className="col-md-6 col-6">
                       <span
                         style={{ fontWeight: "bold", fontSize: "12px" }}
                         className="px-0"
@@ -143,16 +148,16 @@ function HotelPreBookingPageInfo() {
                         1 Night & 2 Days
                       </span>
                     </div>
-                    <div className="col-md-6 px-0">
+                    <div className="col-md-6 col-6 px-0">
                       <span style={{ fontSize: "14px" }}>Change Room</span>
                     </div>
                   </div>
                   <hr></hr>
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-6">
                       <span>Room Capacity:</span>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-6">
                       <span style={{ fontSize: "14px" }}>1 Adult</span>
                     </div>
                   </div>
@@ -174,73 +179,73 @@ function HotelPreBookingPageInfo() {
             <Card>
               <CardContent>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Hotel Charges</span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>BDT 20,750.00</span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Discount</span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>BDT 13,280.00</span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Hotel Offer (64%)</span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>BDT 13,280.00</span>
                   </div>
                 </div>
                 <hr></hr>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Sub Total</span>
                   </div>
-                  <div className="col-md-6 ">
+                  <div className="col-md-6 col-6 ">
                     <span style={{ fontSize: "15px" }}>BDT 7,470.00</span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>
                       Service Charge & VAT
                     </span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>BDT 1,979.55</span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>
                       Service Charge (10%)
                     </span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>BDT 747.00</span>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <sapn style={{ fontSize: "15px" }}>VAT (15%)</sapn>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <sapn style={{ fontSize: "15px" }}>BDT 1,232.55</sapn>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontWeight: "bold", fontSize: "20px" }}>
                       You Pay
                     </span>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <span style={{ fontWeight: "bold", fontSize: "15px" }}>
                       BDT 9,449.55
                     </span>
@@ -248,8 +253,8 @@ function HotelPreBookingPageInfo() {
                 </div>
 
                 <div className="row">
-                  <div className="col-md-6">Total Savings:</div>
-                  <div className="col-md-6">BDT 16,799.20</div>
+                  <div className="col-md-6 col-6">Total Savings:</div>
+                  <div className="col-md-6 col-6">BDT 16,799.20</div>
                 </div>
               </CardContent>
             </Card>

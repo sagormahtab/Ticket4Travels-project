@@ -84,7 +84,6 @@ const Header2 = () => {
       <div className="container ">
         <div className="row mt-5">
           <div className="col-md-12 col-12">
-            {/* <h2 className="font-bold txt1">Tickets4Travels<img src={logo} width="90px" height="50px"></img></h2> */}
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {
                 const stepProps = {};

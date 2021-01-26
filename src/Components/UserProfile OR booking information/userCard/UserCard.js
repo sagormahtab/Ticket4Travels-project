@@ -1,21 +1,21 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Card,CardContent }from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 import UsrPNGG from "../userCard/images/user.png"
 import "../userCard/userCard.css"
 
 
 const useStyles = makeStyles(theme => ({
     root: {
-      maxWidth: 345,
-      [theme.breakpoints.down("md")] : {
-      maxWidth: 200
-      }
+        maxWidth: 500,
+        [theme.breakpoints.down("sm")]: {
+            width: "400px"
+        },
     },
     media: {
-      height: 140
+        height: 140
     }
-  }));
+}));
 
 
 function UserCard() {
@@ -25,17 +25,17 @@ function UserCard() {
             <div className="container">
                 <div className="row mt-5">
                     <div className="col-md-6 col-4">
-                        <Card  className={classes.root}>
+                        <Card className={classes.root}>
                             <CardContent>
-                            <div className="row">
-                            <div className="col-md-4 col-12"><img src={UsrPNGG} height="30px" width="30px" alt="" className="img-fluid"></img></div>
-                            <div className="col-md-8 col-12">
-                                <h5>Ismail Hosain</h5>
-                                <p>name@gmail.comm</p>
-                            </div>
-                        </div>
+                                <div className="row">
+                                    <div className="col-md-2 col-4"><img src={UsrPNGG} alt="" className="img-fluid"></img></div>
+                                    <div className="col-md-10 col-8">
+                                        <h5>Ismail Hosain</h5>
+                                        <p>name@gmail.comm</p>
+                                    </div>
+                                </div>
                             </CardContent>
-                    </Card>
+                        </Card>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,8 @@ import Box from "@material-ui/core/Box";
 import BusInputForm from "./BusInputForm";
 import { DirectionsBus, Hotel, DirectionsBoat } from "@material-ui/icons";
 import { Paper } from "@material-ui/core";
+import HotelInputForm from "./HotelInputForm";
+import LaunchInputFrom from "./LaunchInputFrom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,10 +51,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 224,
+    height: "auto",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    width: "220px"
   },
   tabPanel: {
     flexGrow: 1,
@@ -115,10 +118,10 @@ export default function VerticalTabs() {
               <BusInputForm />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Coming soon
+              <HotelInputForm />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              Coming soon
+              <LaunchInputFrom />
             </TabPanel>
             <TabPanel value={value} index={3}>
               Coming soon

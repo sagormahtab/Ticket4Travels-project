@@ -9,7 +9,6 @@ import Saved from "./Components/NavBar/pages/Saved";
 import HelpCenter from "./Components/NavBar/pages/HelpCenter";
 import PartnerUs from "./Components/NavBar/pages/PartnerUs";
 import ContactUs from "./Components/NavBar/pages/ContactUs";
-import Dropdown from "./Components/Dropdown/Dropdown";
 import Footer from "./Components/Footer_part/Footer";
 // import Footer from "./Components/Footer_part/Footer"
 import Login_page from "./Components/Register_Log-in-page/LoginPage";
@@ -38,8 +37,6 @@ function App() {
       <Router>
         <HeadFirst />
         <Navbar />
-
-        {/* <Dropdown /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/aboutus" component={About} />

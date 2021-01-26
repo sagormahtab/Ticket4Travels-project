@@ -1,7 +1,7 @@
 import React from 'react'
 import LaunchBanner from "./LaunchBanner-part/LaunchBanner"
 import LaunchSearchR from "./LaunchSearchResult-part/LaunchSearchR"
-import LaunchCard1 from "./LaunchCard1/LaunchCard1"
+
 
 
 function LaunchSearchPagesCombines() {
@@ -9,7 +9,6 @@ function LaunchSearchPagesCombines() {
         <div>
             <LaunchBanner />
             <LaunchSearchR />
-            {/* <LaunchCard1/> */}
         </div>
     )
 }

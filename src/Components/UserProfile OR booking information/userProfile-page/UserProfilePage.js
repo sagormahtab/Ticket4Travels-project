@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        width: 250,
+        width: 150,
         backgroundColor: "#00baff",
         color: "white",
         alignItems: "left",

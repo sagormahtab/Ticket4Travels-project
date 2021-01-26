@@ -1,11 +1,12 @@
 import React from "react";
-import { Card, CardContent, CardHeader, Checkbox } from '@material-ui/core';
+import { Card, CardContent, CardHeader } from '@material-ui/core';
 import icon from "../Booking-Partt/images/ICOn.png";
 import peopleIocn from "../Booking-Partt/images/people.png";
 import "../Booking-Partt/booking.css";
 import { useBus } from "../../../BusContext";
 import { useCart } from "../../../CartContext";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom"
 
 function Booking({
   handleNext,
@@ -43,19 +44,18 @@ function Booking({
           <div className="col-md-6 mt-3 booking_1stcard">
             <Card className="booking_Card1">
               <CardContent>
-                <div className="container">
+                <div >
                   <div className="row">
-                    <div className="col-md-4 col-4 text-left ">
+                    <div className="col-md-3 col-3 text-left ">
                       <img
                         src={icon}
-                        width="140px"
-                        height="170px"
+
                         alt=""
                         className="img-fluid"
                       ></img>
                     </div>
 
-                    <div className="col-md-8 col-8 text-left mt-3 px-0">
+                    <div className="col-md-9 col-9 text-left mt-3 px-0">
                       <p>Log in or register to enjoy this-member-only</p>
                       <p>
                         <img
@@ -67,7 +67,9 @@ function Booking({
                         ></img>{" "}
                       Book faster and easier with passenger quick pick
                     </p>
-                      <span className="color_change">Log in or Regiter</span>
+                      <Link to="/login_form">
+                        <span className="color_change">Log in or Regiter</span>
+                      </Link>
                     </div>
                   </div>
                 </div>
