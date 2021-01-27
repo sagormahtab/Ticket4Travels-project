@@ -33,12 +33,12 @@ function Footer() {
           <div className="row">
             <div className="col-md-3 col-sm-6 ">
               {/* <h6>About us</h6> */}
-              <div className="about-us "><a href="aboutus" alt="About us">About us</a></div>
+              <div className="about-us"><a href="/" alt="About us">About us</a></div>
               <div className="mt-3 ">
                 <div className="mt-3 about-us-content1"><a href="##"> How to book</a></div>
                 <div className="mt-3 about-us-content2"><a href="##"> Contact us</a></div>
                 <div className="mt-3 about-us-content3"><a href="##"> Help Center</a></div>
-                <div className="mt-3 about-us-content4"><a href="##"> Installment</a></div>
+                <div className="mt-3 about-us-content4"><Link to="/aboutus"><a href="##"> About us</a></Link></div>
               </div>
               <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" />
             </div>
