@@ -9,7 +9,7 @@ import "../LaunchSearchResult-part/LaunchSearchR.css"
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 650,
+        minWidth: 200,
     },
 });
 
@@ -18,11 +18,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData('A.R Khan 1', 10.00, 6.0, 24),
+    createData('Bay Cruise SPL', 10.30, 9.0, 37),
+    createData('Bay Cruise SPL.', 10.50, 16.0, 24),
+    createData('MV Green Line Return', 11.00, 3.7, 67),
+    createData('MV Karnafully 11', 12.00, 16.0, 49),
 ];
 
 function LaunchSearchR() {
@@ -66,7 +66,7 @@ function LaunchSearchR() {
                                 <TableContainer component={Paper}>
                                     <Table className={classes.table}>
                                         <TableHead>
-                                            <TableRow style={{ backgroundColor: "#E4E4E5" }}>
+                                            <TableRow style={{ backgroundColor: "#E4E4E5", }}>
                                                 <TableCell>Launch / Ship</TableCell>
                                                 <TableCell align="right">Dep. Time</TableCell>
                                                 <TableCell align="right">Arr. Time</TableCell>
@@ -75,7 +75,17 @@ function LaunchSearchR() {
                                         </TableHead>
 
                                         <TableBody>
-                                            <p className="ml-2"> No trips found</p>
+                                            {rows.map((row) => (
+                                                <TableRow key={row.name}>
+                                                    <TableCell component="th" scope="row">
+                                                        {row.name}
+                                                    </TableCell>
+                                                    <TableCell align="right">{row.calories}</TableCell>
+                                                    <TableCell align="right">{row.fat}</TableCell>
+                                                    <TableCell align="right">{row.carbs}</TableCell>
+                                                    <TableCell align="right">{row.protein}</TableCell>
+                                                </TableRow>
+                                            ))}
                                         </TableBody>
                                     </Table>
                                 </TableContainer>
@@ -96,14 +106,14 @@ function LaunchSearchR() {
                         </div>
 
 
-                        <div className="row mt-5">
+                        {/* <div className="row mt-5">
                             <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                                 <h5>Available Launches</h5>
                             </div>
                             <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                                 <h5>Connect with Us</h5>
                             </div>
-                        </div>
+                        </div> */}
                         <hr></hr>
                     </CardContent>
                 </Card>

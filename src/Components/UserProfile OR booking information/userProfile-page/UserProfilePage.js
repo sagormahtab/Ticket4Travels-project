@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        width: 150,
+        width: 140,
         backgroundColor: "#00baff",
         color: "white",
         alignItems: "left",
@@ -91,6 +91,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             maxWidth: "100%",
             width: "100%"
+        }
+    },
+    tabPanel1: {
+        [theme.breakpoints.down("sm")]: {
+            width: "10px"
         }
     },
 }));
