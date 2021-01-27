@@ -17,25 +17,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        width: 900,
-        marginTop: 10,
-        [theme.breakpoints.down("sm")]: {
-            width: 300,
+    // root: {
+    //     maxWidth: 600,
+    //     marginTop: 10,
+    //     [theme.breakpoints.down("sm")]: {
+    //         maxWidth: 200
 
-        }
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+    //     }
+    // },
 }));
 
 
@@ -46,101 +35,100 @@ function MyAccount_page() {
 
     return (
 
-        <div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12 col-5 accountTab">
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <p> <img src={bellPNG} width="30px" height="30px" alt="" className="img-fluid"></img>Want to receive updates on New log in and others account activities?</p>
-                                    <div className="text-right"><Button type="Button" variant="outlined" color="primary">Allow Dekstop notification</Button></div>
-                                </CardContent>
-                            </Card>
-                        </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12">
 
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-3 col-3"><img src={userLOGO} width="20px" height="20px" alt="" className="img-fluid"></img>MD.Ismail Hossain</div>
-                                        <div className="col-md-4 col- 12text-right"><Button type="Button" variant="outlined" color="primary"><img src={colorPENCIL} width="20px" height="20px" alt="" className="img-fluid"></img>Update Profile</Button></div>
-                                        <div className="col-md-4 col-12 text-right"><Button type="Button" variant="outlined" color="primary">Update Profile</Button></div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-2 text-left"><img src={settingPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
-                                        <div className="col-md-10">
-                                            <h5 className="text-left ">Enable log in Verification code?</h5>
-                                            <Checkbox
-                                                color="primary"
-                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                            />Send me verification code every time when log in from new device
-                                    </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-2 text-left"><img src={phonePaymentNGG} width="20px" height="20px" alt="" className="img-fluid"></img> </div>
-                                        <div className="col-md-5 text-left"><h5>Phone</h5>
-                                            <p>Mobile number to receive accounts verification-code</p> </div>
-
-                                        <div className="col-md-5 text-right"><Button type="Button" variant="outlined" color="primary"><AddCircleOutlineIcon />phone</Button></div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-2 text-left"><img src={emailPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
-                                        <div className="col-md-10 text-left">
-                                            <h5 className=" ">Email Address</h5>
-                                            <p>Email address to receive account related notification</p>
-
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-2 text-left"><img src={socialNetwork} width="20px" height="20px" alt="" className="img-fluid"></img></div>
-                                        <div className="col-md-10 text-left">
-                                            <h5 className=" ">Linked Account</h5>
-                                            <p>For an easier log in connect your social accounts with Tickets4travel</p>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                            <Card className={classes.root}>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-md-6 text-left"><img src={facbookPNGG} width="20px" height="20px" alt="" className="img-fluid"></img> Facebook</div>
-                                        <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6 text-left"><img src={gOOGLEpng} width="20px" height="20px" alt="" className="img-fluid"></img> Google</div>
-                                        <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
+                    <Card >
+                        <CardContent>
+                            <p> <img src={bellPNG} width="30px" height="30px" alt="" className="img-fluid"></img>Want to receive updates on New log in and others account activities?</p>
+                            <div className="text-right"><Button type="Button" variant="outlined" color="primary">Allow Dekstop notification</Button></div>
+                        </CardContent>
+                    </Card>
                 </div>
+
+
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4">
+                    <Card >
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-3 col-3"><img src={userLOGO} width="20px" height="20px" alt="" className="img-fluid"></img>MD.Ismail Hossain</div>
+                                <div className="col-md-4 col- 12text-right"><Button type="Button" variant="outlined" color="primary"><img src={colorPENCIL} width="20px" height="20px" alt="" className="img-fluid"></img>Update Profile</Button></div>
+                                <div className="col-md-4 col-12 text-right"><Button type="Button" variant="outlined" color="primary">Update Profile</Button></div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4">
+                    <Card className={classes.root}>
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-2 text-left"><img src={settingPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+                                <div className="col-md-10">
+                                    <h5 className="text-left ">Enable log in Verification code?</h5>
+                                    <Checkbox
+                                        color="primary"
+                                        inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                    />Send me verification code every time when log in from new device
+                                    </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4">
+                    <Card className={classes.root}>
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-2 text-left"><img src={phonePaymentNGG} width="20px" height="20px" alt="" className="img-fluid"></img> </div>
+                                <div className="col-md-5 text-left"><h5>Phone</h5>
+                                    <p>Mobile number to receive accounts verification-code</p> </div>
+
+                                <div className="col-md-5 text-right"><Button type="Button" variant="outlined" color="primary"><AddCircleOutlineIcon />phone</Button></div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4">
+                    <Card className={classes.root}>
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-2 text-left"><img src={emailPNG} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+                                <div className="col-md-10 text-left">
+                                    <h5 className=" ">Email Address</h5>
+                                    <p>Email address to receive account related notification</p>
+
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4">
+                    <Card className={classes.root}>
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-2 text-left"><img src={socialNetwork} width="20px" height="20px" alt="" className="img-fluid"></img></div>
+                                <div className="col-md-10 text-left">
+                                    <h5 className=" ">Linked Account</h5>
+                                    <p>For an easier log in connect your social accounts with Tickets4travel</p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                    <Card className={classes.root}>
+                        <CardContent>
+                            <div className="row">
+                                <div className="col-md-6 text-left"><img src={facbookPNGG} width="20px" height="20px" alt="" className="img-fluid"></img> Facebook</div>
+                                <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-6 text-left"><img src={gOOGLEpng} width="20px" height="20px" alt="" className="img-fluid"></img> Google</div>
+                                <div className="col-md-6 text-right"><a href="lol">Link Account</a></div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-4"></div>
             </div>
         </div>
     )

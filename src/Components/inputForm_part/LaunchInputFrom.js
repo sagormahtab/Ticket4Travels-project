@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     searchBtn: {
         background: "#00b894",
         height: "50px",
+        marginTop: "15px",
         "&:hover": {
             background: "#00b894",
         },
@@ -105,7 +106,7 @@ const LaunchInputFrom = () => {
                                     format="MM/dd/yyyy"
                                     margin="normal"
                                     id="date-picker-inline"
-                                    label="Date picker inline"
+                                    label="Date of journey"
                                     value={selectedDate}
                                     onChange={handleDateChange}
                                     KeyboardButtonProps={{
@@ -127,7 +128,7 @@ const LaunchInputFrom = () => {
                                     format="MM/dd/yyyy"
                                     margin="normal"
                                     id="date-picker-inline"
-                                    label="Date picker inline"
+                                    label="Date of return (optional)"
                                     value={selectedDate}
                                     onChange={handleDateChange}
                                     KeyboardButtonProps={{

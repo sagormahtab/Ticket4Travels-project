@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 500,
         [theme.breakpoints.down("sm")]: {
-            width: "400px"
+            width: "280px"
         },
     },
     media: {
