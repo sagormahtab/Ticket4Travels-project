@@ -36,7 +36,7 @@ function MyAccount_page() {
     return (
 
         <div className="container">
-            <div className="row">
+            <div className="row acountTab-content">
                 <div className="col-md-12 col-lg-12 col-sm-12 col-12">
 
                     <Card >

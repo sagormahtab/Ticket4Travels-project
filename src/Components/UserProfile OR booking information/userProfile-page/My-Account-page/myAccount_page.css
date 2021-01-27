@@ -1,9 +1,5 @@
-.myAccount_pageCardShadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* @media (max-width: 40em) {
-    .accountTab {
+@media (max-width: 40em) {
+  .acountTab-content {
     display: none;
-    }
-  }   */
+  }
+}
