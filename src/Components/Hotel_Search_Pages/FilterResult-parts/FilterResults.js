@@ -104,7 +104,7 @@ export default function InputSlider() {
                             </Card>
                         </div>
                         <div className="col-md-8 col-lg-8 col-sm-12 col-12 ">
-                            <Link to="/hotel" className={classes.link}>
+                            <Link to="/hotel_details" className={classes.link}>
                                 <Card className={classes.root}>
                                     <CardMedia>
                                         <img src={architecture} alt="" width="200px" height="240px"></img>

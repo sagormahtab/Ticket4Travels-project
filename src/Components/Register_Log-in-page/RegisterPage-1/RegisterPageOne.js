@@ -41,20 +41,15 @@ function RegisterPageOne({ submitForm }) {
     return (
         <div>
             <div className="">
-                <div className="row">
+                <div className="row" style={{ width: "100%" }}>
                     <div className="col-sm-6 col-md-6 ">
                         <div className="womeIMG_div"> <img src={WomenPIC} alt="" className="img-fluid"></img></div>
-                        <div className="mt-5">
-                            <img src={google_Store} width="110px" height="60px" alt="" className="img-fluid"></img>
-                            <img src={Apple_Store} width="110px" height="45px" alt="" className="img-fluid"></img>
-                        </div>
-                        <p className="ml-5">Downlode Our app</p>
 
 
                     </div>
-                    <div className="col-sm-6 col-md-6  mt-5">
-                        <h2 className="text-left ml-2"><span className="ticekt-Text_Div2 m-0">Join</span> Us Become</h2>
-                        <h2><span className="ticekt-Text_Div2 mt-0 ml-5">Tickets4Travel</span> Member</h2>
+                    <div className="col-sm-12 col-md-6  mt-5">
+                        <h2 className="text-left ml-2"><span className="joinSpan m-0">Join</span> <span className="us-become-header">Us Become</span></h2>
+                        <h2><span className="Tickets4Travel-header mt-0 ml-5">Tickets4Travel's</span> <span className="member-header">Member</span></h2>
 
                         <div>
                             <Card className={classes.root}>
@@ -89,22 +84,16 @@ function RegisterPageOne({ submitForm }) {
                                             {errors.email && <p>{errors.email}</p>}
                                         </div>
                                         <CardActions>
-                                            <Button type="submit" variant="contained" color="primary">
+                                            <Button type="submit" variant="contained" style={{ backgroundColor: "#30dd89" }}>
                                                 Join
                                     </Button>
                                         </CardActions>
                                     </form>
 
-                                    <div>
 
-                                        <Button className="mt-4 mr-5" variant="outlined" color="primary"> <img src={Fb} width="20px" height="20px" alt="" className="img-fluid"></img> <span className="ml-2">Register using Facbook</span> </Button>
-
-                                        <Button className="mt-2" variant="outlined" color="primary"> <img src={Google} width="20px" height="20px" alt="" className="img-fluid"></img> <span className="ml-2">Register using Facbook</span> </Button>
-
-                                    </div>
 
                                     <div className="mt-3">
-                                        <p>By clicking the button below Your agree to <span className="ticekt-Text_Div">Tickets4travel</span> <span className="ticekt-Text_Div2"> Terms & conditions </span> & <span className="ticekt-Text_Div2"> privacy poilicy</span></p>
+                                        <p>By clicking the button below Your agree to <span className="ticket-Text_Div">Tickets4travel</span> <span className="ticket-Text_Div2"> <a href="##">Terms & conditions</a> </span> & <span className="ticket-Text_Div2"><a href="##">privacy poilicy</a></span></p>
                                     </div>
                                 </CardContent>
                             </Card>

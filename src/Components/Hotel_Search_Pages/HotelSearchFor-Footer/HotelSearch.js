@@ -10,15 +10,16 @@ import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import busBanner from "./images/Bus-Search-Page-Banner.png"
+import HotelBanner from "./images/Hotel-Banner-Without-Button.png"
 
 
 
-const BusRoute = () => {
+
+const HotelSearch = () => {
 
     let history = useHistory();
     const redirect = () => {
-        history.push('/bus_search');
+        history.push('/hotel_search');
     }
 
     const cityList = [
@@ -69,7 +70,7 @@ const BusRoute = () => {
                                 </div>
 
                                 <div className="row mt-3">
-                                    <div className="col-sm-12 col-md-6 col-lg-6 col-12">
+                                    <div className="col-sm-12 col-md-12 col-lg-12 col-12">
                                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
                                             <KeyboardDatePicker
@@ -88,24 +89,7 @@ const BusRoute = () => {
                                         </MuiPickersUtilsProvider>
                                     </div>
 
-                                    <div className="col-sm-12 col-md-6 col-lg-6 col-12">
-                                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
-                                            <KeyboardDatePicker
-
-                                                variant="inline"
-                                                fullWidth
-                                                format="MM/dd/yyyy"
-                                                margin="normal"
-                                                id="date-picker-inline"
-                                                label="Date of Return(optional)"
-                                                value={selectedDate}
-                                                onChange={handleDateChange}
-
-                                            />
-
-                                        </MuiPickersUtilsProvider>
-                                    </div>
                                 </div>
 
                                 <div>
@@ -118,11 +102,11 @@ const BusRoute = () => {
                     </Card>
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-6 col-12">
-                    <img alt="BusBanner" src={busBanner} className="img-fluid"></img>
+                    <img alt="BusBanner" src={HotelBanner} className="img-fluid"></img>
                 </div>
             </div>
         </div>
     )
 }
 
-export default BusRoute
+export default HotelSearch

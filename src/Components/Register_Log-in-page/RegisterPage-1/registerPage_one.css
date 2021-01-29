@@ -1,40 +1,60 @@
-.womeIMG_div{
-    margin-left: -50px;
+.womeIMG_div {
+  margin-left: -50px;
 }
-.RegisterButton{
-    margin-left: 350px;
-    margin-top: -40px;
+.RegisterButton {
+  margin-left: 350px;
+  margin-top: -40px;
 }
-.FormJoin_divlol{
-    margin-left: 350px;
-    margin-top: -22px;
-    background-color: #49b7ff;
-    padding: 10px 24px;
-    border-radius: 8px;
-    margin-left: 300px;
-}
-
-
-.btn-fb_button{
-    border: 2px solid black;
+.FormJoin_divlol {
+  margin-left: 350px;
+  margin-top: -22px;
+  background-color: #49b7ff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  margin-left: 300px;
 }
 
-.ticekt-Text_Div{
-    color: greenyellow;
-}
-.ticekt-Text_Div2{
-    color: #49b7ff;
+.btn-fb_button {
+  border: 2px solid black;
 }
 
-.PhoneInput--focus{
-    color: black;
+.ticket-Text_Div {
+  color: #30dd89;
+}
+.ticket-Text_Div2 {
+  color: #49b7ff;
+}
+.joinSpan {
+  color: #49b7ff;
 }
 
-
-.form-group p{
-    color: red;
+.Tickets4Travel-header {
+  color: #49b7ff;
 }
 
-.meterialButton{
-    margin-right: 30px;
+.PhoneInput--focus {
+  color: black;
+}
+
+.form-group p {
+  color: red;
+}
+
+.meterialButton {
+  margin-right: 30px;
+}
+
+@media (max-width: 40em) {
+  .joinSpan {
+    font-size: 25px;
+  }
+  .us-become-header {
+    font-size: 20px;
+  }
+  .Tickets4Travel-header {
+    font-size: 26px;
+  }
+  .member-header {
+    font-size: 20px;
+  }
 }

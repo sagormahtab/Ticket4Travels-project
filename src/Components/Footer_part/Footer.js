@@ -11,8 +11,6 @@ import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faCcPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCcVisa } from '@fortawesome/free-brands-svg-icons';
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -31,38 +29,41 @@ function Footer() {
       <div className="footer-content">
         <div className="container">
           <div className="row">
-            <div className="col-md-3 col-sm-6 ">
+            <div className="col-md-4 col-sm-6 ">
               {/* <h6>About us</h6> */}
               <div className="about-us"><a href="/" alt="About us">About us</a></div>
               <div className="mt-3 ">
-                <div className="mt-3 about-us-content1"><a href="##"> How to book</a></div>
-                <div className="mt-3 about-us-content2"><a href="##"> Contact us</a></div>
-                <div className="mt-3 about-us-content3"><a href="##"> Help Center</a></div>
+                <div className="mt-3 about-us-content1"><Link to="/how-to-book"><a href="##"> How to book</a></Link></div>
+                <div className="mt-3 about-us-content2"><Link to="/contactWithUs"><a href="##"> Contact us</a></Link></div>
+                <div className="mt-3 about-us-content3"><Link to="careerUs"><a href="##"> Career us</a></Link></div>
                 <div className="mt-3 about-us-content4"><Link to="/aboutus"><a href="##"> About us</a></Link></div>
               </div>
-              <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" />
+              {/* <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" /> */}
             </div>
-            <div className="col-md-3 col-sm-6 ">
+            <div className="col-md-4 col-sm-6 ">
               <h6 className="followUs-Header">Follow us On</h6>
               <div className="mt-3 mr-1 d-flex  align-items-center followUs-body1">
                 <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg" />
-                <a href="##" className="ml-2"><span>Facebook</span></a>
+                <a href="https://www.facebook.com/Tickets4Travel-100339085420852" className="ml-2"><span>Facebook</span></a>
               </div>
               <div className="mt-3 mr-4 d-flex  align-items-center followUs-body2">
-                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2" /><a href="##" className="ml-2">Twitter</a>
+                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2" />
+                <a href="https://twitter.com/Tickets4T" className="ml-2">Twitter</a>
               </div>
               <div className="mt-3 mr-1 d-flex align-items-center followUs-body3">
-                <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950" /><a href="##" className="ml-2">Instagram</a>
+                <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950" />
+                <a href="https://www.instagram.com/tickets4travel/" className="ml-2">Instagram</a>
               </div>
               <div className="mt-3 mr-2 d-flex align-items-center followUs-body4">
-                <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000" /><a href="##" className="ml-2">YouTube</a>
+                <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000" />
+                <a href="https://www.youtube.com/channel/UC1ULM4XtHOAABUUcIOcwZUA" className="ml-2">YouTube</a>
               </div>
-              <div>
+              {/* <div>
                 <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa" />
-              </div>
+              </div> */}
             </div>
-            <div className="col-md-3 col-sm-6">
-              <h6 className="products-header">Products</h6>
+            <div className="col-md-4 col-sm-6">
+              <h6 className="products-header">Services</h6>
               <div className="mt-3 products-body1">
                 <Link to="/flight" ><a href="##" > Flights</a></Link></div>
               <div className="mt-3 products-body2">
@@ -73,15 +74,17 @@ function Footer() {
                 <Link to="/bus"><a href="##" className="products-body4"> Bus</a></Link></div>
               <div className="mt-3 products-body5">
                 <Link to="/train"><a href="##" className="products-body5"> Train</a></Link></div>
-              <img
+              {/* <img
                 src={bikas}
                 alt="paypal"
                 height="30px"
                 width="30px"
                 className=" bikash  img-fluid"
-              ></img>
+              ></img> */}
             </div>
-            <div className="col-md-3 col-sm-6">
+
+
+            {/* <div className="col-md-3 col-sm-6">
               <h6 className="others-Products-Header">Others Products</h6>
               <div className="mt-3 others-Products-body1"><a href="##"> Flights</a></div>
               <div className="mt-3 others-Products-body2"><a href="##"> Hotels</a></div>
@@ -102,7 +105,9 @@ function Footer() {
                 height="50px"
                 width="160px"
               ></img>
-            </div>
+            </div> */}
+
+
           </div>
         </div>
       </div>

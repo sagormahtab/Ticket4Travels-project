@@ -5,13 +5,13 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-    link : {
-      "&:hover": {
-        textDecoration: "none"
-      }
+    link: {
+        "&:hover": {
+            textDecoration: "none"
+        }
     }
-  }));
-  
+}));
+
 
 
 function Login() {
@@ -24,11 +24,12 @@ function Login() {
                         <div className="col-md-12">
                             <h1 className="text-center font-weight-bold">Exclusivly For Tickets4Travel Member</h1>
                             <div className="text-center ">
-                                <Button variant="outlined" color="primary">Log In</Button>
+                                <Link to="/login" className={classes.link}>
+                                    <Button variant="outlined" color="primary" size="large">Log In</Button>
+                                </Link>
                                 <span className="text-center"> OR </span>
-                                {/* <button type="button" class="btn btn-success lol1">Register</button><span className="font-weight-bold">to enjoy this benifit.</span> */}
-                                <Link to="/login_form" className={classes.link}>
-                                    <Button variant="outlined" color="primary">Register</Button>
+                                <Link to="/register" className={classes.link}>
+                                    <Button variant="outlined" color="primary" size="large">Register</Button>
                                 </Link>
 
 

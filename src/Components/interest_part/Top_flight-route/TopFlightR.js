@@ -6,23 +6,23 @@ function TopFlightR() {
             <div className="">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4  col-4">Flight to Bali</div>
-                        <div className="col-md-4  col-4">Flight to Kuala Lumpur</div>
-                        <div className="col-md-4 col-4">Flight to Kuala Bandung</div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Dhaka</a></div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Chittagong</a></div>
+                        <div className="col-lg-4 col-md-4 col-4"><a href="##">Flight to Barisal</a></div>
                     </div>
                 </div>
                 <div className="container mt-4">
                     <div className="row">
-                        <div className="col-md-4  col-4">Flight to Singapore</div>
-                        <div className="col-md-4  col-4">Flight to Kuala Malang</div>
-                        <div className="col-md-4 col-4">Flight to Hong Kong</div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Cox's Bazar</a></div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Jessore</a></div>
+                        <div className="col-lg-4 col-md-4 col-4"><a href="##">Flight to Rajshahi</a></div>
                     </div>
                 </div>
                 <div className="container mt-4">
                     <div className="row">
-                        <div className="col-md-4  col-4">Flight to Jakarta</div>
-                        <div className="col-md-4  col-4">Flight to Bangkok</div>
-                        <div className="col-md-4 col-4">Flight to Korea</div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Sylhet</a></div>
+                        <div className="col-lg-4 col-md-4  col-4"><a href="##">Flight to Saidpur</a></div>
+                        <div className="col-lg-4 col-md-4 col-4"><a href="##">Flight to Khulna</a></div>
                     </div>
                 </div>
 

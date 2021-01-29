@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: "2rem",
     },
     searchBtn: {
-        background: "#00b894",
+        background: "#30dd89",
         height: "50px",
         marginTop: "15px",
         "&:hover": {
@@ -76,7 +76,7 @@ const LaunchInputFrom = () => {
 
                     {/* From - To Form start */}
                     <div className="row">
-                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 mt-2">
+                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 mt-3">
                             <Autocomplete id="combo-box-demo"
                                 freeSolo
                                 options={cityList}
@@ -84,7 +84,7 @@ const LaunchInputFrom = () => {
                                 renderInput={(params) => <TextField required {...params} label="From" variant="outlined" fullWidth />}
                             />
                         </div>
-                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 mt-2">
+                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 mt-3">
                             <Autocomplete id="combo-box-demo"
                                 freeSolo
                                 options={cityList2}
@@ -97,12 +97,13 @@ const LaunchInputFrom = () => {
 
 
                     <div className="row mt-2">
-                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-2">
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
                                 <KeyboardDatePicker
                                     disableToolbar
                                     variant="inline"
+                                    inputVariant="outlined"
                                     format="MM/dd/yyyy"
                                     margin="normal"
                                     id="date-picker-inline"
@@ -119,12 +120,13 @@ const LaunchInputFrom = () => {
 
 
 
-                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-2">
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
                                 <KeyboardDatePicker
                                     disableToolbar
                                     variant="inline"
+                                    inputVariant="outlined"
                                     format="MM/dd/yyyy"
                                     margin="normal"
                                     id="date-picker-inline"
@@ -140,7 +142,7 @@ const LaunchInputFrom = () => {
 
 
 
-                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+                        <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-2">
                             <Button
                                 className={classes.searchBtn}
                                 variant="contained"

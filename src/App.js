@@ -1,6 +1,7 @@
 import React from "react";
+import "../src/index.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HeadFirst from "./Components/HeaderFrist/HeaderFirst";
+import HeadFirst from "./Components/Header-Of-Landing-Page/HeaderFirst";
 import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/NavBar/pages/Home";
 import MyBooking from "./Components/NavBar/pages/MyBooking";
@@ -10,8 +11,6 @@ import HelpCenter from "./Components/NavBar/pages/HelpCenter";
 import PartnerUs from "./Components/NavBar/pages/PartnerUs";
 import ContactUs from "./Components/NavBar/pages/ContactUs";
 import Footer from "./Components/Footer_part/Footer";
-// import Footer from "./Components/Footer_part/Footer"
-import Login_page from "./Components/Register_Log-in-page/LoginPage";
 import Form2 from "./Components/Register_Log-in-page/Account_Information/Form2";
 import FlightSearchPagesCombines from "./Components/Flight_Search_Pages/FlightSearchPagesCombines";
 import FlightName from "./Components/Flight_Search_Pages/Initial-Flight-booking-page/card1/FlightName";
@@ -30,6 +29,11 @@ import BusRoute from "./Components/Bus_Search_Pages/BusRoute-ForFooter/BusRoute"
 import LaunchRoute from "./Components/Launch_Search_Pages/LaunchRoute-ForFooter/LaunchRoute";
 import TrainRoute from "./Components/Train_Search_Pages/TrainRoute-ForFooter/TrainRoute";
 import FlightRoute from "./Components/Flight_Search_Pages/FlightRoute-ForFooter/FlightRoute";
+import LoginPage from "./Components/LogIn-page/LoginPage";
+import RegistrationPage from "./Components/Register_Log-in-page/RegistrationPage";
+import HotelSearch from "./Components/Hotel_Search_Pages/HotelSearchFor-Footer/HotelSearch";
+import HowToBook from "./Components/Footer_part/How-To-Book/HowToBook";
+import ContactWithUs from "./Components/Footer_part/Contact-With-Us/ContactWithUs";
 
 function App() {
   return (
@@ -52,7 +56,13 @@ function App() {
           <Route path="/partner_us" component={PartnerUs} />
 
           <Route path="/contact_us" component={ContactUs} />
-          <Route path="/login_form" component={Login_page}></Route>
+
+          <Route path="/how-to-book" component={HowToBook} />
+
+          <Route path="/contactWithUs" component={ContactWithUs} />
+
+          <Route path="/login" component={LoginPage} />
+          <Route path="/register" component={RegistrationPage}></Route>
           <Route path="/account_inforamtion" component={Form2}></Route>
 
           {/* Flight-Search-start */}
@@ -84,6 +94,7 @@ function App() {
 
           {/* bUS-SEARCH-START */}
           <Route path="/bus_search" component={BusSearchPagesCombines}></Route>
+
           <Route path="/bus" component={BusRoute}></Route>
           <Route
             path="/busPre_Booking"
@@ -112,8 +123,12 @@ function App() {
             component={HotelSearchPagesCombines}
           ></Route>
           <Route
-            path="/hotel"
+            path="/hotel_details"
             component={HotelDetails}
+          ></Route>
+          <Route
+            path="/hotel"
+            component={HotelSearch}
           ></Route>
           <Route
             path="/hotelPre_Booking"

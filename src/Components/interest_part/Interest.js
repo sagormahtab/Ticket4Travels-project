@@ -68,21 +68,21 @@ export default function ScrollableTabsButtonAuto() {
   return (
 
     <div className={`${classes.root} container`}>
-      <h1 className="text-center mt-5">What interests you?</h1>
+      <h1 className="text-center mt-5" style={{ fontSize: "32px" }}>What interests you?</h1>
       <Grid container item sm={5} md={12} spacing={3}>
-      <Tabs
+        <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
           variant="scrollable"
-          scrollButtons= "on"
+          scrollButtons="on"
           aria-label="scrollable auto tabs example">
-          <Tab  label="Top Flights Routes" {...a11yProps(0)} />
-          <Tab  label="Top Hotel Destinations" {...a11yProps(1)} />
-          <Tab  label="Top Packages Destination" {...a11yProps(2)} />
-          <Tab  label="For Your Connectivity" {...a11yProps(3)} />
-          <Tab  label="Top Things to Do" {...a11yProps(4)} />
+          <Tab label="Top Flights Routes" {...a11yProps(0)} />
+          <Tab label="Top Hotel Destinations" {...a11yProps(1)} />
+          <Tab label="Top Packages Destination" {...a11yProps(2)} />
+          <Tab label="For Your Connectivity" {...a11yProps(3)} />
+          <Tab label="Top Things to Do" {...a11yProps(4)} />
         </Tabs>
         <hr></hr>
 

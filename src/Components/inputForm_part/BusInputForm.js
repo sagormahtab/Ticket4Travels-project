@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "2rem",
   },
   searchBtn: {
-    background: "#00b894",
+    background: "#30dd89",
     height: "50px",
     "&:hover": {
       background: "#00b894",
