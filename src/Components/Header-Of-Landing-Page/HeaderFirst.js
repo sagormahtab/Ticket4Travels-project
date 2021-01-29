@@ -1,5 +1,5 @@
 import React from "react";
-import "../HeaderFrist/HeaderFirst.css";
+import "./HeaderFirst.css"
 
 function HeaderFirst() {
   return <header className="header_one"></header>;

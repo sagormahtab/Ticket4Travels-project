@@ -9,14 +9,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHotel, faShip } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { faAd } from '@fortawesome/free-solid-svg-icons';
-import { faSave } from '@fortawesome/free-solid-svg-icons';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
-import { faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faBus } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -42,32 +38,27 @@ function Navbar() {
 
   return (
     <>
-      {/* <IconContext.Provider value={{ color: "#41B3F7" }}> */}
       <div className="navbar">
         <span className="menu-bars">
-          <FontAwesomeIcon icon={faBars} onClick={showSidebar} size="1x" color="#007bff" />
-          <img src={logo} alt="logo" height="50px" width="80px" />
+          <FontAwesomeIcon icon={faBars} onClick={showSidebar} size="1x" color="#007bff" className="SideNav-bar" />
+          <Link to="/" className={classes.link}>
+            <img src={logo} alt="logo" height="50px" width="80px" className="img-fluid" /><span className="tickets4travel-span">Tickets4travel</span>
+          </Link>
         </span>
         <nav class="nav ml-auto MenuBar-Contents">
-          <a class="nav-link  " href="/" >
-            <FontAwesomeIcon icon={faHandshake} className="mr-1" /> Partnership
+          <a class="nav-link  " href="http://bus.tickets4travel.com" >
+            <FontAwesomeIcon icon={faBus} className="mr-1" /> Bus Partnership
             </a>
-          <a class="nav-link " href="/">
-            <FontAwesomeIcon icon={faAd} className="mr-1" /> Promo
+          <a class="nav-link " href="http://hotel.tickets4travel.com">
+            <FontAwesomeIcon icon={faHotel} className="mr-1" /> Hotel Partnership
             </a>
-          <a class="nav-link " href="/">
-            <FontAwesomeIcon icon={faSave} className="mr-1" /> Saved
+          <a class="nav-link " href="http://launch.tickets4travel.com">
+            <FontAwesomeIcon icon={faShip} className="mr-1" /> Launch Partnership
             </a>
-          <a class="nav-link " href="/">
-            <FontAwesomeIcon icon={faBook} className="mr-1" /> My Booking
-            </a>
-          <a class="nav-link " href="/">
-            <FontAwesomeIcon icon={faMoneyCheck} className="mr-1" /> Pay
-            </a>
-          <a class="nav-link " href="/">
+          <Link class="nav-link " to="/login">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-1" /> Log In
-            </a>
-          <Link to="/login_form" className={classes.link}>
+            </Link>
+          <Link to="/register" className={classes.link}>
             <Button variant="contained" style={{ backgroundColor: "#30dd89" }}>Register</Button>
           </Link>
         </nav>

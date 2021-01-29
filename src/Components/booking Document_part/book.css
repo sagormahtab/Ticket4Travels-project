@@ -7,9 +7,15 @@
 }
 
 .best-price {
-  margin-left: -70px;
+  /* margin-left: -70px; */
 }
 
 .special-dis-text {
   margin-left: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .why-book-withUs-Header {
+    font-size: 33px;
+  }
 }

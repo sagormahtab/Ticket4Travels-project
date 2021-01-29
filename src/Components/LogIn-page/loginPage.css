@@ -1,0 +1,25 @@
+.Login-header {
+  color: #49b7ff;
+}
+
+.ticekts4Travel-Header {
+  color: #49b7ff;
+}
+
+@media (max-width: 40em) {
+  .Login-header {
+    font-size: 25px;
+  }
+
+  .others-header {
+    font-size: 20px;
+  }
+
+  .ticekts4Travel-Header {
+    font-size: 25px;
+  }
+
+  .member-header {
+    font-size: 20px;
+  }
+}

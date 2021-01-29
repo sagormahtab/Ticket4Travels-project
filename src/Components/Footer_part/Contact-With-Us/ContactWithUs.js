@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import contactUsImg from "./images/contactUs.png"
 
 
-const ContactUs = () => {
+const ContactWithUs = () => {
 
     const [data, setData] = useState({
         id: "",
@@ -127,4 +127,4 @@ const ContactUs = () => {
     )
 }
 
-export default ContactUs
+export default ContactWithUs

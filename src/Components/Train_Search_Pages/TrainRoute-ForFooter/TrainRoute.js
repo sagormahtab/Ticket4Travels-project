@@ -110,7 +110,7 @@ const TrainRoute = () => {
                                 </div>
 
                                 <div>
-                                    <Button type="submit" style={{ width: '96%', marginTop: '1rem', backgroundColor: "green", color: "white" }}>
+                                    <Button type="submit" style={{ width: '96%', marginTop: '1rem', backgroundColor: "#30dd89", color: "white" }}>
                                         <FontAwesomeIcon icon={faSearch} color="white" /> Search
                                     </Button>
                                 </div>

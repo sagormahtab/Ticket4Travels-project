@@ -200,8 +200,8 @@ const HotelDetails = () => {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             </div>
-            <div className="col-md-2 ">
-              <Button variant="contained" color="primary" fullWidth>
+            <div className="col-md-2 mt-2">
+              <Button variant="contained" style={{ backgroundColor: "#30dd89", padding: "12px" }} fullWidth>
                 Search
               </Button>
             </div>
@@ -397,7 +397,7 @@ const HotelDetails = () => {
                       </div>
                       <div className="mt-3">
                         <Link to="/hotelPre_Booking" className={classes.hotelBookLink}>
-                          <Button variant="contained" style={{ backgroundColor: "#3e8f3e", color: "white", marginLeft: "195px" }}>Book Now</Button>
+                          <Button variant="contained" style={{ backgroundColor: "#30dd89", color: "white", marginLeft: "195px" }}>Book Now</Button>
                         </Link>
                       </div>
                     </CardContent>
