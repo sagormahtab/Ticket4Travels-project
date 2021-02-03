@@ -1,5 +1,5 @@
 import React from "react";
-import "../src/index.css"
+import "../src/index.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HeadFirst from "./Components/Header-Of-Landing-Page/HeaderFirst";
 import Navbar from "./Components/NavBar/Navbar";
@@ -34,15 +34,21 @@ import RegistrationPage from "./Components/Register_Log-in-page/RegistrationPage
 import HotelSearch from "./Components/Hotel_Search_Pages/HotelSearchFor-Footer/HotelSearch";
 import HowToBook from "./Components/Footer_part/How-To-Book/HowToBook";
 import ContactWithUs from "./Components/Footer_part/Contact-With-Us/ContactWithUs";
+import ScrollToTop from "./Components/ScrollToTop";
+import PartnerShip from "./Components/NavBar/PartnerShip/PartnerShip";
+import Terms from "./Components/Register_Log-in-page/RegisterPage-1/Terms-and-Condition/Terms";
+import PrivacyPolicy from "./Components/Register_Log-in-page/RegisterPage-1/Privacy-Policy/PrivacyPolicy";
 
 function App() {
   return (
     <div>
       <Router>
+      <ScrollToTop />
         <HeadFirst />
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/partnership" component={PartnerShip} />
           <Route exact path="/aboutus" component={About} />
 
           <Route path="/my_booking" component={MyBooking} />
@@ -63,6 +69,8 @@ function App() {
 
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegistrationPage}></Route>
+          <Route path="/terms&conditions" component={Terms}></Route>
+          <Route path="/privacy&policy" component={PrivacyPolicy}></Route>
           <Route path="/account_inforamtion" component={Form2}></Route>
 
           {/* Flight-Search-start */}
@@ -70,10 +78,7 @@ function App() {
             path="/flight_search"
             component={FlightSearchPagesCombines}
           ></Route>
-          <Route
-            path="/flight"
-            component={FlightRoute}
-          ></Route>
+          <Route path="/flight" component={FlightRoute}></Route>
           <Route path="/flightPre_Booking" component={FlightName}></Route>
 
           {/* Flight-Search-END */}
@@ -82,10 +87,7 @@ function App() {
             path="/train_search"
             component={TrainSearchPagesCombines}
           ></Route>
-          <Route
-            path="/train"
-            component={TrainRoute}
-          ></Route>
+          <Route path="/train" component={TrainRoute}></Route>
           <Route
             path="/trainPre_Booking"
             component={TrainPreBookingPageInfo}
@@ -107,10 +109,7 @@ function App() {
             path="/launch_search"
             component={LaunchSearchPagesCombines}
           ></Route>
-          <Route
-            path="/launch"
-            component={LaunchRoute}
-          ></Route>
+          <Route path="/launch" component={LaunchRoute}></Route>
           <Route
             path="/launchPre_Booking"
             component={LaunchPreBookingPageInfo}
@@ -122,14 +121,8 @@ function App() {
             path="/hotel_search"
             component={HotelSearchPagesCombines}
           ></Route>
-          <Route
-            path="/hotel_details"
-            component={HotelDetails}
-          ></Route>
-          <Route
-            path="/hotel"
-            component={HotelSearch}
-          ></Route>
+          <Route path="/hotel_details" component={HotelDetails}></Route>
+          <Route path="/hotel" component={HotelSearch}></Route>
           <Route
             path="/hotelPre_Booking"
             component={HotelPreBookingPageInfo}

@@ -18,19 +18,26 @@ import Input from '@material-ui/core/Input';
 import { Link } from "react-router-dom"
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        flexWrap: "wrap",
         width: "100%",
         height: "auto"
     },
     hotelContent: {
         flex: '1 1  auto',
+        [theme.breakpoints.down('sm')]: {
+            flex: "100%"
+          },
 
     },
     checkInWithTex: {
         flex: '1 1 0 auto',
-        marginTop: "50px"
+        
+        [theme.breakpoints.down('sm')]: {
+            flex: "100%"
+          },
     },
     priceFilter: {
         height: 40,
@@ -65,7 +72,7 @@ const useStyles = makeStyles({
             textDecoration: "none"
         }
     }
-});
+}));
 
 
 export default function InputSlider() {

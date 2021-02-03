@@ -31,48 +31,48 @@ function Footer() {
           <div className="row">
             <div className="col-md-4 col-sm-6 ">
               {/* <h6>About us</h6> */}
-              <div className="about-us"><a href="/" alt="About us">About us</a></div>
+              <div className="about-us"><h6 className="d-flex justify-content-center text-center align-items-center">About Tickets4travel</h6></div>
               <div className="mt-3 ">
-                <div className="mt-3 about-us-content1"><Link to="/how-to-book"><a href="##"> How to book</a></Link></div>
-                <div className="mt-3 about-us-content2"><Link to="/contactWithUs"><a href="##"> Contact us</a></Link></div>
-                <div className="mt-3 about-us-content3"><Link to="careerUs"><a href="##"> Career us</a></Link></div>
-                <div className="mt-3 about-us-content4"><Link to="/aboutus"><a href="##"> About us</a></Link></div>
+                <div className="mt-3 about-us-content1 d-flex justify-content-center text-center align-items-center"><Link to="/how-to-book"><a href="##"> How to book</a></Link></div>
+                <div className="mt-3 about-us-content2 d-flex justify-content-center text-center align-items-center"><Link to="/contactWithUs"><a href="##"> Contact us</a></Link></div>
+                <div className="mt-3 about-us-content3 d-flex justify-content-center text-center align-items-center"><Link to="careerUs"><a href="##"> Career us</a></Link></div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center"><Link to="/aboutus"><a href="##"> About us</a></Link></div>
               </div>
               {/* <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" /> */}
             </div>
             <div className="col-md-4 col-sm-6 ">
-              <h6 className="followUs-Header">Follow us On</h6>
-              <div className="mt-3 mr-1 d-flex  align-items-center followUs-body1">
+              <h6 className="followUs-Header d-flex justify-content-center text-center align-items-center">Follow us On</h6>
+              <div className="mt-3 mr-1 d-flex  justify-content-center text-center align-items-center followUs-body1">
                 <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg" />
-                <a href="https://www.facebook.com/Tickets4Travel-100339085420852" className="ml-2"><span>Facebook</span></a>
+                <a href="https://www.facebook.com/Tickets4Travel-100339085420852" target="_blank" without rel="noopener noreferrer" className="ml-2"><span>Facebook</span></a>
               </div>
-              <div className="mt-3 mr-4 d-flex  align-items-center followUs-body2">
+              <div className="mt-3 mr-4 d-flex justify-content-center text-center align-items-center followUs-body2">
                 <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2" />
-                <a href="https://twitter.com/Tickets4T" className="ml-2">Twitter</a>
+                <a href="https://twitter.com/Tickets4T" target="_blank" without rel="noopener noreferrer" className="ml-2">Twitter</a>
               </div>
-              <div className="mt-3 mr-1 d-flex align-items-center followUs-body3">
+              <div className="mt-3 mr-1 d-flex justify-content-center text-center align-items-center followUs-body3">
                 <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950" />
-                <a href="https://www.instagram.com/tickets4travel/" className="ml-2">Instagram</a>
+                <a href="https://www.instagram.com/tickets4travel/" target="_blank" without rel="noopener noreferrer" className="ml-2">Instagram</a>
               </div>
-              <div className="mt-3 mr-2 d-flex align-items-center followUs-body4">
+              <div className="mt-3 mr-2 d-flex justify-content-center text-center align-items-center followUs-body4">
                 <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000" />
-                <a href="https://www.youtube.com/channel/UC1ULM4XtHOAABUUcIOcwZUA" className="ml-2">YouTube</a>
+                <a href="https://www.youtube.com/channel/UC1ULM4XtHOAABUUcIOcwZUA" target="_blank" without rel="noopener noreferrer" className="ml-2">YouTube</a>
               </div>
               {/* <div>
                 <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa" />
               </div> */}
             </div>
-            <div className="col-md-4 col-sm-6">
-              <h6 className="products-header">Services</h6>
-              <div className="mt-3 products-body1">
+            <div className="col-md-4 col-sm-6 ">
+              <h6 className="products-header d-flex justify-content-center text-center align-items-center">Services</h6>
+              <div className="mt-3 products-body1 d-flex justify-content-center text-center align-items-center">
                 <Link to="/flight" ><a href="##" > Flights</a></Link></div>
-              <div className="mt-3 products-body2">
+              <div className="mt-3 products-body2 d-flex justify-content-center text-center align-items-center">
                 <Link to="/hotel"><a href="##" className="products-body2"> Hotels</a></Link></div>
-              <div className="mt-3 products-body3">
+              <div className="mt-3 products-body3 d-flex justify-content-center text-center align-items-center">
                 <Link to="/launch"><a href="##" className="products-body3"> Launch</a></Link></div>
-              <div className="mt-3 products-body4">
+              <div className="mt-3 products-body4 d-flex justify-content-center text-center align-items-center">
                 <Link to="/bus"><a href="##" className="products-body4"> Bus</a></Link></div>
-              <div className="mt-3 products-body5">
+              <div className="mt-3 products-body5 d-flex justify-content-center text-center align-items-center">
                 <Link to="/train"><a href="##" className="products-body5"> Train</a></Link></div>
               {/* <img
                 src={bikas}
