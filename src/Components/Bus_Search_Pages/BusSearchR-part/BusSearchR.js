@@ -3,6 +3,7 @@ import ArrowPng from "../BusSearchR-part/images/next.png";
 import "../BusSearchR-part/busSearch.css";
 import { useBus } from "../../../BusContext";
 import { format } from "date-fns";
+import { Button } from "@material-ui/core";
 
 function BusSearchR() {
   const { bus } = useBus();
@@ -26,9 +27,9 @@ function BusSearchR() {
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <p className="mb-0"> {date}</p>
-              <button type="button" className="btn btn-success">
+              <Button type="button" variant="outlined" color="primary">
                 Change Search
-              </button>
+              </Button>
             </div>
           </div>
           <hr></hr>

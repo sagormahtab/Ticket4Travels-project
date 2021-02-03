@@ -8,8 +8,10 @@ import Box from "@material-ui/core/Box";
 import BusInputForm from "./BusInputForm";
 import { DirectionsBus, Hotel, DirectionsBoat } from "@material-ui/icons";
 import { Paper } from "@material-ui/core";
-import HotelInputForm from "./HotelInputForm";
+import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     display: "flex",
     height: "auto",
+    [theme.breakpoints.down('sm')]: {
+      display: "none"
+    },
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,

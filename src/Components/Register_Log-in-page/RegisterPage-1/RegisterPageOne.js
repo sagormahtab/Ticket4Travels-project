@@ -93,7 +93,7 @@ function RegisterPageOne({ submitForm }) {
 
 
                                     <div className="mt-3">
-                                        <p>By clicking the button below Your agree to <span className="ticket-Text_Div">Tickets4travel</span> <span className="ticket-Text_Div2"> <a href="##">Terms & conditions</a> </span> & <span className="ticket-Text_Div2"><a href="##">privacy poilicy</a></span></p>
+                                        <p>By clicking the button below Your agree to <span className="ticket-Text_Div">Tickets4travel</span> <span className="ticket-Text_Div2"> <a href="/terms&conditions">Terms & conditions</a> </span> & <span className="ticket-Text_Div2"><a href="/privacy&policy">privacy poilicy</a></span></p>
                                     </div>
                                 </CardContent>
                             </Card>

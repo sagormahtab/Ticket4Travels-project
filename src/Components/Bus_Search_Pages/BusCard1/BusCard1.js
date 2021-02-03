@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    width: "100%"
   },
   busTab1: {
     [theme.breakpoints.down("sm")]: {
@@ -85,9 +86,11 @@ export default function SimpleTabs({ bus }) {
   return (
     <div className={classes.root}>
       <div className="container">
-        <Card className="busCard1_boxshadow mb-4">
+      <div className="row">
+      <div className="col-md-12">
+      <Card className="mb-4" >
           <CardContent>
-            <h5 className="text-left">{bus.name}</h5>
+            <h5 className="text-left" style={{color: "#30dd89"}}>{bus.name}</h5>
             <p className="text-left">
               {bus.model} {bus.AC ? "AC" : null}
             </p>
@@ -138,7 +141,7 @@ export default function SimpleTabs({ bus }) {
               />
               <Tab
                 className={`${classes.busTab2} busTab2`}
-                label="View Seats"
+                label="Bookings"
                 {...a11yProps(1)}
               />
             </Tabs>
@@ -151,6 +154,8 @@ export default function SimpleTabs({ bus }) {
             </TabPanel>
           </CardContent>
         </Card>
+      </div>
+      </div>
       </div>
     </div>
   );
