@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import icn1 from "../popularDeals_part/images/travel2.png";
 import icn2 from "../popularDeals_part/images/bus2.png";
 import icn3 from "../popularDeals_part/images/cruise-ship.png";
@@ -110,22 +110,22 @@ function PopularDeal() {
             <ReactImage photos={photos} />
           </div>
           <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-3">
-          <ReactImage photos={photos2} />
+            <ReactImage photos={photos2} />
           </div>
           <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-3">
-          <ReactImage photos={photos3} />
+            <ReactImage photos={photos3} />
           </div>
         </div>
 
         <div className="row mt-5">
           <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-3">
-          <ReactImage photos={photos4} />
+            <ReactImage photos={photos4} />
           </div>
           <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-3">
-          <ReactImage photos={photos5}/>
+            <ReactImage photos={photos5} />
           </div>
           <div className="col-md-4 col-lg-4 col-sm-12 col-12 mt-3">
-          <ReactImage photos={photos6} />
+            <ReactImage photos={photos6} />
           </div>
         </div>
       </div>

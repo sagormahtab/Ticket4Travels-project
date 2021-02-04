@@ -34,7 +34,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import hotelPic from "./images/hotel-img1.jpg";
-import Hotel from "./images/hotel-img1.jpg";
 
 import { Link } from "react-router-dom";
 

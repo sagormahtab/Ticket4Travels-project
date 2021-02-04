@@ -1,16 +1,12 @@
 import React from "react";
 // import Wave_png from "../Footer_part/images/Wave.png"
-
-import bikas from "../Footer_part/images/bikas1.png";
-import play from "../Footer_part/images/google.png";
-import apple from "../Footer_part/images/Apple.png";
 import "./footer.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -31,83 +27,134 @@ function Footer() {
           <div className="row">
             <div className="col-md-4 col-sm-6 ">
               {/* <h6>About us</h6> */}
-              <div className="about-us"><h6 className="d-flex justify-content-center text-center align-items-center">About Tickets4travel</h6></div>
+              <div className="about-us">
+                <h6 className="d-flex justify-content-center text-center align-items-center">
+                  About Tickets4travel
+                </h6>
+              </div>
               <div className="mt-3 ">
-                <div className="mt-3 about-us-content1 d-flex justify-content-center text-center align-items-center"><Link to="/how-to-book"><a href="##"> How to book</a></Link></div>
-                <div className="mt-3 about-us-content2 d-flex justify-content-center text-center align-items-center"><Link to="/contactWithUs"><a href="##"> Contact us</a></Link></div>
-                <div className="mt-3 about-us-content3 d-flex justify-content-center text-center align-items-center"><Link to="careerUs"><a href="##"> Career us</a></Link></div>
-                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center"><Link to="/aboutus"><a href="##"> About us</a></Link></div>
+                <div className="mt-3 about-us-content1 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/how-to-book">
+                    <a href="##"> How to book</a>
+                  </Link>
+                </div>
+                <div className="mt-3 about-us-content2 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/contactWithUs">
+                    <a href="##"> Contact us</a>
+                  </Link>
+                </div>
+                <div className="mt-3 about-us-content3 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/partnership">
+                    <a href="##"> PartnerShip with us</a>
+                  </Link>
+                </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/aboutus">
+                    <a href="##"> About us</a>
+                  </Link>
+                </div>
               </div>
               {/* <FontAwesomeIcon icon={faCcPaypal} size="3x" color="#3b7bbf" className="paypal" /> */}
             </div>
             <div className="col-md-4 col-sm-6 ">
-              <h6 className="followUs-Header d-flex justify-content-center text-center align-items-center">Follow us On</h6>
+              <h6 className="followUs-Header d-flex justify-content-center text-center align-items-center">
+                Follow us On
+              </h6>
               <div className="mt-3 mr-1 d-flex  justify-content-center text-center align-items-center followUs-body1">
-                <FontAwesomeIcon icon={faFacebookSquare} color="#4267B2" size="lg" />
-                <a href="https://www.facebook.com/Tickets4Travel-100339085420852" target="_blank" without rel="noopener noreferrer" className="ml-2"><span>Facebook</span></a>
+                <FontAwesomeIcon
+                  icon={faFacebookSquare}
+                  color="#4267B2"
+                  size="lg"
+                />
+                <a
+                  href="https://www.facebook.com/Tickets4Travel-100339085420852"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  className="ml-2"
+                >
+                  <span>Facebook</span>
+                </a>
               </div>
               <div className="mt-3 mr-4 d-flex justify-content-center text-center align-items-center followUs-body2">
-                <FontAwesomeIcon icon={faTwitterSquare} size="lg" color="#1DA1F2" />
-                <a href="https://twitter.com/Tickets4T" target="_blank" without rel="noopener noreferrer" className="ml-2">Twitter</a>
+                <FontAwesomeIcon
+                  icon={faTwitterSquare}
+                  size="lg"
+                  color="#1DA1F2"
+                />
+                <a
+                  href="https://twitter.com/Tickets4T"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  className="ml-2"
+                >
+                  Twitter
+                </a>
               </div>
               <div className="mt-3 mr-1 d-flex justify-content-center text-center align-items-center followUs-body3">
                 <FontAwesomeIcon icon={faInstagram} size="lg" color="#e95950" />
-                <a href="https://www.instagram.com/tickets4travel/" target="_blank" without rel="noopener noreferrer" className="ml-2">Instagram</a>
+                <a
+                  href="https://www.instagram.com/tickets4travel/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  className="ml-2"
+                >
+                  Instagram
+                </a>
               </div>
               <div className="mt-3 mr-2 d-flex justify-content-center text-center align-items-center followUs-body4">
                 <FontAwesomeIcon icon={faYoutube} size="lg" color="#FF0000" />
-                <a href="https://www.youtube.com/channel/UC1ULM4XtHOAABUUcIOcwZUA" target="_blank" without rel="noopener noreferrer" className="ml-2">YouTube</a>
+                <a
+                  href="https://www.youtube.com/channel/UC1ULM4XtHOAABUUcIOcwZUA"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  className="ml-2"
+                >
+                  YouTube
+                </a>
               </div>
-              {/* <div>
-                <FontAwesomeIcon icon={faCcVisa} size="3x" color="#fcb70a" className="visa" />
-              </div> */}
             </div>
             <div className="col-md-4 col-sm-6 ">
-              <h6 className="products-header d-flex justify-content-center text-center align-items-center">Services</h6>
+              <h6 className="products-header d-flex justify-content-center text-center align-items-center">
+                Services
+              </h6>
               <div className="mt-3 products-body1 d-flex justify-content-center text-center align-items-center">
-                <Link to="/flight" ><a href="##" > Flights</a></Link></div>
+                <Link to="/flight">
+                  <a href="##"> Flights</a>
+                </Link>
+              </div>
               <div className="mt-3 products-body2 d-flex justify-content-center text-center align-items-center">
-                <Link to="/hotel"><a href="##" className="products-body2"> Hotels</a></Link></div>
+                <Link to="/hotel">
+                  <a href="##" className="products-body2">
+                    Hotels
+                  </a>
+                </Link>
+              </div>
               <div className="mt-3 products-body3 d-flex justify-content-center text-center align-items-center">
-                <Link to="/launch"><a href="##" className="products-body3"> Launch</a></Link></div>
+                <Link to="/launch">
+                  <a href="##" className="products-body3">
+                    Launch
+                  </a>
+                </Link>
+              </div>
               <div className="mt-3 products-body4 d-flex justify-content-center text-center align-items-center">
-                <Link to="/bus"><a href="##" className="products-body4"> Bus</a></Link></div>
+                <Link to="/bus">
+                  <a href="##" className="products-body4">
+                    Bus
+                  </a>
+                </Link>
+              </div>
               <div className="mt-3 products-body5 d-flex justify-content-center text-center align-items-center">
-                <Link to="/train"><a href="##" className="products-body5"> Train</a></Link></div>
-              {/* <img
-                src={bikas}
-                alt="paypal"
-                height="30px"
-                width="30px"
-                className=" bikash  img-fluid"
-              ></img> */}
+                <Link to="/train">
+                  <a href="##" className="products-body5">
+                    Train
+                  </a>
+                </Link>
+              </div>
             </div>
-
-
-            {/* <div className="col-md-3 col-sm-6">
-              <h6 className="others-Products-Header">Others Products</h6>
-              <div className="mt-3 others-Products-body1"><a href="##"> Flights</a></div>
-              <div className="mt-3 others-Products-body2"><a href="##"> Hotels</a></div>
-              <div className="mt-3 others-Products-body3"><a href="##"> Train</a></div>
-              <div className="mt-3 others-Products-body4"><a href="##"> Bus</a></div>
-              <p className="mt-5 Our-app-header" style={{ color: "white" }}>Download Our App</p>
-              <img
-                src={play}
-                alt="play"
-                className="play img-fluid"
-                height="50px"
-                width="150px"
-              ></img>
-              <img
-                src={apple}
-                alt="apple"
-                className="apple img-fluid"
-                height="50px"
-                width="160px"
-              ></img>
-            </div> */}
-
-
           </div>
         </div>
       </div>

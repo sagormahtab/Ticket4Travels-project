@@ -11,8 +11,6 @@ import { Paper } from "@material-ui/core";
 import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
 
-
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -54,13 +52,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     display: "flex",
     height: "auto",
-    [theme.breakpoints.down('sm')]: {
-      display: "none"
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    width: "220px"
+    width: "220px",
   },
   tabPanel: {
     flexGrow: 1,
@@ -68,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
   paperStyle: {
     paddingTop: "1rem",
     paddingBottom: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));
 

@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Button,
-} from "@material-ui/core";
+import React from "react";
+import { Card, CardContent, CardMedia, Button } from "@material-ui/core";
 import "../Initial-Hotel-booking-page/hotelPreBooking.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
@@ -26,23 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   hotelContent: {
     flex: "1 1  auto",
-    [theme.breakpoints.down('sm')]: {
-      flex: "100%"
+    [theme.breakpoints.down("sm")]: {
+      flex: "100%",
     },
   },
   bookNowContent: {
     flex: "1 1  auto",
     marginTop: "10px",
-
   },
 }));
 
-
-
 function HotelPreBookingPageInfo() {
   const classes = useStyles();
-
-
 
   return (
     <div>
@@ -167,10 +157,25 @@ function HotelPreBookingPageInfo() {
 
               <CardContent style={{ backgroundColor: "#D3D3D2" }}>
                 <h6>Cancellation Policy:</h6>
-                <p className="m-0" style={{ fontSize: "14px" }}> Before 7 Days of check in: FREE cancellation</p>
-                <p className="m-0" style={{ fontSize: "14px" }}>  Within 7 Days of check in: Full amount of the first night's charge</p>
-                <p className="m-0" style={{ fontSize: "14px" }}>  Failure to arrive at the hotel or property will be treated as No-show and will incur the first night’s charge.</p>
-                <p className="m-0" style={{ fontSize: "14px" }}> During Blackout/Long Holidays period Cancellation policy will not be applicable..</p>
+                <p className="m-0" style={{ fontSize: "14px" }}>
+                  {" "}
+                  Before 7 Days of check in: FREE cancellation
+                </p>
+                <p className="m-0" style={{ fontSize: "14px" }}>
+                  {" "}
+                  Within 7 Days of check in: Full amount of the first night's
+                  charge
+                </p>
+                <p className="m-0" style={{ fontSize: "14px" }}>
+                  {" "}
+                  Failure to arrive at the hotel or property will be treated as
+                  No-show and will incur the first night’s charge.
+                </p>
+                <p className="m-0" style={{ fontSize: "14px" }}>
+                  {" "}
+                  During Blackout/Long Holidays period Cancellation policy will
+                  not be applicable..
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -259,15 +264,17 @@ function HotelPreBookingPageInfo() {
               </CardContent>
             </Card>
             <Link to="/booking_Stepper">
-              <Button variant="contained" color="primary" fullWidth className="p-3 mt-3">Continue</Button>
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                className="p-3 mt-3"
+              >
+                Continue
+              </Button>
             </Link>
           </div>
         </div>
-
-
-
-
-
       </div>
     </div>
   );
