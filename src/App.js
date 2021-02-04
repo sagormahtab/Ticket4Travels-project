@@ -43,12 +43,14 @@ function App() {
   return (
     <div>
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <HeadFirst />
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+
           <Route exact path="/partnership" component={PartnerShip} />
+
           <Route exact path="/aboutus" component={About} />
 
           <Route path="/my_booking" component={MyBooking} />
@@ -68,9 +70,13 @@ function App() {
           <Route path="/contactWithUs" component={ContactWithUs} />
 
           <Route path="/login" component={LoginPage} />
+
           <Route path="/register" component={RegistrationPage}></Route>
-          <Route path="/terms&conditions" component={Terms}></Route>
-          <Route path="/privacy&policy" component={PrivacyPolicy}></Route>
+
+          <Route path="/terms_conditions" component={Terms}></Route>
+
+          <Route path="/privacy_policy" component={PrivacyPolicy}></Route>
+
           <Route path="/account_inforamtion" component={Form2}></Route>
 
           {/* Flight-Search-start */}

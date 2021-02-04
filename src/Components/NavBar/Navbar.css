@@ -84,10 +84,15 @@
 }
 
 @media (max-width: 40em) {
-  .MenuBar-Contents {
+  /* .MenuBar-Contents {
+    display: none;
+  } */
+  .MenuBar-Contents-partnership {
     display: none;
   }
-
+  .tickets4travel-span {
+    display: none;
+  }
   .nav-menu {
     width: 250px;
   }

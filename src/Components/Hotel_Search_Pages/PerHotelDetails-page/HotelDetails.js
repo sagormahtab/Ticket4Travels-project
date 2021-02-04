@@ -14,6 +14,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import "./hotelDetails.css";
 import DateFnsUtils from "@date-io/date-fns";
+import ImageGallery from "react-image-gallery";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -33,7 +34,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import hotelPic from "./images/hotel-img1.jpg";
-import Hotel from "./images/hotel-img1.jpg"
+import Hotel from "./images/hotel-img1.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -45,14 +46,14 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
   },
   HotelCardMedia: {
-    [theme.breakpoints.down('sm')]: {
-      width: "100%"
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
     },
   },
   hotelContent: {
     flex: "1 1 0 auto",
-    [theme.breakpoints.down('sm')]: {
-      flex: "100%"
+    [theme.breakpoints.down("sm")]: {
+      flex: "100%",
     },
   },
   bookNowContent: {
@@ -67,10 +68,25 @@ const useStyles = makeStyles((theme) => ({
   },
   hotelBookLink: {
     "&:hover": {
-      textDecoration: "none"
-    }
-  }
+      textDecoration: "none",
+    },
+  },
 }));
+
+const images = [
+  {
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  },
+];
 
 const HotelDetails = () => {
   const [selectedDate, setSelectedDate] = React.useState(
@@ -96,7 +112,7 @@ const HotelDetails = () => {
 
   const open = Boolean(anchorEl);
 
-  const [numberOfRoom, setNumberOfRoom] = React.useState('1');
+  const [numberOfRoom, setNumberOfRoom] = React.useState("1");
 
   const handleChange = (event) => {
     setNumberOfRoom(event.target.value);
@@ -201,7 +217,11 @@ const HotelDetails = () => {
               </ExpansionPanel>
             </div>
             <div className="col-md-2 mt-2">
-              <Button variant="contained" style={{ backgroundColor: "#30dd89", padding: "12px" }} fullWidth>
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "#30dd89", padding: "12px" }}
+                fullWidth
+              >
                 Search
               </Button>
             </div>
@@ -210,7 +230,7 @@ const HotelDetails = () => {
 
           <div className="row mt-3">
             <div className="col-md-6">
-              <img src={Hotel} alt="One Kind Of Hotel" className="img-fluid"></img>
+              <ImageGallery items={images} />
             </div>
             <div className="col-md-6">
               <CardHeader title="The Raintree Dhaka" />
@@ -296,7 +316,7 @@ const HotelDetails = () => {
         <CardContent>
           <div className="row mt-5">
             <div className="col-md-12">
-              <Card className={classes.CardRoot} >
+              <Card className={classes.CardRoot}>
                 <CardMedia className={classes.HotelCardMedia}>
                   <img
                     src={hotelPic}
@@ -315,7 +335,7 @@ const HotelDetails = () => {
                     <div className="mt-2">
                       <Button variant="outlined" color="secondary" size="small">
                         Not Included: 15% VAT & 10% Service Charge
-                  </Button>
+                      </Button>
                     </div>
 
                     <div className="mt-3">
@@ -328,7 +348,7 @@ const HotelDetails = () => {
                         style={{ fontSize: "small", marginLeft: "3px" }}
                       >
                         Cancellation policy
-                  </span>
+                      </span>
                       <Popover
                         id="mouse-over-popover"
                         className={classes.popover}
@@ -375,18 +395,23 @@ const HotelDetails = () => {
                         <h2 className="text-right"> BDT 7470</h2>
                       </div>
                       <div className="row">
-                        <div className="col-md-8 text-right">Number of Rooms</div>
+                        <div className="col-md-8 text-right">
+                          Number of Rooms
+                        </div>
                         <div className="col-md-4 text-right">
-                          <FormControl className={classes.formControl} fullWidth>
+                          <FormControl
+                            className={classes.formControl}
+                            fullWidth
+                          >
                             {/* <InputLabel htmlFor="age-native-simple">
                           Number OF Rooms
                         </InputLabel> */}
                             <Select
-
                               value={numberOfRoom}
                               onChange={handleChange}
-
-                            > <option aria-label="None" value="1" />
+                            >
+                              {" "}
+                              <option aria-label="None" value="1" />
                               <option value={1}>1</option>
                               <option value={2}>2</option>
                               <option value={3}>3</option>
@@ -396,20 +421,30 @@ const HotelDetails = () => {
                         </div>
                       </div>
                       <div className="mt-3">
-                        <Link to="/hotelPre_Booking" className={classes.hotelBookLink}>
-                          <Button variant="contained" style={{ backgroundColor: "#30dd89", color: "white", marginLeft: "195px" }}>Book Now</Button>
+                        <Link
+                          to="/hotelPre_Booking"
+                          className={classes.hotelBookLink}
+                        >
+                          <Button
+                            variant="contained"
+                            style={{
+                              backgroundColor: "#30dd89",
+                              color: "white",
+                              marginLeft: "195px",
+                            }}
+                          >
+                            Book Now
+                          </Button>
                         </Link>
                       </div>
                     </CardContent>
                   </Card>
-
                 </CardContent>
               </Card>
             </div>
           </div>
         </CardContent>
       </Card>
-
 
       {/* Features of The Raintree Dhaka start */}
       <Card className="mt-5">
@@ -421,13 +456,16 @@ const HotelDetails = () => {
               <h5>Food & Drinks</h5>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Snack Bar/Restaurant</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Snack Bar/Restaurant</span>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Lunch & Dinner</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Lunch & Dinner</span>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Breakfast</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Breakfast</span>
             </div>
           </div>
           <hr></hr>
@@ -438,69 +476,114 @@ const HotelDetails = () => {
 
             <div className="row ml-3">
               <div className="col-md-3 col-3">
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Newspape</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Express Check In/Check Out</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Transport Service</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Smoking Zone</span></div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Newspape</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}>
+                    {" "}
+                    Express Check In/Check Out
+                  </span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Transport Service</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Smoking Zone</span>
+                </div>
               </div>
               <div className="col-md-3 col-3">
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Parking Area</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> 24/7 Front Desk</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Business center</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Tour Guide</span></div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Parking Area</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> 24/7 Front Desk</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Business center</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Tour Guide</span>
+                </div>
               </div>
               <div className="col-md-3 col-3">
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Doctor</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Terrace</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Refrigerator</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Oven</span></div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Doctor</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Terrace</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Refrigerator</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Oven</span>
+                </div>
               </div>
               <div className="col-md-3 col-3">
-                <div ><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Early Wake up call</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Wake up service</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Wheel chair</span></div>
-                <div><FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Early Wake up call</span></div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Early Wake up call</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Wake up service</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Wheel chair</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+                  <span style={{ fontSize: "small" }}> Early Wake up call</span>
+                </div>
               </div>
             </div>
           </div>
-
-
-
         </CardContent>
 
-
         <div>
-
-
           <hr></hr>
-
-
 
           <div className="row ml-1">
             <div className="col-md-2">
               <h5 className="ml-1">Fitness, Relaxing</h5>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Daily Housekeeping</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Daily Housekeeping</span>
             </div>
             <div className="col-md-2 col-3 ">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Free toiletries</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Free toiletries</span>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Long beds</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Long beds</span>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Personal Locker</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Personal Locker</span>
             </div>
             <div className="col-md-2 col-3">
-              <FontAwesomeIcon icon={faCheckCircle} size="xs" /> <span style={{ fontSize: "small" }}> Air Conditioner</span>
+              <FontAwesomeIcon icon={faCheckCircle} size="xs" />{" "}
+              <span style={{ fontSize: "small" }}> Air Conditioner</span>
             </div>
           </div>
-
         </div>
-
       </Card>
-
 
       {/* Nearby Landmarks start */}
       <Card className="mt-5">
@@ -556,7 +639,6 @@ const HotelDetails = () => {
           </div>
         </CardContent>
       </Card>
-
     </div>
   );
 };

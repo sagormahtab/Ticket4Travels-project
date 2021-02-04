@@ -1,4 +1,4 @@
-import Card from '@material-ui/core/Card';
+import Card from "@material-ui/core/Card";
 import NxxtPng from "../BusCard1/images/next.png";
 import "../BusCard1/busCard1.css";
 import React from "react";
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    width: "100%"
+    width: "100%",
   },
   busTab1: {
     [theme.breakpoints.down("sm")]: {
@@ -86,76 +86,85 @@ export default function SimpleTabs({ bus }) {
   return (
     <div className={classes.root}>
       <div className="container">
-      <div className="row">
-      <div className="col-md-12">
-      <Card className="mb-4" >
-          <CardContent>
-            <h5 className="text-left" style={{color: "#30dd89"}}>{bus.name}</h5>
-            <p className="text-left">
-              {bus.model} {bus.AC ? "AC" : null}
-            </p>
-
-            <div className="row mt-3">
-              <div className="col-lg-3 col-md-3 col-3 d-flex align-items-center justify-content-between">
-                <div>
-                  <p>
-                    {new Intl.DateTimeFormat("default", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Dhaka",
-                    }).format(new Date(bus.depTime))}
-                  </p>
-                  <p>{bus.from}</p>
-                </div>
-                <div>
-                  <img src={NxxtPng} width="20px" alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-3 col-3">
-                <p>
-                  {new Intl.DateTimeFormat("default", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Dhaka",
-                  }).format(new Date(bus.arrTime))}
+        <div className="row">
+          <div className="col-md-12">
+            <Card className="mb-4">
+              <CardContent>
+                <h5 className="text-left" style={{ color: "#30dd89" }}>
+                  {bus.name}
+                </h5>
+                <p className="text-left font-weight-bold">
+                  {bus.model} {bus.AC ? "AC" : null}
                 </p>
-                <p>{bus.to}</p>
-              </div>
-              <div className="col-lg-3 col-md-3 col-3">
-                <p className="text-center">Seats Available</p>
-                <p className="text-center">{bus.seat - bus.bookedSeatNum}</p>
-              </div>
-              <div className="col-lg-3 col-md-3 col-3">
-                <p className="text-center">Amount</p>
-                <p className="text-center">{bus.fare}</p>
-              </div>
-            </div>
 
-            <Tabs value={value} onChange={handleChange}>
-              <Tab
-                className={`${classes.busTab1} busTab1`}
-                label="Bus Details"
-                {...a11yProps(0)}
-              />
-              <Tab
-                className={`${classes.busTab2} busTab2`}
-                label="Bookings"
-                {...a11yProps(1)}
-              />
-            </Tabs>
+                <div className="row mt-3">
+                  <div className="col-lg-3 col-md-3 col-3 d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>
+                        {new Intl.DateTimeFormat("default", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                          timeZone: "Asia/Dhaka",
+                        }).format(new Date(bus.depTime))}
+                      </p>
+                      <p style={{ color: "#30dd89" }}>{bus.from}</p>
+                    </div>
+                    <div>
+                      <img
+                        src={NxxtPng}
+                        width="20px"
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-lg-3 col-md-3 col-3">
+                    <p>
+                      {new Intl.DateTimeFormat("default", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Dhaka",
+                      }).format(new Date(bus.arrTime))}
+                    </p>
+                    <p style={{ color: "#30dd89" }}>{bus.to}</p>
+                  </div>
+                  <div className="col-lg-3 col-md-3 col-3">
+                    <p className="text-center">Seats Available</p>
+                    <p className="text-center">
+                      {bus.seat - bus.bookedSeatNum}
+                    </p>
+                  </div>
+                  <div className="col-lg-3 col-md-3 col-3">
+                    <p className="text-center">Amount</p>
+                    <p className="text-center">{bus.fare}</p>
+                  </div>
+                </div>
 
-            <TabPanel value={value} index={0}>
-              <BusDetails bus={bus} />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <ViewSeats bus={bus} />
-            </TabPanel>
-          </CardContent>
-        </Card>
-      </div>
-      </div>
+                <Tabs value={value} onChange={handleChange}>
+                  <Tab
+                    className={`${classes.busTab1} busTab1`}
+                    label="Bus Details"
+                    {...a11yProps(0)}
+                  />
+                  <Tab
+                    className={`${classes.busTab2} busTab2`}
+                    label="Bookings"
+                    {...a11yProps(1)}
+                  />
+                </Tabs>
+
+                <TabPanel value={value} index={0}>
+                  <BusDetails bus={bus} />
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                  <ViewSeats bus={bus} />
+                </TabPanel>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .md-form.md-outline {
   margin: 0 !important;
 }
@@ -83,45 +85,44 @@ input[type="date"] {
   margin: 0;
 }
 
-.service-body ul li{
+.service-body ul li {
   display: block;
-    padding-right: 25px;
-    position: relative;
-    width: auto;
-    height: auto!important;
-    float: left;
-    margin-top: 0px;
-    margin-right: 10px;
+  padding-right: 25px;
+  position: relative;
+  width: auto;
+  height: auto !important;
+  float: left;
+  margin-top: 0px;
+  margin-right: 10px;
 }
 
 .nearby-landmark {
   padding: 10px 0;
 }
-ul{
+ul {
   display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
-.nearby-landmark li{
+.nearby-landmark li {
   padding: 5px 10px;
-    width: 33%;
-    border-right: 1px solid #eee;
-    display: inline-block;
-    font-size: small;
+  width: 33%;
+  border-right: 1px solid #eee;
+  display: inline-block;
+  font-size: small;
 }
 
-.nearby-landmark li span:last-child{
-
+.nearby-landmark li span:last-child {
   float: right;
-    right: 0;
+  right: 0;
 }
 
-.nearby-landmark li span{
+.nearby-landmark li span {
   max-width: 80%;
-    display: inline-block
+  display: inline-block;
 }

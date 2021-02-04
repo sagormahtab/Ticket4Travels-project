@@ -1,40 +1,46 @@
 import { Button, Card, CardContent } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus, faHotel, faShip } from "@fortawesome/free-solid-svg-icons";
+import PartnerShipBanner from "./images/Partnership-page-banner.png";
 import React from "react";
 
 const PartnerShip = () => {
   return (
     <div>
-      <Card>
-        <CardContent>
-          <div className="container">
-            <div className="row">
+      <div>
+        <img src={PartnerShipBanner} alt="" className="img-fluid"></img>
+      </div>
+      <div className="container mt-5">
+        <Card>
+          <CardContent>
+            <div className="row mt-5">
               <div className="col-md-12">
                 <h3 className="mt-2">Grow Your Business with Tickets4Travel</h3>
-                <p className="mt-3">
-                  More business opportunities through us. Just need to register
-                  your vehicle companies with our company and get 3x times more
-                  customers.{" "}
-                </p>
+                <ul>
+                  <li className="mt-3">
+                    More business opportunities through us. Just need to
+                    register your vehicle companies with our company and get 3x
+                    times more customers.
+                  </li>
+                </ul>
 
                 <h3 className="mt-4">Be with us, just one click away.</h3>
-                <p className="mt-3">
-                  Select the services you would like to offer from the below
-                  buttons, select your vehicle type, submit a few personal
-                  details and thats it, wait for our response.
-                </p>
-                <p className="mt-3">Join us now</p>
+                <ul>
+                  <li className="mt-3">
+                    Select the services you would like to offer from the below
+                    buttons, select your vehicle type, submit a few personal
+                    details and thats it, wait for our response.
+                  </li>
+                  <li className="mt-3">Join us now</li>
+                </ul>
               </div>
             </div>
-            <div className="row">
+            <div className="row mt-4">
               <div className="col-md-4 mt-3">
-                <Button variant="outlined" color="primary">
+                <Button variant="outlined" color="primary" fullWidth>
                   <a
                     className="nav-link "
                     href="http://hotel.tickets4travel.com"
-                    target="_blank"
-                    without
                     rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faHotel} className="mr-1" /> Hotel
@@ -43,37 +49,33 @@ const PartnerShip = () => {
                 </Button>
               </div>
               <div className="col-md-4 mt-3">
-                <Button variant="outlined" color="primary">
+                <Button variant="outlined" color="primary" fullWidth>
                   <a
                     className="nav-link "
                     href="http://bus.tickets4travel.com"
-                    target="_blank"
-                    without
                     rel="noopener noreferrer"
                   >
-                    <FontAwesomeIcon icon={faHotel} className="mr-1" /> Bus
+                    <FontAwesomeIcon icon={faBus} className="mr-1" /> Bus
                     Partnership
                   </a>
                 </Button>
               </div>
               <div className="col-md-4 mt-3">
-                <Button variant="outlined" color="primary">
+                <Button variant="outlined" color="primary" fullWidth>
                   <a
                     className="nav-link "
                     href="http://launch.tickets4travel.com"
-                    target="_blank"
-                    without
                     rel="noopener noreferrer"
                   >
-                    <FontAwesomeIcon icon={faHotel} className="mr-1" /> Launch
+                    <FontAwesomeIcon icon={faShip} className="mr-1" /> Launch
                     Partnership
                   </a>
                 </Button>
               </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };

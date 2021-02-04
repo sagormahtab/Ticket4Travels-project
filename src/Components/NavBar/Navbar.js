@@ -3,23 +3,20 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import logo from "./logo/Final Logo.png";
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHandshake } from '@fortawesome/free-solid-svg-icons';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-
-
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faHandshake } from "@fortawesome/free-solid-svg-icons";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles(() => ({
   link: {
     "&:hover": {
-      textDecoration: "none"
-    }
-  }
+      textDecoration: "none",
+    },
+  },
 }));
-
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -32,22 +29,41 @@ function Navbar() {
     <>
       <div className="navbar">
         <span className="menu-bars">
-          <FontAwesomeIcon icon={faBars} onClick={showSidebar} size="1x" color="#007bff" className="SideNav-bar" />
+          <FontAwesomeIcon
+            icon={faBars}
+            onClick={showSidebar}
+            size="1x"
+            color="#007bff"
+            className="SideNav-bar"
+          />
           <Link to="/" className={classes.link}>
-            <img src={logo} alt="logo" height="50px" width="80px" className="img-fluid" /><span className="tickets4travel-span">Tickets4travel</span>
+            <img
+              src={logo}
+              alt="logo"
+              height="50px"
+              width="80px"
+              className="img-fluid"
+            />
+            <span className="tickets4travel-span">Tickets4travel</span>
           </Link>
         </span>
         <nav className="nav ml-auto MenuBar-Contents">
-          <Link to="/partnership" className="nav-link ">
-          <FontAwesomeIcon icon={faHandshake} className="mr-1" /> Partnership with us
+          <Link
+            to="/partnership"
+            className="nav-link MenuBar-Contents-partnership"
+          >
+            <FontAwesomeIcon icon={faHandshake} className="mr-1" /> Partnership
+            with us
           </Link>
-            
+
           <Link className="nav-link " to="/login">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-1" /> Log In
-            </Link>
+          </Link>
 
           <Link to="/register" className={classes.link}>
-            <Button variant="contained" style={{ backgroundColor: "#30dd89" }}>Register</Button>
+            <Button variant="contained" style={{ backgroundColor: "#30dd89" }}>
+              Register
+            </Button>
           </Link>
         </nav>
       </div>

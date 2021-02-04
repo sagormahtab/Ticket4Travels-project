@@ -10,7 +10,6 @@ import PopularDeal from "../../popularDeals_part/PopularDeal";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import MobileInputForm from "../../inputForm_part/MobileInputForm";
-import MHome from "../../Mobile-View/MHome";
 
 function Home() {
   return (
