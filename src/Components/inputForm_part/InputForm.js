@@ -6,8 +6,14 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BusInputForm from "./BusInputForm";
-import { DirectionsBus, Hotel, DirectionsBoat } from "@material-ui/icons";
-import { Paper } from "@material-ui/core";
+import {
+  DirectionsBus,
+  Hotel,
+  DirectionsBoat,
+  Flight,
+  Train,
+} from "@material-ui/icons";
+import { Button, Paper } from "@material-ui/core";
 import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
 
@@ -116,8 +122,22 @@ export default function VerticalTabs() {
               }
               {...a11yProps(2)}
             />
-            <Tab label="Flight" {...a11yProps(3)} />
-            <Tab label="Train" {...a11yProps(4)} />
+            <Tab
+              label={
+                <div>
+                  <Flight style={{ verticalAlign: "middle" }} /> Flight
+                </div>
+              }
+              {...a11yProps(3)}
+            />
+            <Tab
+              label={
+                <div>
+                  <Train style={{ verticalAlign: "middle" }} /> Train
+                </div>
+              }
+              {...a11yProps(4)}
+            />
           </Tabs>
           <div className={classes.tabPanel}>
             <TabPanel value={value} index={0}>
@@ -133,7 +153,14 @@ export default function VerticalTabs() {
               Coming soon
             </TabPanel>
             <TabPanel value={value} index={4}>
-              Coming soon
+              <a
+                href="https://www.esheba.cnsbd.com/#/"
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="contained" color="primary">
+                  Get Started
+                </Button>
+              </a>
             </TabPanel>
           </div>
         </Box>

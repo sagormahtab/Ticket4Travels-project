@@ -25,8 +25,8 @@ const HeaderFirst = () => {
         <div className="nav-link ">
           <FontAwesomeIcon icon={faPhone} color="white" />
           <span>
-            <a href="tel: +8809611262020" style={{ color: "white" }}>
-              +8809611262020
+            <a href="tel: +8809613123365" style={{ color: "white" }}>
+              +8809613123365
             </a>
           </span>
         </div>
@@ -51,7 +51,7 @@ const HeaderFirst = () => {
           <div className="ml-2 order-1">
             <FontAwesomeIcon icon={faPhone} />
             <span className="ml-2">
-              <a href="tel: +8809611262020" style={{ color: "white" }}>
+              <a href="tel: +8809613123365" style={{ color: "white" }}>
                 Phone
               </a>
             </span>
