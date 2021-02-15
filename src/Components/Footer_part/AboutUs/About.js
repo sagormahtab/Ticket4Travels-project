@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
     const classes = useStyles();
     return (
-        <div className="AboutPage-main-content">
+        <div className="AboutPage-main-content" >
             <div>
 
                 <div className="container">
 
                     <h2 className="text-center">Who are we</h2>
 
-                    <p className=" mt-4 main-content">We, Tickets4Travel, started our journey in 2020. Necessity drives Innovation, Innovation is necessity. In Bangladesh, we are becoming digital. But, in many sector, we are still lagging behind. Let’s hear how we initiated this startup, Our CEO, Mahjfujur Rahman Miraj, who wants to travel by launch but couldn’t find any digital solutions, he had to waste too many hours, but solutions didn’t happen. The same incident happens in the bus sector. So, He came up with an idea where general people can experience all services in a single platform.  Now, Tickets4Travel, developed an online platform, this serves people with bus, launch, air, train – tickets and hotel booking.
+                    <p className=" mt-4 main-content">We, Tickets4Travel, started our journey in 2020. Necessity drives Innovation, Innovation is necessity. In Bangladesh, we are becoming digital. But, in many sector, we are still lagging behind. Let’s hear how we initiated this startup, Our CEO, Mahfujur Rahman Miraj, who wants to travel by launch but couldn’t find any digital solutions, he had to waste too many hours, but solutions didn’t happen. The same incident happens in the bus sector. So, He came up with an idea where general people can experience all services in a single platform.  Now, Tickets4Travel, developed an online platform, this serves people with bus, launch, air, train – tickets and hotel booking.
                     Tickets4Travel makes people life easier with the innovative solutions. We make people life much easier than before with our unique digital solutions.
                   </p>
 
