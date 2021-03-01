@@ -145,12 +145,14 @@ export default function SimpleTabs({ bus }) {
                 <Tabs value={value} onChange={handleChange}>
                   <Tab
                     className={`${classes.busTab1} busTab1`}
-                    label="Bus Details"
+                    label={
+                      <span style={{ color: "#4ec3f0" }}>Bus Details</span>
+                    }
                     {...a11yProps(0)}
                   />
                   <Tab
                     className={`${classes.busTab2} busTab2`}
-                    label="Bookings"
+                    label={<span style={{ color: "#4ec3f0" }}>Bookings</span>}
                     {...a11yProps(1)}
                   />
                 </Tabs>

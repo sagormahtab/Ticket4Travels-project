@@ -174,7 +174,6 @@ const HotelDetails = () => {
                   id="panel1a-header"
                 >
                   <div>
-                    {" "}
                     <p>
                       {persons} Persons in {room} Room
                     </p>

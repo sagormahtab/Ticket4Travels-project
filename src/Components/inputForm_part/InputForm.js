@@ -6,13 +6,18 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BusInputForm from "./BusInputForm";
-import {
-  DirectionsBus,
-  Hotel,
-  DirectionsBoat,
-  Flight,
-  Train,
-} from "@material-ui/icons";
+// import {
+//   DirectionsBus,
+//   Hotel,
+//   DirectionsBoat,
+//   Flight,
+//   Train,
+// } from "@material-ui/icons";
+import HotelImg from "./images/hotel2.png";
+import BusImg from "./images/bus2.png";
+import ShipImg from "./images/cruise-ship.png";
+import FlightImg from "./images/Plane 2.png";
+import TrainImg from "./images/train2.png";
 import { Button, Paper } from "@material-ui/core";
 import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
@@ -101,7 +106,18 @@ export default function VerticalTabs() {
             <Tab
               label={
                 <div>
-                  <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus
+                  {/* <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus */}
+                  <img
+                    src={BusImg}
+                    className="img-fluid"
+                    alt="Hotel_image"
+                    style={{
+                      verticalAlign: "middle",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  ></img>{" "}
+                  <span className="font-weight-bold ml-1"> Bus</span>
                 </div>
               }
               {...a11yProps(0)}
@@ -109,7 +125,18 @@ export default function VerticalTabs() {
             <Tab
               label={
                 <div>
-                  <Hotel style={{ verticalAlign: "middle" }} /> Hotel
+                  {/* <Hotel style={{ verticalAlign: "middle" }} /> Hotel */}
+                  <img
+                    src={HotelImg}
+                    className="img-fluid"
+                    alt="Hotel_image"
+                    style={{
+                      verticalAlign: "middle",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  ></img>
+                  <span className="font-weight-bold ml-1"> Hotel</span>
                 </div>
               }
               {...a11yProps(1)}
@@ -117,7 +144,18 @@ export default function VerticalTabs() {
             <Tab
               label={
                 <div>
-                  <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch
+                  {/* <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch */}
+                  <img
+                    src={ShipImg}
+                    className="img-fluid"
+                    alt="Hotel_image"
+                    style={{
+                      verticalAlign: "middle",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  ></img>
+                  <span className="font-weight-bold ml-1"> Launch</span>
                 </div>
               }
               {...a11yProps(2)}
@@ -125,7 +163,18 @@ export default function VerticalTabs() {
             <Tab
               label={
                 <div>
-                  <Flight style={{ verticalAlign: "middle" }} /> Flight
+                  {/* <Flight style={{ verticalAlign: "middle" }} /> Flight */}
+                  <img
+                    src={FlightImg}
+                    className="img-fluid"
+                    alt="Hotel_image"
+                    style={{
+                      verticalAlign: "middle",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  ></img>
+                  <span className="font-weight-bold ml-1"> Flight</span>
                 </div>
               }
               {...a11yProps(3)}
@@ -133,7 +182,18 @@ export default function VerticalTabs() {
             <Tab
               label={
                 <div>
-                  <Train style={{ verticalAlign: "middle" }} /> Train
+                  {/* <Train style={{ verticalAlign: "middle" }} /> Train */}
+                  <img
+                    src={TrainImg}
+                    className="img-fluid"
+                    alt="Hotel_image"
+                    style={{
+                      verticalAlign: "middle",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  ></img>
+                  <span className="font-weight-bold ml-1"> Train</span>
                 </div>
               }
               {...a11yProps(4)}

@@ -67,10 +67,10 @@ const BusInputForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container">
-
           {/* From - To Form start */}
           <div className="row">
-            <div className="col-md-6 col-lg-6 col-sm-12 col-12">
+            <div className="col-md-6 col-sm-12 ">
+              <h6 className="font-weight-bold mb-0">From</h6>
               <Autocomplete
                 id="from-input-field"
                 freeSolo
@@ -79,7 +79,7 @@ const BusInputForm = () => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label="From"
+                    label="Origin"
                     margin="normal"
                     variant="outlined"
                     name="from"
@@ -88,7 +88,8 @@ const BusInputForm = () => {
                 )}
               />
             </div>
-            <div className="col-md-6 col-lg-6 col-sm-12 col-12">
+            <div className="col-md-6 col-sm-12">
+              <h6 className="font-weight-bold mb-0">To</h6>
               <Autocomplete
                 id="to-input-field"
                 freeSolo
@@ -97,7 +98,7 @@ const BusInputForm = () => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label="To"
+                    label="Destination"
                     margin="normal"
                     variant="outlined"
                     name="to"
@@ -109,9 +110,9 @@ const BusInputForm = () => {
           </div>
           {/* From - To Form End */}
 
-
-          <div className="row mt-2">
+          <div className="row mt-3">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+              <h6 className="font-weight-bold">Departure Date</h6>
               <Controller
                 name="date"
                 control={control}
@@ -137,6 +138,7 @@ const BusInputForm = () => {
               />
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+              <h6 className="font-weight-bold">Roundtrip</h6>
               <Controller
                 name="returnDate"
                 control={control}
@@ -159,7 +161,7 @@ const BusInputForm = () => {
                 )}
               />
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-5">
               <Button
                 className={classes.searchBtn}
                 variant="contained"
@@ -169,7 +171,7 @@ const BusInputForm = () => {
                 style={{ outline: "0" }}
               >
                 Search Bus
-          </Button>
+              </Button>
             </div>
           </div>
         </div>

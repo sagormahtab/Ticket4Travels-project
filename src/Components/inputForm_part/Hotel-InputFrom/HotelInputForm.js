@@ -6,14 +6,10 @@ import {
   AccordionDetails,
   Typography,
 } from "@material-ui/core";
-import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
+import { KeyboardDatePicker } from "@material-ui/pickers";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./style.css"
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import "./style.css";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Search } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
@@ -57,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "60.33%",
     flexShrink: 0,
-    [theme.breakpoints.down('sm')]: {
-      flex: "100%"
+    [theme.breakpoints.down("sm")]: {
+      flex: "100%",
     },
   },
   subaccordationContent: {
@@ -68,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const HotelInputForm = () => {
-
   const [persons, setPersons] = useState(1);
   const [baby, setBabies] = useState(0);
   const [room, setRooms] = useState(1);
@@ -86,16 +81,7 @@ const HotelInputForm = () => {
     console.log(data);
     redirect();
   };
-
-  const [selectedDateForCheckIn, setSelectedDateForCheckI] = useState(null);
-  const [selectedDateForCheckOut, setSelectedDateForCheckOut] = useState(null);
-
-  const handleDateChangeForCheckIn = (date) => {
-    setSelectedDateForCheckI(date);
-  };
-  const handleDateChangeForCheckOut = (date) => {
-    setSelectedDateForCheckOut(date);
-  };
+  const { register, control } = useForm();
 
   return (
     <div>
@@ -127,151 +113,153 @@ const HotelInputForm = () => {
           {/* From - To Form End */}
 
           <div className="row mt-2">
-            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-2">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
               <h6 className="font-weight-bold">Check-in</h6>
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
-                  disableToolbar
-                  variant="inline"
-                  inputVariant="outlined"
-                  format="MM/dd/yyyy"
-                  margin="normal"
-                  className="mt-0"
-                  required
-                  id="date-picker-inline"
-                  label="Date of booking"
-                  value={selectedDateForCheckIn}
-                  onChange={handleDateChangeForCheckIn}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                />
-              </MuiPickersUtilsProvider>
+              <Controller
+                name="date"
+                control={control}
+                defaultValue={false}
+                rules={{ required: true }}
+                render={(props) => (
+                  <KeyboardDatePicker
+                    className={classes.firstDatePicker}
+                    fullWidth
+                    disableToolbar
+                    disablePast
+                    autoOk
+                    variant="inline"
+                    inputVariant="outlined"
+                    placeholder="Pick a date"
+                    format="dd-MM-yyyy"
+                    label="Date of Check-in"
+                    value={props.value ? props.value : null}
+                    inputRef={register}
+                    onChange={(date) => props.onChange(date)}
+                  />
+                )}
+              />
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-2">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
               <h6 className="font-weight-bold">Check-out</h6>
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
-                  disableToolbar
-                  variant="inline"
-                  inputVariant="outlined"
-                  format="MM/dd/yyyy"
-                  margin="normal"
-                  className="mt-0"
-                  required
-                  id="date-picker-inline"
-                  label="Date of return booking"
-                  value={selectedDateForCheckOut}
-                  onChange={handleDateChangeForCheckOut}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                />
-              </MuiPickersUtilsProvider>
+              <Controller
+                name="returnDate"
+                control={control}
+                defaultValue={false}
+                render={({ value, onChange }) => (
+                  <KeyboardDatePicker
+                    disableToolbar
+                    fullWidth
+                    disablePast
+                    autoOk
+                    variant="inline"
+                    inputVariant="outlined"
+                    placeholder="Pick a date"
+                    format="dd-MMM-yyyy"
+                    label="Date of Check-out"
+                    value={value ? value : null}
+                    inputRef={register}
+                    onChange={(date) => onChange(date)}
+                  />
+                )}
+              />
             </div>
           </div>
 
           {/* adults and rooms input number start */}
           <div className="row mt-4">
             <div className="col-md-8">
-              <Accordion >
+              <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
                   <Typography className={classes.heading}>
-                  {persons} adults, {baby} child, {room} Room
+                    {persons} adults, {baby} child, {room} Room
                   </Typography>
                 </AccordionSummary>
                 {/* For adults Input start */}
-                <AccordionDetails style={{height: "50px"}}>
+                <AccordionDetails style={{ height: "50px" }}>
                   <div className={classes.accordationContent}>
                     <FontAwesomeIcon icon={faUser} />
                     <span> Adult</span>
                   </div>
                   <div className={classes.subaccordationContent}>
-                  <div className="def-number-input number-input">
-                          <button
-                            onClick={() =>
-                              persons > 1 && setPersons(persons - 1)
-                            }
-                            type="button"
-                            className="minus"
-                          ></button>
-                          <input
-                            className="quantity"
-                            name="quantity"
-                            value={persons}
-                            type="number"
-                          />
-                          <button
-                            onClick={() => setPersons(persons + 1)}
-                            type="button"
-                            className="plus"
-                          ></button>
-                        </div>
+                    <div className="def-number-input number-input">
+                      <button
+                        onClick={() => persons > 1 && setPersons(persons - 1)}
+                        type="button"
+                        className="minus"
+                      ></button>
+                      <input
+                        className="quantity"
+                        name="quantity"
+                        value={persons}
+                        type="number"
+                      />
+                      <button
+                        onClick={() => setPersons(persons + 1)}
+                        type="button"
+                        className="plus"
+                      ></button>
+                    </div>
                   </div>
                 </AccordionDetails>
                 {/* For adults Input end */}
                 {/* For childrens Input start */}
-                <AccordionDetails style={{height: "50px"}}>
-                <div className={classes.accordationContent}>
+                <AccordionDetails style={{ height: "50px" }}>
+                  <div className={classes.accordationContent}>
                     <FontAwesomeIcon icon={faBaby} />
                     <span> Children</span>
                   </div>
                   <div className={classes.subaccordationContent}>
-                  <div className="def-number-input number-input">
-                          <button
-                            onClick={() =>
-                              baby > 0 && setBabies(baby - 1)
-                            }
-                            type="button"
-                            className="minus"
-                          ></button>
-                          <input
-                            className="quantity"
-                            name="quantity"
-                            value={baby}
-                            type="number"
-                          />
-                          <button
-                            onClick={() => setBabies(baby + 1)}
-                            type="button"
-                            className="plus"
-                          ></button>
-                        </div>
+                    <div className="def-number-input number-input">
+                      <button
+                        onClick={() => baby > 0 && setBabies(baby - 1)}
+                        type="button"
+                        className="minus"
+                      ></button>
+                      <input
+                        className="quantity"
+                        name="quantity"
+                        value={baby}
+                        type="number"
+                      />
+                      <button
+                        onClick={() => setBabies(baby + 1)}
+                        type="button"
+                        className="plus"
+                      ></button>
+                    </div>
                   </div>
                 </AccordionDetails>
                 {/* For childrens Input end */}
                 {/* For Rooms Input start */}
-                <AccordionDetails >
-                <div className={classes.accordationContent}>
+                <AccordionDetails>
+                  <div className={classes.accordationContent}>
                     <FontAwesomeIcon icon={faHotel} />
                     <span> Room</span>
                   </div>
                   <div className={classes.subaccordationContent}>
-                  <div className="def-number-input number-input">
-                          <button
-                            onClick={() =>
-                              room > 1 && setRooms(room - 1)
-                            }
-                            type="button"
-                            className="minus"
-                          ></button>
-                          <input
-                            className="quantity"
-                            name="quantity"
-                            value={room}
-                            type="number"
-                          />
-                          <button
-                            onClick={() => setRooms(room + 1)}
-                            type="button"
-                            className="plus"
-                          ></button>
-                        </div>
+                    <div className="def-number-input number-input">
+                      <button
+                        onClick={() => room > 1 && setRooms(room - 1)}
+                        type="button"
+                        className="minus"
+                      ></button>
+                      <input
+                        className="quantity"
+                        name="quantity"
+                        value={room}
+                        type="number"
+                      />
+                      <button
+                        onClick={() => setRooms(room + 1)}
+                        type="button"
+                        className="plus"
+                      ></button>
+                    </div>
                   </div>
                 </AccordionDetails>
                 {/* For Rooms Input end */}
