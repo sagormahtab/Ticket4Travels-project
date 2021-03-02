@@ -1,5 +1,5 @@
 import Card from "@material-ui/core/Card";
-import NxxtPng from "../BusCard1/images/next.png";
+// import NxxtPng from "../BusCard1/images/next.png";
 import "../BusCard1/busCard1.css";
 import React from "react";
 import { CardContent, Tab, Tabs } from "@material-ui/core";
@@ -98,9 +98,9 @@ export default function SimpleTabs({ bus }) {
                 </p>
 
                 <div className="row mt-3">
-                  <div className="col-lg-3 col-md-3 col-3 d-flex align-items-center justify-content-between">
+                  <div className="col-md-3 col-6 ">
                     <div>
-                      <p>
+                      <p className="Time-Zone">
                         {new Intl.DateTimeFormat("default", {
                           hour: "numeric",
                           minute: "numeric",
@@ -108,19 +108,19 @@ export default function SimpleTabs({ bus }) {
                           timeZone: "Asia/Dhaka",
                         }).format(new Date(bus.depTime))}
                       </p>
-                      <p style={{ color: "#30dd89" }}>{bus.from}</p>
+                      <p className="From-Where-To-Go">{bus.from}</p>
                     </div>
-                    <div>
+                    {/* <div>
                       <img
                         src={NxxtPng}
                         width="20px"
                         alt=""
-                        className="img-fluid"
+                        className="img-fluid mt-3"
                       />
-                    </div>
+                    </div> */}
                   </div>
-                  <div className="col-lg-3 col-md-3 col-3">
-                    <p>
+                  <div className="col-md-3 col-6">
+                    <p className="Time-Zone">
                       {new Intl.DateTimeFormat("default", {
                         hour: "numeric",
                         minute: "numeric",
@@ -128,17 +128,24 @@ export default function SimpleTabs({ bus }) {
                         timeZone: "Asia/Dhaka",
                       }).format(new Date(bus.arrTime))}
                     </p>
-                    <p style={{ color: "#30dd89" }}>{bus.to}</p>
+                    <p>{bus.to}</p>
                   </div>
-                  <div className="col-lg-3 col-md-3 col-3">
-                    <p className="text-center">Seats Available</p>
-                    <p className="text-center">
+                  <div className="col-lg-3 col-md-3 col-12">
+                    <p className="text-center SeatAvailBle-in-Mobileview">
+                      Seats Available
+                    </p>
+                    <p className="text-center SeatAvailBle-in-Mobileview">
                       {bus.seat - bus.bookedSeatNum}
                     </p>
                   </div>
-                  <div className="col-lg-3 col-md-3 col-3">
-                    <p className="text-center">Amount</p>
-                    <p className="text-center">{bus.fare}</p>
+                  <div className="col-md-3 col-12">
+                    <p className="text-center Amount-in-Mobileview">Amount</p>
+                    <p
+                      className="text-center Amount-in-Mobileview"
+                      style={{ color: "#30dd89" }}
+                    >
+                      {bus.fare}
+                    </p>
                   </div>
                 </div>
 

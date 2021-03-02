@@ -7,18 +7,15 @@ import InputForm from "../../inputForm_part/InputForm";
 import Interest from "../../interest_part/Interest";
 import PartnerShip from "../../partnerShip_part/PartnerShip";
 import PopularDeal from "../../popularDeals_part/PopularDeal";
-import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+
 import MobileInputForm from "../../inputForm_part/MobileInputForm";
 
 function Home() {
   return (
     <div>
       <Carousel />
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <InputForm />
-        <MobileInputForm />
-      </MuiPickersUtilsProvider>
+      <InputForm />
+      <MobileInputForm />
       <Login />
       <HotelPic />
       <PopularDeal />

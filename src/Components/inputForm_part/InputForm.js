@@ -116,7 +116,7 @@ export default function VerticalTabs() {
                       height: "25px",
                       width: "25px",
                     }}
-                  ></img>{" "}
+                  ></img>
                   <span className="font-weight-bold ml-1"> Bus</span>
                 </div>
               }

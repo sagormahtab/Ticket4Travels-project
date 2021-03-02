@@ -6,10 +6,13 @@ import {
   CardHeader,
   Checkbox,
   Button,
+  List,
+  Drawer,
 } from "@material-ui/core";
+import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   filterContent: {
     display: "flex",
     justifyContent: "center",
+    backgroundColor: "#E0E5E6",
     position: "fixed",
     right: "0px",
     bottom: "0px",
@@ -41,6 +45,35 @@ const useStyles = makeStyles((theme) => ({
 
 const BusLeftSideBar = () => {
   const classes = useStyles();
+  const [state, setState] = React.useState({
+    bottom: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === "top" || anchor === "bottom",
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <p>hello</p>
+      </List>
+    </div>
+  );
 
   return (
     <div>
@@ -51,39 +84,35 @@ const BusLeftSideBar = () => {
         ></CardHeader>
         <hr></hr>
         <CardContent>
-          <div className="row">
-            <div className="col-lg-6 col-md-6">
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              Depart Time
-            </div>
-
-            <div className="col-lg-6 col-md-6">
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              Lowest Time
-            </div>
+          <div>
+            <Checkbox
+              color="primary"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+            Depart Time
           </div>
 
-          <div className="row mt-3">
-            <div className="col-lg-6 col-md-6">
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              Arrival Time
-            </div>
-            <div className="col-lg-6 col-md-6">
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              Duration
-            </div>
+          <div>
+            <Checkbox
+              color="primary"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+            Lowest Time
+          </div>
+
+          <div>
+            <Checkbox
+              color="primary"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+            Arrival Time
+          </div>
+          <div>
+            <Checkbox
+              color="primary"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+            Duration
           </div>
         </CardContent>
       </Card>
@@ -363,10 +392,23 @@ const BusLeftSideBar = () => {
         </Card>
         {/* Fliter-For-Mobile start */}
         <div className={classes.filterContent}>
-          <Button variant="outlined" style={{ backgroundColor: "#079D49" }}>
-            <FontAwesomeIcon icon={faFilter} />{" "}
+          {/* <Button variant="outlined" style={{ backgroundColor: "#079D49" }}>
+            <FontAwesomeIcon icon={faFilter} />
             <span className="ml-1"> Filter</span>
-          </Button>
+          </Button> */}
+
+          {["top", "bottom"].map((anchor) => (
+            <React.Fragment key={anchor}>
+              <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+              <Drawer
+                anchor={anchor}
+                open={state[anchor]}
+                onClose={toggleDrawer(anchor, false)}
+              >
+                {list(anchor)}
+              </Drawer>
+            </React.Fragment>
+          ))}
         </div>
         {/* Fliter-For-Mobile end */}
       </div>

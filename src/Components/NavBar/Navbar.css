@@ -83,6 +83,10 @@
   align-items: center;
 }
 
+.Sidenav-text {
+  margin-left: 3px;
+}
+
 @media (max-width: 40em) {
   /* .MenuBar-Contents {
     display: none;

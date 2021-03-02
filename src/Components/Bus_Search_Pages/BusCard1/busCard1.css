@@ -1,17 +1,17 @@
-.busarrow_div{
-    margin-left: 90px;
+.busarrow_div {
+  margin-left: 90px;
 }
 
-.busbuttonn{
-    margin-left: 500px;
+.busbuttonn {
+  margin-left: 500px;
 }
 
-.busButton1{
-    background-color: aqua;
+.busButton1 {
+  background-color: aqua;
 }
 
-.busColorDiv{
-    color: aqua;
+.busColorDiv {
+  color: aqua;
 }
 
 /* .busD_border{
@@ -19,32 +19,45 @@
 
 } */
 
-.busIMG_div{
-    /* position: relative;
+.busIMG_div {
+  /* position: relative;
     z-index: 2; */
-    margin-left: 450px;
-    margin-top: -120px;
+  margin-left: 450px;
+  margin-top: -120px;
 }
 
-.busCard1_boxshadow{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 690px;
-
+.busCard1_boxshadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 690px;
 }
 
-@media (max-width: 40em){
-    .busCard1_boxshadow{
-        width: 380px;
-    }
+@media (max-width: 40em) {
+  .busCard1_boxshadow {
+    width: 380px;
+  }
 
-    .busbuttonn{
-        margin-left: 200px;
-    }
-    .busIMG_div{
-        margin-left: 200px;
-        margin-top: -140px;
-    }
-    .bus_otehrs{
-        display: none;
-    }
+  .busbuttonn {
+    margin-left: 200px;
+  }
+  .busIMG_div {
+    margin-left: 200px;
+    margin-top: -140px;
+  }
+  .bus_otehrs {
+    display: none;
+  }
+  .SeatAvailBle-in-Mobileview {
+    text-align: left !important;
+    margin-bottom: 0px;
+  }
+  .Amount-in-Mobileview {
+    text-align: left !important;
+    margin-bottom: 0px;
+  }
+  .From-Where-To-Go {
+    margin-bottom: 0px;
+  }
+  .Time-Zone {
+    margin-bottom: 0px;
+  }
 }
