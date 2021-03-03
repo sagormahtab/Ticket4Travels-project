@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,6 +25,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   filterContent: {
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "#E0E5E6",
+    position: "fixed",
+    right: "0px",
+    bottom: "0px",
+    width: "400px",
+    zIndex: "2",
+    [theme.breakpoints.up("lg")]: {
+      display: "none",
+    },
+  },
+  FilterButton:{
     display: "flex",
     justifyContent: "center",
     backgroundColor: "#E0E5E6",
@@ -70,7 +85,205 @@ const BusLeftSideBar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <p>hello</p>
+        <div className="m-0">
+        <div className="row" style={{backgroundColor:"#68B9EE"}}>
+          <div className="col-4">
+          <FontAwesomeIcon icon={faWindowClose} size="2x" />
+          </div>
+          <div className="col-4"></div>
+          <div className="col-4"></div>
+        </div>
+        </div>
+      <Card>
+          <CardContent>
+            <h6>Departare Name</h6>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 06.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 12.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 18.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              18.00 - 0.00
+            </div>
+          </CardContent>
+        </Card>
+        <div> <Card>
+          <CardContent>
+          <h6>Arrival Time</h6>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 06.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 12.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              0.00 - 18.00
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              18.00 - 0.00
+            </div>
+          </CardContent>
+        </Card></div>
+        <div>
+        <Card>
+          <CardContent>
+            <h6>Bus Name</h6>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Green Line
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Shamoly Square
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Shohag
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Ena
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Hanif
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Gono Poribohon
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Saudia
+            </div>
+          </CardContent>
+        </Card>
+        </div>
+        <div>
+        <Card>
+          <CardContent>
+            <h6>Facilites</h6>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Wifi
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Non AC
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Air Coindition
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Power Supply
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Clean Trip
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Buffet
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Reclaining Seat
+            </div>
+            <div>
+              <Checkbox
+                color="primary"
+                inputProps={{ "aria-label": "secondary checkbox" }}
+              />
+              Sleeping Coach
+            </div>
+          </CardContent>
+        </Card>
+        </div>
+      </List>
+      <List>
+        <div className={classes.FilterButton}>
+          <Button variant="contained" color="primary" fullWidth> Select from 0 buses </Button>
+        </div>
       </List>
     </div>
   );

@@ -26,7 +26,7 @@ function BusSearchR() {
         <div className="container">
           <div className="d-flex flex-column">
             <div className="d-flex align-items-center">
-              <h3 className="text-left mr-3 mb-0" style={{ color: "#30dd89" }}>
+              <h3 className="text-left mr-3 mb-0 Where-From-In-MobileView" style={{ color: "#30dd89" }}>
                 {from}
               </h3>
               <img
@@ -35,7 +35,7 @@ function BusSearchR() {
                 alt=""
                 className="img-fluid"
               ></img>
-              <h3 className="ml-3 mb-0" style={{ color: "#30dd89" }}>
+              <h3 className="ml-3 mb-0 Where-To-Go-In-MobileView" style={{ color: "#30dd89" }}>
                 {to}
               </h3>
             </div>
