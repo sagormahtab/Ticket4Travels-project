@@ -1,113 +1,310 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, Checkbox, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Checkbox,
+  Grid,
+  Slider,
+  Input,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import HotelSearch from "./images/Hotel-Search-Page-App-bar.png";
 
-import "../Sort-Results-part/sortResults.css"
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import TextField from '@material-ui/core/TextField';
+import "../Sort-Results-part/sortResults.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
-
-const cityList = [
-    { title: 'Dhaka' },
-    { title: 'narayangonj' },
-];
-
-
-
-
 function SortResults() {
-    const classes = useStyles();
-    const [price, setPrice] = React.useState('');
+  const classes = useStyles();
+  const [value, setValue] = React.useState(30);
+  const handleSliderChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
-    const handleChange = (event) => {
-        setPrice(event.target.value);
-    };
-    return (
+  const handleInputChange = (event) => {
+    setValue(event.target.value === "" ? "" : Number(event.target.value));
+  };
+
+  const handleBlur = () => {
+    if (value < 0) {
+      setValue(0);
+    } else if (value > 100) {
+      setValue(100);
+    }
+  };
+
+  return (
+    <div>
+      <div className=" mt-5">
         <div>
-            <div className=" mt-5">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <Card >
-                                <CardHeader title="Sort In result" subheader="Sort your search result by:-">
-                                </CardHeader>
-                                <hr></hr>
-                                <CardContent>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6">
-                                            <Checkbox
-                                                color="primary"
-                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                            />Depart Time
-                                        </div>
-
-                                        <div className="col-lg-6 col-md-6">
-                                            <Checkbox
-                                                color="primary"
-                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                            />Lowest Time
-                                        </div>
-                                    </div>
-
-                                    <div className="row mt-3">
-                                        <div className="col-lg-6 col-md-6">
-                                            <Checkbox
-                                                color="primary"
-                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                            />Arrival Time
-                                    </div>
-                                        <div className="col-lg-6 col-md-6">
-                                            <Checkbox
-                                                color="primary"
-                                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                                            />Duration
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                        <div className="col-md-6 col-lg-6 col-sm-12 col-12 form1 mt-3">
-                            <Autocomplete
-                                id="combo-box-demo"
-                                freeSolo
-                                options={cityList}
-                                getOptionLabel={(option) => option.title}
-                                fullWidth
-                                renderInput={(params) => <TextField required {...params} label="City hotel place to go" variant="outlined" />}
-                            />
-                        </div>
-                        <div className="col-md-2 col-lg-2 col-sm-12 col-12 formControl mt-2">
-
-                            <FormControl variant="outlined" className={classes.formControl}>
-                                <InputLabel >Total Price</InputLabel>
-                                <Select
-                                    value={price}
-                                    onChange={handleChange}
-                                    label="Total price"
-                                >
-                                    <MenuItem value="Per Room,Per Night">Per Room,Per Night</MenuItem>
-                                    <MenuItem value="Total Price">Total Price</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                            </FormControl>
-
-
-                        </div>
-                    </div>
-                </div>
+          <div>
+            <div>
+              <Card>
+                <CardHeader title="Map" />
+                <hr></hr>
+                <CardContent>
+                  <p>View Map</p>
+                </CardContent>
+              </Card>
             </div>
+            {/* <div className="col-md-8 col-12 hotelapplogo ">
+              <img
+                src={HotelSearch}
+                alt="HotelBanner"
+                className="img-fluid"
+              ></img>
+            </div> */}
+          </div>
+          <div>
+            <div className="mt-3">
+              <Card>
+                <CardHeader
+                  title="Sort In result"
+                  subheader="Sort your search result by:-"
+                ></CardHeader>
+                <hr></hr>
+                <CardContent>
+                  <div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Depart Time
+                    </div>
+
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Lowest Time
+                    </div>
+                  </div>
+
+                  <div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Arrival Time
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Duration
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div>
+              <div className="mt-3">
+                <Card className="hotelPriceRange">
+                  <CardHeader title="Price Range Per Night" />
+                  <hr></hr>
+                  <CardContent>
+                    <div className={classes.priceFilter}>
+                      <Grid container spacing={2} alignItems="center">
+                        <Grid item xs>
+                          <Slider
+                            value={typeof value === "number" ? value : 0}
+                            onChange={handleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </Grid>
+                        <Grid item>
+                          <Input
+                            className={classes.input}
+                            value={value}
+                            margin="dense"
+                            onChange={handleInputChange}
+                            onBlur={handleBlur}
+                            inputProps={{
+                              step: 10,
+                              min: 0,
+                              max: 100,
+                              type: "number",
+                              "aria-labelledby": "input-slider",
+                            }}
+                          />
+                        </Grid>
+                      </Grid>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="mt-3">
+              <Card className="hotelFilter1 mt-4">
+                <CardHeader title="Booking Policy" />
+                <hr></hr>
+                <Checkbox
+                  color="primary"
+                  inputProps={{ "aria-label": "secondary checkbox" }}
+                />
+                Free cencelation
+              </Card>
+            </div>
+
+            <div className="mt-3">
+              <Card>
+                <CardHeader title="Star Rating" />
+                <CardContent>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="lg" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="mt-3">
+              <Card>
+                <CardHeader title="Facilities" />
+                <hr></hr>
+                <CardContent>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Wifi
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Non AC
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Air Coindition
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Power Supply
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Parking
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Airport transfer
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Fitness center
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    24-hour Front desk
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Wheelchain acess
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Resturent
+                  </div>
+                  <div>
+                    <Checkbox
+                      color="primary"
+                      inputProps={{ "aria-label": "secondary checkbox" }}
+                    />
+                    Swimming pool
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default SortResults
+export default SortResults;

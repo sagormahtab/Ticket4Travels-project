@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    width: "220px",
+    width: "170px",
   },
   tabPanel: {
     flexGrow: 1,
@@ -105,7 +105,7 @@ export default function VerticalTabs() {
           >
             <Tab
               label={
-                <div>
+                <div className="mr-auto">
                   {/* <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus */}
                   <img
                     src={BusImg}
@@ -124,7 +124,7 @@ export default function VerticalTabs() {
             />
             <Tab
               label={
-                <div>
+                <div className="mr-auto">
                   {/* <Hotel style={{ verticalAlign: "middle" }} /> Hotel */}
                   <img
                     src={HotelImg}
@@ -143,7 +143,7 @@ export default function VerticalTabs() {
             />
             <Tab
               label={
-                <div>
+                <div className="mr-auto">
                   {/* <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch */}
                   <img
                     src={ShipImg}
@@ -162,7 +162,7 @@ export default function VerticalTabs() {
             />
             <Tab
               label={
-                <div>
+                <div className="mr-auto">
                   {/* <Flight style={{ verticalAlign: "middle" }} /> Flight */}
                   <img
                     src={FlightImg}
@@ -181,7 +181,7 @@ export default function VerticalTabs() {
             />
             <Tab
               label={
-                <div>
+                <div className="mr-auto">
                   {/* <Train style={{ verticalAlign: "middle" }} /> Train */}
                   <img
                     src={TrainImg}
