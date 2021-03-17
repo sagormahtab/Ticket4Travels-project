@@ -38,6 +38,9 @@ import ScrollToTop from "./Components/ScrollToTop";
 import PartnerShip from "./Components/NavBar/PartnerShip/PartnerShip";
 import Terms from "./Components/Register_Log-in-page/RegisterPage-1/Terms-and-Condition/Terms";
 import PrivacyPolicy from "./Components/Register_Log-in-page/RegisterPage-1/Privacy-Policy/PrivacyPolicy";
+import ConfirmUserPage from "./Components/Auth/ConfirmUserPage";
+import ForgotPassword from "./Components/Auth/ForgotPassword";
+import ResetPassword from "./Components/Auth/ResetPassword";
 
 function App() {
   return (
@@ -142,6 +145,15 @@ function App() {
           <Route
             path="/booking_Stepper"
             component={BookingSteper_Combine}
+          ></Route>
+          <Route
+            path="/confirm-user/:token"
+            component={ConfirmUserPage}
+          ></Route>
+          <Route path="/forgot-password" component={ForgotPassword}></Route>
+          <Route
+            path="/reset-password/:token"
+            component={ResetPassword}
           ></Route>
         </Switch>
         <Footer />
