@@ -9,7 +9,7 @@ import {
   Input,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import HotelSearch from "./images/Hotel-Search-Page-App-bar.png";
+// import HotelSearch from "./images/Hotel-Search-Page-App-bar.png";
 
 import "../Sort-Results-part/sortResults.css";
 

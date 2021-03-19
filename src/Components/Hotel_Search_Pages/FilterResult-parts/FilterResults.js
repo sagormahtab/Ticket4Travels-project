@@ -83,25 +83,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function InputSlider() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(30);
+  // const [value, setValue] = React.useState(30);
   const [price, setPrice] = React.useState("");
   const cityList = [{ title: "Dhaka" }, { title: "narayangonj" }];
 
-  const handleInputChange = (event) => {
-    setValue(event.target.value === "" ? "" : Number(event.target.value));
-  };
+  // const handleInputChange = (event) => {
+  //   setValue(event.target.value === "" ? "" : Number(event.target.value));
+  // };
 
   const handleChange = (event) => {
     setPrice(event.target.value);
   };
 
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
+  // const handleBlur = () => {
+  //   if (value < 0) {
+  //     setValue(0);
+  //   } else if (value > 100) {
+  //     setValue(100);
+  //   }
+  // };
 
   return (
     <div>

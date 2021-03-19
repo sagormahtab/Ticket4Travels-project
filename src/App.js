@@ -41,6 +41,9 @@ import PrivacyPolicy from "./Components/Register_Log-in-page/RegisterPage-1/Priv
 import ConfirmUserPage from "./Components/Auth/ConfirmUserPage";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
 import ResetPassword from "./Components/Auth/ResetPassword";
+import CareersWithUs from "./Components/Footer_part/Careers-With-Us/CareersWithUs";
+import SubmitCv from "./Components/Footer_part/Careers-With-Us/Submit-Your-CV/SubmitCv";
+import MeetWithUs from "./Components/Footer_part/Meet-Our-Team/MeetWithUs";
 
 function App() {
   return (
@@ -69,6 +72,12 @@ function App() {
           <Route path="/contact_us" component={ContactUs} />
 
           <Route path="/how-to-book" component={HowToBook} />
+
+          <Route path="/careers-with-us" component={CareersWithUs} />
+
+          <Route path="/submit-cv" component={SubmitCv} />
+
+          <Route path="/meet-our-team" component={MeetWithUs} />
 
           <Route path="/contactWithUs" component={ContactWithUs} />
 

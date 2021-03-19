@@ -38,6 +38,21 @@ function Footer() {
                     <a href="##"> How to book</a>
                   </Link>
                 </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/aboutus">
+                    <a href="##"> About us</a>
+                  </Link>
+                </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/careers-with-us">
+                    <a href="##"> Careeers With Us</a>
+                  </Link>
+                </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/meet-our-team">
+                    <a href="##"> Meet Our Team</a>
+                  </Link>
+                </div>
                 <div className="mt-3 about-us-content2 d-flex justify-content-center text-center align-items-center">
                   <Link to="/contactWithUs">
                     <a href="##"> Contact us</a>
@@ -46,11 +61,6 @@ function Footer() {
                 <div className="mt-3 about-us-content3 d-flex justify-content-center text-center align-items-center">
                   <Link to="/partnership">
                     <a href="##"> PartnerShip with us</a>
-                  </Link>
-                </div>
-                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
-                  <Link to="/aboutus">
-                    <a href="##"> About us</a>
                   </Link>
                 </div>
               </div>
