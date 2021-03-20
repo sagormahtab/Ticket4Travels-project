@@ -121,7 +121,7 @@ const HotelDetails = () => {
 
   return (
     <div className="container mt-5">
-      <Card>
+      <Card variant="outlined">
         <CardContent>
           <div className="row ">
             <div className="col-md-3 mt-2">
@@ -252,7 +252,7 @@ const HotelDetails = () => {
 
               <div className="row">
                 <div className="col-md-4">
-                  <Card>
+                  <Card variant="outlined">
                     <CardContent>
                       <h6 className="text-center">Check-In</h6>
                       <p className="text-center">18</p>
@@ -262,7 +262,7 @@ const HotelDetails = () => {
                   </Card>
                 </div>
                 <div className="col-md-4">
-                  <Card>
+                  <Card variant="outlined">
                     <CardContent>
                       <h6 className="text-center">Check-Out</h6>
                       <p className="text-center">18</p>
@@ -272,7 +272,7 @@ const HotelDetails = () => {
                   </Card>
                 </div>
                 <div className="col-md-4">
-                  <Card style={{ backgroundColor: "beige" }}>
+                  <Card style={{ backgroundColor: "beige" }} variant="outlined">
                     <CardContent>
                       <h6 className="text-center">You Choose</h6>
                       <p className="text-center">2</p>
@@ -310,7 +310,7 @@ const HotelDetails = () => {
       </Card>
 
       {/* Hotel card start */}
-      <Card>
+      <Card variant="outlined">
         <CardContent>
           <div className="row mt-5">
             <div className="col-md-12">
@@ -445,7 +445,7 @@ const HotelDetails = () => {
       </Card>
 
       {/* Features of The Raintree Dhaka start */}
-      <Card className="mt-5">
+      <Card className="mt-5" variant="outlined">
         <CardContent>
           <CardHeader title="Features of The Raintree Dhaka" />
           <hr></hr>
@@ -584,7 +584,7 @@ const HotelDetails = () => {
       </Card>
 
       {/* Nearby Landmarks start */}
-      <Card className="mt-5">
+      <Card className="mt-5" variant="outlined">
         <CardContent>
           <h5 className="text-center">Nearby Landmarks</h5>
           <hr></hr>

@@ -54,7 +54,7 @@ function RegisterPageOne({ submitForm }) {
             </h2>
 
             <div>
-              <Card className={classes.root}>
+              <Card className={classes.root} variant="outlined">
                 <CardContent>
                   <form onSubmit={handleSubmit}>
                     <div className="form-group">

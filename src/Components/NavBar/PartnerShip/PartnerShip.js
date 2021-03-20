@@ -11,8 +11,8 @@ const PartnerShip = () => {
         <img src={PartnerShipBanner} alt="" className="img-fluid"></img>
       </div>
       <div className="container mt-5">
-        <Card>
-          <CardContent>
+        <Card variant="outlined">
+          <CardContent >
             <div className="row mt-5">
               <div className="col-md-12">
                 <h3 className="mt-2">Grow Your Business with Tickets4Travel</h3>

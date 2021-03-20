@@ -94,7 +94,7 @@ const BusLeftSideBar = () => {
             <div className="col-4"></div>
           </div>
         </div>
-        <Card>
+        <Card variant="outlined">
           <CardContent>
             <h6>Departare Name</h6>
             <div>
@@ -129,7 +129,7 @@ const BusLeftSideBar = () => {
         </Card>
         <div>
           {" "}
-          <Card>
+          <Card variant="outlined">
             <CardContent>
               <h6>Arrival Time</h6>
               <div>
@@ -164,7 +164,7 @@ const BusLeftSideBar = () => {
           </Card>
         </div>
         <div>
-          <Card>
+          <Card variant="outlined">
             <CardContent>
               <h6>Bus Name</h6>
               <div>
@@ -220,7 +220,7 @@ const BusLeftSideBar = () => {
           </Card>
         </div>
         <div>
-          <Card>
+          <Card variant="outlined">
             <CardContent>
               <h6>Facilites</h6>
               <div>
@@ -304,7 +304,7 @@ const BusLeftSideBar = () => {
     >
       <List>
         <div className="row">
-          <Card>
+          <Card variant="outlined">
             <h5 className="text-center">SORT BY</h5>
             <hr></hr>
             <p>Earliest departure time</p>
@@ -319,7 +319,7 @@ const BusLeftSideBar = () => {
   );
   return (
     <div>
-      <Card className={classes.root}>
+      <Card className={classes.root} variant="outlined">
         <CardHeader
           title="Sort In result"
           subheader="Sort your search result by:-"
@@ -360,7 +360,7 @@ const BusLeftSideBar = () => {
       </Card>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Filter results" />
           <hr></hr>
           <CardContent>
@@ -372,7 +372,7 @@ const BusLeftSideBar = () => {
       </div>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Facilites" />
           <hr></hr>
           <CardContent>
@@ -437,7 +437,7 @@ const BusLeftSideBar = () => {
       </div>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Bus Name" />
           <hr></hr>
           <CardContent>
@@ -495,7 +495,7 @@ const BusLeftSideBar = () => {
       </div>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Departare Name" />
           <hr></hr>
           <CardContent>
@@ -532,7 +532,7 @@ const BusLeftSideBar = () => {
       </div>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Arrival Time" />
           <hr></hr>
           <CardContent>
@@ -568,7 +568,7 @@ const BusLeftSideBar = () => {
         </Card>
       </div>
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Seat Arrangment" />
           <hr></hr>
           <CardContent>
@@ -598,7 +598,7 @@ const BusLeftSideBar = () => {
       </div>
 
       <div className="mt-4">
-        <Card className={classes.root}>
+        <Card className={classes.root} variant="outlined">
           <CardHeader title="Fleet Name" />
           <hr></hr>
           <CardContent>

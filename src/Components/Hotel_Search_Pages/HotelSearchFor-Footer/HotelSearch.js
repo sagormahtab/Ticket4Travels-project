@@ -110,7 +110,7 @@ const HotelSearch = () => {
         </div>
 
         <div className="col-md-6">
-          <Card>
+          <Card variant="outlined">
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)}>
                 {/* city destination start */}

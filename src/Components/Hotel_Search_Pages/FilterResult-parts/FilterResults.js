@@ -148,7 +148,7 @@ export default function InputSlider() {
             </div>
             <div className=" mt-4">
               <Link to="/hotel_details" className={classes.link}>
-                <Card className={classes.root}>
+                <Card className={classes.root} variant="outlined">
                   <CardMedia className={classes.cardMedia}>
                     <img
                       src={architecture}

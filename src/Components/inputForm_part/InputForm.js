@@ -18,7 +18,7 @@ import BusImg from "./images/bus2.png";
 import ShipImg from "./images/cruise-ship.png";
 import FlightImg from "./images/Plane 2.png";
 import TrainImg from "./images/train2.png";
-import { Button, Paper } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
 
@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    marginTop: "15px",
     width: "170px",
   },
   tabPanel: {
@@ -93,8 +94,8 @@ export default function VerticalTabs() {
 
   return (
     <div className={`${classes.searchSectionWrapper} container`}>
-      <Paper className={classes.paperStyle}>
-        <Box className={classes.root}>
+      
+        <Box className={classes.root} border={1} borderColor="grey.500" borderRadius={16}>
           <Tabs
             orientation="vertical"
             variant="scrollable"
@@ -224,7 +225,7 @@ export default function VerticalTabs() {
             </TabPanel>
           </div>
         </Box>
-      </Paper>
+      
     </div>
   );
 }
