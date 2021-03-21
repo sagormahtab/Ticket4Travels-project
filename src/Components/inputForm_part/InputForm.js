@@ -93,7 +93,7 @@ export default function VerticalTabs() {
 
   return (
     <div className={`${classes.searchSectionWrapper} container`}>
-      <Paper className={classes.paperStyle}>
+      <Paper border={1} className={classes.paperStyle}>
         <Box className={classes.root}>
           <Tabs
             orientation="vertical"

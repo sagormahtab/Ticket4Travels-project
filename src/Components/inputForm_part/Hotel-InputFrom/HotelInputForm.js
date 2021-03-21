@@ -13,11 +13,12 @@ import "./style.css";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Search } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faBaby, faHotel } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   searchInputContainer: {
@@ -67,21 +68,47 @@ const HotelInputForm = () => {
   const [persons, setPersons] = useState(1);
   const [baby, setBabies] = useState(0);
   const [room, setRooms] = useState(1);
+  const [location, setLocation] = useState([]);
   const classes = useStyles();
 
   let history = useHistory();
-  const redirect = () => {
-    history.push("/hotel_search");
+  const redirect = (data) => {
+    let { location, checkin, checkout } = data;
+    // capitalizing location
+    location = location.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+      match.toUpperCase()
+    );
+
+    checkin = JSON.parse(JSON.stringify(checkin));
+    checkout = JSON.parse(JSON.stringify(checkout));
+    sessionStorage.setItem(
+      "searchedData",
+      JSON.stringify({ location, checkin, checkout, persons, room, baby })
+    );
+    history.push(
+      `/hotel_search?location=${location}&checkin=${checkin}&checkout=${checkout}&persons=${persons}&baby=${baby}&room=${room}`
+    );
   };
 
-  const cityList = [{ title: "Dhaka" }];
+  useEffect(() => {
+    axios
+      .get("https://hotel-api-sm.herokuapp.com/api/v1/hotel-list/locations")
+      .then(function (response) {
+        setLocation([
+          ...response.data.data.primary,
+          ...response.data.data.secondary,
+        ]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
-  const { handleSubmit } = useForm(); // initialise the hook
+  const { register, handleSubmit, control } = useForm(); // initialise the hook
   const onSubmit = (data) => {
-    console.log(data);
-    redirect();
+    console.log(data, persons, baby, room);
+    redirect(data);
   };
-  const { register, control } = useForm();
 
   return (
     <div>
@@ -94,17 +121,17 @@ const HotelInputForm = () => {
                 City, destination, or hotel name
               </h6>
               <Autocomplete
-                id="combo-box-demo"
+                id="from-input-field"
                 freeSolo
-                options={cityList}
-                getOptionLabel={(option) => option.title}
+                options={location}
                 renderInput={(params) => (
                   <TextField
-                    required
                     {...params}
                     label="City, hotel, place to go"
+                    margin="normal"
                     variant="outlined"
-                    fullWidth
+                    name="location"
+                    inputRef={register}
                   />
                 )}
               />
@@ -116,7 +143,7 @@ const HotelInputForm = () => {
             <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
               <h6 className="font-weight-bold">Check-in</h6>
               <Controller
-                name="date"
+                name="checkin"
                 control={control}
                 defaultValue={false}
                 rules={{ required: true }}
@@ -143,7 +170,7 @@ const HotelInputForm = () => {
             <div className="col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
               <h6 className="font-weight-bold">Check-out</h6>
               <Controller
-                name="returnDate"
+                name="checkout"
                 control={control}
                 defaultValue={false}
                 render={({ value, onChange }) => (

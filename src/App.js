@@ -139,7 +139,10 @@ function App() {
             path="/hotel_search"
             component={HotelSearchPagesCombines}
           ></Route>
-          <Route path="/hotel_details" component={HotelDetails}></Route>
+          <Route
+            path="/hotel_details/:hotelId"
+            component={HotelDetails}
+          ></Route>
           <Route path="/hotel" component={HotelSearch}></Route>
           <Route
             path="/hotelPre_Booking"
