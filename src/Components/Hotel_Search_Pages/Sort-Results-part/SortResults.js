@@ -51,7 +51,7 @@ function SortResults() {
         <div>
           <div>
             <div>
-              <Card>
+              <Card variant="outlined">
                 <CardHeader title="Map" />
                 <hr></hr>
                 <CardContent>
@@ -69,7 +69,7 @@ function SortResults() {
           </div>
           <div>
             <div className="mt-3">
-              <Card>
+              <Card variant="outlined">
                 <CardHeader
                   title="Sort In result"
                   subheader="Sort your search result by:-"
@@ -115,7 +115,7 @@ function SortResults() {
             </div>
             <div>
               <div className="mt-3">
-                <Card className="hotelPriceRange">
+                <Card className="hotelPriceRange" variant="outlined">
                   <CardHeader title="Price Range Per Night" />
                   <hr></hr>
                   <CardContent>
@@ -152,7 +152,7 @@ function SortResults() {
             </div>
 
             <div className="mt-3">
-              <Card className="hotelFilter1 mt-4">
+              <Card className="hotelFilter1 mt-4" variant="outlined">
                 <CardHeader title="Booking Policy" />
                 <hr></hr>
                 <Checkbox
@@ -164,7 +164,7 @@ function SortResults() {
             </div>
 
             <div className="mt-3">
-              <Card>
+              <Card variant="outlined">
                 <CardHeader title="Star Rating" />
                 <CardContent>
                   <div>
@@ -216,7 +216,7 @@ function SortResults() {
               </Card>
             </div>
             <div className="mt-3">
-              <Card>
+              <Card variant="outlined">
                 <CardHeader title="Facilities" />
                 <hr></hr>
                 <CardContent>

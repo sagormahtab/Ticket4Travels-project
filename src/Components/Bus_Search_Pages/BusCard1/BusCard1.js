@@ -88,7 +88,7 @@ export default function SimpleTabs({ bus }) {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <Card className="mb-4">
+            <Card className="mb-4" variant="outlined">
               <CardContent>
                 <h5 className="text-left" style={{ color: "#30dd89" }}>
                   {bus.name}

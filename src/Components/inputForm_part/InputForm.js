@@ -18,7 +18,7 @@ import BusImg from "./images/bus2.png";
 import ShipImg from "./images/cruise-ship.png";
 import FlightImg from "./images/Plane 2.png";
 import TrainImg from "./images/train2.png";
-import { Button, Paper } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import HotelInputForm from "./Hotel-InputFrom/HotelInputForm";
 import LaunchInputFrom from "./LaunchInputFrom";
 
@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    marginTop: "15px",
     width: "170px",
   },
   tabPanel: {
@@ -93,138 +94,141 @@ export default function VerticalTabs() {
 
   return (
     <div className={`${classes.searchSectionWrapper} container`}>
-      <Paper border={1} className={classes.paperStyle}>
-        <Box className={classes.root}>
-          <Tabs
-            orientation="vertical"
-            variant="scrollable"
-            value={value}
-            onChange={handleChange}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-          >
-            <Tab
-              label={
-                <div className="mr-auto">
-                  {/* <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus */}
-                  <img
-                    src={BusImg}
-                    className="img-fluid"
-                    alt="Hotel_image"
-                    style={{
-                      verticalAlign: "middle",
-                      height: "25px",
-                      width: "25px",
-                    }}
-                  ></img>
-                  <span className="font-weight-bold ml-1"> Bus</span>
-                </div>
-              }
-              {...a11yProps(0)}
-            />
-            <Tab
-              label={
-                <div className="mr-auto">
-                  {/* <Hotel style={{ verticalAlign: "middle" }} /> Hotel */}
-                  <img
-                    src={HotelImg}
-                    className="img-fluid"
-                    alt="Hotel_image"
-                    style={{
-                      verticalAlign: "middle",
-                      height: "25px",
-                      width: "25px",
-                    }}
-                  ></img>
-                  <span className="font-weight-bold ml-1"> Hotel</span>
-                </div>
-              }
-              {...a11yProps(1)}
-            />
-            <Tab
-              label={
-                <div className="mr-auto">
-                  {/* <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch */}
-                  <img
-                    src={ShipImg}
-                    className="img-fluid"
-                    alt="Hotel_image"
-                    style={{
-                      verticalAlign: "middle",
-                      height: "25px",
-                      width: "25px",
-                    }}
-                  ></img>
-                  <span className="font-weight-bold ml-1"> Launch</span>
-                </div>
-              }
-              {...a11yProps(2)}
-            />
-            <Tab
-              label={
-                <div className="mr-auto">
-                  {/* <Flight style={{ verticalAlign: "middle" }} /> Flight */}
-                  <img
-                    src={FlightImg}
-                    className="img-fluid"
-                    alt="Hotel_image"
-                    style={{
-                      verticalAlign: "middle",
-                      height: "25px",
-                      width: "25px",
-                    }}
-                  ></img>
-                  <span className="font-weight-bold ml-1"> Flight</span>
-                </div>
-              }
-              {...a11yProps(3)}
-            />
-            <Tab
-              label={
-                <div className="mr-auto">
-                  {/* <Train style={{ verticalAlign: "middle" }} /> Train */}
-                  <img
-                    src={TrainImg}
-                    className="img-fluid"
-                    alt="Hotel_image"
-                    style={{
-                      verticalAlign: "middle",
-                      height: "25px",
-                      width: "25px",
-                    }}
-                  ></img>
-                  <span className="font-weight-bold ml-1"> Train</span>
-                </div>
-              }
-              {...a11yProps(4)}
-            />
-          </Tabs>
-          <div className={classes.tabPanel}>
-            <TabPanel value={value} index={0}>
-              <BusInputForm />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <HotelInputForm />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <LaunchInputFrom />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-              Coming soon
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-              <a
-                href="https://www.esheba.cnsbd.com/#/"
-                style={{ textDecoration: "none" }}
-              >
-                <Button variant="contained" color="primary">
-                  Get Started
-                </Button>
-              </a>
-            </TabPanel>
-          </div>
-        </Box>
-      </Paper>
+      <Box
+        className={classes.root}
+        border={1}
+        borderColor="grey.500"
+        borderRadius={16}
+      >
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          className={classes.tabs}
+        >
+          <Tab
+            label={
+              <div className="mr-auto">
+                {/* <DirectionsBus style={{ verticalAlign: "middle" }} /> Bus */}
+                <img
+                  src={BusImg}
+                  className="img-fluid"
+                  alt="Hotel_image"
+                  style={{
+                    verticalAlign: "middle",
+                    height: "25px",
+                    width: "25px",
+                  }}
+                ></img>
+                <span className="font-weight-bold ml-1"> Bus</span>
+              </div>
+            }
+            {...a11yProps(0)}
+          />
+          <Tab
+            label={
+              <div className="mr-auto">
+                {/* <Hotel style={{ verticalAlign: "middle" }} /> Hotel */}
+                <img
+                  src={HotelImg}
+                  className="img-fluid"
+                  alt="Hotel_image"
+                  style={{
+                    verticalAlign: "middle",
+                    height: "25px",
+                    width: "25px",
+                  }}
+                ></img>
+                <span className="font-weight-bold ml-1"> Hotel</span>
+              </div>
+            }
+            {...a11yProps(1)}
+          />
+          <Tab
+            label={
+              <div className="mr-auto">
+                {/* <DirectionsBoat style={{ verticalAlign: "middle" }} /> Launch */}
+                <img
+                  src={ShipImg}
+                  className="img-fluid"
+                  alt="Hotel_image"
+                  style={{
+                    verticalAlign: "middle",
+                    height: "25px",
+                    width: "25px",
+                  }}
+                ></img>
+                <span className="font-weight-bold ml-1"> Launch</span>
+              </div>
+            }
+            {...a11yProps(2)}
+          />
+          <Tab
+            label={
+              <div className="mr-auto">
+                {/* <Flight style={{ verticalAlign: "middle" }} /> Flight */}
+                <img
+                  src={FlightImg}
+                  className="img-fluid"
+                  alt="Hotel_image"
+                  style={{
+                    verticalAlign: "middle",
+                    height: "25px",
+                    width: "25px",
+                  }}
+                ></img>
+                <span className="font-weight-bold ml-1"> Flight</span>
+              </div>
+            }
+            {...a11yProps(3)}
+          />
+          <Tab
+            label={
+              <div className="mr-auto">
+                {/* <Train style={{ verticalAlign: "middle" }} /> Train */}
+                <img
+                  src={TrainImg}
+                  className="img-fluid"
+                  alt="Hotel_image"
+                  style={{
+                    verticalAlign: "middle",
+                    height: "25px",
+                    width: "25px",
+                  }}
+                ></img>
+                <span className="font-weight-bold ml-1"> Train</span>
+              </div>
+            }
+            {...a11yProps(4)}
+          />
+        </Tabs>
+        <div className={classes.tabPanel}>
+          <TabPanel value={value} index={0}>
+            <BusInputForm />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <HotelInputForm />
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <LaunchInputFrom />
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            Coming soon
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <a
+              href="https://www.esheba.cnsbd.com/#/"
+              style={{ textDecoration: "none" }}
+            >
+              <Button variant="contained" color="primary">
+                Get Started
+              </Button>
+            </a>
+          </TabPanel>
+        </div>
+      </Box>
     </div>
   );
 }
