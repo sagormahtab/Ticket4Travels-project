@@ -5,14 +5,10 @@ import {
   Typography,
   CardHeader,
   Checkbox,
-  Button,
-  List,
-  Drawer,
 } from "@material-ui/core";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import "./busCard1.css";
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   filterContent: {
     display: "flex",
+    alignItems: "flex-end",
     justifyContent: "center",
     backgroundColor: "#E0E5E6",
     position: "fixed",
@@ -60,263 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
 const BusLeftSideBar = () => {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    bottom: false,
-  });
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list1 = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "bottom",
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        <div className="m-0">
-          <div className="row" style={{ backgroundColor: "#68B9EE" }}>
-            <div className="col-4">
-              <FontAwesomeIcon icon={faWindowClose} size="2x" />
-            </div>
-            <div className="col-4"></div>
-            <div className="col-4"></div>
-          </div>
-        </div>
-        <Card variant="outlined">
-          <CardContent>
-            <h6>Departare Name</h6>
-            <div>
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              0.00 - 06.00
-            </div>
-            <div>
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              0.00 - 12.00
-            </div>
-            <div>
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              0.00 - 18.00
-            </div>
-            <div>
-              <Checkbox
-                color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
-              />
-              18.00 - 0.00
-            </div>
-          </CardContent>
-        </Card>
-        <div>
-          {" "}
-          <Card variant="outlined">
-            <CardContent>
-              <h6>Arrival Time</h6>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                0.00 - 06.00
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                0.00 - 12.00
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                0.00 - 18.00
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                18.00 - 0.00
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        <div>
-          <Card variant="outlined">
-            <CardContent>
-              <h6>Bus Name</h6>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Green Line
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Shamoly Square
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Shohag
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Ena
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Hanif
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Gono Poribohon
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Saudia
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        <div>
-          <Card variant="outlined">
-            <CardContent>
-              <h6>Facilites</h6>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Wifi
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Non AC
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Air Coindition
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Power Supply
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Clean Trip
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Buffet
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Reclaining Seat
-              </div>
-              <div>
-                <Checkbox
-                  color="primary"
-                  inputProps={{ "aria-label": "secondary checkbox" }}
-                />
-                Sleeping Coach
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </List>
-      <List>
-        <div className={classes.FilterButton}>
-          <Button variant="contained" color="primary" fullWidth>
-            Select from 0 buses
-          </Button>
-        </div>
-      </List>
-    </div>
-  );
-
-  const list2 = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top",
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        <div className="row">
-          <Card variant="outlined">
-            <h5 className="text-center">SORT BY</h5>
-            <hr></hr>
-            <p>Earliest departure time</p>
-            <p>Earliest departure time</p>
-            <p>Earliest departure time</p>
-            <p>Earliest departure time</p>
-            <p>Earliest departure time</p>
-          </Card>
-        </div>
-      </List>
-    </div>
-  );
   return (
     <div>
       <Card className={classes.root} variant="outlined">
@@ -634,30 +375,188 @@ const BusLeftSideBar = () => {
         </Card>
         {/* Fliter-For-Mobile start */}
         <div className={classes.filterContent}>
-          {["Filter"].map((anchor) => (
-            <React.Fragment key={anchor}>
-              <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-              <Drawer
-                anchor={anchor}
-                open={state[anchor]}
-                onClose={toggleDrawer(anchor, false)}
-              >
-                {list1(anchor)}
-              </Drawer>
-            </React.Fragment>
-          ))}
-          {["Sort"].map((anchor) => (
-            <React.Fragment key={anchor}>
-              <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-              <Drawer
-                anchor={anchor}
-                open={state[anchor]}
-                onClose={toggleDrawer(anchor, false)}
-              >
-                {list2(anchor)}
-              </Drawer>
-            </React.Fragment>
-          ))}
+          <div style={{ flex: "50%" }}>
+            <button
+              className="mobileFilter-btn"
+              data-toggle="modal"
+              data-target="#exampleModalLong1"
+            >
+              Filter
+            </button>
+          </div>
+          <div style={{ flex: "50%" }}>
+            <button
+              className="mobileFilter-btn"
+              data-toggle="modal"
+              data-target="#exampleModalCenter2"
+            >
+              Sort
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          id="exampleModalLong1"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLongTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Filtering items
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <Card>
+                  <CardHeader
+                    title="Sort In result"
+                    subheader="Sort your search result by:-"
+                  />
+                  <hr></hr>
+                  <CardContent>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Depart Time
+                    </div>
+
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Lowest Time
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Arrival Time
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Duration
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader title="Bus Name" />
+                  <CardContent>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Green Line
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Shamoly Square
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Shohag
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Ena
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Hanif
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Gono Poribohon
+                    </div>
+                    <div>
+                      <Checkbox
+                        color="primary"
+                        inputProps={{ "aria-label": "secondary checkbox" }}
+                      />
+                      Saudia
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="exampleModalCenter2"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLongTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLongTitle">
+                  Sort by
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <hr></hr>
+                <p>Earliest Departure time</p>
+                <hr></hr>
+                <hr></hr>
+                <p>Lowest price</p>
+                <hr></hr>
+                <hr></hr>
+                <p>Earliest Arrival time</p>
+                <hr></hr>
+                <hr></hr>
+                <p>Shortest Duration</p>
+                <hr></hr>
+                <hr></hr>
+                <p>Highest rating</p>
+                <hr></hr>
+              </div>
+            </div>
+          </div>
         </div>
         {/* Fliter-For-Mobile end */}
       </div>
