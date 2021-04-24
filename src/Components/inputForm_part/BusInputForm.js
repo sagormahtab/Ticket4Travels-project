@@ -116,7 +116,7 @@ const BusInputForm = () => {
               <Controller
                 name="date"
                 control={control}
-                defaultValue={false}
+                defaultValue={new Date()}
                 rules={{ required: true }}
                 render={(props) => (
                   <KeyboardDatePicker

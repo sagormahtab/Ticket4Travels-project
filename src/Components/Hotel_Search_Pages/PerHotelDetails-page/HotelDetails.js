@@ -1,77 +1,16 @@
 import React, { useState, useEffect } from "react";
-import {
-  Card,
-  TextField,
-  CardContent,
-  Button,
-  CardHeader,
-  CardMedia,
-  Popover,
-  Typography,
-  FormControl,
-  Select,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Card, CardContent, Button, CardHeader } from "@material-ui/core";
 import "./hotelDetails.css";
-import DateFnsUtils from "@date-io/date-fns";
 import ImageGallery from "react-image-gallery";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
-
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-import { faWifi } from "@fortawesome/free-solid-svg-icons";
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
-import hotelPic from "./images/hotel-img1.jpg";
-
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-
-const useStyles = makeStyles((theme) => ({
-  CardRoot: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "100%",
-    height: "auto",
-  },
-  HotelCardMedia: {
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
-  },
-  hotelContent: {
-    flex: "1 1 0 auto",
-    [theme.breakpoints.down("sm")]: {
-      flex: "100%",
-    },
-  },
-  bookNowContent: {
-    flex: "1 1  auto",
-    marginTop: "10px",
-  },
-  popover: {
-    pointerEvents: "none",
-  },
-  paper: {
-    padding: theme.spacing(1),
-  },
-  hotelBookLink: {
-    "&:hover": {
-      textDecoration: "none",
-    },
-  },
-}));
+import RoomCard from "./RoomCard";
 
 const images = [
   {
@@ -92,36 +31,13 @@ const HotelDetails = () => {
   const { hotelId } = useParams();
   let [hotel, setHotel] = useState(null);
   const [image, setImage] = useState(null);
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  const [persons, setPersons] = useState(1);
-  const [room] = useState(1);
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-
-  const [numberOfRoom, setNumberOfRoom] = React.useState("1");
 
   useEffect(() => {
     axios
       .get(`https://hotel-api-sm.herokuapp.com/api/v1/hotel-list/${hotelId}`)
       .then(function (response) {
-        setHotel(response.data.data[0]);
+        setHotel(response.data.data);
+        console.log(response.data.data);
       })
       .catch(function (error) {
         if (error.response) {
@@ -133,138 +49,48 @@ const HotelDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  let { checkin, checkout, persons, room } = JSON.parse(
+    sessionStorage.getItem("searchedData")
+  );
+  checkin = new Intl.DateTimeFormat("default", { dateStyle: "medium" })
+    .format(new Date(checkin))
+    .split(" ");
+  checkin[1] = checkin[1].slice(0, -1);
+
+  checkout = new Intl.DateTimeFormat("default", { dateStyle: "medium" })
+    .format(new Date(checkout))
+    .split(" ");
+  checkout[1] = checkout[1].slice(0, -1);
+
   useEffect(() => {
     if (hotel) {
       const images = hotel.images.map((img) => {
         return {
-          original: `https://hotel-api-sm.herokuapp.com/img/hotels/${img}`,
-          thumbnail: `https://hotel-api-sm.herokuapp.com/img/hotels/${img}`,
+          original: img,
+          thumbnail: img,
         };
       });
       setImage(images);
     }
   }, [hotel]);
 
-  const handleChange = (event) => {
-    setNumberOfRoom(event.target.value);
-  };
-
-  const classes = useStyles();
-
   return (
     <div className="container mt-5">
-      <Card variant="outlined">
-        <CardContent>
-          <div className="row ">
-            <div className="col-md-3 mt-2">
-              <TextField
-                id="outlined-basic"
-                label="Where Are You Going?"
-                variant="outlined"
-                fullWidth
-              />
-            </div>
-            <div className="col-md-2 mt-2">
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
-                  disableToolbar
-                  fullWidth
-                  className="ml-2"
-                  variant="outline"
-                  format="MM/dd/yyyy"
-                  label="Check-In"
-                  value={selectedDate}
-                  onChange={handleDateChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                />
-              </MuiPickersUtilsProvider>
-            </div>
-            <div className="col-md-2 mt-2">
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
-                  disableToolbar
-                  fullWidth
-                  className="ml-2"
-                  variant="outline"
-                  format="MM/dd/yyyy"
-                  label="Check-Out"
-                  value={selectedDate}
-                  onChange={handleDateChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                />
-              </MuiPickersUtilsProvider>
-            </div>
-            <div className="col-md-3 mt-2">
-              <ExpansionPanel>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <div>
-                    <p>
-                      {persons} Persons in {room} Room
-                    </p>
-                  </div>
-                </ExpansionPanelSummary>
-
-                <ExpansionPanelDetails>
-                  <div className="expandPanel">
-                    <div className="row">
-                      <h6>Room 1:</h6>
-                      <div className="col-md-6">
-                        <p className="text-uppercase">adults</p>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="def-number-input number-input">
-                          <button
-                            onClick={() =>
-                              persons > 0 && setPersons(persons - 1)
-                            }
-                            type="button"
-                            className="minus"
-                          ></button>
-                          <input
-                            className="quantity"
-                            name="quantity"
-                            value={persons}
-                            type="number"
-                          />
-                          <button
-                            onClick={() => setPersons(persons + 1)}
-                            type="button"
-                            className="plus"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-            </div>
-            <div className="col-md-2 mt-2">
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#30dd89", padding: "12px" }}
-                fullWidth
-              >
-                Search
-              </Button>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      <hr></hr>
+      <div className="d-flex flex-row-reverse">
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#30dd89", padding: "12px" }}
+        >
+          Change Search
+        </Button>
+      </div>
+      <hr />
 
       {hotel && (
         <div>
           <div className="row mt-3">
             <div className="col-md-6">
-              {image ? (
+              {image && image.length > 0 ? (
                 <ImageGallery items={image} />
               ) : (
                 <ImageGallery items={images} />
@@ -273,10 +99,16 @@ const HotelDetails = () => {
             <div className="col-md-6">
               <CardHeader title={hotel.name} />
               <div className="ml-3">
-                <FontAwesomeIcon icon={faStar} size="lg" color="#DFC857" />
-                <FontAwesomeIcon icon={faStar} size="lg" color="#DFC857" />
-                <FontAwesomeIcon icon={faStar} size="lg" color="#DFC857" />
-                <FontAwesomeIcon icon={faStar} size="lg" color="#DFC857" />
+                {new Array(+hotel.category.split(" ")[0])
+                  .fill("star")
+                  .map((el, i) => (
+                    <FontAwesomeIcon
+                      key={i}
+                      icon={faStar}
+                      size="lg"
+                      color="#DFC857"
+                    />
+                  ))}
               </div>
 
               <div className="ml-3">
@@ -292,9 +124,9 @@ const HotelDetails = () => {
                   <Card variant="outlined">
                     <CardContent>
                       <h6 className="text-center">Check-In</h6>
-                      <p className="text-center">18</p>
+                      <p className="text-center">{checkin[1]}</p>
                       <hr></hr>
-                      <p className="text-center">jan | 2.00pm</p>
+                      <p className="text-center">{checkin[0]} | 2.00pm</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -302,9 +134,9 @@ const HotelDetails = () => {
                   <Card variant="outlined">
                     <CardContent>
                       <h6 className="text-center">Check-Out</h6>
-                      <p className="text-center">18</p>
+                      <p className="text-center">{checkout[1]}</p>
                       <hr></hr>
-                      <p className="text-center">jan | 2.00pm</p>
+                      <p className="text-center">{checkout[0]} | 2.00pm</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -312,8 +144,8 @@ const HotelDetails = () => {
                   <Card style={{ backgroundColor: "beige" }} variant="outlined">
                     <CardContent>
                       <h6 className="text-center">You Choose</h6>
-                      <p className="text-center">2</p>
-                      <p className="text-center">guests in 1 room</p>
+                      <p className="text-center">{persons}</p>
+                      <p className="text-center">guests in {room} room</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -327,150 +159,9 @@ const HotelDetails = () => {
             </div>
           </div>
 
-          {/* Hotel card start */}
-          <Card variant="outlined">
-            <CardContent>
-              <div className="row mt-5">
-                <div className="col-md-12">
-                  <Card className={classes.CardRoot}>
-                    <CardMedia className={classes.HotelCardMedia}>
-                      <img
-                        src={hotelPic}
-                        alt="Hotel"
-                        width="280px"
-                        height="280px"
-                      ></img>
-                    </CardMedia>
-
-                    <CardContent className={classes.hotelContent}>
-                      <CardHeader title="Superior (Single)" className="pb-0" />
-                      <CardContent>
-                        <FontAwesomeIcon
-                          icon={faWifi}
-                          color="green"
-                          size="sm"
-                        />
-                        <span className="ml-1 mt-0">Wifi</span>
-
-                        <div className="mt-2">
-                          <Button
-                            variant="outlined"
-                            color="secondary"
-                            size="small"
-                          >
-                            Not Included: 15% VAT & 10% Service Charge
-                          </Button>
-                        </div>
-
-                        <div className="mt-3">
-                          <FontAwesomeIcon icon={faCheckSquare} />
-                          <span
-                            aria-owns={open ? "mouse-over-popover" : undefined}
-                            aria-haspopup="true"
-                            onMouseEnter={handlePopoverOpen}
-                            onMouseLeave={handlePopoverClose}
-                            style={{ fontSize: "small", marginLeft: "3px" }}
-                          >
-                            Cancellation policy
-                          </span>
-                          <Popover
-                            id="mouse-over-popover"
-                            className={classes.popover}
-                            classes={{
-                              paper: classes.paper,
-                            }}
-                            open={open}
-                            anchorEl={anchorEl}
-                            anchorOrigin={{
-                              vertical: "bottom",
-                              horizontal: "left",
-                            }}
-                            transformOrigin={{
-                              vertical: "top",
-                              horizontal: "left",
-                            }}
-                            onClose={handlePopoverClose}
-                            disableRestoreFocus
-                          >
-                            <Typography>
-                              {/* <CardHeader title="Cancellation policy"/> */}
-                              <CardContent>
-                                <p>
-                                  Before 7 days in Check-in free cencelation
-                                </p>
-                              </CardContent>
-                            </Typography>
-                          </Popover>
-                        </div>
-
-                        <div className="mt-3">
-                          <span>
-                            <span style={{ fontWeight: "bold" }}>Capacity</span>{" "}
-                            <FontAwesomeIcon icon={faUser} size="sm" />
-                            <span style={{ fontSize: "small" }}>1 adults</span>
-                          </span>
-                        </div>
-                      </CardContent>
-                    </CardContent>
-
-                    <CardContent className={classes.bookNowContent}>
-                      <Card style={{ backgroundColor: "#F3F1EB" }}>
-                        <CardContent>
-                          <p className="text-right">Price Per Night</p>
-                          <div>
-                            <h2 className="text-right"> BDT 7470</h2>
-                          </div>
-                          <div className="row">
-                            <div className="col-md-8 text-right">
-                              Number of Rooms
-                            </div>
-                            <div className="col-md-4 text-right">
-                              <FormControl
-                                className={classes.formControl}
-                                fullWidth
-                              >
-                                {/* <InputLabel htmlFor="age-native-simple">
-                          Number OF Rooms
-                        </InputLabel> */}
-                                <Select
-                                  value={numberOfRoom}
-                                  onChange={handleChange}
-                                >
-                                  {" "}
-                                  <option aria-label="None" value="1" />
-                                  <option value={1}>1</option>
-                                  <option value={2}>2</option>
-                                  <option value={3}>3</option>
-                                  <option value={4}>4</option>
-                                </Select>
-                              </FormControl>
-                            </div>
-                          </div>
-                          <div className="mt-3">
-                            <Link
-                              to="/hotelPre_Booking"
-                              className={classes.hotelBookLink}
-                            >
-                              <Button
-                                variant="contained"
-                                style={{
-                                  backgroundColor: "#30dd89",
-                                  color: "white",
-                                  marginLeft: "195px",
-                                }}
-                              >
-                                Book Now
-                              </Button>
-                            </Link>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {hotel.room.map((rm) => (
+            <RoomCard room={rm} />
+          ))}
 
           {/* Features of The Raintree Dhaka start */}
           <Card className="mt-5">

@@ -106,7 +106,6 @@ const HotelInputForm = () => {
 
   const { register, handleSubmit, control } = useForm(); // initialise the hook
   const onSubmit = (data) => {
-    console.log(data, persons, baby, room);
     redirect(data);
   };
 
@@ -145,7 +144,7 @@ const HotelInputForm = () => {
               <Controller
                 name="checkin"
                 control={control}
-                defaultValue={false}
+                defaultValue={new Date()}
                 rules={{ required: true }}
                 render={(props) => (
                   <KeyboardDatePicker
@@ -172,7 +171,7 @@ const HotelInputForm = () => {
               <Controller
                 name="checkout"
                 control={control}
-                defaultValue={false}
+                defaultValue={new Date(Date.now() + 24 * 60 * 60 * 1000)}
                 render={({ value, onChange }) => (
                   <KeyboardDatePicker
                     disableToolbar
