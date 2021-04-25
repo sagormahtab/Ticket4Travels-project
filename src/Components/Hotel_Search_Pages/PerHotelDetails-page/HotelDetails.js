@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, Button, CardHeader } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
 import "./hotelDetails.css";
 import ImageGallery from "react-image-gallery";
 
@@ -27,6 +28,36 @@ const images = [
   },
 ];
 
+const LoadingComponent = () => {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <Skeleton variant="rect" height={200} />
+        </div>
+        <div className="col-md-6">
+          <Skeleton variant="text" height={50} />
+          <Skeleton variant="text" height={40} />
+          <Skeleton variant="text" />
+          <div className="row justify-content-around">
+            <div className="col-md-3">
+              <Skeleton variant="rect" height={100} />
+            </div>
+            <div className="col-md-3">
+              <Skeleton variant="rect" height={100} />
+            </div>
+            <div className="col-md-3">
+              <Skeleton variant="rect" height={100} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Skeleton variant="text" height={175} />
+      <Skeleton variant="react" height={300} />
+    </div>
+  );
+};
+
 const HotelDetails = () => {
   const { hotelId } = useParams();
   let [hotel, setHotel] = useState(null);
@@ -37,7 +68,6 @@ const HotelDetails = () => {
       .get(`https://hotel-api-sm.herokuapp.com/api/v1/hotel-list/${hotelId}`)
       .then(function (response) {
         setHotel(response.data.data);
-        console.log(response.data.data);
       })
       .catch(function (error) {
         if (error.response) {
@@ -64,6 +94,14 @@ const HotelDetails = () => {
 
   useEffect(() => {
     if (hotel) {
+      sessionStorage.setItem(
+        "selectedHotel",
+        JSON.stringify({
+          name: hotel.name,
+          image: hotel.images[0],
+          star: hotel.category,
+        })
+      );
       const images = hotel.images.map((img) => {
         return {
           original: img,
@@ -86,7 +124,7 @@ const HotelDetails = () => {
       </div>
       <hr />
 
-      {hotel && (
+      {hotel ? (
         <div>
           <div className="row mt-3">
             <div className="col-md-6">
@@ -160,7 +198,7 @@ const HotelDetails = () => {
           </div>
 
           {hotel.room.map((rm) => (
-            <RoomCard room={rm} />
+            <RoomCard room={rm} bookedRoomNum={room} />
           ))}
 
           {/* Features of The Raintree Dhaka start */}
@@ -378,6 +416,8 @@ const HotelDetails = () => {
             </CardContent>
           </Card>
         </div>
+      ) : (
+        <LoadingComponent />
       )}
     </div>
   );

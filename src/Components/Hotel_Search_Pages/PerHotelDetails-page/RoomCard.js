@@ -20,7 +20,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import roomPic from "./images/hotel-img1.jpg";
 
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   CardRoot: {
@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ room, bookedRoomNum }) => {
+  const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handlePopoverOpen = (event) => {
@@ -70,10 +71,22 @@ const RoomCard = ({ room }) => {
 
   const open = Boolean(anchorEl);
 
-  const [numberOfRoom, setNumberOfRoom] = React.useState("1");
+  const [numberOfRoom, setNumberOfRoom] = React.useState(bookedRoomNum);
 
   const handleChange = (event) => {
     setNumberOfRoom(event.target.value);
+  };
+
+  const bookNowHandler = () => {
+    sessionStorage.setItem(
+      "selectedRoom",
+      JSON.stringify({
+        type: room.type,
+        price: room.price,
+        number: numberOfRoom,
+      })
+    );
+    history.push("/hotelPre_Booking");
   };
 
   const classes = useStyles();
@@ -192,21 +205,17 @@ const RoomCard = ({ room }) => {
                         </div>
                       </div>
                       <div className="mt-3">
-                        <Link
-                          to="/hotelPre_Booking"
-                          className={classes.hotelBookLink}
+                        <Button
+                          variant="contained"
+                          style={{
+                            backgroundColor: "#30dd89",
+                            color: "white",
+                            marginLeft: "195px",
+                          }}
+                          onClick={bookNowHandler}
                         >
-                          <Button
-                            variant="contained"
-                            style={{
-                              backgroundColor: "#30dd89",
-                              color: "white",
-                              marginLeft: "195px",
-                            }}
-                          >
-                            Book Now
-                          </Button>
-                        </Link>
+                          Book Now
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
