@@ -7,14 +7,7 @@ export function useHotel() {
 }
 
 export function HotelProvider({ children }) {
-  const [hotel, setHotel] = useState({
-    city: "Dhaka",
-    checkin: "2020-12-20T04:30:33.875Z",
-    checkout: "2020-12-21T04:30:33.875Z",
-    adult: 2,
-    child: 1,
-    room: 1,
-  });
+  const [hotel, setHotel] = useState(null);
 
   return (
     <HotelContext.Provider value={{ hotel, setHotel }}>

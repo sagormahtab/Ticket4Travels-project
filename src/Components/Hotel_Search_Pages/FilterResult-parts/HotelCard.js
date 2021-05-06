@@ -77,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HotelCard({ hotel }) {
   const classes = useStyles();
-  console.log(hotel.images);
 
   return (
     <div className="mt-3">

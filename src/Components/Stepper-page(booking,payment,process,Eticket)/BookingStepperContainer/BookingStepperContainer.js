@@ -1,5 +1,5 @@
 import React from "react";
-import "../Header-part2/header2.css";
+import "./header2.css";
 import Booking from "../Booking-Partt/Booking";
 import Payment from "../payment-part/Payment";
 import Stepper from "@material-ui/core/Stepper";
@@ -28,7 +28,7 @@ const fieldsValidation = {
   },
 };
 
-const Header2 = () => {
+const BookingStepperContainer = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
@@ -106,4 +106,4 @@ const Header2 = () => {
   );
 };
 
-export default Header2;
+export default BookingStepperContainer;

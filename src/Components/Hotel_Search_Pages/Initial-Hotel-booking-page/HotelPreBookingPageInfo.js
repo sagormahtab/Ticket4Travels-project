@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardContent, CardMedia, Button } from "@material-ui/core";
 import "../Initial-Hotel-booking-page/hotelPreBooking.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,6 +7,8 @@ import hotelImage from "./images/hotel-img1.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faStar } from "@fortawesome/free-solid-svg-icons";
+import { useHotelCart } from "../../../Context/HotelCartContext";
+import differenceInCalendarDays from "date-fns/differenceInCalendarDays";
 
 const useStyles = makeStyles((theme) => ({
   HotelButton: {
@@ -33,6 +35,57 @@ const useStyles = makeStyles((theme) => ({
 
 function HotelPreBookingPageInfo() {
   const classes = useStyles();
+  const selectedHotel = JSON.parse(sessionStorage.getItem("selectedHotel"));
+  const selectedRoom = JSON.parse(sessionStorage.getItem("selectedRoom"));
+  let roomType;
+  let roomPrice;
+  let roomNumber;
+  let vat;
+  let hotelCharges;
+  let totalPay;
+  let { checkin, checkout, persons, baby } = JSON.parse(
+    sessionStorage.getItem("searchedData")
+  );
+  const nights = differenceInCalendarDays(
+    new Date(checkout),
+    new Date(checkin)
+  );
+  const { hotelCart, setHotelCart } = useHotelCart();
+
+  if (hotelCart) {
+    roomType = hotelCart.roomType;
+    roomPrice = hotelCart.roomPrice;
+    roomNumber = hotelCart.roomNumber;
+
+    hotelCharges = +roomPrice * +roomNumber * nights;
+    vat = Math.round(+roomPrice * 0.15 * 100) / 100;
+    totalPay = hotelCharges + vat;
+  }
+  checkin = new Intl.DateTimeFormat("default", { dateStyle: "medium" })
+    .format(new Date(checkin))
+    .split(" ");
+  checkin[1] = checkin[1].slice(0, -1);
+
+  checkout = new Intl.DateTimeFormat("default", { dateStyle: "medium" })
+    .format(new Date(checkout))
+    .split(" ");
+  checkout[1] = checkout[1].slice(0, -1);
+
+  if (selectedRoom) {
+    hotelCharges = +selectedRoom.roomPrice * +selectedRoom.roomNumber * nights;
+    vat = Math.round(+selectedRoom.roomPrice * 0.15 * 100) / 100;
+    totalPay = hotelCharges + vat;
+  }
+
+  useEffect(() => {
+    if (totalPay) {
+      setHotelCart({
+        ...hotelCart,
+        amount: totalPay,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalPay]);
 
   return (
     <div>
@@ -54,29 +107,40 @@ function HotelPreBookingPageInfo() {
                 <CardContent className={classes.hotelContent}>
                   <div className="ml-1">
                     <span style={{ fontWeight: "bold", fontSize: "25px" }}>
-                      The Raintree Dhaka
+                      {selectedHotel.name}
                     </span>
                   </div>
                   <CardContent className="pt-0">
-                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
-                    <FontAwesomeIcon icon={faStar} color="#D4AC0D" size="sm" />
+                    {new Array(+selectedHotel.star.split(" ")[0])
+                      .fill("star")
+                      .map((el, i) => (
+                        <FontAwesomeIcon
+                          key={i}
+                          icon={faStar}
+                          size="lg"
+                          color="#DFC857"
+                        />
+                      ))}
 
-                    <div className="row mt-4">
-                      <div
-                        className="col-md-5 col-12 Check-In"
-                        style={{ backgroundColor: "#D3D3D2 " }}
-                      >
-                        <p className="text-center">Check-In</p>
-                        <h2 className="text-center">18</h2>
-                      </div>
-                      <div
-                        className="col-md-5 col-12 ml-1 Check-Out"
-                        style={{ backgroundColor: "#D3D3D2 " }}
-                      >
-                        <p className="text-center">Check-Out</p>
-                        <h2 className="text-center">18</h2>
+                    <div className="mt-4">
+                      <p>{roomType || selectedRoom.roomType}</p>
+                      <div className="row">
+                        <div
+                          className="col-md-5 col-12 Check-In"
+                          style={{ backgroundColor: "#D3D3D2 " }}
+                        >
+                          <p className="text-center mb-0">Check-In</p>
+                          <h2 className="text-center">{checkin[1]}</h2>
+                          <p className="text-center mb-0">{`${checkin[0]}, ${checkin[2]}`}</p>
+                        </div>
+                        <div
+                          className="col-md-5 col-12 ml-1 Check-Out"
+                          style={{ backgroundColor: "#D3D3D2 " }}
+                        >
+                          <p className="text-center mb-0">Check-Out</p>
+                          <h2 className="text-center">{checkout[1]}</h2>
+                          <p className="text-center mb-0">{`${checkout[0]}, ${checkout[2]}`}</p>
+                        </div>
                       </div>
                     </div>
 
@@ -127,7 +191,7 @@ function HotelPreBookingPageInfo() {
 
                 <CardContent className={classes.bookNowContent}>
                   <div>
-                    <p>1 Room</p>
+                    <p>{roomNumber || selectedRoom.roomNumber} Room</p>
                   </div>
                   <div className="row">
                     <div className="col-md-6 col-6">
@@ -135,7 +199,7 @@ function HotelPreBookingPageInfo() {
                         style={{ fontWeight: "bold", fontSize: "12px" }}
                         className="px-0"
                       >
-                        1 Night & 2 Days
+                        {nights} Night
                       </span>
                     </div>
                     <div className="col-md-6 col-6 px-0">
@@ -148,7 +212,10 @@ function HotelPreBookingPageInfo() {
                       <span>Room Capacity:</span>
                     </div>
                     <div className="col-md-6 col-6">
-                      <span style={{ fontSize: "14px" }}>1 Adult</span>
+                      <span style={{ fontSize: "14px" }}>{persons} Adult</span>
+                      <span className="d-block" style={{ fontSize: "14px" }}>
+                        {baby} Children
+                      </span>
                     </div>
                   </div>
                   <hr></hr>
@@ -174,7 +241,7 @@ function HotelPreBookingPageInfo() {
                 <p className="m-0" style={{ fontSize: "14px" }}>
                   {" "}
                   During Blackout/Long Holidays period Cancellation policy will
-                  not be applicable..
+                  not be applicable.
                 </p>
               </CardContent>
             </Card>
@@ -183,65 +250,65 @@ function HotelPreBookingPageInfo() {
           <div className="col-md-3 col-12">
             <Card>
               <CardContent>
-                <div className="row">
+                <div className="row align-items-center">
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>Room Fare</span>
+                  </div>
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>
+                      BDT {roomPrice || selectedRoom.roomPrice}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="row align-items-center">
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>Num of Rooms</span>
+                  </div>
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>
+                      X {roomNumber || selectedRoom.roomNumber}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="row align-items-center">
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>Nights</span>
+                  </div>
+                  <div className="col-md-6 col-6">
+                    <span style={{ fontSize: "15px" }}>X {nights}</span>
+                  </div>
+                </div>
+
+                <hr></hr>
+                <div className="row align-items-center">
                   <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Hotel Charges</span>
                   </div>
                   <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>BDT 20,750.00</span>
+                    <span style={{ fontSize: "15px" }}>BDT {hotelCharges}</span>
                   </div>
                 </div>
-                <div className="row">
+
+                <div className="row align-items-center">
                   <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>Discount</span>
+                    <span style={{ fontSize: "15px" }}>
+                      Service Charge & VAT (15%)
+                    </span>
                   </div>
                   <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>BDT 13,280.00</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>Hotel Offer (64%)</span>
-                  </div>
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>BDT 13,280.00</span>
+                    <span style={{ fontSize: "15px" }}>BDT {vat}</span>
                   </div>
                 </div>
+
                 <hr></hr>
                 <div className="row">
                   <div className="col-md-6 col-6">
                     <span style={{ fontSize: "15px" }}>Sub Total</span>
                   </div>
                   <div className="col-md-6 col-6 ">
-                    <span style={{ fontSize: "15px" }}>BDT 7,470.00</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>
-                      Service Charge & VAT
-                    </span>
-                  </div>
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>BDT 1,979.55</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>
-                      Service Charge (10%)
-                    </span>
-                  </div>
-                  <div className="col-md-6 col-6">
-                    <span style={{ fontSize: "15px" }}>BDT 747.00</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6 col-6">
-                    <sapn style={{ fontSize: "15px" }}>VAT (15%)</sapn>
-                  </div>
-                  <div className="col-md-6 col-6">
-                    <sapn style={{ fontSize: "15px" }}>BDT 1,232.55</sapn>
+                    <span style={{ fontSize: "15px" }}>BDT {totalPay}</span>
                   </div>
                 </div>
                 <div className="row">
@@ -252,14 +319,9 @@ function HotelPreBookingPageInfo() {
                   </div>
                   <div className="col-md-6 col-6">
                     <span style={{ fontWeight: "bold", fontSize: "15px" }}>
-                      BDT 9,449.55
+                      BDT {totalPay}
                     </span>
                   </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-md-6 col-6">Total Savings:</div>
-                  <div className="col-md-6 col-6">BDT 16,799.20</div>
                 </div>
               </CardContent>
             </Card>

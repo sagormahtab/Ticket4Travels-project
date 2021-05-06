@@ -13,7 +13,7 @@ import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { Link } from "react-router-dom";
-import { useCart } from "../../../CartContext";
+import { useBusCart } from "../../../BusCartContext";
 
 const useStyles = makeStyles((theme) => ({
   greenText: {
@@ -28,15 +28,15 @@ const useStyles = makeStyles((theme) => ({
 const BusCart = ({ bus, selectedSeats }) => {
   const classes = useStyles();
   const [boarding, setBoarding] = useState("");
-  const { setCart } = useCart();
+  const { setBusCart } = useBusCart();
   useEffect(() => {
-    setCart({
+    setBusCart({
       ...bus,
       goingToBook: selectedSeats,
       price: bus.fare * selectedSeats.length,
       boardingPoint: boarding,
     });
-  }, [selectedSeats, bus, setCart, boarding]);
+  }, [selectedSeats, bus, setBusCart, boarding]);
   const rows = [];
   if (selectedSeats) {
     selectedSeats.forEach((st) => rows.push({ seat: st, price: bus.fare }));

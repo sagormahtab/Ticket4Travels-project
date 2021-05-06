@@ -1,12 +1,15 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from '@material-ui/core';
+import { Card, CardContent } from "@material-ui/core";
 import icon from "../Booking-Partt/images/ICOn.png";
 import peopleIocn from "../Booking-Partt/images/people.png";
 import "../Booking-Partt/booking.css";
 import { useBus } from "../../../BusContext";
-import { useCart } from "../../../CartContext";
+import { useBusCart } from "../../../BusCartContext";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useHotelCart } from "../../../Context/HotelCartContext";
+import HotelJourneyDetails from "./HotelJourneyDetails";
+import BusJourneyDetails from "./BusJourneyDetails";
 
 function Booking({
   handleNext,
@@ -15,7 +18,9 @@ function Booking({
   formErrors,
 }) {
   const { bus } = useBus();
-  const { cart, setCart } = useCart();
+  const { busCart, setBusCart } = useBusCart();
+  const { hotelCart, setHotelCart } = useHotelCart();
+
   const isValid =
     name.length > 0 &&
     !formErrors.name &&
@@ -25,11 +30,18 @@ function Booking({
     !formErrors.phone;
 
   const handleSubmit = () => {
-    setCart({
-      ...cart,
-      depDate: bus.date,
-      passenger: { name, email, phone },
-    });
+    if (hotelCart) {
+      setHotelCart({
+        ...hotelCart,
+        passenger: { name, email, phone },
+      });
+    } else {
+      setBusCart({
+        ...busCart,
+        depDate: bus.date,
+        passenger: { name, email, phone },
+      });
+    }
     handleNext();
   };
 
@@ -44,15 +56,10 @@ function Booking({
           <div className="col-md-6 mt-3 booking_1stcard">
             <Card className="booking_Card1">
               <CardContent>
-                <div >
+                <div>
                   <div className="row">
                     <div className="col-md-3 col-3 text-left ">
-                      <img
-                        src={icon}
-
-                        alt=""
-                        className="img-fluid"
-                      ></img>
+                      <img src={icon} alt="" className="img-fluid"></img>
                     </div>
 
                     <div className="col-md-9 col-9 text-left mt-3 px-0">
@@ -65,8 +72,8 @@ function Booking({
                           alt=""
                           className="img-fluid"
                         ></img>{" "}
-                      Book faster and easier with passenger quick pick
-                    </p>
+                        Book faster and easier with passenger quick pick
+                      </p>
                       <Link to="/login_form">
                         <span className="color_change">Log in or Regiter</span>
                       </Link>
@@ -103,7 +110,7 @@ function Booking({
                     >
                       As in Passport/Official ID Card (without title/special
                       characters)
-                  </small>
+                    </small>
                   </div>
                   <div className="row mt-5">
                     <div className="col-lg-6 col-md-6">
@@ -130,7 +137,7 @@ function Booking({
                           className="form-text text-muted text-left"
                         >
                           Mobile No. 01XXXXXXXXX
-                      </small>
+                        </small>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
@@ -156,7 +163,7 @@ function Booking({
                           className="form-text text-muted text-left"
                         >
                           e.g.: email@example.com
-                      </small>
+                        </small>
                       </div>
                     </div>
                   </div>
@@ -165,40 +172,11 @@ function Booking({
             </Card>
           </div>
           <div className="col-md-4 mt-3 ">
-            <Card
-              style={{ width: "300px" }}
-              className="booking_Card2"
-            >
-              <CardHeader title="Journey Details" />
-              <hr></hr>
-              <CardContent>
-                <h4 className="base-text-color">
-                  {bus.from} - {bus.to}
-                </h4>
-                <p>{cart.name}</p>
-                <p>
-                  {new Intl.DateTimeFormat("default", {
-                    dateStyle: "long",
-                  }).format(new Date(bus.date))}
-                </p>
-                <ul>
-                  {cart.goingToBook.map((st, i) => (
-                    <li key={i}>
-                      Seat No(s): <span className="base-text-color">{st}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p>
-                  Boarding at {cart.boardingPoint},{" "}
-                  {new Intl.DateTimeFormat("default", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Dhaka",
-                  }).format(new Date(cart.depTime))}
-                </p>
-              </CardContent>
-            </Card>
+            {hotelCart ? (
+              <HotelJourneyDetails hotelCart={hotelCart} />
+            ) : (
+              <BusJourneyDetails bus={bus} busCart={busCart} />
+            )}
           </div>
         </div>
         <Button

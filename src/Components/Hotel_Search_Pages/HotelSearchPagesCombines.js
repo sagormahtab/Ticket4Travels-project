@@ -7,14 +7,28 @@ import HotelCard from "./FilterResult-parts/HotelCard";
 import { format } from "date-fns";
 import queryString from "query-string";
 import axios from "axios";
+import { useHotelCart } from "../../Context/HotelCartContext";
 
 function HotelSearchPagesCombines() {
+  const { setHotelCart } = useHotelCart();
+  const [hotel, setHotel] = useState(null);
   let { location, checkin, checkout } = queryString.parse(
     window.location.search
   );
+
+  useEffect(() => {
+    if (checkin && checkout && location) {
+      setHotelCart({
+        checkin: JSON.parse(JSON.stringify(checkin)),
+        checkout: JSON.parse(JSON.stringify(checkout)),
+        location: JSON.parse(JSON.stringify(location)),
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   checkin = format(new Date(checkin), "dd MMMM, yyyy");
   checkout = format(new Date(checkout), "dd MMMM, yyyy");
-  const [hotel, setHotel] = useState(null);
 
   useEffect(() => {
     axios

@@ -9,7 +9,8 @@ import {
 import "./creditCard.css";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import { useCart } from "../../../../CartContext";
+import { useBusCart } from "../../../../BusCartContext";
+import { useHotelCart } from "../../../../Context/HotelCartContext";
 
 const ELEMENT_OPTIONS = {
   style: {
@@ -37,10 +38,23 @@ const CreditCard = ({ handleBack, handleNext }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { cart, setCart } = useCart();
-  const {
-    passenger: { name, email, phone },
-  } = cart;
+  const { busCart, setBusCart } = useBusCart();
+  const { hotelCart, setHotelCart } = useHotelCart();
+  let name;
+  let email;
+  let phone;
+
+  if (busCart) {
+    name = busCart.passenger.name;
+    email = busCart.passenger.email;
+    phone = busCart.passenger.phone;
+  }
+
+  if (hotelCart) {
+    name = hotelCart.passenger.name;
+    email = hotelCart.passenger.email;
+    phone = hotelCart.passenger.phone;
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,10 +86,19 @@ const CreditCard = ({ handleBack, handleNext }) => {
       setIsLoading(false);
     } else {
       setPaymentMethod(payload.paymentMethod);
-      setCart({
-        ...cart,
-        paymentId: payload.paymentMethod.id,
-      });
+      if (busCart) {
+        setBusCart({
+          ...busCart,
+          paymentId: payload.paymentMethod.id,
+        });
+      }
+
+      if (hotelCart) {
+        setHotelCart({
+          ...hotelCart,
+          paymentId: payload.paymentMethod.id,
+        });
+      }
       setErrorMessage(null);
     }
   };
@@ -84,13 +107,26 @@ const CreditCard = ({ handleBack, handleNext }) => {
     try {
       setIsLoading(true);
       const { id } = paymentMethod;
-      const response = await axios.post(
-        "https://bus-api-sm.herokuapp.com/api/v1/bookings/checkout-session",
-        {
-          product: cart,
-          id: id,
-        }
-      );
+      let response;
+      if (hotelCart) {
+        response = await axios.post(
+          "https://hotel-api-sm.herokuapp.com/api/v1/bookings/checkout-session",
+          {
+            product: busCart,
+            id: id,
+          }
+        );
+      }
+
+      if (busCart) {
+        response = await axios.post(
+          "https://bus-api-sm.herokuapp.com/api/v1/bookings/checkout-session",
+          {
+            product: busCart,
+            id: id,
+          }
+        );
+      }
 
       if (response.data.success) {
         handleNext();

@@ -12,6 +12,7 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import RoomCard from "./RoomCard";
+import { useHotelCart } from "../../../Context/HotelCartContext";
 
 const images = [
   {
@@ -60,14 +61,15 @@ const LoadingComponent = () => {
 
 const HotelDetails = () => {
   const { hotelId } = useParams();
-  let [hotel, setHotel] = useState(null);
+  let [hotelDetails, setHotelDetails] = useState(null);
   const [image, setImage] = useState(null);
+  const { hotelCart, setHotelCart } = useHotelCart();
 
   useEffect(() => {
     axios
       .get(`https://hotel-api-sm.herokuapp.com/api/v1/hotel-list/${hotelId}`)
       .then(function (response) {
-        setHotel(response.data.data);
+        setHotelDetails(response.data.data);
       })
       .catch(function (error) {
         if (error.response) {
@@ -93,16 +95,22 @@ const HotelDetails = () => {
   checkout[1] = checkout[1].slice(0, -1);
 
   useEffect(() => {
-    if (hotel) {
+    if (hotelDetails) {
+      setHotelCart({
+        ...hotelCart,
+        hotelId: hotelDetails._id,
+      });
+
       sessionStorage.setItem(
         "selectedHotel",
         JSON.stringify({
-          name: hotel.name,
-          image: hotel.images[0],
-          star: hotel.category,
+          name: hotelDetails.name,
+          image: hotelDetails.images[0],
+          star: hotelDetails.category,
         })
       );
-      const images = hotel.images.map((img) => {
+
+      const images = hotelDetails.images.map((img) => {
         return {
           original: img,
           thumbnail: img,
@@ -110,7 +118,8 @@ const HotelDetails = () => {
       });
       setImage(images);
     }
-  }, [hotel]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hotelDetails]);
 
   return (
     <div className="container mt-5">
@@ -124,7 +133,7 @@ const HotelDetails = () => {
       </div>
       <hr />
 
-      {hotel ? (
+      {hotelDetails ? (
         <div>
           <div className="row mt-3">
             <div className="col-md-6">
@@ -135,9 +144,9 @@ const HotelDetails = () => {
               )}
             </div>
             <div className="col-md-6">
-              <CardHeader title={hotel.name} />
+              <CardHeader title={hotelDetails.name} />
               <div className="ml-3">
-                {new Array(+hotel.category.split(" ")[0])
+                {new Array(+hotelDetails.category.split(" ")[0])
                   .fill("star")
                   .map((el, i) => (
                     <FontAwesomeIcon
@@ -151,10 +160,10 @@ const HotelDetails = () => {
 
               <div className="ml-3">
                 <FontAwesomeIcon icon={faMapMarkedAlt} size="md" />
-                <span className="ml-2">{hotel.fullAddress}</span>
+                <span className="ml-2">{hotelDetails.fullAddress}</span>
               </div>
 
-              <Button variant="outlined">{hotel.category}</Button>
+              <Button variant="outlined">{hotelDetails.category}</Button>
               <hr></hr>
 
               <div className="row">
@@ -193,11 +202,11 @@ const HotelDetails = () => {
 
           <div className="row mt-4">
             <div className="col-md-12" style={{ backgroundColor: "#f4f4f4" }}>
-              <p>{hotel.description}</p>
+              <p>{hotelDetails.description}</p>
             </div>
           </div>
 
-          {hotel.room.map((rm) => (
+          {hotelDetails.room.map((rm) => (
             <RoomCard room={rm} bookedRoomNum={room} />
           ))}
 

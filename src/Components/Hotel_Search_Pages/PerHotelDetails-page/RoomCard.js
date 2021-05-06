@@ -21,6 +21,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import roomPic from "./images/hotel-img1.jpg";
 
 import { useHistory } from "react-router-dom";
+import { useHotelCart } from "../../../Context/HotelCartContext";
 
 const useStyles = makeStyles((theme) => ({
   CardRoot: {
@@ -60,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
 const RoomCard = ({ room, bookedRoomNum }) => {
   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { hotelCart, setHotelCart } = useHotelCart();
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -78,12 +80,19 @@ const RoomCard = ({ room, bookedRoomNum }) => {
   };
 
   const bookNowHandler = () => {
+    setHotelCart({
+      ...hotelCart,
+      roomId: room._id,
+      roomType: room.type,
+      roomPrice: room.price,
+      roomNumber: numberOfRoom,
+    });
     sessionStorage.setItem(
       "selectedRoom",
       JSON.stringify({
-        type: room.type,
-        price: room.price,
-        number: numberOfRoom,
+        roomType: room.type,
+        roomPrice: room.price,
+        roomNumber: numberOfRoom,
       })
     );
     history.push("/hotelPre_Booking");

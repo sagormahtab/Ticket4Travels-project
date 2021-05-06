@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
 
-const CartContext = createContext();
+const BusCartContext = createContext();
 
-export function useCart() {
-  return useContext(CartContext);
+export function useBusCart() {
+  return useContext(BusCartContext);
 }
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState({
+export function BusCartProvider({ children }) {
+  const [busCart, setBusCart] = useState({
     _id: "5f9b088c341aec0718f7fb8b",
     AC: false,
     startingPoints: ["Dhaka"],
@@ -42,8 +42,8 @@ export function CartProvider({ children }) {
   });
 
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
+    <BusCartContext.Provider value={{ busCart, setBusCart }}>
       {children}
-    </CartContext.Provider>
+    </BusCartContext.Provider>
   );
 }
