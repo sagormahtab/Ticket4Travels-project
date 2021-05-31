@@ -43,6 +43,14 @@ function Footer() {
                     <a href="##"> About us</a>
                   </Link>
                 </div>
+
+               <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                <Link to="/terms_conditions">Terms and Conditions</Link>
+              </div>
+
+              <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                <Link to="/privacy_policy">Privecy Policy</Link>
+              </div>
                 <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
                   <Link to="/careers-with-us">
                     <a href="##"> Careeers With Us</a>
