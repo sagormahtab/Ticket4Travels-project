@@ -32,6 +32,13 @@ function Footer() {
                   About Tickets4travel
                 </h6>
               </div>
+              <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                <Link to="/terms_conditions">Terms and Conditions</Link>
+              </div>
+
+              <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                <Link to="/privacy_policy">Privecy Policy</Link>
+              </div>
               <div className="mt-3 ">
                 <div className="mt-3 about-us-content1 d-flex justify-content-center text-center align-items-center">
                   <Link to="/how-to-book">
