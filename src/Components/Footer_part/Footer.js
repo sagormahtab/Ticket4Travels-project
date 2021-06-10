@@ -57,7 +57,7 @@ function Footer() {
                 </div>
 
                 <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
-                  <Link to="/privacy_policy">Privecy Policy</Link>
+                  <Link to="/privacy_policy">Privacy Policy</Link>
                 </div>
                 <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
                   <Link to="/careers-with-us">
