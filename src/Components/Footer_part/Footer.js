@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react'
 // import Wave_png from "../Footer_part/images/Wave.png"
-import "./footer.css";
+import './footer.css'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
-import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom'
+
+import SSL from './images/ssl.png'
 
 function Footer() {
   return (
@@ -44,13 +46,19 @@ function Footer() {
                   </Link>
                 </div>
 
-               <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
-                <Link to="/terms_conditions">Terms and Conditions</Link>
-              </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/refund">
+                    <a href="##"> Refund Policy</a>
+                  </Link>
+                </div>
 
-              <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
-                <Link to="/privacy_policy">Privecy Policy</Link>
-              </div>
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/terms_conditions">Terms and Conditions</Link>
+                </div>
+
+                <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
+                  <Link to="/privacy_policy">Privacy Policy</Link>
+                </div>
                 <div className="mt-3 about-us-content4 d-flex justify-content-center text-center align-items-center">
                   <Link to="/careers-with-us">
                     <a href="##"> Careeers With Us</a>
@@ -136,48 +144,13 @@ function Footer() {
               </div>
             </div>
             <div className="col-md-4 col-sm-6 ">
-              <h6 className="products-header d-flex justify-content-center text-center align-items-center">
-                Services
-              </h6>
-              <div className="mt-3 products-body1 d-flex justify-content-center text-center align-items-center">
-                <Link to="/flight">
-                  <a href="##"> Flights</a>
-                </Link>
-              </div>
-              <div className="mt-3 products-body2 d-flex justify-content-center text-center align-items-center">
-                <Link to="/hotel">
-                  <a href="##" className="products-body2">
-                    Hotels
-                  </a>
-                </Link>
-              </div>
-              <div className="mt-3 products-body3 d-flex justify-content-center text-center align-items-center">
-                <Link to="/launch">
-                  <a href="##" className="products-body3">
-                    Launch
-                  </a>
-                </Link>
-              </div>
-              <div className="mt-3 products-body4 d-flex justify-content-center text-center align-items-center">
-                <Link to="/bus">
-                  <a href="##" className="products-body4">
-                    Bus
-                  </a>
-                </Link>
-              </div>
-              <div className="mt-3 products-body5 d-flex justify-content-center text-center align-items-center">
-                <Link to="/train">
-                  <a href="##" className="products-body5">
-                    Train
-                  </a>
-                </Link>
-              </div>
+              <img src={SSL} alt="ssl" />
             </div>
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
