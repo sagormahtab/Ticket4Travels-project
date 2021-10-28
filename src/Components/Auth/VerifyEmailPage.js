@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { Container, Box, LinearProgress, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -67,8 +67,7 @@ const VerifyEmailPage = ({ theme }) => {
               <h3
                 style={{ color: "black", textAlign: "center", marginTop: "0" }}
               >
-                Your account is activated. <Link to="/login">Login</Link> to
-                continue
+                Your Email is verified.
               </h3>
             </Paper>
           </Container>
